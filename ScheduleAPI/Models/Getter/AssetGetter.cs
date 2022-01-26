@@ -92,15 +92,14 @@ namespace ScheduleAPI.Models.Getter
         public WeekSchedule GetWeekSchedule(String groupName)
         {
             groupName = groupName.ToUpper();
-            WeekSchedule schedule = new WeekSchedule();
-            schedule.GroupName = groupName;
+            List<DaySchedule> schedule = new(1);
 
             for (int i = 0; i < 7; i++)
             {
-                schedule.Days.Add(GetDaySchedule(i, groupName));
+               schedule.Add(GetDaySchedule(i, groupName));
             }
 
-            return schedule;
+            return new(groupName, schedule);
         }
 
         /// <summary>
