@@ -44,8 +44,7 @@ namespace ScheduleAPI.Controllers
         [HttpGet]
         public String Get(Int32 dayIndex = 0, String groupName = "19П-3")
         {
-            ChangesGetter getter = new(environment);
-            ChangesOfDay changes = getter.GetDayChanges(dayIndex, groupName);
+            ChangesOfDay changes = new ChangesGetter().GetDayChanges(dayIndex, groupName);
 
             return JsonConvert.SerializeObject(changes);
         }
@@ -91,8 +90,7 @@ namespace ScheduleAPI.Controllers
         [HttpGet]
         public String Get(String groupName = "19П-3")
         {
-            ChangesGetter getter = new(environment);
-            List<ChangesOfDay> changes = getter.GetWeekChanges(groupName);
+            List<ChangesOfDay> changes = new ChangesGetter().GetWeekChanges(groupName);
 
             return JsonConvert.SerializeObject(changes);
         }

@@ -10,24 +10,6 @@ namespace ScheduleAPI.Models.Getter
     /// </summary>
     public class ChangesGetter
     {
-        #region Область: Поля.
-        /// <summary>
-        /// Поле, содержащее информацию о окружении приложения.
-        /// </summary>
-        private readonly IHostEnvironment environment;
-        #endregion
-
-        #region Область: Конструктор.
-        /// <summary>
-        /// Конструктор класса.
-        /// </summary>
-        /// <param name="env">Окружение приложения.</param>
-        public ChangesGetter(IHostEnvironment env)
-        {
-            environment = env;
-        }
-        #endregion
-
         #region Область: Методы.
         /// <summary>
         /// Метод для получения замен на день.
@@ -68,9 +50,7 @@ namespace ScheduleAPI.Models.Getter
             // Для красоты выделим в отдельный блок:
             else
             {
-                String path = environment.ContentRootPath;
-                path = path[0..path.LastIndexOf(Path.DirectorySeparatorChar)];
-                path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument), Path.Combine(path, "Assets", "!Changes"));
+                String path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
 
                 ChangesReader reader = new(path);
                 ChangesOfDay toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);

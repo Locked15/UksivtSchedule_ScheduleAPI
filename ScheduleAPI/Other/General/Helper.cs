@@ -41,7 +41,7 @@ namespace ScheduleAPI.Other.General
         /// <param name="destination">Место, куда будет скачан файл.</param>
         /// <returns>Путь к скачанному файлу.</returns>
         /// <exception cref="ArgumentException">Отправленная ссылка была некорректна.</exception>
-        public static String DownloadFileFromURL(String url, String destination)
+        public static String DownloadFileFromURL(String url)
         {
             //Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
             if (!url.Contains(GoogleDriveDownloadLinkTemplate))
@@ -51,12 +51,22 @@ namespace ScheduleAPI.Other.General
 
             using (WebClient client = new WebClient())
             {
-                client.Credentials = new NetworkCredential(Environment.UserName, "Password");
+                try
+                {
+                    client.Credentials = new NetworkCredential(Environment.UserName, "Password");
 
-                client.DownloadFile(url, Path.Combine(destination, "Changes.docx"));
+                    client.DownloadFile(url, "Changes.docx");
+                }
+
+                catch (Exception e)
+                {
+                    Logger.WriteError(3, $"Обнаружена ошибка при скачивании файла с заменами: {e.Message}.");
+
+                    return null;
+                }
             }
 
-            return Path.Combine(destination, "Changes.docx");
+            return "Changes.docx";
         }
         #endregion
     }
