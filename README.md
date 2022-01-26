@@ -34,3 +34,7 @@ Most part of controllers use 2 parameters:
 DataBase controllers also use 1 additional parameter:
   1. selectUnsecure — Cause database have some wrong values (for example: lesson teachers or places), user can delete this values and select only precise ones. Anything else will be replaced by default values.
      Default value — false.
+
+# Examples
+  1. <b>https://scheduleapi20220126123653.azurewebsites.net/api/day/scheduledayasset?dayIndex=0&groupName=19%D0%BF-3</b> — Return monday schedule for group '19П-3';
+  2. <b></b>
