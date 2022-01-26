@@ -8,4 +8,4 @@ Instead of write getting schedule and changes algorithms on every platform, you 
 Web API locates on:
 <strong>https://scheduleapi20220126123653.azurewebsites.net/</strong>
 
-<i>All controllers parameters must be add after address part.</i>
+<i>All controller parameters must be add after address part.</i>
