@@ -60,7 +60,6 @@ namespace ScheduleAPI.Models.Getter
         {
             groupName = groupName.ToUpper();
             (String fullPath, String groupBranch, String subFolder) = GetValues(groupName);
-
             fullPath = Path.Combine(fullPath, "Assets", groupBranch, subFolder, groupName + ".json");
 
             if (File.Exists(fullPath))
@@ -76,7 +75,6 @@ namespace ScheduleAPI.Models.Getter
                         Logger.WriteError(1, $"При получении данных (День) произошла ошибка: " +
                         $"Группа — {week?.GroupName}, День — {week?.Days[dayIndex]?.Day}.");
                     }
-
                     return week?.Days[dayIndex] ?? defaultDaySchedule;
                 }
             }
@@ -94,31 +92,15 @@ namespace ScheduleAPI.Models.Getter
         public WeekSchedule GetWeekSchedule(String groupName)
         {
             groupName = groupName.ToUpper();
-            (String fullPath, String groupBranch, String subFolder) = GetValues(groupName);
+            WeekSchedule schedule = new WeekSchedule();
+            schedule.GroupName = groupName;
 
-            fullPath = Path.Combine(fullPath, "Assets", groupBranch, subFolder, groupName + ".json");
-
-            if (File.Exists(fullPath))
+            for (int i = 0; i < 7; i++)
             {
-                using (StreamReader reader = new(fullPath, System.Text.Encoding.Default))
-                {
-                    // Чтобы избавиться от форматирования полностью, придется сперва получить сериализованный объект.
-                    WeekSchedule? week = JsonConvert.DeserializeObject<WeekSchedule>(reader.ReadToEnd());
-                    week?.Days.ForEach(day => day.Day = day.Day.GetTranslatedDay());
-
-                    if (week == null)
-                    {
-                        Logger.WriteError(1, $"При получении данных (Неделя) произошла ошибка: " +
-                        $"Группа — {week?.GroupName}.");
-                    }
-
-                    return week ?? defaultWeekSchedule;
-                }
+                schedule.Days.Add(GetDaySchedule(i, groupName));
             }
 
-            Logger.WriteError(1, $"Файл с расписанием не обнаружен: " +
-            $"Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.");
-            return defaultWeekSchedule;
+            return schedule;
         }
 
         /// <summary>
@@ -135,14 +117,22 @@ namespace ScheduleAPI.Models.Getter
         /// </returns>
         private (String, String, String) GetValues(String groupName)
         {
-            (String, String, String) values = new();
-            values.Item1 = environment.ContentRootPath;
-            values.Item2 = groupName.GetPrefixFromName();
-            values.Item3 = groupName.GetSubFolderFromName();
+            try
+            {
+                (String, String, String) values = new();
+                values.Item1 = environment.ContentRootPath;
+                values.Item2 = groupName.GetPrefixFromName();
+                values.Item3 = groupName.GetSubFolderFromName();
 
-            values.Item1 = values.Item1[0..values.Item1.LastIndexOf(Path.DirectorySeparatorChar)];
+                values.Item1 = values.Item1[0..values.Item1.LastIndexOf(Path.DirectorySeparatorChar)];
 
-            return values;
+                return values;
+            }
+
+            catch
+            {
+                return new(String.Empty, String.Empty, String.Empty);
+            }
         }
         #endregion
     }
