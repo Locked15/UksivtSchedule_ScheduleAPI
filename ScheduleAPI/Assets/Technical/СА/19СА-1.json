@@ -1,0 +1,334 @@
+{
+  "groupName": "19СА-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Физ-Ра",
+          "teacher": "Гильманов Р. А.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "МДК 0102",
+          "teacher": "Тимашев Т. Р.",
+          "place": "231"
+        },
+        {
+          "number": 3,
+          "name": "МДК 0201",
+          "teacher": "Озерова Р. А.",
+          "place": "231"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "БЖД",
+          "teacher": null,
+          "place": "231"
+        },
+        {
+          "number": 1,
+          "name": "Производ. практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        },
+        {
+          "number": 2,
+          "name": "Производ. практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        },
+        {
+          "number": 3,
+          "name": "Производ. практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "Учебная практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        },
+        {
+          "number": 5,
+          "name": "Учебная практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        },
+        {
+          "number": 6,
+          "name": "Учебная практика",
+          "teacher": "Павлов Н. А.",
+          "place": "231"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Ин. Яз.",
+          "teacher": "Пустовалова Э. У.",
+          "place": "Библиотека"
+        },
+        {
+          "number": 1,
+          "name": "МДК 0202",
+          "teacher": "Озерова Р. А.",
+          "place": "231"
+        },
+        {
+          "number": 2,
+          "name": "МДК 0201",
+          "teacher": "Озерова Р. А.",
+          "place": "231"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Стандартизация",
+          "teacher": "Кувшинников А. М.",
+          "place": "231"
+        },
+        {
+          "number": 4,
+          "name": "МДК 0202",
+          "teacher": "Озерова Р. А.",
+          "place": "231"
+        },
+        {
+          "number": 5,
+          "name": "МДК 0201",
+          "teacher": "Озерова Р. А.",
+          "place": "231"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ОАКС",
+          "teacher": "Стива И. М.",
+          "place": "231"
+        },
+        {
+          "number": 1,
+          "name": "ОАКС",
+          "teacher": "Стива И. М.",
+          "place": "231"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "groupName": "20ЗИО-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "БЖД",
+          "teacher": "Исмаилова Р.Х.",
+          "place": "331"
+        },
+        {
+          "number": 2,
+          "name": "Ин.яз",
+          "teacher": "Арсланова Ф.М.",
+          "place": "331"
+        },
+        {
+          "number": 3,
+          "name": "ДОУ",
+          "teacher": "Алибаева Р.Р.",
+          "place": "331"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Основы менедж и маркет",
+          "teacher": "Таюпов Ф.А.",
+          "place": "331"
+        },
+        {
+          "number": 4,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "Земельное право",
+          "teacher": "Дуйсенов И.А.",
+          "place": "331"
+        },
+        {
+          "number": 6,
+          "name": "Земельное право",
+          "teacher": "Дуйсенов И.А.",
+          "place": "331"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Статистика",
+          "teacher": "Ахатова Г.И.",
+          "place": "331"
+        },
+        {
+          "number": 1,
+          "name": "Статистика",
+          "teacher": "Ахатова Г.И.",
+          "place": "331"
+        },
+        {
+          "number": 2,
+          "name": "УП",
+          "teacher": "Нагаева З.Т.",
+          "place": "331"
+        },
+        {
+          "number": 3,
+          "name": "Геодезия",
+          "teacher": "Нагаева З.Т.",
+          "place": "331"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "УТИНИ",
+          "teacher": "Акчева Д.М.",
+          "place": "305"
+        },
+        {
+          "number": 2,
+          "name": "УТИНИ",
+          "teacher": "Акчева Д.М.",
+          "place": "305"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Экономика организации",
+          "teacher": "Кунсбаева Р.Р.",
+          "place": "301"
+        },
+        {
+          "number": 2,
+          "name": "Экономика организации",
+          "teacher": "Кунсбаева Р.Р.",
+          "place": "301"
+        },
+        {
+          "number": 3,
+          "name": "Основы философии",
+          "teacher": "Каримова И.Р.",
+          "place": "331"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "БЖД",
+          "teacher": "Исмаилова Р.Х.",
+          "place": "301"
+        },
+        {
+          "number": 2,
+          "name": "ПСД",
+          "teacher": "Дибаев А.Ф.",
+          "place": "301"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "groupName": "19ПД-3",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "ТСП",
+          "teacher": "Избаев А.Ш.",
+          "place": "111"
+        },
+        {
+          "number": 4,
+          "name": "Физ-ра",
+          "teacher": "Валиев Р.Ф.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "Огневая подготовка",
+          "teacher": "Фролов А.А.",
+          "place": "111"
+        },
+        {
+          "number": 6,
+          "name": "Огневая подготовка",
+          "teacher": "Фролов А.А.",
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "УПП",
+          "teacher": "Галиев А.Г.",
+          "place": "111"
+        },
+        {
+          "number": 6,
+          "name": "УПП",
+          "teacher": "Галиев А.Г.",
+          "place": "111"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "ПО ОРД",
+          "teacher": "Юмагулов И.Т.",
+          "place": "110"
+        },
+        {
+          "number": 5,
+          "name": "Пр по делопроизв",
+          "teacher": "Хасанова Л.Ф.",
+          "place": "111а"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Ин.яз",
+          "teacher": "Арсланова Ф.М.",
+          "place": "111"
+        },
+        {
+          "number": 1,
+          "name": "Спец техника",
+          "teacher": "Избаев А.Ш.",
+          "place": "111"
+        },
+        {
+          "number": 2,
+          "name": "ТСП",
+          "teacher": "Избаев А.Ш.",
+          "place": "111"
+        },
+        {
+          "number": 3,
+          "name": "УПП",
+          "teacher": "Галиев А.Г.",
+          "place": "111"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Криминалистика",
+          "teacher": "Фагманова Э.В.",
+          "place": "118"
+        },
+        {
+          "number": 2,
+          "name": "Криминалистика",
+          "teacher": "Фагманова Э.В.",
+          "place": "118"
+        },
+        {
+          "number": 3,
+          "name": "ТСП",
+          "teacher": "Избаев А.Ш.",
+          "place": "118"
+        },
+        {
+          "number": 4,
+          "name": "ПО ОРД",
+          "teacher": "Юмагулов И.Т.",
+          "place": "118"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Делопроизводство",
+          "teacher": "Хасанова Л.Ф.",
+          "place": "111а"
+        },
+        {
+          "number": 1,
+          "name": "Делопроизводство",
+          "teacher": "Хасанова Л.Ф.",
+          "place": "111а"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

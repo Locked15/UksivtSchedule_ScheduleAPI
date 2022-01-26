@@ -1,0 +1,334 @@
+{
+  "groupName": "19ЗИО-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Страховое дело",
+          "teacher": "Засыпкин К.Н.",
+          "place": "337"
+        },
+        {
+          "number": 1,
+          "name": "Страховое дело",
+          "teacher": "Засыпкин К.Н.",
+          "place": "337"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Страховое дело",
+          "teacher": "Засыпкин К.Н.",
+          "place": "337"
+        },
+        {
+          "number": 4,
+          "name": "ПОПД",
+          "teacher": "Габбасова Н.А.",
+          "place": "337"
+        },
+        {
+          "number": 5,
+          "name": "ПОПД",
+          "teacher": "Габбасова Н.А.",
+          "place": "337"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ОНИ",
+          "teacher": "Минниханова Г.Ф.",
+          "place": "337"
+        },
+        {
+          "number": 1,
+          "name": "ОНИ",
+          "teacher": "Минниханова Г.Ф.",
+          "place": "337"
+        },
+        {
+          "number": 2,
+          "name": "Ин.яз",
+          "teacher": "Валеева З.М.",
+          "place": "337"
+        },
+        {
+          "number": 3,
+          "name": "Страховое дело",
+          "teacher": "Засыпкин К.Н.",
+          "place": "337"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Пр по оценке земель",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 1,
+          "name": "Пр по оценке земель",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Пр по оценке земель",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 1,
+          "name": "Кадастр",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 2,
+          "name": "Кадастр",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Кадастр",
+          "teacher": "Нагаева З.Т.",
+          "place": "337"
+        },
+        {
+          "number": 4,
+          "name": "ОНИ",
+          "teacher": "Минниханова Г.Ф.",
+          "place": "341"
+        },
+        {
+          "number": 5,
+          "name": "ОНИ",
+          "teacher": "Минниханова Г.Ф.",
+          "place": "341"
+        },
+        {
+          "number": 6,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

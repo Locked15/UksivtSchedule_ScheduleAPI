@@ -1,0 +1,334 @@
+{
+  "groupName": "19П-2",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ТРИЗБД",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 1,
+          "name": "ТРИЗБД",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 2,
+          "name": "Ин.яз",
+          "teacher": "Пустовалова Э.У.",
+          "place": "библ"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "ТРИЗБД",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 4,
+          "name": "ТРИЗБД",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "УП",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 1,
+          "name": "УП",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 2,
+          "name": "ПП",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 3,
+          "name": "ПП",
+          "teacher": "Фатхулова О.В.",
+          "place": "221"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "БЖД",
+          "teacher": null,
+          "place": "321"
+        },
+        {
+          "number": 1,
+          "name": "МДК 0402",
+          "teacher": "Шевченко И.А.",
+          "place": "221"
+        },
+        {
+          "number": 2,
+          "name": "Веб",
+          "teacher": "Файзулова А.И.",
+          "place": "237"
+        },
+        {
+          "number": 3,
+          "name": "Веб",
+          "teacher": "Файзулова А.И.",
+          "place": "237"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "МДК 0401",
+          "teacher": "Шевченко И.А.",
+          "place": "229"
+        },
+        {
+          "number": 3,
+          "name": "МДК 0401",
+          "teacher": "Шевченко И.А.",
+          "place": "229"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "УП",
+          "teacher": "Шевченко И.А.",
+          "place": "216"
+        },
+        {
+          "number": 5,
+          "name": "УП",
+          "teacher": "Шевченко И.А.",
+          "place": "216"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

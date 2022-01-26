@@ -1,0 +1,334 @@
+{
+  "groupName": "20ПСА-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Ин.яз",
+          "teacher": "Ханова Л.В.",
+          "place": "315"
+        },
+        {
+          "number": 4,
+          "name": "Уголовное право",
+          "teacher": "Корниенко А.В.",
+          "place": "118"
+        },
+        {
+          "number": 5,
+          "name": "Трудовое право",
+          "teacher": "Корниенко А.В.",
+          "place": "118"
+        },
+        {
+          "number": 6,
+          "name": "Основы философии",
+          "teacher": "Каримова И.Р.",
+          "place": "118"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Судебная статистика",
+          "teacher": "Решетникова А.А.",
+          "place": "324"
+        },
+        {
+          "number": 4,
+          "name": "Судебная статистика",
+          "teacher": "Решетникова А.А.",
+          "place": "324"
+        },
+        {
+          "number": 5,
+          "name": "КП",
+          "teacher": "Султанов А.Х.",
+          "place": "343"
+        },
+        {
+          "number": 6,
+          "name": "КП",
+          "teacher": "Султанов А.Х.",
+          "place": "343"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "УПП",
+          "teacher": "Маликов М.Г.",
+          "place": "323а"
+        },
+        {
+          "number": 1,
+          "name": "УПП",
+          "teacher": "Маликов М.Г.",
+          "place": "323а"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "ГПП",
+          "teacher": "Фахретдинов И.М.",
+          "place": "323"
+        },
+        {
+          "number": 5,
+          "name": "МДК 0402",
+          "teacher": "Решетникова А.А.",
+          "place": "323"
+        },
+        {
+          "number": 6,
+          "name": "АП и ГПП",
+          "teacher": "Языкбаев А.Г.",
+          "place": "323"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Управл. персоналом",
+          "teacher": "Алибаева Р.Р.",
+          "place": "339"
+        },
+        {
+          "number": 1,
+          "name": "Основы статистики",
+          "teacher": "Юсупова С.В.",
+          "place": "339"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Уголовное право",
+          "teacher": "Корниенко А.В.",
+          "place": "110"
+        },
+        {
+          "number": 3,
+          "name": "Уголовное право",
+          "teacher": "Корниенко А.В.",
+          "place": "110"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

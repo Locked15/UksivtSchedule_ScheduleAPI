@@ -1,0 +1,275 @@
+{
+  "groupName" : "21ВЕБ-3",
+  "days" : [ {
+    "day" : "Monday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : "История (1 Неделя)",
+      "teacher" : "Логинова А. И.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 4,
+      "name" : "Лит-Ра (2 Неделя)",
+      "teacher" : "Бокарева С. Ф.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 5,
+      "name" : "Общество",
+      "teacher" : "Ахметшина Е. В.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 6,
+      "name" : "Лит-Ра",
+      "teacher" : "Бокарева С. Ф.",
+      "place" : "Чз. Общежитие"
+    } ]
+  }, {
+    "day" : "Tuesday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "ОБЖ",
+      "teacher" : "Кобелева С. В.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 1,
+      "name" : "Математика",
+      "teacher" : "Гущина М. В.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 2,
+      "name" : "Физ-Ра (2 Неделя)",
+      "teacher" : "Гильманов Р. А.",
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Wednesday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Математика",
+      "teacher" : "Гущина М. В.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 3,
+      "name" : "Русский",
+      "teacher" : "Бокарева С. Ф.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 4,
+      "name" : "Физ-Ра",
+      "teacher" : "Гильманов Р. А.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Thursday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : "Физика",
+      "teacher" : "Нагаев Р. А.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 2,
+      "name" : "Экология",
+      "teacher" : "Акбарова Р. Х.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 3,
+      "name" : "Ин. Яз.",
+      "teacher" : "Валеева З. М.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 4,
+      "name" : "Химия",
+      "teacher" : "Акбарова Р. Х.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Friday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Информатика",
+      "teacher" : "Рысаева Э. Р.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 1,
+      "name" : "Математика",
+      "teacher" : "Гущина М. В.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 2,
+      "name" : "История",
+      "teacher" : "Логинова А. И.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Saturday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : "Ин. Яз. (2 Неделя)",
+      "teacher" : "Валеева З. М.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 5,
+      "name" : "Астрономия",
+      "teacher" : "Таюпов М. М.",
+      "place" : "Чз. Общежитие"
+    }, {
+      "number" : 6,
+      "name" : "Баш. Яз.",
+      "teacher" : "Хисамутдинова Р. М.",
+      "place" : "Чз. Общежитие"
+    } ]
+  }, {
+    "day" : "Sunday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  } ]
+}

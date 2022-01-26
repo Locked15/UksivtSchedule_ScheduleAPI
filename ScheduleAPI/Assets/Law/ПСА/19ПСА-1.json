@@ -1,0 +1,334 @@
+{
+  "groupName": "19ПСА-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "МДК 05.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Орг работы архива ",
+          "teacher": "Решетникова А.А.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Орг работы архива ",
+          "teacher": "Решетникова А.А.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "МДК 01.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "МДК 01.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "МДК 05.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": "МДК 05.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "МДК 0104",
+          "teacher": "Корниенко А.В.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "МДК 01.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": "МДК 01.02",
+          "teacher": "Шангареева Г.Ф.",
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Орг работы архива ",
+          "teacher": "Решетникова А.А.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "МДК 0104",
+          "teacher": "Корниенко А.В.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": "МДК 0104",
+          "teacher": "Корниенко А.В.",
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Физ-ра",
+          "teacher": "Гильманов Р.А.",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Ин.яз",
+          "teacher": "Ханова Л.В.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Судебное делопроизв.",
+          "teacher": "Ардуванова Д.Р.",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Судебное делопроизв.",
+          "teacher": "Ардуванова Д.Р.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Судебное делопроизв.",
+          "teacher": "Ардуванова Д.Р.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

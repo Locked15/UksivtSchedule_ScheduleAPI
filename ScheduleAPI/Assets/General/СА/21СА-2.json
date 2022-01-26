@@ -1,0 +1,275 @@
+{
+  "groupName" : "21СА-2",
+  "days" : [ {
+    "day" : "Monday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Экология",
+      "teacher" : "Сафаргалиева Г. С.",
+      "place" : "214"
+    }, {
+      "number" : 3,
+      "name" : "Астрономия",
+      "teacher" : "Таюпов М. М.",
+      "place" : "214"
+    }, {
+      "number" : 4,
+      "name" : "Лит-Ра",
+      "teacher" : "Абдульманова А. С.",
+      "place" : "214"
+    }, {
+      "number" : 5,
+      "name" : "Ин. Яз. (1 Неделя)",
+      "teacher" : "Ахметова А. М.",
+      "place" : "214"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Tuesday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : "Физ-Ра (1 Неделя)",
+      "teacher" : "Баранов А. В.",
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : "Лит-Ра (2 Неделя)",
+      "teacher" : "Абдульманова А. С.",
+      "place" : "214"
+    }, {
+      "number" : 2,
+      "name" : "Информатика",
+      "teacher" : "Васильева А. А.",
+      "place" : "7"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Wednesday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Химия",
+      "teacher" : "Гареева С. Т.",
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "ОБЖ",
+      "teacher" : "Кобелева С. В.",
+      "place" : "214"
+    }, {
+      "number" : 4,
+      "name" : "Математика",
+      "teacher" : "Гарипова Р. М.",
+      "place" : "214"
+    }, {
+      "number" : 5,
+      "name" : "Математика",
+      "teacher" : "Гарипова Р. М.",
+      "place" : "214"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Thursday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Общество",
+      "teacher" : "Исмагилова Г. М.",
+      "place" : "214"
+    }, {
+      "number" : 3,
+      "name" : "История",
+      "teacher" : "Гумерова Э. Г.",
+      "place" : "214"
+    }, {
+      "number" : 4,
+      "name" : "История (2 Неделя)",
+      "teacher" : "Гумерова Э. Г.",
+      "place" : "214"
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Friday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Ин. Яз.",
+      "teacher" : "Ахметова А. М.",
+      "place" : "214"
+    }, {
+      "number" : 1,
+      "name" : "Физ-Ра",
+      "teacher" : "Баранов А. В.",
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Русский",
+      "teacher" : "Абдульманова А. С.",
+      "place" : "214"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Saturday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Физика",
+      "teacher" : "Нагаев Р. А.",
+      "place" : "214"
+    }, {
+      "number" : 4,
+      "name" : "Математика",
+      "teacher" : "Гарипова Р. М.",
+      "place" : "214"
+    }, {
+      "number" : 5,
+      "name" : "Баш. Яз.",
+      "teacher" : "Хисамутдинова Р. М.",
+      "place" : "214"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "Sunday",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  } ]
+}

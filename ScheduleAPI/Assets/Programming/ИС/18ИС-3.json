@@ -1,0 +1,334 @@
+{
+  "groupName": "18ИС-3",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 2,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 3,
+          "name": "Экономика орг",
+          "teacher": "Киселева М.В.",
+          "place": "316"
+        },
+        {
+          "number": 4,
+          "name": "Экономика орг",
+          "teacher": "Киселева М.В.",
+          "place": "216"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Ин.яз",
+          "teacher": "Валеева З.М.",
+          "place": "320"
+        },
+        {
+          "number": 2,
+          "name": "ПОПД",
+          "teacher": "Дуйсенов И.А.",
+          "place": "216"
+        },
+        {
+          "number": 3,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "ИБ на предпр",
+          "teacher": "Хакимзянов М Р",
+          "place": "234"
+        },
+        {
+          "number": 3,
+          "name": "ИБ на предпр",
+          "teacher": "Хакимзянов М Р",
+          "place": "234"
+        },
+        {
+          "number": 4,
+          "name": "Физ-ра",
+          "teacher": "Баранов А В",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ПОПД",
+          "teacher": "Дуйсенов И.А.",
+          "place": "234"
+        },
+        {
+          "number": 1,
+          "name": "ПОПД",
+          "teacher": "Дуйсенов И.А.",
+          "place": "234"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 3,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Экономика орг",
+          "teacher": "Киселева М.В.",
+          "place": "308"
+        },
+        {
+          "number": 4,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 5,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        },
+        {
+          "number": 6,
+          "name": "Прогр в 1С",
+          "teacher": "Набиева Л.Р.",
+          "place": "232"
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

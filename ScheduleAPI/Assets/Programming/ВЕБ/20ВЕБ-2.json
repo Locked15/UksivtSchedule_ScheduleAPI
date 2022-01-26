@@ -1,0 +1,334 @@
+{
+  "groupName": "20ВЕБ-2",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "КС",
+          "teacher": "Озерова Р.А,",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Ин.яз",
+          "teacher": "Ахметова А.М.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Числен методы",
+          "teacher": "Лахмуткина Т.Г.",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "МДК 0108",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "ТВИМС",
+          "teacher": "Латыпова Л.В.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "ПП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "ПП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "ПП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Дискр математика",
+          "teacher": "Бакирова А.Ю.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Граф диз и мультим.",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "МДК 0801",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "МДК 0108",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "УП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "УП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "УП",
+          "teacher": "Васильева А.А.",
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ОАИП",
+          "teacher": "Забирова М,Г,",
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "ОАИП",
+          "teacher": "Забирова М,Г,",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

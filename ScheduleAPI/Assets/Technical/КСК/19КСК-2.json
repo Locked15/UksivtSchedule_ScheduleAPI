@@ -1,0 +1,334 @@
+{
+  "groupName": "19КСК-2",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "ПЦУ",
+          "teacher": "Лихарев И. А.",
+          "place": "3"
+        },
+        {
+          "number": 1,
+          "name": "Физ-Ра",
+          "teacher": "Баранов А. В.",
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Основы философии",
+          "teacher": "Каримова И. Р.",
+          "place": "3"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Ист. пит СВТ",
+          "teacher": "Ларионова Е. В.",
+          "place": "11"
+        },
+        {
+          "number": 4,
+          "name": "Ист. пит СВТ",
+          "teacher": "Ларионова Е. В.",
+          "place": "11"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Пр. по прототипированию",
+          "teacher": "Шарипов Н. Т.",
+          "place": "001"
+        },
+        {
+          "number": 1,
+          "name": "Пр. по прототипированию",
+          "teacher": "Шарипов Н. Т.",
+          "place": "001"
+        },
+        {
+          "number": 2,
+          "name": "ОАИП",
+          "teacher": "Лепеева Д. И.",
+          "place": "001"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "КС",
+          "teacher": "Поглазов К. Ю.",
+          "place": "3"
+        },
+        {
+          "number": 1,
+          "name": "КС",
+          "teacher": "Поглазов К. Ю.",
+          "place": "3"
+        },
+        {
+          "number": 2,
+          "name": "БЖД",
+          "teacher": null,
+          "place": "3"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Прикл эл-ка",
+          "teacher": "Колесников Д. Н.",
+          "place": "14"
+        },
+        {
+          "number": 2,
+          "name": "Ин. Яз.",
+          "teacher": "Каримова А. А.",
+          "place": "324"
+        },
+        {
+          "number": 3,
+          "name": "Прикл эл-ка",
+          "teacher": "Колесников Д. Н.",
+          "place": "14"
+        },
+        {
+          "number": 4,
+          "name": "Прикл эл-ка",
+          "teacher": "Колесников Д. Н.",
+          "place": "14"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "Пр САПП",
+          "teacher": "Лихарев И. А.",
+          "place": "11"
+        },
+        {
+          "number": 5,
+          "name": "Пр САПП",
+          "teacher": "Лихарев И. А.",
+          "place": "11"
+        },
+        {
+          "number": 6,
+          "name": "Пр САПП",
+          "teacher": "Лихарев И. А.",
+          "place": "11"
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

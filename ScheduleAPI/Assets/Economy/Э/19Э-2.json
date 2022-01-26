@@ -1,0 +1,334 @@
+{
+  "groupName": "19Э-2",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Аудит",
+          "teacher": "Басырова Р.Н.",
+          "place": "305"
+        },
+        {
+          "number": 1,
+          "name": "Аудит",
+          "teacher": "Басырова Р.Н.",
+          "place": "305"
+        },
+        {
+          "number": 2,
+          "name": "МДК 04.01",
+          "teacher": "Басырова Р.Н.",
+          "place": "305"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Ин.яз",
+          "teacher": "Ханова Л.В.",
+          "place": "305"
+        },
+        {
+          "number": 4,
+          "name": "МДК 03.01",
+          "teacher": "Зсасыпкин К.Н.",
+          "place": "305"
+        },
+        {
+          "number": 5,
+          "name": "МДК 03.01",
+          "teacher": "Зсасыпкин К.Н.",
+          "place": "305"
+        },
+        {
+          "number": 6,
+          "name": "МДК 03.01",
+          "teacher": "Зсасыпкин К.Н.",
+          "place": "305"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Аудит",
+          "teacher": "Басырова Р.Н.",
+          "place": "305"
+        },
+        {
+          "number": 1,
+          "name": "Аудит",
+          "teacher": "Басырова Р.Н.",
+          "place": "305"
+        },
+        {
+          "number": 2,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "МДК 04.01",
+          "teacher": "Басырова Р.Н.",
+          "place": "331"
+        },
+        {
+          "number": 4,
+          "name": "МДК 04.01",
+          "teacher": "Басырова Р.Н.",
+          "place": "331"
+        },
+        {
+          "number": 5,
+          "name": "Основы анализа БО",
+          "teacher": "Акчева Д.М.",
+          "place": "331"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Основы анализа БО",
+          "teacher": "Акчева Д.М.",
+          "place": "305"
+        },
+        {
+          "number": 4,
+          "name": "Основы анализа БО",
+          "teacher": "Акчева Д.М.",
+          "place": "305"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "МДК 03.01",
+          "teacher": "Зсасыпкин К.Н.",
+          "place": "305"
+        },
+        {
+          "number": 4,
+          "name": "МДК 03.01",
+          "teacher": "Зсасыпкин К.Н.",
+          "place": "305"
+        },
+        {
+          "number": 5,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

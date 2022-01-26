@@ -1,0 +1,334 @@
+{
+  "groupName": "20ПО-3",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "Ин.яз",
+          "teacher": "Ханова Л.В.",
+          "place": "117"
+        },
+        {
+          "number": 5,
+          "name": "Уголовное право",
+          "teacher": "Дуйсенов И.А.",
+          "place": "117"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "Основы эк права",
+          "teacher": "Гареева Г.Ф.",
+          "place": "117"
+        },
+        {
+          "number": 4,
+          "name": "Основы философии",
+          "teacher": "Логинова А.И.",
+          "place": "117"
+        },
+        {
+          "number": 5,
+          "name": "Трудовое право",
+          "teacher": "Ахметова Э.Р.",
+          "place": "117"
+        },
+        {
+          "number": 6,
+          "name": "Трудовое право",
+          "teacher": "Ахметова Э.Р.",
+          "place": "117"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "ПСО",
+          "teacher": "Кильсенбаев Э.Р.",
+          "place": "117"
+        },
+        {
+          "number": 3,
+          "name": "Гражд право",
+          "teacher": "Фахретдинов И.М.",
+          "place": "117"
+        },
+        {
+          "number": 4,
+          "name": "Гражд право",
+          "teacher": "Фахретдинов И.М.",
+          "place": "117"
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": "ПСО",
+          "teacher": "Кильсенбаев Э.Р",
+          "place": "117"
+        },
+        {
+          "number": 5,
+          "name": "Информатика",
+          "teacher": "Васильева А.А.",
+          "place": "117"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Трудовое право",
+          "teacher": "Ахметова Э.Р.",
+          "place": "117"
+        },
+        {
+          "number": 1,
+          "name": "КП",
+          "teacher": "Альмухаметова Г.А.",
+          "place": "117"
+        },
+        {
+          "number": 2,
+          "name": "КП",
+          "teacher": "Альмухаметова Г.А.",
+          "place": "117"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "ПСО",
+          "teacher": "Кильсенбаев Э.Р",
+          "place": "117"
+        },
+        {
+          "number": 4,
+          "name": "Гражд право",
+          "teacher": "Фахретдинов И.М.",
+          "place": "117"
+        },
+        {
+          "number": 5,
+          "name": "ПСПД",
+          "teacher": "Кильсенбаев Э.Р",
+          "place": "117"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}

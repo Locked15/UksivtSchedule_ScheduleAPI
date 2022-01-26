@@ -1,0 +1,199 @@
+﻿using System.Data.SqlClient;
+using ScheduleAPI.Other;
+using ScheduleAPI.Other.General;
+using Bool = System.Boolean;
+
+namespace ScheduleAPI.Models.Getter
+{
+    /// <summary>
+    /// Класс, нужный для получения данных посредством заложенных в приложение ассетов.
+    /// <br/>
+    /// </summary>
+    public static class DbGetter
+    {
+        #region Область: Поля.
+        /// <summary>
+        /// Поле, содержащее запрос на получение расписания для группы по указаному дню.
+        /// <i>
+        /// <br/> <br/>
+        /// Содержит 2 вводимых значения: <br/>
+        /// 1. Название группы (String); <br/>
+        /// 2. Индекс дня (Int32).
+        /// <br/> <br/>
+        /// Возвращает 6 значений: <br/>
+        /// 1. Название пары; <br/>
+        /// 2. Подгруппа; <br/>
+        /// 3. Пара четной/нечетной недели; <br/>
+        /// 4. Номер пары (НЕБЕЗОПАСНО); <br/>
+        /// 5. Преподаватель (НЕБЕЗОПАСНО, Частично); <br/>
+        /// 6. Место проведения пары (НЕБЕЗОПАСНО, Частично).
+        /// </i>
+        /// </summary>
+        private static readonly String mainScheduleQuery;
+
+        /// <summary>
+        /// Поле, содержащее объект-расписание, возвращаемое по умолчанию при возникновении ошибок.
+        /// </summary>
+        private static readonly DaySchedule defaultDaySchedule;
+        #endregion
+
+        #region Область: Конструкторы класса.
+        /// <summary>
+        /// Статический конструктор класса.
+        /// </summary>
+        static DbGetter()
+        {
+            mainScheduleQuery = @"
+            SELECT Lesson_Name,
+                   Lesson_Sub_Group AS Sub_Group,
+                   Lesson_Sub_Week AS Even_Week,
+                   Lesson_Number,
+                   Person_Surname + ' ' + LEFT(Person_Name, 1) + ' ' + LEFT(Person_Middle_Name, 1) AS Teacher_Name,
+                   Lesson_Place
+            FROM Week_Schedule
+                JOIN Day_Schedule_To_Week_Schedules
+                    ON Week_Schedule.Week_Schedule_Id = Day_Schedule_To_Week_Schedules.Week_Schedule_Ids
+                JOIN Day_Schedule
+                    ON Day_Schedule_To_Week_Schedules.Day_Schedule_Ids = Day_Schedule.Day_Schedule_Id
+                JOIN Lessons_To_Schedules
+                    ON Day_Schedule.Day_Schedule_Id = Lessons_To_Schedules.Day_Schedule_Ids
+                JOIN Lesson
+                    ON Lessons_To_Schedules.Lessons_Ids = Lesson.Lesson_Id
+                JOIN Lessons_Names
+                    ON Lesson.Lesson_Name_Id = Lessons_Names.Lesson_Name_Id
+                JOIN Teacher
+                    ON Lesson.Lesson_Teacher_Id = Teacher.Teacher_Id
+                JOIN Person
+                    ON Teacher.Person_Id = Person.Person_Id
+            WHERE Group_Id =
+            (
+                SELECT Group_id FROM Groups WHERE Group_Name = '{0}'
+            )
+            AND Day_Id = {1}
+            ";
+
+            defaultDaySchedule = new("Понедельник", Enumerable.Empty<Lesson>().ToList());
+        }
+        #endregion
+
+        #region Область: Методы.
+        /// <summary>
+        /// Метод для получения расписания на указанный день.
+        /// </summary>
+        /// <param name="dayIndex">Индекс нужного дня.</param>
+        /// <param name="groupName">Название нужной группы.</param>
+        /// <param name="selectUnsecure">Выбирать значения из "небезопасных" столбцов?</param>
+        public static DaySchedule GetDaySchedule(Int32 dayIndex, String groupName, Bool selectUnsecure = false)
+        {
+            #region Подобласть: Переменные для работы.
+            groupName = groupName.ToUpper();
+            SqlConnection connect = DataBaseConnector.Connection;
+            SqlCommand command = new(String.Format(mainScheduleQuery, groupName, dayIndex), connect);
+            #endregion
+
+            #region Подобласть: Проверка на воскресенье.
+            // В БД нет данных о воскресенье, поэтому эти данные надо внести вручную.
+            if (dayIndex == 6)
+            {
+                List<Lesson> lessons = new();
+
+                for (int i = 0; i < dayIndex; i++)
+                {
+                    lessons.Add(new(i));
+                }
+
+                return new(dayIndex.GetDayByIndex(), lessons);
+            }
+            #endregion
+
+            connect.Open();
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    List<Lesson> lessons = new(1);
+
+                    while (reader.Read())
+                    {
+                        // Безопасные значения:
+                        String lessonName = reader.GetString(0);
+                        Int32? subGroup = reader.IsDBNull(1) ? null : reader.GetInt32(1);
+                        Int32? subWeek = reader.IsDBNull(2) ? null : reader.GetInt32(2);
+
+                        // Небезопасные значения:
+                        Int32 lessonNumber = selectUnsecure ? reader.GetInt32(3) : default;
+                        String teacher = selectUnsecure ? (reader.IsDBNull(4) ? "[Нет Данных]" : reader.GetString(4)) : "[Нет Данных]";
+                        String place = selectUnsecure ? (reader.IsDBNull(5) ? "[Нет Данных]" : reader.GetString(5)) : "[Нет Данных]";
+
+                        lessonName = CheckToSubGroup(subGroup, lessonName);
+                        lessonName = CheckToSubWeek(subWeek, lessonName);
+
+                        lessons.Add(new Lesson(lessonNumber, lessonName, teacher, place));
+                    }
+
+                    connect.Close();
+                    return new DaySchedule(dayIndex.GetDayByIndex(), lessons);
+                }
+            }
+
+            connect.Close();
+
+            Logger.WriteError(2, "Данные в БД (День) не обнаружены: " +
+            $"Группа: {groupName}, День: {dayIndex}.");
+            return defaultDaySchedule;
+        }
+
+        /// <summary>
+        /// Метод для получения расписания на неделю для указанной группы.
+        /// </summary>
+        /// <param name="groupName">Название группы.</param>
+        /// <returns>Расписание на неделю для указанной группы.</returns>
+        public static WeekSchedule GetWeekSchedule(String groupName, Bool selectUnsecure = false)
+        {
+            groupName = groupName.ToUpper();
+            List<DaySchedule> days = new(1);
+
+            for (int i = 0; i < 7; i++)
+            {
+                days.Add(GetDaySchedule(i, groupName, selectUnsecure));
+            }
+
+            return new(groupName, days);
+        }
+
+        /// <summary>
+        /// Метод для изменения названия пары в зависимости от того, пара для подгруппы или нет.
+        /// </summary>
+        /// <param name="subGroup">Значение, определяющее для подгруппы или нет.</param>
+        /// <param name="lessonName">Оригинальное название пары.</param>
+        /// <returns>Итоговое название пары.</returns>
+        private static String CheckToSubGroup(Int32? subGroup, String lessonName)
+        {
+            if (subGroup.HasValue)
+            {
+                lessonName += $" ({subGroup.Value} подгруппа)";
+            }
+
+            return lessonName;
+        }
+
+        /// <summary>
+        /// Метод для изменения названия пары в зависимости от того, пара для четной/нечетной недели или нет.
+        /// </summary>
+        /// <param name="subGroup">Значение, определяющее для какой недели пара.</param>
+        /// <param name="lessonName">Оригинальное название пары.</param>
+        /// <returns>Итоговое название пары.</returns>
+        private static String CheckToSubWeek(Int32? subWeek, String lessonName)
+        {
+            if (subWeek.HasValue)
+            {
+                String subValue = subWeek.Value == 1 ? "Нечетная" : "Четная";
+                lessonName += $" ({subValue} неделя)";
+            }
+
+            return lessonName;
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,334 @@
+{
+  "groupName": "18И-1",
+  "days": [
+    {
+      "day": "Monday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 4,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 5,
+          "name": "Физ-ра",
+          "teacher": "Емельянова Л.Г.",
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 2,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 3,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": "Ин.яз",
+          "teacher": "Валеева З.М.",
+          "place": "320"
+        },
+        {
+          "number": 2,
+          "name": "Экономика орг",
+          "teacher": "Дуйсенова Е.А.",
+          "place": "339"
+        },
+        {
+          "number": 3,
+          "name": "Экономика орг",
+          "teacher": "Дуйсенова Е.А.",
+          "place": "339"
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "Менеджмент",
+          "teacher": "Киселева М.В.",
+          "place": "216"
+        },
+        {
+          "number": 1,
+          "name": "Менеджмент",
+          "teacher": "Киселева М.В.",
+          "place": "216"
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 3,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 4,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 5,
+          "name": "Экономика орг",
+          "teacher": "Дуйсенова Е.А.",
+          "place": "329"
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Saturday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 1,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 2,
+          "name": "МДК 03.01",
+          "teacher": "Белозерцев Л.Н.",
+          "place": "Актовый зал"
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    },
+    {
+      "day": "Sunday",
+      "lessons": [
+        {
+          "number": 0,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 1,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 2,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 3,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 4,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 5,
+          "name": null,
+          "teacher": null,
+          "place": null
+        },
+        {
+          "number": 6,
+          "name": null,
+          "teacher": null,
+          "place": null
+        }
+      ]
+    }
+  ]
+}
