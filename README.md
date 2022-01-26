@@ -9,3 +9,28 @@ Web API locates on:
 <strong>https://scheduleapi20220126123653.azurewebsites.net/</strong>
 
 <i>All controller parameters must be add after address part.</i>
+
+# Controllers
+There is two types of controllers, selected by suffix:
+  1.  <b>Day controllers</b> (".../api/day/...") — Get information for one (select by dayIndex) parameter.
+  2.  <b>Week controllers</b> (".../api/week/...") — Get information for current week (include sunday).
+
+Then, controllers devided by they purpose:
+  1.  <b>ScheduleDataBase{Suffix}</b> — Connect to database with schedule and get information for it. 
+      But it have some limits related to original schedule files typos and mistakes (wrong format, different symbols, etc.);
+  2.  <b>Schedule{Suffix}Asset</b> — Instead of database connection and select queries, this controller use assets,
+      located in project. Also, this method doesn't have limits unlike previous;
+  
+  3.  <b>Changes{Suffix}</b> — This controller have another purpose. It give information about changes to user.
+  
+# Parameters
+Most part of controllers use 2 parameters:
+  1. dayIndex — Index (N > -1 && N < 7) of needed day, to get schedule or changes.
+     Doesnt present in Week controllers.
+     Default value: 0;
+  2. groupName — Name of group to get schedule.
+     Default value: 19П-3.
+                                       
+DataBase controllers also use 1 additional parameter:
+  1. selectUnsecure — Cause database have some wrong values (for example: lesson teachers or places), user can delete this values and select only precise ones. Anything else will be replaced by default values.
+     Default value — false.
