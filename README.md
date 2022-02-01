@@ -36,5 +36,7 @@ DataBase controllers also use 1 additional parameter:
      Default value — false.
 
 # Examples
-  1. <b>https://scheduleapi20220126123653.azurewebsites.net/api/day/scheduledayasset?dayIndex=0&groupName=19%D0%BF-3</b> — Return monday schedule for group '19П-3';
-  2. <b></b>
+  1. <b>https://scheduleapi20220126123653.azurewebsites.net/api/day/scheduledayasset?dayIndex=0&groupName=19%D0%BF-3</b> — Return monday asset-based schedule for group '19П-3';
+  2. <b>https://scheduleapi20220126123653.azurewebsites.net/api/week/scheduleweekasset?groupName=20%D0%B7%D0%B8%D0%BE-2</b> — Return week asset-based schedule for group '20ЗИО-2';
+  3. <b>https://scheduleapi20220126123653.azurewebsites.net/api/week/scheduledatabaseweek?groupName=20%D0%9F-3&selectUnsecure=true</b> — Return week databased-schedule for group '20П-3' with unsecure values;
+  4. <b>https://scheduleapi20220126123653.azurewebsites.net/api/day/changesday?dayIndex=0&groupName=19%D0%9F-3</b> — Return monday changes for group '19П-3'.
