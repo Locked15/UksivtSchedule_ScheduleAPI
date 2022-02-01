@@ -21,7 +21,7 @@
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "ScheduleAPI20220126123653",
+      "defaultValue": "UksivtScheduleAPI",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
