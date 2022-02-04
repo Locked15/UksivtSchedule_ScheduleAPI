@@ -52,6 +52,68 @@ namespace ScheduleAPI.Models.Getter
 
         #region Область: Методы.
         /// <summary>
+        /// Метод для получения списка с отделениями-папками из ассетов.
+        /// </summary>
+        /// <returns>Список с отделениями.</returns>
+        public List<String> GetFolders()
+        {
+            String currentPath = GetValues("19П-3").Item1 + Path.DirectorySeparatorChar + "Assets";
+            List<String> folders = Directory.GetDirectories(currentPath).ToList();
+            folders = folders.Select(folder => folder.TrimEnd(Path.DirectorySeparatorChar)).ToList();
+
+            return folders.Select(folder => Path.GetFileName(folder)).ToList();
+        }
+
+        /// <summary>
+        /// Метод для получения списка с названиями направлений обучения из ассетов.
+        /// </summary>
+        /// <param name="folder">Папка отделения обучения.</param>
+        /// <returns>Список с названиями направлений.</returns>
+        public List<String> GetSubFolders(String folder)
+        {
+            try
+            {
+                String currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}";
+                List<String> folders = Directory.GetDirectories(currentPath).ToList();
+                folders = folders.Select(folder => folder.TrimEnd(Path.DirectorySeparatorChar)).ToList();
+
+                return folders.Select(folder => Path.GetFileName(folder)).ToList();
+            }
+
+            catch (DirectoryNotFoundException)
+            {
+                Logger.WriteError(2, "Попытка обратиться к папке, которой не существует.");
+
+                return Enumerable.Empty<String>().ToList();
+            }
+        }
+
+        /// <summary>
+        /// Метод для получения названий групп из ассетов.
+        /// </summary>
+        /// <param name="folder">Отделение обучения.</param>
+        /// <param name="subFolder">Нужное направление обучения.</param>
+        /// <returns>Список с группами по данному адресу.</returns>
+        public List<String> GetGroupNames(String folder, String subFolder)
+        {
+            try
+            {
+                String currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}{Path.DirectorySeparatorChar}{subFolder}";
+                List<String> files = Directory.GetFiles(currentPath).ToList();
+                files = files.Select(file => file.TrimEnd(Path.DirectorySeparatorChar)).ToList();
+
+                return files.Select(file => Path.GetFileNameWithoutExtension(file)).ToList();
+            }
+
+            catch (DirectoryNotFoundException)
+            {
+                Logger.WriteError(2, "Попытка обратиться к папке, которой не существует.");
+
+                return Enumerable.Empty<String>().ToList();
+            }
+        }
+
+        /// <summary>
         /// Метод для получения расписания на указанный день.
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
