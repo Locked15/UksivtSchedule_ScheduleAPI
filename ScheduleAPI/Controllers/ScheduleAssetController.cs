@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Other;
 using ScheduleAPI.Models;
+using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
 
 namespace ScheduleAPI.Controllers
@@ -49,6 +50,7 @@ namespace ScheduleAPI.Controllers
         [Obsolete("Аварийный контроллер. Позволяет получать данные из ассетов, вместо БД.")]
         public String Get(Int32 dayIndex = 0, String groupName = "19П-3")
         {
+            dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = getter.GetDaySchedule(dayIndex, groupName);
 
             return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);

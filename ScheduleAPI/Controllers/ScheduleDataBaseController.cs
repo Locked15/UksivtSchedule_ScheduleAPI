@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Other;
 using ScheduleAPI.Models;
+using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
 using Bool = System.Boolean;
 
@@ -32,6 +33,7 @@ namespace ScheduleAPI.Controllers
         [HttpGet]
         public String Get(Int32 dayIndex = 0, String groupName = "19П-3", Bool selectUnsecure = false)
         {
+            dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = DbGetter.GetDaySchedule(dayIndex, groupName, selectUnsecure);
 
             return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);

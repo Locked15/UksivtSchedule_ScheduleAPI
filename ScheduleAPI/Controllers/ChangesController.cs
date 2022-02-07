@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using ScheduleAPI.Other;
 using ScheduleAPI.Models;
+using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
 
 namespace ScheduleAPI.Controllers
@@ -44,7 +45,10 @@ namespace ScheduleAPI.Controllers
         [HttpGet]
         public String Get(Int32 dayIndex = 0, String groupName = "19П-3")
         {
+            dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ChangesOfDay changes = new ChangesGetter().GetDayChanges(dayIndex, groupName);
+
+            changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
 
             return JsonConvert.SerializeObject(changes);
         }

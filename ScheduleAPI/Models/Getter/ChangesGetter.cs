@@ -21,8 +21,8 @@ namespace ScheduleAPI.Models.Getter
         /// <returns>Объект, содержащий замены для группы.</returns>
         public ChangesOfDay GetDayChanges(Int32 dayIndex, String groupName)
         {
-            List<MonthChanges> changes = default;
             ChangeElement element = default;
+            List<MonthChanges> changes = default;
 
             #region Подобласть: Обрабатываем возможные ошибки.
             try
@@ -54,6 +54,7 @@ namespace ScheduleAPI.Models.Getter
 
                 ChangesReader reader = new(path);
                 ChangesOfDay toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
+                toReturn.ChangesDate = element.Date;
 
                 File.Delete(path);
                 return toReturn;

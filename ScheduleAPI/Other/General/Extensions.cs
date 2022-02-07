@@ -67,7 +67,7 @@ namespace ScheduleAPI.Other.General
         /// <returns>День, соответствующий данному индексу.</returns>
         /// <exception cref="ArgumentException">Введен некорректный день.</exception>
         public static Int32 GetIndexByDay(this String day)
-        {           
+        {
             day = day.GetTranslatedDay();
             day = day.ToLower();
 
@@ -99,6 +99,11 @@ namespace ScheduleAPI.Other.General
             }
         }
 
+        /// <summary>
+        /// Метод расширения, позволяющий перевести название дня на русский язык.
+        /// </summary>
+        /// <param name="day">Название дня на английском.</param>
+        /// <returns>Название дня на русском.</returns>
         public static String GetTranslatedDay(this String day)
         {
             day = day.ToLower();
@@ -182,7 +187,7 @@ namespace ScheduleAPI.Other.General
                     throw new ArgumentException("Отправленное значение некорректно.");
             }
         }
-        
+
         /// <summary>
         /// Метод расширения, позволяющий получить дату начала недели.
         /// </summary>
@@ -212,6 +217,78 @@ namespace ScheduleAPI.Other.General
 
             return time;
         }
+
+        /// <summary>
+        /// Метод расширения, позволяющий получить полную вариацию даты по указанному индексу дня в пределах текущей недели.
+        /// </summary>
+        /// <param name="dayIndex">Индекс нужного дня.</param>
+        /// <returns>Полная дата.</returns>
+        public static DateTime? GetDateTimeInWeek(this Int32 dayIndex)
+		{
+            Int32 currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
+            DateTime? current = DateTime.Now;
+            
+            while (dayIndex > currentDayIndex)
+            {
+                current = current.Value.AddDays(1);
+
+                ++currentDayIndex;
+            }
+
+            while (dayIndex < currentDayIndex)
+			{
+                current = current.Value.AddDays(-1);
+
+                --currentDayIndex;
+			}
+
+            return current;
+		}
+
+        /// <summary>
+        /// Метод для получения индекса дня из "DayOfWeek".
+        /// <br/>
+        /// <b>НЕ НУЖНО ИСПОЛЬЗОВАТЬ ПРИВЕДЕНИЕ К INT32</b>, в 'DayOfWeek' другая последовательность дней. 
+        /// <br/>
+        /// Индекс будет неправильным!
+        /// </summary>
+        /// <param name="day">Экземпляр 'DayOfWeek' из которого нужно получить индекс.</param>
+        /// <returns>Индекс дня недели.</returns>
+        public static Int32 GetIndexFromDayOfWeek(this DayOfWeek day)
+		{
+			return day switch
+			{
+				DayOfWeek.Monday => 0,
+
+				DayOfWeek.Tuesday => 1,
+
+				DayOfWeek.Wednesday => 2,
+
+				DayOfWeek.Thursday => 3,
+
+				DayOfWeek.Friday => 4,
+
+				DayOfWeek.Saturday => 5,
+
+				_ => 6,
+			};
+		}
+
+        /// <summary>
+        /// Метод расширения, позволяющий 'скосить' лишнее значение индекса дня, если оно слишком большое.
+        /// </summary>
+        /// <param name="dayIndex">Индекс дня.</param>
+        /// <returns>Проверенный индекс дня.</returns>
+        public static Int32 CheckDayIndexFromOverflow(this Int32 dayIndex)
+		{
+            // Подготовка индекса, если он некорректен (больше 6 (это воскресенье)):
+            while (dayIndex > 6)
+            {
+                dayIndex -= 7;
+            }
+
+            return dayIndex;
+        }
         #endregion
 
         #region Область: Методы расширений, связанные с расписанием.
@@ -236,7 +313,7 @@ namespace ScheduleAPI.Other.General
             {
                 yearEnd = DateTime.Now.Year.ToString()[2..];
             }
- 
+
             //Общеобразовательное.
             if (groupName.Contains(yearEnd) && (!groupName.Contains("укск")))
             {
@@ -262,7 +339,7 @@ namespace ScheduleAPI.Other.General
                 }
 
                 //Информатика и Программирование.
-                else if (check("п") || check("ис") || check("и") || check("веб") || 
+                else if (check("п") || check("ис") || check("и") || check("веб") ||
                 check("оиб") || check("бд"))
                 {
                     return "Programming";
@@ -319,7 +396,7 @@ namespace ScheduleAPI.Other.General
             foreach (MonthChanges monthChanges in allChanges)
             {
                 //А вот дни - наоборот, в порядке возрастания, так что их надо инвертировать.
-                List<ChangeElement> changes = monthChanges.Changes.OrderByDescending(change => change.Date).ToList(); 
+                List<ChangeElement> changes = monthChanges.Changes.OrderByDescending(change => change.Date).ToList();
 
                 foreach (ChangeElement change in changes)
                 {

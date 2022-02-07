@@ -16,6 +16,11 @@ namespace ScheduleAPI.Models
         public Bool AbsoluteChanges { get; set; }
 
         /// <summary>
+        /// Свойство с датой, на которую предназначены замены.
+        /// </summary>
+        public DateTime? ChangesDate { get; set; }
+
+        /// <summary>
         /// Список с парами замен.
         /// </summary>
         public List<Lesson> NewLessons { get; set; }
@@ -24,15 +29,15 @@ namespace ScheduleAPI.Models
         /// Свойство, содержащее значения замен по умолчанию (если иные не найдены).
         /// </summary>
         public static ChangesOfDay DefaultChanges { get; private set; }
-        #endregion
+		#endregion
 
-        #region Область: Конструкторы.
-        /// <summary>
-        /// Конструктор класса по умолчанию.
-        /// <br/>
-        /// Нужен для заполнения значений через инциализацию.
-        /// </summary>
-        public ChangesOfDay()
+		#region Область: Конструкторы.
+		/// <summary>
+		/// Конструктор класса по умолчанию.
+		/// <br/>
+		/// Нужен для заполнения значений через инциализацию.
+		/// </summary>
+		public ChangesOfDay()
         {
             AbsoluteChanges = false;
         }
@@ -45,6 +50,19 @@ namespace ScheduleAPI.Models
         public ChangesOfDay(Bool absoluteChanges, List<Lesson> lessons)
         {
             AbsoluteChanges = absoluteChanges;
+            NewLessons = lessons;
+        }
+
+        /// <summary>
+        /// Конструктор класса.
+        /// </summary>
+        /// <param name="absoluteChanges">Замены на весь день?</param>
+        /// <param name="changesDate">Дата, для которой предназначены замены.</param>
+        /// <param name="lessons">Список с новыми парами.</param>
+        public ChangesOfDay(Bool absoluteChanges, DateTime? changesDate, List<Lesson> lessons)
+        {
+            AbsoluteChanges = absoluteChanges;
+            ChangesDate = changesDate;
             NewLessons = lessons;
         }
 
