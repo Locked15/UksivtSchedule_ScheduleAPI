@@ -21,7 +21,7 @@ Then, controllers devided by their purpose:
   2.  <b>Schedule{Suffix}Asset</b> — Instead of database connection and select queries, this controller use assets,
       located in project. Also, this method doesn't have limits unlike previous;
   
-  3.  <b>Changes{Suffix}</b> — This controller have another purpose. It give information about changes to user.
+  3.  <b>Changes{Suffix}</b> — This controller have another purpose. It give information about changes to user. Also send information about date of selected day, even       if changes not found.
 
 Also, in API you can get information about student groups. For this purpose designed another three controllers:
   1. <b>Folders</b> — Gets information about student branches (e.g. "Programming" or "Economy", etc);
