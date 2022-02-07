@@ -48,9 +48,10 @@ namespace ScheduleAPI.Controllers
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ChangesOfDay changes = new ChangesGetter().GetDayChanges(dayIndex, groupName);
 
-            changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
-
-            return JsonConvert.SerializeObject(changes);
+            changes.ChangesDate = dayIndex.GetDateTimeInWeek();
+            String value = JsonConvert.SerializeObject(changes);
+            
+            return value;
         }
         #endregion
     }

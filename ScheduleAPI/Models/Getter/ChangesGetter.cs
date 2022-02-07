@@ -54,7 +54,6 @@ namespace ScheduleAPI.Models.Getter
 
                 ChangesReader reader = new(path);
                 ChangesOfDay toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
-                toReturn.ChangesDate = element.Date;
 
                 File.Delete(path);
                 return toReturn;
