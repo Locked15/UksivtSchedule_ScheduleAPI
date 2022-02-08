@@ -235,7 +235,8 @@ namespace ScheduleAPI.Other.DocumentParser
                ... ведь у группы, возможно, вообще нет замен.                            */
             if (!newLessons.Any())
             {
-                return ChangesOfDay.DefaultChanges;
+                // Вызываем конструтор и создаем новый объект, чтобы не затрагивать значения "ChangesOfDay.DefaultChanges".
+                return new();
             }
 
             return new(absoluteChanges, newLessons);
