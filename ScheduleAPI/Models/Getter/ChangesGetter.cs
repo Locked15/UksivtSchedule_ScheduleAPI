@@ -35,7 +35,7 @@ namespace ScheduleAPI.Models.Getter
             {
                 Logger.WriteError(3, $"При получении замен произошла ошибка парса страницы: {ex.Message}.");
 
-                return ChangesOfDay.DefaultChanges;
+                return new();
             }
 
             if (element == null)
@@ -43,7 +43,7 @@ namespace ScheduleAPI.Models.Getter
                 Logger.WriteError(4, $"При получении замен искомое значение не обнаружено:" +
                 $"День: {dayIndex}, Текущая дата — {DateTime.Now.ToShortDateString()}.");
 
-                return ChangesOfDay.DefaultChanges;
+                return new();
             }
             #endregion
 
@@ -54,6 +54,7 @@ namespace ScheduleAPI.Models.Getter
 
                 ChangesReader reader = new(path);
                 ChangesOfDay toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
+                toReturn.ChangesDate = element.Date;
                 toReturn.ChangesFound = true;
 
                 File.Delete(path);

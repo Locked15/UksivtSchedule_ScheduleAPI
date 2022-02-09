@@ -32,11 +32,6 @@ namespace ScheduleAPI.Models
         /// Список с парами замен.
         /// </summary>
         public List<Lesson> NewLessons { get; set; }
-
-        /// <summary>
-        /// Свойство, содержащее значения замен по умолчанию (если иные не найдены).
-        /// </summary>
-        public static ChangesOfDay DefaultChanges { get; private set; }
 		#endregion
 
 		#region Область: Конструкторы.
@@ -89,17 +84,6 @@ namespace ScheduleAPI.Models
             AbsoluteChanges = absoluteChanges;
             ChangesDate = changesDate;
             NewLessons = newLessons;
-        }
-
-        /// <summary>
-        /// Статический конструктор класса.
-        /// </summary>
-        static ChangesOfDay()
-        {
-            DefaultChanges = new(false, Enumerable.Empty<Lesson>().ToList())
-            {
-                ChangesFound = false,
-            };
         }
         #endregion
     }
