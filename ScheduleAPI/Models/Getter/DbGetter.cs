@@ -43,34 +43,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         static DbGetter()
         {
-            mainScheduleQuery = @"
-            SELECT Lesson_Name,
-                   Lesson_Sub_Group AS Sub_Group,
-                   Lesson_Sub_Week AS Even_Week,
-                   Lesson_Number,
-                   Person_Surname + ' ' + LEFT(Person_Name, 1) + ' ' + LEFT(Person_Middle_Name, 1) AS Teacher_Name,
-                   Lesson_Place
-            FROM Week_Schedule
-                JOIN Day_Schedule_To_Week_Schedules
-                    ON Week_Schedule.Week_Schedule_Id = Day_Schedule_To_Week_Schedules.Week_Schedule_Ids
-                JOIN Day_Schedule
-                    ON Day_Schedule_To_Week_Schedules.Day_Schedule_Ids = Day_Schedule.Day_Schedule_Id
-                JOIN Lessons_To_Schedules
-                    ON Day_Schedule.Day_Schedule_Id = Lessons_To_Schedules.Day_Schedule_Ids
-                JOIN Lesson
-                    ON Lessons_To_Schedules.Lessons_Ids = Lesson.Lesson_Id
-                JOIN Lessons_Names
-                    ON Lesson.Lesson_Name_Id = Lessons_Names.Lesson_Name_Id
-                JOIN Teacher
-                    ON Lesson.Lesson_Teacher_Id = Teacher.Teacher_Id
-                JOIN Person
-                    ON Teacher.Person_Id = Person.Person_Id
-            WHERE Group_Id =
-            (
-                SELECT Group_id FROM Groups WHERE Group_Name = '{0}'
-            )
-            AND Day_Id = {1}
-            ";
+            mainScheduleQuery = "GetScheduleData @GroupName, @DayInd;";
 
             defaultDaySchedule = new("Понедельник", Enumerable.Empty<Lesson>().ToList());
         }
@@ -88,7 +61,10 @@ namespace ScheduleAPI.Models.Getter
             #region Подобласть: Переменные для работы.
             groupName = groupName.ToUpper();
             SqlConnection connect = DataBaseConnector.Connection;
-            SqlCommand command = new(String.Format(mainScheduleQuery, groupName, dayIndex), connect);
+
+            SqlCommand command = new(mainScheduleQuery, connect);
+            command.Parameters.AddWithValue("@GroupName", groupName);
+            command.Parameters.AddWithValue("@DayInd", dayIndex);
             #endregion
 
             #region Подобласть: Проверка на воскресенье.
