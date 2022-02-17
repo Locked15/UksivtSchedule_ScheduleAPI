@@ -77,6 +77,16 @@ namespace ScheduleAPI.Other.SiteParser
             //Совершаем проверку на возможные ошибки:
             if (generalChange == null || listOfChanges == null)
             {
+                if (generalChange == null)
+				{
+                    Logger.WriteError(4, $"GeneralChange был \'null\', а селектор: {selector}.");
+				}
+
+                if (listOfChanges == null)
+				{
+                    Logger.WriteError(4, $"ListOfChanges был \'null\', а селектор: {selector}.");
+				}
+
                 throw new GeneralParseException("В процессе обработки страницы произошла ошибка.");
             }
 

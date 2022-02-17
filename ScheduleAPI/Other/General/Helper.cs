@@ -54,6 +54,7 @@ namespace ScheduleAPI.Other.General
                 try
                 {
                     client.Credentials = new NetworkCredential(Environment.UserName, "Password");
+                    client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
 
                     client.DownloadFile(url, "Changes.docx");
                 }
