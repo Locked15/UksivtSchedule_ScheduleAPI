@@ -43,6 +43,9 @@ namespace ScheduleAPI.Other.General
         /// <exception cref="ArgumentException">Отправленная ссылка была некорректна.</exception>
         public static String DownloadFileFromURL(String url)
         {
+            String fileName = Path.GetRandomFileName();
+            fileName = Path.GetFileNameWithoutExtension(fileName) + ".docx";
+
             //Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
             if (!url.Contains(GoogleDriveDownloadLinkTemplate))
             {
@@ -56,7 +59,12 @@ namespace ScheduleAPI.Other.General
                     client.Credentials = new NetworkCredential(Environment.UserName, "Password");
                     client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
 
-                    client.DownloadFile(url, "Changes.docx");
+                    while (File.Exists(fileName))
+                    {
+                        fileName = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
+                    }
+
+                    client.DownloadFile(url, fileName);
                 }
 
                 catch (Exception e)
@@ -67,7 +75,7 @@ namespace ScheduleAPI.Other.General
                 }
             }
 
-            return "Changes.docx";
+            return fileName;
         }
         #endregion
     }
