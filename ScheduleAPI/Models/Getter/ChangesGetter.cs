@@ -50,14 +50,30 @@ namespace ScheduleAPI.Models.Getter
             // Для красоты выделим в отдельный блок:
             else
             {
+                ChangesOfDay toReturn;
                 String path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
 
-                ChangesReader reader = new(path);
-                ChangesOfDay toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
-                toReturn.ChangesDate = element.Date;
-                toReturn.ChangesFound = true;
+                try
+                {
+                    ChangesReader reader = new(path);
 
-                File.Delete(path);
+                    toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
+                    toReturn.ChangesDate = element.Date;
+                    toReturn.ChangesFound = true;
+                }
+
+                catch (WrongDayInDocumentException exception)
+                {
+                    Logger.WriteError(2, exception.Message);
+
+                    toReturn = new();
+                }
+
+                finally
+                {
+                    File.Delete(path);
+                }
+
                 return toReturn;
             }
         }

@@ -465,8 +465,8 @@ namespace ScheduleAPI.Other.DocumentParser
         /// <returns>Полный вид пар.</returns>
         private List<Lesson> ExpandPossibleLessons(String value, Lesson lesson)
         {
-            String[] splatted = value.Split(",");
-            List<Lesson> toReturn = new List<Lesson>(1);
+            String[] splatted = value.Split(new Char[] { ',', '.' });
+            List<Lesson> toReturn = new(1);
 
             /* В отличие от Java, C# способен преобразовать строки с пробелами в целые числа, ...
                ... так что можно сразу переходить в развертке значений.                            */
