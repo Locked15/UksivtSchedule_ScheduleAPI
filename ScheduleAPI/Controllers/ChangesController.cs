@@ -19,6 +19,11 @@ namespace ScheduleAPI.Controllers
         /// Поле, содержащее объект, содержащий данные о окружении приложения.
         /// </summary>
         private IHostEnvironment environment;
+
+        /// <summary>
+        /// Поле, содержащее значение, отвечающее за активность потока обновления данных.
+        /// </summary>
+        private Boolean subThreadIsActive = false;
         #endregion
 
         #region Область: Конструкторы.
@@ -50,8 +55,41 @@ namespace ScheduleAPI.Controllers
 
             changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
             String value = JsonConvert.SerializeObject(changes);
+
+            if (!subThreadIsActive)
+            {
+                AutoUploadSiteAsync();
+            }
             
             return value;
+        }
+
+        /// <summary>
+        /// Метод для автоматического обновления данных о изменении расписания.
+        /// <br/>
+        /// Нужен для обеспечения быстрой работы API.
+        /// </summary>
+        [NonAction]
+        public async void AutoUploadSiteAsync()
+        {
+            subThreadIsActive = true;
+
+            //Субпоток автоматического обновления данных с сайта. Вызов GET производится каждые 10 минут.
+            await Task.Run(() =>
+            {
+                System.Diagnostics.Stopwatch sw1 = new();
+
+                while (true)
+                {
+                    Thread.Sleep(600000);
+
+                    sw1.Restart();
+                    Get();
+                    sw1.Stop();
+
+                    Logger.WriteError(7, $"Завершен вызов автоматического обновления данных о сайте, время вызова: {sw1.ElapsedMilliseconds} миллисекунд.");
+                }
+            });
         }
         #endregion
     }

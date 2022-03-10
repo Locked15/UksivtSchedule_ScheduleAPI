@@ -70,11 +70,19 @@ namespace ScheduleAPI.Other
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@time", time);
 
-            connect.Open();
+            try
+            {
+                connect.Open();
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
-            connect.Close();
+                connect.Close();
+            }
+
+            catch
+            {
+                connect.Close();
+            }
         }
     }
 }
