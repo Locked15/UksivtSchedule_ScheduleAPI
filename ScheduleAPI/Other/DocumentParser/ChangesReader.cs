@@ -75,12 +75,12 @@ namespace ScheduleAPI.Other.DocumentParser
             List<XWPFParagraph> paragraphs = document.GetParagraphsEnumerator().GetParagraphs();
             #endregion
 
-            //Самым последним параграфом идет имя исполнителя, поэтому его игнорируем:
+            // Самым последним параграфом идет имя исполнителя, поэтому его игнорируем:
             for (int i = 0; i < paragraphs.Count - 1; i++)
             {
                 String text;
 
-                //Пятым параграфом идет название дня и недели. Проверяем корректность:
+                // Пятым параграфом идет название дня и недели. Проверяем корректность:
                 if (i == 5)
                 {
                     text = paragraphs[i].Text.ToLower();
@@ -91,7 +91,7 @@ namespace ScheduleAPI.Other.DocumentParser
                     }
                 }
 
-                //Первыми идут параграфы с инициалами администрации, игнорируем:
+                // Первыми идут параграфы с инициалами администрации, игнорируем:
                 else if (i > 5)
                 {
                     text = paragraphs[i].Text;
@@ -104,11 +104,11 @@ namespace ScheduleAPI.Other.DocumentParser
                ... (оно идет в виде списка кабинетов и групп) поэтому такой случай надо обработать. */
             if (technicalString.ToString().Contains("– на практике"))
             {
-                //Замены "на практику" всегда идут сверху, так что их индекс всегда 0.
+                // Замены "на практику" всегда идут сверху, так что их индекс всегда 0.
                 onPractiseString = technicalString.ToString().Split("– на практике")[0].ToLower();
             }
 
-            //Проверяем участие проверяемой группы на "практику":
+            // Проверяем участие проверяемой группы на "практику":
             if (onPractiseString.Contains(groupName.ToLower()))
             {
                 DaySchedule temp = DaySchedule.GetOnPractiseSchedule(day);
@@ -116,7 +116,7 @@ namespace ScheduleAPI.Other.DocumentParser
                 return new ChangesOfDay(true, temp.Lessons);
             }
 
-            //Если группа НЕ на практике, то начинаем проверять таблицу с заменами:
+            // Если группа НЕ на практике, то начинаем проверять таблицу с заменами:
             else
             {
                 IEnumerator<XWPFTable> tables = document.GetTablesEnumerator();
@@ -147,7 +147,7 @@ namespace ScheduleAPI.Other.DocumentParser
                             String text = cell.GetText();
                             String lowerText = text.ToLower();
 
-                            //Иногда вместо тире стоит нижнее подчеркивание, обрабатываем случай:
+                            // Иногда вместо тире стоит нижнее подчеркивание, обрабатываем случай:
                             text = text.Replace('_', '-');
                             lowerText = lowerText.Replace('_', '-');
 
@@ -222,7 +222,7 @@ namespace ScheduleAPI.Other.DocumentParser
                             newLessons.AddRange(ExpandPossibleLessons(possibleNumbs, currentLesson));
                         }
 
-                        //После прерывания первого цикла, прерываем и второй:
+                        // После прерывания первого цикла, прерываем и второй:
                         if (cycleStopper)
                         {
                             break;
