@@ -47,12 +47,12 @@ namespace ScheduleAPI.Models.Getter
             }
             #endregion
 
-            // Для красоты выделим в отдельный блок:
-            else
-            {
-                ChangesOfDay toReturn;
-                String path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
+            #region Подобласть: Работа с файлом замен.
+            ChangesOfDay toReturn;
+            String path = TryToDownloadFileFromGoogleDrive(element);
 
+            if (!String.IsNullOrEmpty(path))
+            {
                 try
                 {
                     ChangesReader reader = new(path);
@@ -73,9 +73,56 @@ namespace ScheduleAPI.Models.Getter
                 {
                     File.Delete(path);
                 }
-
-                return toReturn;
             }
+
+            else
+            {
+                Logger.WriteError(2, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.", DateTime.Now);
+
+                toReturn = new();
+            }
+
+            return toReturn;
+            #endregion
+        }
+
+        /// <summary>
+        /// Метод, пытающийся скачать нужный файл с серверов Google Drive.
+        /// <br/>
+        /// Так как иногда сервер возвращает ошибку скачивания, это все нужно учитывать.
+        /// </summary>
+        /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
+        /// <param name="attempts">Максимальное число попыток скачать документ.</param>
+        /// <returns>Путь к скачанному документу.</returns>
+        public String TryToDownloadFileFromGoogleDrive(ChangeElement element, Int32 attempts = 3)
+        {
+            Int32 currentAttempt = 0;
+            String path = String.Empty;
+
+            while (currentAttempt < attempts && String.IsNullOrEmpty(path))
+            {
+                try
+                {
+                    path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
+                }
+
+                catch (ArgumentException e)
+                {
+                    Logger.WriteError(2, $"Преобразование ссылки прошло неудачно, точная информация: {e.Message}.", DateTime.Now);
+                }
+
+                catch (Exception e)
+                {
+                    Logger.WriteError(2, $"При скачивании произошла непредвиденная ошибка: {e.Message}.", DateTime.Now);
+                }
+
+                finally
+                {
+                    currentAttempt++;
+                }
+            }
+
+            return path;
         }
 
         /// <summary>

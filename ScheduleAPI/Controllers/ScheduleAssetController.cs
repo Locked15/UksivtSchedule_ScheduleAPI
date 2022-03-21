@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Other;
 using ScheduleAPI.Models;
 using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
@@ -25,12 +24,9 @@ namespace ScheduleAPI.Controllers
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
-        /// <param name="configuration">Конфигурация приложения.</param>
         /// <param name="environment">Данные о окружении приложения.</param>
-        public ScheduleDayAssetController(IConfiguration configuration, IHostEnvironment environment)
+        public ScheduleDayAssetController(IHostEnvironment environment)
         {
-            DataBaseConnector.Initialize(configuration);
-
             getter = new(environment);
         }
         #endregion
@@ -79,12 +75,9 @@ namespace ScheduleAPI.Controllers
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
-        /// <param name="configuration">Конфигурация приложения.</param>
         /// <param name="environment">Данные о окружении приложения.</param>
-        public ScheduleWeekAssetController(IConfiguration configuration, IHostEnvironment environment)
+        public ScheduleWeekAssetController(IHostEnvironment environment)
         {
-            DataBaseConnector.Initialize(configuration);
-
             getter = new(environment);
         }
         #endregion

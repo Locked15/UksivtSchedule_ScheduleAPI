@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ScheduleAPI.Other;
 
 namespace ScheduleAPI.Controllers.Folders
 {
@@ -13,10 +12,8 @@ namespace ScheduleAPI.Controllers.Folders
         /// Конструктор класса.
         /// </summary>
         /// <param name="env">Окружение, в котором развенуто приложение.</param>
-        public FoldersController(IHostEnvironment env, IConfiguration configuration) : base(env)
-        {
-            DataBaseConnector.Initialize(configuration);
-        }
+        public FoldersController(IHostEnvironment env) : base(env)
+        { }
         #endregion
 
         #region Область: Метод.

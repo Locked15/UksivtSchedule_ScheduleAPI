@@ -8,59 +8,33 @@ namespace ScheduleAPI.Other
     /// </summary>
     public class DataBaseConnector
     {
-        #region Область: Поля.
-        /// <summary>
-        /// Поле, содержащее подключение к БД.
-        /// </summary>
-        private static SqlConnection connection;
-
-        /// <summary>
-        /// Поле, отвечающее за то, инициализирована ли глобальная конфигурация.
-        /// </summary>
-        private static Bool initialized = false;
-        #endregion
-
         #region Область: Свойства.
         /// <summary>
-        /// Свойство, содержащее конфигурацию приложения.
+        /// Свойство, содержащее подключение к Базе Данных.
         /// </summary>
-        public static SqlConnection Connection
-        {
-            get
-            {
-                if (initialized)
-                {
-                    return connection;
-                }
+        public static SqlConnection Connection { get; private set; }
+        #endregion
 
-                throw new Exception("Попытка получить доступ к конфигурации до инициализации.");
-            }
+        #region Область: Конструкторы.
+        /// <summary>
+        /// Статический конструктор класса.
+        /// </summary>
+        static DataBaseConnector()
+        {
+            Connection = new SqlConnection("Server=tcp:uksivtschedule.database.windows.net, 1433; " +
+                                           "Initial Catalog=ScheduleDataRu; " +
+                                           "Persist Security Info=False; " +
+                                           "User ID=Scheduler; " +
+                                           "Password=Uksivt_22; " +
+                                           "MultipleActiveResultSets=False; " +
+                                           "Encrypt=True; " +
+                                           "TrustServerCertificate=False; " +
+                                           "Connection Timeout=30; " +
+                                           "Integrated Security=False;");
         }
         #endregion
 
         #region Область: Методы.
-        /// <summary>
-        /// Метод для инициализации строки подключения.
-        /// </summary>
-        /// <param name="configuration">Экземпляр конфигурации.</param>
-        public static void Initialize(IConfiguration configuration)
-        {
-            if (!initialized)
-            {
-                connection = new(configuration.GetConnectionString("UksivtScheduleConnect"));
-
-                if (CheckConnection())
-                {
-                    initialized = true;
-                }
-            }
-
-            else
-            {
-                Logger.WriteError(5, "Повторная инициализация конфигурации.");
-            }
-        }
-
         /// <summary>
         /// Метод для проверки корректности подключения.
         /// </summary>
@@ -69,8 +43,8 @@ namespace ScheduleAPI.Other
         {
             try
             {
-                connection.Open();
-                connection.Close();
+                Connection.Open();
+                Connection.Close();
 
                 return true;
             }

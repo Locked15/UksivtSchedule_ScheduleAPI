@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ScheduleAPI.Other;
 using ScheduleAPI.Models;
 using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
@@ -26,12 +25,9 @@ namespace ScheduleAPI.Controllers
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
         /// <param name="env">Информация об окружении API.</param>
-        /// <param name="configuration">Информация о конфигурации приложения.</param>
-        public ChangesDayController(IHostEnvironment env, IConfiguration configuration)
+        public ChangesDayController(IHostEnvironment env)
         {
             environment = env;
-
-            DataBaseConnector.Initialize(configuration);
         }
         #endregion
 
@@ -77,12 +73,9 @@ namespace ScheduleAPI.Controllers
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
         /// <param name="env">Информация об окружении API.</param>
-        /// <param name="configuration">Информация о конфигурации приложения.</param>
-        public ChangesWeekController(IHostEnvironment env, IConfiguration configuration)
+        public ChangesWeekController(IHostEnvironment env)
         {
             environment = env;
-
-            DataBaseConnector.Initialize(configuration);
         }
         #endregion
 

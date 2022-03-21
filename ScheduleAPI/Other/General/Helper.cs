@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-/// <summary>
+﻿/// <summary>
 /// Область кода с классом-помощником.
 /// </summary>
 namespace ScheduleAPI.Other.General
@@ -28,8 +26,8 @@ namespace ScheduleAPI.Other.General
         /// <returns>Обработанная и пригодная для скачивания ссылка.</returns>
         public static String GetDownloadableFileLink(String originalLink)
         {
-            String id = originalLink.Substring(0, originalLink.LastIndexOf('/'));
-            id = id.Substring(id.LastIndexOf('/') + 1);
+            String id = originalLink[..originalLink.LastIndexOf('/')];
+            id = id[(id.LastIndexOf('/') + 1)..];
 
             return GoogleDriveDownloadLinkTemplate + id;
         }
@@ -52,26 +50,28 @@ namespace ScheduleAPI.Other.General
                 throw new ArgumentException("Отправленная ссылка некорректна.");
             }
 
-            using (WebClient client = new WebClient())
+            using (HttpClient client = new())
             {
                 try
                 {
-                    client.Credentials = new NetworkCredential(Environment.UserName, "Password");
-                    client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
+                    client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
 
                     while (File.Exists(fileName))
                     {
                         fileName = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
                     }
 
-                    client.DownloadFile(url, fileName);
+                    HttpResponseMessage response = client.GetAsync(new Uri(url)).Result;
+
+                    using FileStream stream = new(fileName, FileMode.Create);
+                    response.Content.CopyToAsync(stream);
                 }
 
                 catch (Exception e)
                 {
                     Logger.WriteError(3, $"Обнаружена ошибка при скачивании файла с заменами: {e.Message}.");
 
-                    return null;
+                    return String.Empty;
                 }
             }
 

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Other;
 using ScheduleAPI.Models;
 using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
@@ -17,11 +16,8 @@ namespace ScheduleAPI.Controllers
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
-        /// <param name="config">Конфигурация машины.</param>
-        public ScheduleDataBaseDayController(IConfiguration config)
-        {
-            DataBaseConnector.Initialize(config);
-        }
+        public ScheduleDataBaseDayController()
+        { }
 
         /// <summary>
         /// Метод, реализующий Get-запрос на получение расписания.
@@ -52,11 +48,8 @@ namespace ScheduleAPI.Controllers
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
-        /// <param name="config">Конфигурация машины.</param>
-        public ScheduleDataBaseWeekController(IConfiguration config)
-        {
-            DataBaseConnector.Initialize(config);
-        }
+        public ScheduleDataBaseWeekController()
+        { }
 
         /// <summary>
         /// Метод, реализующий Get-запрос на получение расписания.
