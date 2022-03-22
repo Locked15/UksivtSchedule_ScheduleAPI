@@ -71,7 +71,33 @@ namespace ScheduleAPI.Models.Getter
 
                 finally
                 {
-                    File.Delete(path);
+                    Task.Run(() =>
+                    {
+                        Int32 delAttempts = 0;
+                        Boolean deleted = false;
+
+                        while (!deleted && delAttempts < 5)
+                        {
+                            try
+                            {
+                                File.Delete(path);
+
+                                deleted = true;
+                            }
+
+                            catch (IOException)
+                            {
+                                delAttempts++;
+
+                                Thread.Sleep(100);
+                            }
+                        }
+
+                        if (!deleted)
+                        {
+                            Logger.WriteError(2, "Удалить файл с заменам не удалось.");
+                        }
+                    });
                 }
             }
 
@@ -109,11 +135,6 @@ namespace ScheduleAPI.Models.Getter
                 catch (ArgumentException e)
                 {
                     Logger.WriteError(2, $"Преобразование ссылки прошло неудачно, точная информация: {e.Message}.", DateTime.Now);
-                }
-
-                catch (Exception e)
-                {
-                    Logger.WriteError(2, $"При скачивании произошла непредвиденная ошибка: {e.Message}.", DateTime.Now);
                 }
 
                 finally

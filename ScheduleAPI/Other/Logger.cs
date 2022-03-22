@@ -63,26 +63,29 @@ namespace ScheduleAPI.Other
         /// <param name="time">Дата возникновения ошибки.</param>
         public static void WriteError(Int32 priority, String message, DateTime time)
         {
-            SqlConnection connect = DataBaseConnector.Connection;
-            SqlCommand command = new("INSERT INTO Error_Logs(Error_Priority, Error_Data, Error_DateTime)" +
-                                     $"VALUES(@priority, @message, @time)", connect);
-            command.Parameters.AddWithValue("@priority", priority);
-            command.Parameters.AddWithValue("@message", message);
-            command.Parameters.AddWithValue("@time", time);
+            // Данный код временно удален для проверки влияния на производительность.
+            /*
+                SqlConnection connect = DataBaseConnector.Connection;
+                SqlCommand command = new("INSERT INTO Error_Logs(Error_Priority, Error_Data, Error_DateTime)" +
+                                         $"VALUES(@priority, @message, @time)", connect);
+                command.Parameters.AddWithValue("@priority", priority);
+                command.Parameters.AddWithValue("@message", message);
+                command.Parameters.AddWithValue("@time", time);
 
-            try
-            {
-                connect.Open();
+                try
+                {
+                    connect.Open();
 
-                command.ExecuteNonQuery();
+                    command.ExecuteNonQuery();
 
-                connect.Close();
-            }
+                    connect.Close();
+                }
 
-            catch
-            {
-                connect.Close();
-            }
+                catch
+                {
+                    connect.Close();
+                }
+            */
         }
     }
 }

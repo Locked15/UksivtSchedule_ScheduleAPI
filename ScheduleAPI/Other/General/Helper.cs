@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿using System.Net;
+
+/// <summary>
 /// Область кода с классом-помощником.
 /// </summary>
 namespace ScheduleAPI.Other.General
@@ -44,27 +46,25 @@ namespace ScheduleAPI.Other.General
             String fileName = Path.GetRandomFileName();
             fileName = Path.GetFileNameWithoutExtension(fileName) + ".docx";
 
-            //Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
+            // Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
             if (!url.Contains(GoogleDriveDownloadLinkTemplate))
             {
                 throw new ArgumentException("Отправленная ссылка некорректна.");
             }
 
-            using (HttpClient client = new())
+            using (WebClient client = new())
             {
                 try
                 {
-                    client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
+                    client.UseDefaultCredentials = true;
+                    client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.31 Safari/537.36");
 
                     while (File.Exists(fileName))
                     {
                         fileName = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
                     }
 
-                    HttpResponseMessage response = client.GetAsync(new Uri(url)).Result;
-
-                    using FileStream stream = new(fileName, FileMode.Create);
-                    response.Content.CopyToAsync(stream);
+                    client.DownloadFile(new Uri(url), fileName);
                 }
 
                 catch (Exception e)
