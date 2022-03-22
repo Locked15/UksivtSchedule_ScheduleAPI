@@ -130,6 +130,11 @@ namespace ScheduleAPI.Models.Getter
                 try
                 {
                     path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
+
+                    if (String.IsNullOrEmpty(path))
+                    {
+                        Thread.Sleep(100);
+                    }
                 }
 
                 catch (ArgumentException e)
