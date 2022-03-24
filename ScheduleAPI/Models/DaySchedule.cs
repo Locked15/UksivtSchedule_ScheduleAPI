@@ -128,7 +128,11 @@ namespace ScheduleAPI.Models
             return new DaySchedule(day, lessons);
         }
 
-        public override string ToString()
+        /// <summary>
+        /// Метод для преобразования объекта в его строковый вариант.
+        /// </summary>
+        /// <returns>Строковая репрезентация объекта.</returns>
+        public override String ToString()
         {
             StringBuilder toReturn = new(Day + ":\n" +
             "{");
@@ -146,9 +150,14 @@ namespace ScheduleAPI.Models
             return toReturn.ToString();
         }
 
+        /// <summary>
+        /// Метод для сравнения объектов.
+        /// </summary>
+        /// <param name="obj">Объект, с которым нужно провести сравнение.</param>
+        /// <returns>Равенство объектов.</returns>
         public Boolean Equals(DaySchedule obj)
         {
-            if (Lessons.Count != obj.Lessons.Count || 
+            if (Lessons.Count != obj.Lessons.Count ||
             Day != obj.Day)
             {
                 return false;

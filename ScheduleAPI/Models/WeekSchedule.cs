@@ -34,7 +34,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <param name="days">Список дней с расписанием.</param>
-        public WeekSchedule(String groupName,  List<DaySchedule> days)
+        public WeekSchedule(String groupName, List<DaySchedule> days)
         {
             GroupName = groupName;
             Days = days;
@@ -42,6 +42,11 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Методы.
+        /// <summary>
+        /// Метод для сравнения двух объектов.
+        /// </summary>
+        /// <param name="obj">Объект, с которым нужно провести сравнение.</param>
+        /// <returns>Их равенство.</returns>
         public Boolean Equals(WeekSchedule obj)
         {
             if (GroupName != obj.GroupName || Days.Count != obj.Days.Count)

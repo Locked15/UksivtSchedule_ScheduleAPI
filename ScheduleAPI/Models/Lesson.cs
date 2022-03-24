@@ -48,6 +48,7 @@ namespace ScheduleAPI.Models
         public Lesson(Int32 number)
         {
             Number = number;
+
             Name = null;
             Teacher = null;
             Place = null;
