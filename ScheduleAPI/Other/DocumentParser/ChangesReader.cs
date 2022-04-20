@@ -363,7 +363,7 @@ namespace ScheduleAPI.Other.DocumentParser
                             //Иногда вместо тире стоит нижнее подчеркивание, обрабатываем случай:
                             text = text.Replace('_', '-');
                             lowerText = lowerText.Replace('_', '-');
-                           
+
                             /* Перед выполнением всех остальных проверок, необходимо ...
                                ... выполнить проверку на пустое содержимое ячейки:       */
                             if (text.Equals(String.Empty))
@@ -385,7 +385,7 @@ namespace ScheduleAPI.Other.DocumentParser
 
                             /* Если мы встречаем название другой группы во время чтения замен, ...
                                ... то прерываем цикл:                                              */
-                            else if (changesListen && !lowerText.Equals(groupName.ToLower()) && 
+                            else if (changesListen && !lowerText.Equals(groupName.ToLower()) &&
                             (cellNumber == 0 || cellNumber == 3))
                             {
                                 cycleStopper = true;
@@ -465,14 +465,24 @@ namespace ScheduleAPI.Other.DocumentParser
         /// <returns>Полный вид пар.</returns>
         private List<Lesson> ExpandPossibleLessons(String value, Lesson lesson)
         {
-            String[] splatted = value.Split(new Char[] { ',', '.' });
+            /* Как показала практика, иногда в конце номеров пар могут оставить лишнюю запятую.
+               Например: '1,2,3,' и тогда будет вызвана ошибка. Нужно обработать этот случай и удалить лишние символы. */
+            String[] splatted = value.Trim(',').Split(new Char[] { ',', '.' });
             List<Lesson> toReturn = new(1);
 
             /* В отличие от Java, C# способен преобразовать строки с пробелами в целые числа, ...
                ... так что можно сразу переходить в развертке значений.                            */
-            foreach (String s in splatted)
+            foreach (String splattedOne in splatted)
             {
-                toReturn.Add(new Lesson(Int32.Parse(s), lesson.Name, lesson.Teacher, lesson.Place));
+                if (Int32.TryParse(splattedOne, out Int32 parsed))
+                {
+                    toReturn.Add(new Lesson(parsed, lesson.Name, lesson.Teacher, lesson.Place));
+                }
+
+                else
+                {
+                    Logger.WriteError(2, $"Во время обработки документа в метод \"ExpandPossibleLessons()\" попала некорректная строка: {splattedOne}.");
+                }
             }
 
             return toReturn;
