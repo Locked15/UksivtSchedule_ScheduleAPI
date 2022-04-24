@@ -8,7 +8,7 @@ namespace ScheduleAPI.Models
     /// </summary>
     public class WeekSchedule
     {
-        #region Область: Свойста.
+        #region Область: Свойства.
         /// <summary>
         /// Свойство, содержащее название группы.
         /// </summary>
