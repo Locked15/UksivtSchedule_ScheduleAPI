@@ -88,6 +88,7 @@ namespace ScheduleAPI.Models.Getter
             {
                 if (reader.HasRows)
                 {
+                    Int32 i = 0;
                     List<Lesson> lessons = new(1);
 
                     while (reader.Read())
@@ -98,7 +99,7 @@ namespace ScheduleAPI.Models.Getter
                         Int32? subWeek = reader.IsDBNull(2) ? null : reader.GetInt32(2);
 
                         // Небезопасные значения:
-                        Int32 lessonNumber = selectUnsecure ? reader.GetInt32(3) : default;
+                        Int32 lessonNumber = selectUnsecure ? reader.GetInt32(3) : i;
                         String teacher = selectUnsecure ? (reader.IsDBNull(4) ? "[Нет Данных]" : reader.GetString(4)) : "[Нет Данных]";
                         String place = selectUnsecure ? (reader.IsDBNull(5) ? "[Нет Данных]" : reader.GetString(5)) : "[Нет Данных]";
 
@@ -106,6 +107,7 @@ namespace ScheduleAPI.Models.Getter
                         lessonName = CheckToSubWeek(subWeek, lessonName);
 
                         lessons.Add(new Lesson(lessonNumber, lessonName, teacher, place));
+                        ++i;
                     }
 
                     connect.Close();
