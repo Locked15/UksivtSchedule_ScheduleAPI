@@ -35,7 +35,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// <summary>
         /// Внутренняя константа, содержащая неразрывный пробел.
         /// </summary>
-        private const String NonBreakSpace = "\u00A0";
+        private const String nonBreakSpace = "\u00A0";
         #endregion
 
         #region Область: Конструктор класса.
@@ -97,7 +97,7 @@ namespace ScheduleAPI.Other.SiteParser
                 String nodeName = element.NodeName.ToLower();
 
                 //Обработка отступов с неразрывными пробелами:
-                if (nodeName.Equals("p") && !text.Equals(NonBreakSpace))
+                if (nodeName.Equals("p") && !text.Equals(nonBreakSpace))
                 {
                     //В первой итерации программа также зайдет сюда, обрабатываем этот случай:
                     if (changes.Any())
@@ -106,8 +106,8 @@ namespace ScheduleAPI.Other.SiteParser
                     }
 
                     changes = new(30);
-                    currentMonth = text.Substring(0, text.LastIndexOf(' ')).Replace(NonBreakSpace, "");
-                    currentYear = Int32.Parse(text.Substring(text.LastIndexOf(' ')).Replace(NonBreakSpace, ""));
+                    currentMonth = text.Substring(0, text.LastIndexOf(' ')).Replace(nonBreakSpace, "");
+                    currentYear = Int32.Parse(text.Substring(text.LastIndexOf(' ')).Replace(nonBreakSpace, ""));
 
                     i = 1;
                 }
@@ -141,7 +141,7 @@ namespace ScheduleAPI.Other.SiteParser
                                ... пропускаем такую итерацию.
                                Кроме того, если 1 число месяца выпадает не на понедельник, то ...
                                ... некоторое количество ячеек также будет пустым.                          */
-                            if (cellText.Equals(NonBreakSpace))
+                            if (cellText.Equals(nonBreakSpace))
                             {
                                 if (!firstIteration)
                                 {
