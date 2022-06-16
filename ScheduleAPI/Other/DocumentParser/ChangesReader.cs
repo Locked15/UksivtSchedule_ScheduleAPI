@@ -212,6 +212,14 @@ namespace ScheduleAPI.Other.DocumentParser
                                 }
                             }
 
+                            // Проверяем участие проверяемой группы на "ликвидацию задолженностей":
+                            if (changesListen && lowerText.Contains("ликвидация"))
+                            {
+                                DaySchedule temp = DaySchedule.GetDebtLiquidationSchedule(day);
+
+                                return new ChangesOfDay(true, temp.Lessons);
+                            }
+
                             ++cellNumber;
                         }
 
@@ -235,7 +243,7 @@ namespace ScheduleAPI.Other.DocumentParser
                ... ведь у группы, возможно, вообще нет замен.                            */
             if (!newLessons.Any())
             {
-                // Вызываем конструтор и создаем новый объект, чтобы не затрагивать значения "ChangesOfDay.DefaultChanges".
+                // Вызываем конструктор и создаем новый объект, чтобы не затрагивать значения "ChangesOfDay.DefaultChanges".
                 return new();
             }
 

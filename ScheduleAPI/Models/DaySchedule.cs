@@ -129,6 +129,23 @@ namespace ScheduleAPI.Models
         }
 
         /// <summary>
+        /// Статический метод, позволяющий получить расписание для группы с ликвидацией задолженностей.
+        /// </summary>
+        /// <param name="day">День недели для создания расписания.</param>
+        /// <returns>Расписание на день для группы с ликвидацией задолженностей.</returns>
+        public static DaySchedule GetDebtLiquidationSchedule(String day)
+        {
+            List<Lesson> lessons = new List<Lesson>(7);
+
+            for (int i = 0; i < 7; i++)
+            {
+                lessons.Add(new Lesson(i, "Ликвидация Задолженностей", null, null));
+            }
+
+            return new DaySchedule(day, lessons);
+        }
+
+        /// <summary>
         /// Метод для преобразования объекта в его строковый вариант.
         /// </summary>
         /// <returns>Строковая репрезентация объекта.</returns>
