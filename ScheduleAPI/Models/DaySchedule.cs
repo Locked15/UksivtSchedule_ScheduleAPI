@@ -139,7 +139,7 @@ namespace ScheduleAPI.Models
 
             for (int i = 0; i < 7; i++)
             {
-                lessons.Add(new Lesson(i, "Ликвидация Задолженностей", null, null));
+                lessons.Add(new Lesson(i, "Ликвидация задолженностей", null, null));
             }
 
             return new DaySchedule(day, lessons);

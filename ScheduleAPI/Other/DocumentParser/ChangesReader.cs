@@ -102,10 +102,10 @@ namespace ScheduleAPI.Other.DocumentParser
 
             /* Порой бывает так, что замен нет, а вот перераспределение кабинетов — да, ...
                ... (оно идет в виде списка кабинетов и групп) поэтому такой случай надо обработать. */
-            if (technicalString.ToString().Contains("– на практике"))
+            if (technicalString.ToString().Contains("на практике"))
             {
                 // Замены "на практику" всегда идут сверху, так что их индекс всегда 0.
-                onPractiseString = technicalString.ToString().Split("– на практике")[0].ToLower();
+                onPractiseString = technicalString.ToString().Split("на практике")[0].ToLower();
             }
 
             // Проверяем участие проверяемой группы на "практику":
