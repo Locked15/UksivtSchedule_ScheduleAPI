@@ -1,7 +1,4 @@
-﻿/// <summary>
-/// Область кода с исключением несовпадения дней.
-/// </summary>
-namespace ScheduleAPI.Other.DocumentParser
+﻿namespace ScheduleAPI.Controllers.Other.DocumentParser
 {
     /// <summary>
     /// Исключение, возникающее при несовпадении дней в сигнатуре метода и документе.
@@ -20,7 +17,7 @@ namespace ScheduleAPI.Other.DocumentParser
         /// Конструктор класса.
         /// </summary>
         /// <param name="message">Сообщение исключения.</param>
-        public WrongDayInDocumentException(String message) : base(message)
+        public WrongDayInDocumentException(string message) : base(message)
         {
 
         }
@@ -30,7 +27,7 @@ namespace ScheduleAPI.Other.DocumentParser
         /// </summary>
         /// <param name="message">Сообщение исключения.</param>
         /// <param name="inner">Внутреннее исключение.</param>
-        public WrongDayInDocumentException(String message, Exception inner) : base(message, inner)
+        public WrongDayInDocumentException(string message, Exception inner) : base(message, inner)
         {
 
         }

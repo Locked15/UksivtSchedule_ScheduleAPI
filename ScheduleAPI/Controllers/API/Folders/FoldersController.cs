@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ScheduleAPI.Controllers.Folders
+namespace ScheduleAPI.Controllers.API.Folders
 {
+    /// <summary>
+    /// Контроллер для получения данных о директориях с группами.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class FoldersController : FolderControllerAbstract
@@ -12,7 +15,7 @@ namespace ScheduleAPI.Controllers.Folders
         /// <summary>
         /// Конструктор класса.
         /// </summary>
-        /// <param name="env">Окружение, в котором развенуто приложение.</param>
+        /// <param name="env">Окружение, в котором развернуто приложение.</param>
         public FoldersController(IHostEnvironment env) : base(env)
         { }
         #endregion
@@ -24,9 +27,9 @@ namespace ScheduleAPI.Controllers.Folders
         /// </summary>
         /// <returns>Строковое представление списка с папками.</returns>
         [HttpGet]
-        public String Get()
+        public string Get()
         {
-            List<String> folders = Getter.GetFolders();
+            List<string> folders = Getter.GetFolders();
 
             return JsonConvert.SerializeObject(folders);
         }

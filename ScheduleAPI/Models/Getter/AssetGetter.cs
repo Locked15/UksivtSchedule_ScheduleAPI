@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using ScheduleAPI.Other;
-using ScheduleAPI.Other.General;
+using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.ScheduleElements;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -8,8 +8,6 @@ namespace ScheduleAPI.Models.Getter
     /// Класс, нужный для получения данных посредством заложенных в приложение ассетов.
     /// <br/>
     /// </summary>
-    [Obsolete("Аварийный способ получения расписания при ошибках БД. " +
-    "Обычное использование не рекомендуется.")]
     public class AssetGetter
     {
         #region Область: Поля.
@@ -58,10 +56,10 @@ namespace ScheduleAPI.Models.Getter
         /// Метод для получения списка с отделениями-папками из ассетов.
         /// </summary>
         /// <returns>Список с отделениями.</returns>
-        public List<String> GetFolders()
+        public List<string> GetFolders()
         {
-            String currentPath = GetValues("19П-3").Item1 + Path.DirectorySeparatorChar + "Assets";
-            List<String> folders = Directory.GetDirectories(currentPath).ToList();
+            string currentPath = GetValues("19П-3").Item1 + Path.DirectorySeparatorChar + "Assets";
+            List<string> folders = Directory.GetDirectories(currentPath).ToList();
             folders = folders.Select(folder => folder.TrimEnd(Path.DirectorySeparatorChar)).ToList();
 
             return folders.Select(folder => Path.GetFileName(folder)).ToList();
@@ -72,12 +70,12 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="folder">Папка отделения обучения.</param>
         /// <returns>Список с названиями направлений.</returns>
-        public List<String> GetSubFolders(String folder)
+        public List<string> GetSubFolders(string folder)
         {
             try
             {
-                String currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}";
-                List<String> folders = Directory.GetDirectories(currentPath).ToList();
+                string currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}";
+                List<string> folders = Directory.GetDirectories(currentPath).ToList();
                 folders = folders.Select(folder => folder.TrimEnd(Path.DirectorySeparatorChar)).ToList();
 
                 return folders.Select(folder => Path.GetFileName(folder)).ToList();
@@ -87,7 +85,7 @@ namespace ScheduleAPI.Models.Getter
             {
                 Logger.WriteError(2, "Попытка обратиться к папке, которой не существует.");
 
-                return Enumerable.Empty<String>().ToList();
+                return Enumerable.Empty<string>().ToList();
             }
         }
 
@@ -97,12 +95,12 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="folder">Отделение обучения.</param>
         /// <param name="subFolder">Нужное направление обучения.</param>
         /// <returns>Список с группами по данному адресу.</returns>
-        public List<String> GetGroupNames(String folder, String subFolder)
+        public List<string> GetGroupNames(string folder, string subFolder)
         {
             try
             {
-                String currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}{Path.DirectorySeparatorChar}{subFolder}";
-                List<String> files = Directory.GetFiles(currentPath).ToList();
+                string currentPath = $"{GetValues("19П-3").Item1}{Path.DirectorySeparatorChar}Assets{Path.DirectorySeparatorChar}{folder}{Path.DirectorySeparatorChar}{subFolder}";
+                List<string> files = Directory.GetFiles(currentPath).ToList();
                 files = files.Select(file => file.TrimEnd(Path.DirectorySeparatorChar)).ToList();
 
                 return files.Select(file => Path.GetFileNameWithoutExtension(file)).ToList();
@@ -112,7 +110,7 @@ namespace ScheduleAPI.Models.Getter
             {
                 Logger.WriteError(2, "Попытка обратиться к папке, которой не существует.");
 
-                return Enumerable.Empty<String>().ToList();
+                return Enumerable.Empty<string>().ToList();
             }
         }
 
@@ -121,10 +119,10 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <param name="groupName">Название нужной группы.</param>
-        public DaySchedule GetDaySchedule(Int32 dayIndex, String groupName)
+        public DaySchedule GetDaySchedule(int dayIndex, string groupName)
         {
             groupName = groupName.ToUpper();
-            (String fullPath, String groupBranch, String subFolder) = GetValues(groupName);
+            (string fullPath, string groupBranch, string subFolder) = GetValues(groupName);
             fullPath = Path.Combine(fullPath, "Assets", groupBranch, subFolder, groupName + ".json");
 
             if (File.Exists(fullPath))
@@ -154,7 +152,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Расписание на неделю для указанной группы.</returns>
-        public WeekSchedule GetWeekSchedule(String groupName)
+        public WeekSchedule GetWeekSchedule(string groupName)
         {
             groupName = groupName.ToUpper();
             List<DaySchedule> schedule = new(1);
@@ -179,11 +177,11 @@ namespace ScheduleAPI.Models.Getter
         /// <br/>
         /// Название папки, разделяющей ассеты по названиям групп (П, ВЕБ, БД и т.д.).
         /// </returns>
-        private (String, String, String) GetValues(String groupName)
+        private (string, string, string) GetValues(string groupName)
         {
             try
             {
-                (String, String, String) values = new();
+                (string, string, string) values = new();
                 values.Item1 = environment.ContentRootPath;
                 values.Item2 = groupName.GetPrefixFromName();
                 values.Item3 = groupName.GetSubFolderFromName();
@@ -195,7 +193,7 @@ namespace ScheduleAPI.Models.Getter
 
             catch
             {
-                return new(String.Empty, String.Empty, String.Empty);
+                return new(string.Empty, string.Empty, string.Empty);
             }
         }
         #endregion

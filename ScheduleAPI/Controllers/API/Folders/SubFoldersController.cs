@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace ScheduleAPI.Controllers.Folders
+namespace ScheduleAPI.Controllers.API.Folders
 {
+    /// <summary>
+    /// Контроллер для получения данных о принадлежностях указанного отделения.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class SubFoldersController : FolderControllerAbstract
@@ -25,9 +28,9 @@ namespace ScheduleAPI.Controllers.Folders
         /// <param name="folder">Нужное отделение.</param>
         /// <returns>Строковое представление списка направлений обучения.</returns>
         [HttpGet]
-        public String Get(String folder = "Programming")
+        public string Get(string folder = "Programming")
         {
-            List<String> subFolders = Getter.GetSubFolders(folder);
+            List<string> subFolders = Getter.GetSubFolders(folder);
 
             return JsonConvert.SerializeObject(subFolders);
         }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Models.Getter;
 
-namespace ScheduleAPI.Controllers.Folders
+namespace ScheduleAPI.Controllers.API.Folders
 {
     /// <summary>
     /// Базовый абстрактный класс для контроллеров иерархии файлов и папок.

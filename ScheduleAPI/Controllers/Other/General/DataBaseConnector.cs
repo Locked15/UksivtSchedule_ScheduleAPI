@@ -1,7 +1,6 @@
 ﻿using System.Data.SqlClient;
-using Bool = System.Boolean;
 
-namespace ScheduleAPI.Other
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
     /// Класс, содержащий глобальную переменную строки подключения.
@@ -42,7 +41,7 @@ namespace ScheduleAPI.Other
         /// Метод для проверки корректности подключения.
         /// </summary>
         /// <returns>Значение, отвечающее за корректность подключения.</returns>
-        private static Bool CheckConnection()
+        private static bool CheckConnection()
         {
             try
             {

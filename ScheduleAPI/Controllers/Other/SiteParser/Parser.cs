@@ -1,12 +1,8 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
-using ScheduleAPI.Other.General;
-using Bool = System.Boolean;
+using ScheduleAPI.Controllers.Other.General;
 
-/// <summary>
-/// Область с парсером сайта.
-/// </summary>
-namespace ScheduleAPI.Other.SiteParser
+namespace ScheduleAPI.Controllers.Other.SiteParser
 {
     /// <summary>
     /// Класс, представляющий сущность парсера и его логику.
@@ -26,18 +22,18 @@ namespace ScheduleAPI.Other.SiteParser
         /// <summary>
         /// Внутренняя константа, содержащая CSS-селектор для парса страницы.
         /// </summary>
-        private const String selector = "section > div > div > div > div > div > div" +
+        private const string selector = "section > div > div > div > div > div > div" +
         " > div > div > div > div > div > div > div > div > div > div > div";
 
         /// <summary>
         /// Внутренняя константа, содержащая путь к странице с заменами.
         /// </summary>
-        private const String webPagePath = "https://www.uksivt.ru/zameny";
+        private const string webPagePath = "https://www.uksivt.ru/zameny";
 
         /// <summary>
         /// Внутренняя константа, содержащая неразрывный пробел.
         /// </summary>
-        private const String nonBreakSpace = "\u00A0";
+        private const string nonBreakSpace = "\u00A0";
         #endregion
 
         #region Область: Конструктор класса.
@@ -62,18 +58,21 @@ namespace ScheduleAPI.Other.SiteParser
         /// <param name="limit">Количество месяцев, которые нужно получить.</param>
         /// <returns>Список с доступными заменами по месяцам.</returns>
         /// <exception cref="GeneralParseException">Общее исключение парса страницы.</exception>
-        public List<MonthChanges> ParseAvailableNodes(Int32 limit = 2)
+        public List<MonthChanges> ParseAvailableNodes(int limit = 2)
         {
             #region Подобласть: Переменные считывания доступных замен.
-            Int32 i = 0;
-            Int32 monthCounter = 0;
-            Int32 currentYear = DateTime.Now.Year;
-            String currentMonth = "Январь";
+
+            int i = 0;
+            int monthCounter = 0;
+            int currentYear = DateTime.Now.Year;
+            string currentMonth = "Январь";
+
             List<ChangeElement> changes = new(30);
             List<MonthChanges> monthChanges = new(2);
             #endregion
 
             #region Подобласть: Переменные парса веб-страницы.
+
             IElement? generalChange = webPage.QuerySelector(selector);
             List<IElement>? listOfChanges = generalChange?.Children.ToList();
             #endregion
@@ -82,14 +81,14 @@ namespace ScheduleAPI.Other.SiteParser
             if (generalChange == null || listOfChanges == null)
             {
                 if (generalChange == null)
-				{
+                {
                     Logger.WriteError(4, $"GeneralChange был \'null\', а селектор: {selector}.");
-				}
+                }
 
                 if (listOfChanges == null)
-				{
+                {
                     Logger.WriteError(4, $"ListOfChanges был \'null\', а селектор: {selector}.");
-				}
+                }
 
                 throw new GeneralParseException("В процессе обработки страницы произошла ошибка.");
             }
@@ -97,8 +96,8 @@ namespace ScheduleAPI.Other.SiteParser
             //Если же ошибок получения данных нет, начинаем парсить страницу:
             foreach (IElement? element in listOfChanges)
             {
-                String text = element.Text();
-                String nodeName = element.NodeName.ToLower();
+                string text = element.Text();
+                string nodeName = element.NodeName.ToLower();
 
                 //Обработка отступов с неразрывными пробелами:
                 if (nodeName.Equals("p") && !text.Equals(nonBreakSpace))
@@ -111,7 +110,7 @@ namespace ScheduleAPI.Other.SiteParser
 
                     changes = new(30);
                     currentMonth = text.Substring(0, text.LastIndexOf(' ')).Replace(nonBreakSpace, "");
-                    currentYear = Int32.Parse(text.Substring(text.LastIndexOf(' ')).Replace(nonBreakSpace, ""));
+                    currentYear = int.Parse(text.Substring(text.LastIndexOf(' ')).Replace(nonBreakSpace, ""));
 
                     i = 1;
                 }
@@ -126,8 +125,8 @@ namespace ScheduleAPI.Other.SiteParser
 
                     for (int j = 0; j < tableRows.Count; j++)
                     {
-                        Int32 dayCounter = 0;
-                        Bool firstIteration = true;
+                        int dayCounter = 0;
+                        bool firstIteration = true;
                         IElement currentRow = tableRows[j];
 
                         //В первой строке содержатся ненужные значения, пропускаем:
@@ -139,7 +138,7 @@ namespace ScheduleAPI.Other.SiteParser
                         //В иных случаях начинаем итерировать ячейки таблицы:
                         foreach (IElement tableCell in currentRow.Children)
                         {
-                            String cellText = tableCell.Text();
+                            string cellText = tableCell.Text();
 
                             /* Первая ячейка, видимо для отступа, содержит неразрывный пробел, так что ...
                                ... пропускаем такую итерацию.
@@ -159,7 +158,7 @@ namespace ScheduleAPI.Other.SiteParser
                             //В некоторых ячейках (дни без замен) нет содержимого, так что учитываем это.
                             if (tableCell.Children.Length < 1)
                             {
-                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i), 
+                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
                                 dayCounter.GetDayByIndex(), null));
                             }
 
@@ -169,8 +168,8 @@ namespace ScheduleAPI.Other.SiteParser
                                 IElement? link = tableCell.FirstElementChild;
 
                                 //На всякий случай обрабатываем возможную ошибку с получением атрибута:
-                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i), 
-                                dayCounter.GetDayByIndex(), link.GetAttribute("href")));
+                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
+                                dayCounter.GetDayByIndex(), link?.GetAttribute("href") ?? String.Empty));
                             }
 
                             ++i;

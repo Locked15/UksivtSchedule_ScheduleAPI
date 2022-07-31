@@ -1,7 +1,6 @@
 ﻿using System.Data.SqlClient;
-using ScheduleAPI.Other;
-using ScheduleAPI.Other.General;
-using Bool = System.Boolean;
+using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.ScheduleElements;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -30,7 +29,7 @@ namespace ScheduleAPI.Models.Getter
         /// 6. Место проведения пары (НЕБЕЗОПАСНО, Частично).
         /// </i>
         /// </summary>
-        private static readonly String mainScheduleQuery;
+        private static readonly string mainScheduleQuery;
 
         /// <summary>
         /// Поле, содержащее объект-расписание, возвращаемое по умолчанию при возникновении ошибок.
@@ -59,9 +58,10 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <param name="groupName">Название нужной группы.</param>
         /// <param name="selectUnsecure">Выбирать значения из "небезопасных" столбцов?</param>
-        public static DaySchedule GetDaySchedule(Int32 dayIndex, String groupName, Bool selectUnsecure = false)
+        public static DaySchedule GetDaySchedule(int dayIndex, string groupName, bool selectUnsecure = false)
         {
             #region Подобласть: Переменные для работы.
+
             groupName = groupName.ToUpper();
             SqlConnection connect = DataBaseConnector.Connection;
 
@@ -71,6 +71,7 @@ namespace ScheduleAPI.Models.Getter
             #endregion
 
             #region Подобласть: Проверка на воскресенье.
+
             // В БД нет данных о воскресенье, поэтому эти данные надо внести вручную.
             if (dayIndex == 6)
             {
@@ -91,20 +92,20 @@ namespace ScheduleAPI.Models.Getter
             {
                 if (reader.HasRows)
                 {
-                    Int32 i = 0;
+                    int i = 0;
                     List<Lesson> lessons = new(1);
 
                     while (reader.Read())
                     {
                         // Безопасные значения:
-                        String lessonName = reader.GetString(0);
-                        Int32? subGroup = reader.IsDBNull(1) ? null : reader.GetInt32(1);
-                        Int32? subWeek = reader.IsDBNull(2) ? null : reader.GetInt32(2);
+                        string lessonName = reader.GetString(0);
+                        int? subGroup = reader.IsDBNull(1) ? null : reader.GetInt32(1);
+                        int? subWeek = reader.IsDBNull(2) ? null : reader.GetInt32(2);
 
                         // Небезопасные значения:
-                        Int32 lessonNumber = selectUnsecure ? reader.GetInt32(3) : i;
-                        String teacher = selectUnsecure ? (reader.IsDBNull(4) ? "[Нет Данных]" : reader.GetString(4)) : "[Нет Данных]";
-                        String place = selectUnsecure ? (reader.IsDBNull(5) ? "[Нет Данных]" : reader.GetString(5)) : "[Нет Данных]";
+                        int lessonNumber = selectUnsecure ? reader.GetInt32(3) : i;
+                        string teacher = selectUnsecure ? (reader.IsDBNull(4) ? "[Нет Данных]" : reader.GetString(4)) : "[Нет Данных]";
+                        string place = selectUnsecure ? (reader.IsDBNull(5) ? "[Нет Данных]" : reader.GetString(5)) : "[Нет Данных]";
 
                         lessonName = CheckToSubGroup(subGroup, lessonName);
                         lessonName = CheckToSubWeek(subWeek, lessonName);
@@ -130,7 +131,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Расписание на неделю для указанной группы.</returns>
-        public static WeekSchedule GetWeekSchedule(String groupName, Bool selectUnsecure = false)
+        public static WeekSchedule GetWeekSchedule(string groupName, bool selectUnsecure = false)
         {
             groupName = groupName.ToUpper();
             List<DaySchedule> days = new(1);
@@ -149,7 +150,7 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="subGroup">Значение, определяющее для подгруппы или нет.</param>
         /// <param name="lessonName">Оригинальное название пары.</param>
         /// <returns>Итоговое название пары.</returns>
-        private static String CheckToSubGroup(Int32? subGroup, String lessonName)
+        private static string CheckToSubGroup(int? subGroup, string lessonName)
         {
             if (subGroup.HasValue)
             {
@@ -165,11 +166,11 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="subGroup">Значение, определяющее для какой недели пара.</param>
         /// <param name="lessonName">Оригинальное название пары.</param>
         /// <returns>Итоговое название пары.</returns>
-        private static String CheckToSubWeek(Int32? subWeek, String lessonName)
+        private static string CheckToSubWeek(int? subWeek, string lessonName)
         {
             if (subWeek.HasValue)
             {
-                String subValue = subWeek.Value == 1 ? "Нечетная" : "Четная";
+                string subValue = subWeek.Value == 1 ? "Нечетная" : "Четная";
                 lessonName += $" ({subValue} неделя)";
             }
 

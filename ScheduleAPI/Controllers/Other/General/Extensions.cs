@@ -1,13 +1,9 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
 using NPOI.XWPF.UserModel;
-using ScheduleAPI.Other.SiteParser;
-using Bool = System.Boolean;
+using ScheduleAPI.Controllers.Other.SiteParser;
 
-/// <summary>
-/// Область с классом расширений.
-/// </summary>
-namespace ScheduleAPI.Other.General
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
     /// Класс расширений.
@@ -21,7 +17,7 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="value">Значение, наличие которого нужно проверить.</param>
         /// <returns>Логическое значение, отвечающее за наличие подстроки в строке.</returns>
-        public delegate Bool Check(String value);
+        public delegate bool Check(string value);
         #endregion
 
         #region Область: Методы расширения, связанные с датами.
@@ -32,34 +28,20 @@ namespace ScheduleAPI.Other.General
         /// <param name="index">Индекс дня (0 : 6).</param>
         /// <returns>День, соответствующий данному индексу.</returns>
         /// <exception cref="IndexOutOfRangeException">Введен некорректный индекс.</exception>
-        public static String GetDayByIndex(this Int32 index)
+        public static string GetDayByIndex(this int index)
         {
-            switch (index)
+            return index switch
             {
-                case 0:
-                    return "Понедельник";
+                0 => "Понедельник",
+                1 => "Вторник",
+                2 => "Среда",
+                3 => "Четверг",
+                4 => "Пятница",
+                5 => "Суббота",
+                6 => "Воскресенье",
 
-                case 1:
-                    return "Вторник";
-
-                case 2:
-                    return "Среда";
-
-                case 3:
-                    return "Четверг";
-
-                case 4:
-                    return "Пятница";
-
-                case 5:
-                    return "Суббота";
-
-                case 6:
-                    return "Воскресенье";
-
-                default:
-                    throw new IndexOutOfRangeException($"Введен некорректный индекс ({index}).");
-            }
+                _ => throw new IndexOutOfRangeException($"Введен некорректный индекс ({index})."),
+            };
         }
 
         /// <summary>
@@ -68,37 +50,23 @@ namespace ScheduleAPI.Other.General
         /// <param name="day">Название дня.</param>
         /// <returns>День, соответствующий данному индексу.</returns>
         /// <exception cref="ArgumentException">Введен некорректный день.</exception>
-        public static Int32 GetIndexByDay(this String day)
+        public static int GetIndexByDay(this string day)
         {
             day = day.GetTranslatedDay();
             day = day.ToLower();
 
-            switch (day)
+            return day switch
             {
-                case "понедельник":
-                    return 0;
+                "понедельник" => 0,
+                "вторник" => 1,
+                "среда" => 2,
+                "четверг" => 3,
+                "пятница" => 4,
+                "суббота" => 5,
+                "воскресенье" => 6,
 
-                case "вторник":
-                    return 1;
-
-                case "среда":
-                    return 2;
-
-                case "четверг":
-                    return 3;
-
-                case "пятница":
-                    return 4;
-
-                case "суббота":
-                    return 5;
-
-                case "воскресенье":
-                    return 6;
-
-                default:
-                    throw new ArgumentException($"Введен некорректный день ({day}).");
-            }
+                _ => throw new ArgumentException($"Введен некорректный день ({day})."),
+            };
         }
 
         /// <summary>
@@ -106,36 +74,22 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="day">Название дня на английском.</param>
         /// <returns>Название дня на русском.</returns>
-        public static String GetTranslatedDay(this String day)
+        public static string GetTranslatedDay(this string day)
         {
             day = day.ToLower();
 
-            switch (day)
+            return day switch
             {
-                case "monday":
-                    return "Понедельник";
+                "monday" => "Понедельник",
+                "tuesday" => "Вторник",
+                "wednesday" => "Среда",
+                "thursday" => "Четверг",
+                "friday" => "Пятница",
+                "saturday" => "Суббота",
+                "sunday" => "Воскресенье",
 
-                case "tuesday":
-                    return "Вторник";
-
-                case "wednesday":
-                    return "Среда";
-
-                case "thursday":
-                    return "Четверг";
-
-                case "friday":
-                    return "Пятница";
-
-                case "saturday":
-                    return "Суббота";
-
-                case "sunday":
-                    return "Воскресенье";
-
-                default:
-                    return day;
-            }
+                _ => day,
+            };
         }
 
         /// <summary>
@@ -143,51 +97,27 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="monthName">Название месяца для получения его номера.</param>
         /// <returns>Номер месяца.</returns>
-        public static Int32 GetMonthNumber(this String monthName)
+        public static int GetMonthNumber(this string monthName)
         {
             monthName = monthName.ToLower();
 
-            switch (monthName)
+            return monthName switch
             {
-                case "январь":
-                    return 1;
+                "январь" => 1,
+                "февраль" => 2,
+                "март" => 3,
+                "апрель" => 4,
+                "май" => 5,
+                "июнь" => 6,
+                "июль" => 7,
+                "август" => 8,
+                "сентябрь" => 9,
+                "октябрь" => 10,
+                "ноябрь" => 11,
+                "декабрь" => 12,
 
-                case "февраль":
-                    return 2;
-
-                case "март":
-                    return 3;
-
-                case "апрель":
-                    return 4;
-
-                case "май":
-                    return 5;
-
-                case "июнь":
-                    return 6;
-
-                case "июль":
-                    return 7;
-
-                case "август":
-                    return 8;
-
-                case "сентябрь":
-                    return 9;
-
-                case "октябрь":
-                    return 10;
-
-                case "ноябрь":
-                    return 11;
-
-                case "декабрь":
-                    return 12;
-
-                default:
-                    throw new ArgumentException("Отправленное значение некорректно.");
-            }
+                _ => throw new ArgumentException("Отправленное значение некорректно."),
+            };
         }
 
         /// <summary>
@@ -225,11 +155,11 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <returns>Полная дата.</returns>
-        public static DateTime? GetDateTimeInWeek(this Int32 dayIndex)
-		{
-            Int32 currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
+        public static DateTime? GetDateTimeInWeek(this int dayIndex)
+        {
+            int currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
             DateTime? current = DateTime.Now;
-            
+
             while (dayIndex > currentDayIndex)
             {
                 current = current.Value.AddDays(1);
@@ -238,14 +168,14 @@ namespace ScheduleAPI.Other.General
             }
 
             while (dayIndex < currentDayIndex)
-			{
+            {
                 current = current.Value.AddDays(-1);
 
                 --currentDayIndex;
-			}
+            }
 
             return current;
-		}
+        }
 
         /// <summary>
         /// Метод для получения индекса дня из "DayOfWeek".
@@ -256,33 +186,28 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="day">Экземпляр 'DayOfWeek' из которого нужно получить индекс.</param>
         /// <returns>Индекс дня недели.</returns>
-        public static Int32 GetIndexFromDayOfWeek(this DayOfWeek day)
-		{
-			return day switch
-			{
-				DayOfWeek.Monday => 0,
+        public static int GetIndexFromDayOfWeek(this DayOfWeek day)
+        {
+            return day switch
+            {
+                DayOfWeek.Monday => 0,
+                DayOfWeek.Tuesday => 1,
+                DayOfWeek.Wednesday => 2,
+                DayOfWeek.Thursday => 3,
+                DayOfWeek.Friday => 4,
+                DayOfWeek.Saturday => 5,
 
-				DayOfWeek.Tuesday => 1,
-
-				DayOfWeek.Wednesday => 2,
-
-				DayOfWeek.Thursday => 3,
-
-				DayOfWeek.Friday => 4,
-
-				DayOfWeek.Saturday => 5,
-
-				_ => 6,
-			};
-		}
+                _ => 6,
+            };
+        }
 
         /// <summary>
         /// Метод расширения, позволяющий 'скосить' лишнее значение индекса дня, если оно слишком большое.
         /// </summary>
         /// <param name="dayIndex">Индекс дня.</param>
         /// <returns>Проверенный индекс дня.</returns>
-        public static Int32 CheckDayIndexFromOverflow(this Int32 dayIndex)
-		{
+        public static int CheckDayIndexFromOverflow(this int dayIndex)
+        {
             // Подготовка индекса, если он некорректен (больше 6 (это воскресенье)):
             while (dayIndex > 6)
             {
@@ -300,10 +225,10 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Название подпапки (префикс).</returns>
-        public static String GetPrefixFromName(this String groupName)
+        public static string GetPrefixFromName(this string groupName)
         {
             groupName = groupName.ToLower();
-            String yearEnd;
+            string yearEnd;
 
             //Если сейчас второй семестр, то первый курс поступал в прошлом году.
             if (DateTime.Now.Month <= 6)
@@ -318,7 +243,7 @@ namespace ScheduleAPI.Other.General
             }
 
             //Общеобразовательное.
-            if (groupName.Contains(yearEnd) && (!groupName.Contains("укск")))
+            if (groupName.Contains(yearEnd) && !groupName.Contains("укск"))
             {
                 return "General";
             }
@@ -327,7 +252,7 @@ namespace ScheduleAPI.Other.General
             else
             {
                 //Для краткости записи определяем делегат:
-                Check check = (String val) => groupName.Contains(val);
+                Check check = (val) => groupName.Contains(val);
 
                 //Экономика и ЗИО.
                 if (check("зио") || check("э") || check("уэ") || check("ул"))
@@ -367,7 +292,7 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Подпапка ассетов.</returns>
-        public static String GetSubFolderFromName(this String groupName)
+        public static string GetSubFolderFromName(this string groupName)
         {
             StringBuilder subFolderBuilder = new();
             MatchCollection matches = Regex.Matches(groupName, "[а-яА-Я]");
@@ -387,7 +312,7 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public static ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthChanges> allChanges, String day)
+        public static ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthChanges> allChanges, string day)
         {
             /* Так как в целях совместимости была использована структура "DateTime", а не "DateOnly", ...
                ... то в дело сравнения вмешивается ещё и время, что может нарушить работу.

@@ -1,9 +1,6 @@
 ﻿using System.Net;
 
-/// <summary>
-/// Область кода с классом-помощником.
-/// </summary>
-namespace ScheduleAPI.Other.General
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
     /// Класс-помощник, нужный для различных задач.
@@ -15,7 +12,7 @@ namespace ScheduleAPI.Other.General
         /// <summary>
         /// Константа, содержащая шаблон для создания ссылки для скачивания файла с Google Drive.
         /// </summary>
-        private const String GoogleDriveDownloadLinkTemplate =
+        private const string GoogleDriveDownloadLinkTemplate =
         "https://drive.google.com/uc?export=download&id=";
         #endregion
 
@@ -28,9 +25,11 @@ namespace ScheduleAPI.Other.General
         /// </summary>
         /// <param name="originalLink">Оригинальная ссылка на файл.</param>
         /// <returns>Обработанная и пригодная для скачивания ссылка.</returns>
-        public static String GetDownloadableFileLink(String originalLink)
+        public static string GetDownloadableFileLink(string originalLink)
         {
-            String id = originalLink[..originalLink.LastIndexOf('/')];
+            //TODO: Переработать.
+
+            string id = originalLink[..originalLink.LastIndexOf('/')];
             id = id[(id.LastIndexOf('/') + 1)..];
 
             return GoogleDriveDownloadLinkTemplate + id;
@@ -43,9 +42,9 @@ namespace ScheduleAPI.Other.General
         /// <param name="destination">Место, куда будет скачан файл.</param>
         /// <returns>Путь к скачанному файлу.</returns>
         /// <exception cref="ArgumentException">Отправленная ссылка была некорректна.</exception>
-        public static String DownloadFileFromURL(String url)
+        public static string DownloadFileFromURL(string url)
         {
-            String fileName = Path.GetRandomFileName();
+            string fileName = Path.GetRandomFileName();
             fileName = Path.GetFileNameWithoutExtension(fileName) + ".docx";
 
             // Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
@@ -58,8 +57,9 @@ namespace ScheduleAPI.Other.General
             {
                 try
                 {
+                    // Актуальность "User-Agent": 31.07.2022!
                     client.UseDefaultCredentials = true;
-                    client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36");
+                    client.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36 Edg/103.0.1264.77");
 
                     while (File.Exists(fileName))
                     {
@@ -73,7 +73,7 @@ namespace ScheduleAPI.Other.General
                 {
                     Logger.WriteError(3, $"Обнаружена ошибка при скачивании файла с заменами: {e.Message}.");
 
-                    return String.Empty;
+                    return string.Empty;
                 }
             }
 

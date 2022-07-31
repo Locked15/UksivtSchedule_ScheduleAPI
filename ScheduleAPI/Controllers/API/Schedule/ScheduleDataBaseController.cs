@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Models;
-using ScheduleAPI.Other.General;
+using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Getter;
-using Bool = System.Boolean;
+using ScheduleAPI.Models.ScheduleElements;
 
-namespace ScheduleAPI.Controllers
+namespace ScheduleAPI.Controllers.API.Schedule
 {
     /// <summary>
     /// Класс-контроллер получения расписания через базу данных.
@@ -27,7 +26,7 @@ namespace ScheduleAPI.Controllers
         /// <param name="selectUnsecure">Выбирать "небезопасные" значения из БД?</param>
         /// <returns>Строковое представление расписания на указанный день для указанной группы.</returns>
         [HttpGet]
-        public String Get(Int32 dayIndex = 0, String groupName = "19П-3", Bool selectUnsecure = false)
+        public string Get(int dayIndex = 0, string groupName = "19П-3", bool selectUnsecure = false)
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = DbGetter.GetDaySchedule(dayIndex, groupName, selectUnsecure);
@@ -58,7 +57,7 @@ namespace ScheduleAPI.Controllers
         /// <param name="selectUnsecure">Выбирать "небезопасные" значения из БД?</param>
         /// <returns>Строковое представление расписания на неделю для указанной группы.</returns>
         [HttpGet]
-        public String Get(String groupName = "19П-3", Bool selectUnsecure = false)
+        public string Get(string groupName = "19П-3", bool selectUnsecure = false)
         {
             WeekSchedule schedule = DbGetter.GetWeekSchedule(groupName, selectUnsecure);
 

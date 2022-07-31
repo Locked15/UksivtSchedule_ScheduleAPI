@@ -1,6 +1,4 @@
-﻿using Bool = System.Boolean;
-
-namespace ScheduleAPI.Models
+﻿namespace ScheduleAPI.Models.ScheduleElements
 {
     /// <summary>
     /// Класс, представляющий сущность замен на один день.
@@ -17,12 +15,12 @@ namespace ScheduleAPI.Models
         /// Это нужно, чтобы можно было выводить разные сообщения, в зависимости от того,
         /// не найдены ли замены для текущей даты вообще или не найдены только для указанной группы.
         /// </summary>
-        public Bool ChangesFound { get; set; }
+        public bool ChangesFound { get; set; }
 
         /// <summary>
         /// Логическое значение, отвечающее за то, замены на весь день или нет.
         /// </summary>
-        public Bool AbsoluteChanges { get; set; }
+        public bool AbsoluteChanges { get; set; }
 
         /// <summary>
         /// Свойство с датой, на которую предназначены замены.
@@ -33,16 +31,16 @@ namespace ScheduleAPI.Models
         /// Список с парами замен.
         /// </summary>
         public List<Lesson> NewLessons { get; set; }
-		#endregion
+        #endregion
 
-		#region Область: Конструкторы.
+        #region Область: Конструкторы.
 
-		/// <summary>
-		/// Конструктор класса по умолчанию.
-		/// <br/>
-		/// Нужен для заполнения значений через инциализацию.
-		/// </summary>
-		public ChangesOfDay()
+        /// <summary>
+        /// Конструктор класса по умолчанию.
+        /// <br/>
+        /// Нужен для заполнения значений через инициализацию.
+        /// </summary>
+        public ChangesOfDay()
         {
             ChangesFound = false;
             AbsoluteChanges = false;
@@ -54,7 +52,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="lessons">Список с новыми парами.</param>
-        public ChangesOfDay(Bool absoluteChanges, List<Lesson> lessons)
+        public ChangesOfDay(bool absoluteChanges, List<Lesson> lessons)
         {
             AbsoluteChanges = absoluteChanges;
             NewLessons = lessons;
@@ -66,7 +64,7 @@ namespace ScheduleAPI.Models
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="changesDate">Дата, для которой предназначены замены.</param>
         /// <param name="lessons">Список с новыми парами.</param>
-        public ChangesOfDay(Bool absoluteChanges, DateTime? changesDate, List<Lesson> lessons)
+        public ChangesOfDay(bool absoluteChanges, DateTime? changesDate, List<Lesson> lessons)
         {
             AbsoluteChanges = absoluteChanges;
             ChangesDate = changesDate;
@@ -80,7 +78,7 @@ namespace ScheduleAPI.Models
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="changesDate">Дата (даже предполагаемая) замен.</param>
         /// <param name="newLessons">Список с новыми парами.</param>
-        public ChangesOfDay(Bool changesFound, Bool absoluteChanges, DateTime? changesDate, List<Lesson> newLessons)
+        public ChangesOfDay(bool changesFound, bool absoluteChanges, DateTime? changesDate, List<Lesson> newLessons)
         {
             ChangesFound = changesFound;
             AbsoluteChanges = absoluteChanges;

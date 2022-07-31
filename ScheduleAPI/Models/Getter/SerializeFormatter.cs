@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using ScheduleAPI.Models.ScheduleElements;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -14,7 +15,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="schedule">Расписание на день для получения представления.</param>
         /// <returns>Неформатированное строковое представление объекта.</returns>
-        public static String ConvertToUnformattedJsonForm(DaySchedule schedule)
+        public static string ConvertToUnformattedJsonForm(DaySchedule schedule)
         {
             return JsonConvert.SerializeObject(schedule, Formatting.None);
         }
@@ -24,7 +25,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="schedule">Расписание на неделю для получения представления.</param>
         /// <returns>Неформатированное строковое представление объекта.</returns>
-        public static String ConvertToUnformattedJsonForm(WeekSchedule schedule)
+        public static string ConvertToUnformattedJsonForm(WeekSchedule schedule)
         {
             return JsonConvert.SerializeObject(schedule, Formatting.None);
         }
@@ -37,7 +38,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="schedule">Расписание на день для получения представления.</param>
         /// <returns>Форматированное строковое представление объекта.</returns>
-        public static String ConvertToFormattedJsonForm(DaySchedule schedule)
+        public static string ConvertToFormattedJsonForm(DaySchedule schedule)
         {
             return JsonConvert.SerializeObject(schedule, Formatting.Indented);
         }
@@ -47,7 +48,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="schedule">Расписание на неделю для получения представления.</param>
         /// <returns>Форматированное строковое представление объекта.</returns>
-        public static String ConvertToFormattedJsonForm(WeekSchedule schedule)
+        public static string ConvertToFormattedJsonForm(WeekSchedule schedule)
         {
             return JsonConvert.SerializeObject(schedule, Formatting.Indented);
         }

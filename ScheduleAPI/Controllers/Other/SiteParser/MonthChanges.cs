@@ -1,10 +1,7 @@
 ﻿using System.Text;
-using ScheduleAPI.Other.General;
+using ScheduleAPI.Controllers.Other.General;
 
-/// <summary>
-/// Область с классом, представляющим сущность замен за месяц.
-/// </summary>
-namespace ScheduleAPI.Other.SiteParser
+namespace ScheduleAPI.Controllers.Other.SiteParser
 {
     /// <summary>
     /// Класс замен за месяц.
@@ -16,7 +13,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// <summary>
         /// Поле, содержащее название месяца.
         /// </summary>
-        public String Month { get; set; }
+        public string Month { get; set; }
 
         /// <summary>
         /// Поле, содержащее список замен на данный месяц.
@@ -39,7 +36,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// </summary>
         /// <param name="month">Название месяца.</param>
         /// <param name="changes">Список замен.</param>
-        public MonthChanges(String month, List<ChangeElement> changes)
+        public MonthChanges(string month, List<ChangeElement> changes)
         {
             Month = month;
             Changes = changes;
@@ -56,7 +53,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(String day)
+        public ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(string day)
         {
             DateTime start = DateTime.Now.GetStartOfWeek().AddDays(-1);
             DateTime end = DateTime.Now.GetEndOfWeek().AddDays(1);
@@ -90,7 +87,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// Реализация прямо из Java!
         /// </summary>
         /// <returns>Строковое представление объекта.</returns>
-        public override String ToString()
+        public override string ToString()
         {
             StringBuilder toReturn = new("\nНовый месяц: \n" +
             "CurrentMonth = " + Month + ";\n" +

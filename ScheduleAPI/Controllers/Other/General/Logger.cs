@@ -1,9 +1,9 @@
 ﻿using System.Data.SqlClient;
 
-namespace ScheduleAPI.Other
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
-    /// Класс-логер, нужный для записи ошибок API в БД.
+    /// Класс-логгер, нужный для записи ошибок API в БД.
     /// <br/><br/>
     /// <i>
     /// Приоритет основных ошибок:
@@ -23,23 +23,23 @@ namespace ScheduleAPI.Other
         /// Метод для записи ошибки в БД.
         /// </summary>
         /// <param name="priority">Приоритет ошибки.</param>
-        public static void WriteError(Int32 priority)
+        public static void WriteError(int priority)
         {
-            String message;
+            string message;
 
             if (priority == 1)
             {
-                message = "Critical Error Occured! Fix It ASAP.";
+                message = "Critical Error Occurred! Fix It ASAP.";
             }
 
             else if (priority <= 3)
             {
-                message = "Important Error Occured. Need Attantion.";
+                message = "Important Error Occurred. Need Attention.";
             }
 
             else
             {
-                message = "Common Error Occured. Fix It When Get Time.";
+                message = "Common Error Occurred. Fix It When Get Time.";
             }
 
             WriteError(priority, message);
@@ -50,7 +50,7 @@ namespace ScheduleAPI.Other
         /// </summary>
         /// <param name="priority">Приоритет ошибки.</param>
         /// <param name="message">Текст ошибки.</param>
-        public static void WriteError(Int32 priority, String message)
+        public static void WriteError(int priority, string message)
         {
             WriteError(priority, message, DateTime.Now);
         }
@@ -61,7 +61,7 @@ namespace ScheduleAPI.Other
         /// <param name="priority">Приоритет ошибки.</param>
         /// <param name="message">Текст ошибки.</param>
         /// <param name="time">Дата возникновения ошибки.</param>
-        public static void WriteError(Int32 priority, String message, DateTime time)
+        public static void WriteError(int priority, string message, DateTime time)
         {
             SqlConnection connect = DataBaseConnector.Connection;
             SqlCommand command = new("INSERT INTO Error_Logs(Error_Priority, Error_Data, Error_DateTime)" +

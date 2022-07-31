@@ -3,7 +3,7 @@
 /// <summary>
 /// Область кода с расписанием на день.
 /// </summary>
-namespace ScheduleAPI.Models
+namespace ScheduleAPI.Models.ScheduleElements
 {
     /// <summary>
     /// Класс, представляющий расписание на один день.
@@ -15,7 +15,7 @@ namespace ScheduleAPI.Models
         /// <summary>
         /// Свойство, содержащее название текущего дня.
         /// </summary>
-        public String Day { get; set; }
+        public string Day { get; set; }
 
         /// <summary>
         /// Свойство, содержащее список пар для данного дня.
@@ -38,7 +38,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="day">День недели.</param>
         /// <param name="lessons">Пары в этот день.</param>
-        public DaySchedule(String day, List<Lesson> lessons)
+        public DaySchedule(string day, List<Lesson> lessons)
         {
             Day = day;
             Lessons = lessons;
@@ -53,7 +53,7 @@ namespace ScheduleAPI.Models
         /// <param name="changes">Замены.</param>
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <returns>Измененное расписание.</returns>
-        public DaySchedule MergeChanges(List<Lesson> changes, Boolean absoluteChanges)
+        public DaySchedule MergeChanges(List<Lesson> changes, bool absoluteChanges)
         {
             List<Lesson> mergedSchedule = Lessons;
 
@@ -66,7 +66,7 @@ namespace ScheduleAPI.Models
 
             foreach (Lesson change in changes)
             {
-                Int32 lessonIndex = change.Number;
+                int lessonIndex = change.Number;
 
                 if (change.Name.ToLower().Equals("нет"))
                 {
@@ -89,7 +89,7 @@ namespace ScheduleAPI.Models
         {
             for (int i = 0; i < 7; i++)
             {
-                Boolean missing = true;
+                bool missing = true;
 
                 foreach (Lesson lesson in lessons)
                 {
@@ -119,7 +119,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="day">День недели для создания расписания.</param>
         /// <returns>Расписание на день для группы с практикой.</returns>
-        public static DaySchedule GetOnPractiseSchedule(String day)
+        public static DaySchedule GetOnPractiseSchedule(string day)
         {
             List<Lesson> lessons = new List<Lesson>(7);
 
@@ -136,7 +136,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="day">День недели для создания расписания.</param>
         /// <returns>Расписание на день для группы с ликвидацией задолженностей.</returns>
-        public static DaySchedule GetDebtLiquidationSchedule(String day)
+        public static DaySchedule GetDebtLiquidationSchedule(string day)
         {
             List<Lesson> lessons = new List<Lesson>(7);
 
@@ -152,7 +152,7 @@ namespace ScheduleAPI.Models
         /// Метод для преобразования объекта в его строковый вариант.
         /// </summary>
         /// <returns>Строковая репрезентация объекта.</returns>
-        public override String ToString()
+        public override string ToString()
         {
             StringBuilder toReturn = new(Day + ":\n" +
             "{");
@@ -175,7 +175,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="obj">Объект, с которым нужно провести сравнение.</param>
         /// <returns>Равенство объектов.</returns>
-        public Boolean Equals(DaySchedule obj)
+        public bool Equals(DaySchedule obj)
         {
             if (Lessons.Count != obj.Lessons.Count ||
             Day != obj.Day)

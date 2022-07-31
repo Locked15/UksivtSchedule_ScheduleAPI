@@ -1,9 +1,6 @@
 ﻿using Bool = System.Boolean;
 
-/// <summary>
-/// Область кода с классом, представляющим сущность одной замены.
-/// </summary>
-namespace ScheduleAPI.Other.SiteParser
+namespace ScheduleAPI.Controllers.Other.SiteParser
 {
     /// <summary>
     /// Класс, представляющий один элемент с заменами.
@@ -20,12 +17,12 @@ namespace ScheduleAPI.Other.SiteParser
         /// <summary>
         /// Свойство, содержащее название дня недели, на который идут замены.
         /// </summary>
-        public String DayOfWeek { get; set; }
+        public string DayOfWeek { get; set; }
 
         /// <summary>
         /// Свойство, содержащее ссылку на документ с заменами.
         /// </summary>
-        public String LinkToDocument { get; set; }
+        public string LinkToDocument { get; set; }
         #endregion
 
         #region Область: Конструкторы класса.
@@ -44,7 +41,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// <param name="dayOfMonth">День месяца (число).</param>
         /// <param name="dayOfWeek">День недели.</param>
         /// <param name="linkToDocument">Ссылка на документ с заменами.</param>
-        public ChangeElement(DateTime date, String dayOfWeek, String linkToDocument)
+        public ChangeElement(DateTime date, string dayOfWeek, string linkToDocument)
         {
             Date = date;
             DayOfWeek = dayOfWeek;
@@ -68,7 +65,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// </summary>
         /// <param name="append">Строка для дополнительной вставки.</param>
         /// <returns>Строковое представление объекта.</returns>
-        public String ToString(String append)
+        public string ToString(string append)
         {
             //Реализация прямиком из Java:
             return "\n" + append + "ChangeElement: \n" +

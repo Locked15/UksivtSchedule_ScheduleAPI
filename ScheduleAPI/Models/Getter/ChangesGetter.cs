@@ -1,7 +1,7 @@
-﻿using ScheduleAPI.Other;
-using ScheduleAPI.Other.General;
-using ScheduleAPI.Other.SiteParser;
-using ScheduleAPI.Other.DocumentParser;
+﻿using ScheduleAPI.Controllers.Other.SiteParser;
+using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.Other.DocumentParser;
+using ScheduleAPI.Models.ScheduleElements;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -20,7 +20,7 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="dayIndex">Индекс дня.</param>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Объект, содержащий замены для группы.</returns>
-        public ChangesOfDay GetDayChanges(Int32 dayIndex, String groupName)
+        public ChangesOfDay GetDayChanges(int dayIndex, string groupName)
         {
             ChangeElement element = default;
             List<MonthChanges> changes = default;
@@ -50,9 +50,9 @@ namespace ScheduleAPI.Models.Getter
 
             #region Подобласть: Работа с файлом замен.
             ChangesOfDay toReturn;
-            String path = TryToDownloadFileFromGoogleDrive(element);
+            string path = TryToDownloadFileFromGoogleDrive(element);
 
-            if (!String.IsNullOrEmpty(path))
+            if (!string.IsNullOrEmpty(path))
             {
                 try
                 {
@@ -74,8 +74,8 @@ namespace ScheduleAPI.Models.Getter
                 {
                     Task.Run(() =>
                     {
-                        Int32 delAttempts = 0;
-                        Boolean deleted = false;
+                        int delAttempts = 0;
+                        bool deleted = false;
 
                         while (!deleted && delAttempts < 5)
                         {
@@ -121,18 +121,18 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
         /// <param name="attempts">Максимальное число попыток скачать документ.</param>
         /// <returns>Путь к скачанному документу.</returns>
-        public String TryToDownloadFileFromGoogleDrive(ChangeElement element, Int32 attempts = 3)
+        public string TryToDownloadFileFromGoogleDrive(ChangeElement element, int attempts = 3)
         {
-            Int32 currentAttempt = 0;
-            String path = String.Empty;
+            int currentAttempt = 0;
+            string path = string.Empty;
 
-            while (currentAttempt < attempts && String.IsNullOrEmpty(path))
+            while (currentAttempt < attempts && string.IsNullOrEmpty(path))
             {
                 try
                 {
                     path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
 
-                    if (String.IsNullOrEmpty(path))
+                    if (string.IsNullOrEmpty(path))
                     {
                         Thread.Sleep(100);
                     }
@@ -159,7 +159,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Список с объектами, содержащими замены на каждый день.</returns>
-        public List<ChangesOfDay> GetWeekChanges(String groupName)
+        public List<ChangesOfDay> GetWeekChanges(string groupName)
         {
             List<ChangesOfDay> list = new(1);
 

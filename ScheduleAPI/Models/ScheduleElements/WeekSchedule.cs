@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Область с классом недельного расписания.
 /// </summary>
-namespace ScheduleAPI.Models
+namespace ScheduleAPI.Models.ScheduleElements
 {
     /// <summary>
     /// Класс, представляющий сущность Расписания на неделю.
@@ -13,7 +13,7 @@ namespace ScheduleAPI.Models
         /// <summary>
         /// Свойство, содержащее название группы.
         /// </summary>
-        public String GroupName { get; set; }
+        public string GroupName { get; set; }
 
         /// <summary>
         /// Свойство, содержащее расписание группы на неделю.
@@ -36,7 +36,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <param name="days">Список дней с расписанием.</param>
-        public WeekSchedule(String groupName, List<DaySchedule> days)
+        public WeekSchedule(string groupName, List<DaySchedule> days)
         {
             GroupName = groupName;
             Days = days;
@@ -50,7 +50,7 @@ namespace ScheduleAPI.Models
         /// </summary>
         /// <param name="obj">Объект, с которым нужно провести сравнение.</param>
         /// <returns>Их равенство.</returns>
-        public Boolean Equals(WeekSchedule obj)
+        public bool Equals(WeekSchedule obj)
         {
             if (GroupName != obj.GroupName || Days.Count != obj.Days.Count)
             {

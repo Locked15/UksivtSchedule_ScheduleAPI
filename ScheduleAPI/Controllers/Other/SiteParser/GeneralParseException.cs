@@ -1,7 +1,4 @@
-﻿/// <summary>
-/// Область с классом исключения парса веб-страницы.
-/// </summary>
-namespace ScheduleAPI.Other.SiteParser
+﻿namespace ScheduleAPI.Controllers.Other.SiteParser
 {
     /// <summary>
     /// Класс, представляющий исключения парса страницы.
@@ -20,7 +17,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// Конструктор класса.
         /// </summary>
         /// <param name="message">Сообщение исключения.</param>
-        public GeneralParseException(String message) : base(message)
+        public GeneralParseException(string message) : base(message)
         {
 
         }
@@ -30,7 +27,7 @@ namespace ScheduleAPI.Other.SiteParser
         /// </summary>
         /// <param name="message">Сообщение исключения.</param>
         /// <param name="inner">Внутреннее исключение?</param>
-        public GeneralParseException(String message, Exception? inner) : base(message, inner)
+        public GeneralParseException(string message, Exception? inner) : base(message, inner)
         {
 
         }

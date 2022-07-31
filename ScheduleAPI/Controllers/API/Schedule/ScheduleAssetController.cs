@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Models;
-using ScheduleAPI.Other.General;
 using ScheduleAPI.Models.Getter;
+using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.ScheduleElements;
 
-namespace ScheduleAPI.Controllers
+namespace ScheduleAPI.Controllers.API.Schedule
 {
     /// <summary>
     /// Класс-контроллер получения расписания через ассеты.
     /// </summary>
-    [Obsolete("Аварийный контроллер. Получает данные из ассетов, не задействуя БД.")]
     [Route("api/day/[controller]")]
     [ApiController]
     public class ScheduleDayAssetController : Controller
@@ -47,7 +46,7 @@ namespace ScheduleAPI.Controllers
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet]
         [Obsolete("Аварийный контроллер. Позволяет получать данные из ассетов, вместо БД.")]
-        public String Get(Int32 dayIndex = 0, String groupName = "19П-3")
+        public string Get(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = getter.GetDaySchedule(dayIndex, groupName);
@@ -62,7 +61,6 @@ namespace ScheduleAPI.Controllers
     /// <br/>
     /// Позволяет получить расписание на неделю.
     /// </summary>
-    [Obsolete("Аварийный контроллер. Получает данные из ассетов, не задействуя БД.")]
     [Route("api/week/[controller]")]
     [ApiController]
     public class ScheduleWeekAssetController : Controller
@@ -98,7 +96,7 @@ namespace ScheduleAPI.Controllers
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet]
         [Obsolete("Аварийный контроллер. Позволяет получать данные из ассетов, вместо БД.")]
-        public String Get(String groupName = "19П-3")
+        public string Get(string groupName = "19П-3")
         {
             WeekSchedule schedule = getter.GetWeekSchedule(groupName);
 

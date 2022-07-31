@@ -1,9 +1,7 @@
-﻿using Bool = System.Boolean;
-
-/// <summary>
+﻿/// <summary>
 /// Область с классом пары.
 /// </summary>
-namespace ScheduleAPI.Models
+namespace ScheduleAPI.Models.ScheduleElements
 {
     /// <summary>
     /// Класс, представляющий сущность пары.
@@ -15,22 +13,22 @@ namespace ScheduleAPI.Models
         /// <summary>
         /// Свойство, содержащее номер пары.
         /// </summary>
-        public Int32 Number { get; set; }
+        public int Number { get; set; }
 
         /// <summary>
         /// Свойство, содержащее название пары.
         /// </summary>
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Свойство, содержащее имя преподавателя.
         /// </summary>
-        public String Teacher { get; set; }
+        public string Teacher { get; set; }
 
         /// <summary>
         /// Свойство, содержащее место проведения пары.
         /// </summary>
-        public String Place { get; set; }
+        public string Place { get; set; }
         #endregion
 
         #region Область: Конструкторы.
@@ -47,7 +45,7 @@ namespace ScheduleAPI.Models
         /// Конструктор класса для заполнения пустой пары.
         /// </summary>
         /// <param name="number">Номер пары.</param>
-        public Lesson(Int32 number)
+        public Lesson(int number)
         {
             Number = number;
 
@@ -63,7 +61,7 @@ namespace ScheduleAPI.Models
         /// <param name="name">Названия пары.</param>
         /// <param name="teacher">Имя преподавателя.</param>
         /// <param name="place">Место проведения.</param>
-        public Lesson(Int32 number, String name, String teacher, String place)
+        public Lesson(int number, string name, string teacher, string place)
         {
             Number = number;
             Name = name;
@@ -78,7 +76,7 @@ namespace ScheduleAPI.Models
         /// Метод для проверки пары на полноту (наличие самой пары).
         /// </summary>
         /// <returns>Логическое значение, отвечающее за полноту.</returns>
-        public Bool CheckHaveValue()
+        public bool CheckHaveValue()
         {
             return Name != null;
         }
