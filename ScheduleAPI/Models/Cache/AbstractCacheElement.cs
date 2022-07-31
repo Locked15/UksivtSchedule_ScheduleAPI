@@ -17,7 +17,7 @@
         /// <summary>
         /// Время кэширования данного элемента.
         /// </summary>
-        protected DateTime CachingTime { get; set; }
+        public DateTime CachingTime { get; set; }
 
         /// <summary>
         /// Время, в течение которого кэшированный элемент считается актуальным.

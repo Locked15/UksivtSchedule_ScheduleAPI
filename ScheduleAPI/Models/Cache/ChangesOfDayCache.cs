@@ -2,6 +2,11 @@
 
 namespace ScheduleAPI.Models.Cache
 {
+    /// <summary>
+    /// Класс, наследный от универсального "AbstractCacheElement".
+    /// <br /> <br />
+    /// Специально предназначен для работы с объектами типа "ChangesOfDay".
+    /// </summary>
     public class ChangesOfDayCache : AbstractCacheElement<ChangesOfDay>
     {
         /// <summary>
