@@ -11,6 +11,7 @@ namespace ScheduleAPI.Other.General
     public static class Helper
     {
         #region Область: Константы.
+
         /// <summary>
         /// Константа, содержащая шаблон для создания ссылки для скачивания файла с Google Drive.
         /// </summary>
@@ -19,6 +20,7 @@ namespace ScheduleAPI.Other.General
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для получения рабочей ссылки для скачивания файла с заменами.
         /// <br/>

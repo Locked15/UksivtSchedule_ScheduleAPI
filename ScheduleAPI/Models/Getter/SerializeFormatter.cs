@@ -8,6 +8,7 @@ namespace ScheduleAPI.Models.Getter
     public static class SerializeFormatter
     {
         #region Область: Неформатированное представление.
+
         /// <summary>
         /// Метод для получения неформатированного строкового представления объекта.
         /// </summary>
@@ -30,6 +31,7 @@ namespace ScheduleAPI.Models.Getter
         #endregion
 
         #region Область: Форматированное представление.
+
         /// <summary>
         /// Метод для получения форматированного строкового представления объекта.
         /// </summary>

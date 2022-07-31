@@ -12,6 +12,7 @@ namespace ScheduleAPI.Other.SiteParser
     public class MonthChanges
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Поле, содержащее название месяца.
         /// </summary>
@@ -24,6 +25,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Конструкторы класса.
+
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -45,6 +47,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, выполняющий поиск по заменам текущего месяца и возвращающем день с указанным названием.
         /// Выполняет поиск только по текущей неделе, не учитывая замены предыдущих недель.

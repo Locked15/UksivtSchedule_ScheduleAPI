@@ -11,6 +11,7 @@ namespace ScheduleAPI.Models
     public class Lesson
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, содержащее номер пары.
         /// </summary>
@@ -33,6 +34,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -71,6 +73,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для проверки пары на полноту (наличие самой пары).
         /// </summary>

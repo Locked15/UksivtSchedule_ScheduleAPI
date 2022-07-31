@@ -12,6 +12,7 @@ namespace ScheduleAPI.Models.Getter
     public static class DbGetter
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее запрос на получение расписания для группы по указаному дню.
         /// <i>
@@ -38,6 +39,7 @@ namespace ScheduleAPI.Models.Getter
         #endregion
 
         #region Область: Конструкторы класса.
+
         /// <summary>
         /// Статический конструктор класса.
         /// </summary>
@@ -50,6 +52,7 @@ namespace ScheduleAPI.Models.Getter
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для получения расписания на указанный день.
         /// </summary>

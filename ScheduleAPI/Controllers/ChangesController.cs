@@ -14,6 +14,7 @@ namespace ScheduleAPI.Controllers
     public class ChangesDayController : Controller
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее объект, содержащий данные о окружении приложения.
         /// </summary>
@@ -21,6 +22,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
@@ -32,6 +34,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, представляющий Get-запрос на получение замен.
         /// </summary>
@@ -62,6 +65,7 @@ namespace ScheduleAPI.Controllers
     public class ChangesWeekController : Controller
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее объект, содержащий данные о окружении приложения.
         /// </summary>
@@ -69,6 +73,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
@@ -80,6 +85,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, представляющий Get-запрос на получение замен на неделю.
         /// </summary>

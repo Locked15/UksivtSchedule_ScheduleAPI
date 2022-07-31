@@ -10,6 +10,7 @@ namespace ScheduleAPI.Models
     public class ChangesOfDay
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, отвечающее за то, что элемент с заменами на указанный день найден.
         /// <br/>
@@ -35,6 +36,7 @@ namespace ScheduleAPI.Models
 		#endregion
 
 		#region Область: Конструкторы.
+
 		/// <summary>
 		/// Конструктор класса по умолчанию.
 		/// <br/>

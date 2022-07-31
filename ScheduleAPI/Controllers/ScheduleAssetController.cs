@@ -14,6 +14,7 @@ namespace ScheduleAPI.Controllers
     public class ScheduleDayAssetController : Controller
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее объект, нужный для получения расписания из ассетов.
         /// </summary>
@@ -21,6 +22,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
@@ -32,6 +34,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, реализующий Get-запрос на получение расписания.
         /// </summary>
@@ -65,6 +68,7 @@ namespace ScheduleAPI.Controllers
     public class ScheduleWeekAssetController : Controller
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее объект, нужный для получения расписания из ассетов.
         /// </summary>
@@ -72,6 +76,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
@@ -83,6 +88,7 @@ namespace ScheduleAPI.Controllers
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, реализующий Get-запрос на получение расписания.
         /// </summary>

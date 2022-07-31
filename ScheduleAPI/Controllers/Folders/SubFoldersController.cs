@@ -8,6 +8,7 @@ namespace ScheduleAPI.Controllers.Folders
     public class SubFoldersController : FolderControllerAbstract
     {
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>
@@ -17,6 +18,7 @@ namespace ScheduleAPI.Controllers.Folders
         #endregion
 
         #region Область: Метод.
+
         /// <summary>
         /// Метод, представляющий Get-запрос на получение списка направлений обучения в отделении.
         /// </summary>

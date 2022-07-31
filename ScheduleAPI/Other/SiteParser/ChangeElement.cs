@@ -11,6 +11,7 @@ namespace ScheduleAPI.Other.SiteParser
     public class ChangeElement
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, содержащее число месяца, на которое идут замены.
         /// </summary>
@@ -28,6 +29,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Конструкторы класса.
+
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -51,6 +53,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, позволяющий проверить определенный день на наличие замен.
         /// </summary>

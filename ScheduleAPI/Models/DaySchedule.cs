@@ -11,6 +11,7 @@ namespace ScheduleAPI.Models
     public class DaySchedule
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, содержащее название текущего дня.
         /// </summary>
@@ -23,6 +24,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -44,6 +46,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод, позволяющий произвести слияние оригинального расписания и замен.
         /// </summary>

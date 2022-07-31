@@ -9,6 +9,7 @@ namespace ScheduleAPI.Controllers.Folders
     public abstract class FolderControllerAbstract : Controller
     {
         #region Область: Поле.
+
         /// <summary>
         /// Защищенное поле, содержащее объект, нужный для работы с иерархией ассетов.
         /// </summary>
@@ -16,6 +17,7 @@ namespace ScheduleAPI.Controllers.Folders
         #endregion
 
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>

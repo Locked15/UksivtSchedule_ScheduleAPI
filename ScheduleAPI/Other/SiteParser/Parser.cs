@@ -14,6 +14,7 @@ namespace ScheduleAPI.Other.SiteParser
     public class Parser
     {
         #region Область: Поля.
+
         /// <summary>
         /// Внутреннее поле, содержащее всю Web-страницу с заменами.
         /// </summary>
@@ -21,6 +22,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Константы.
+
         /// <summary>
         /// Внутренняя константа, содержащая CSS-селектор для парса страницы.
         /// </summary>
@@ -39,6 +41,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Конструктор класса.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>
@@ -50,6 +53,7 @@ namespace ScheduleAPI.Other.SiteParser
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для получения списка возможных дней для просмотра замен.
         /// <br/>

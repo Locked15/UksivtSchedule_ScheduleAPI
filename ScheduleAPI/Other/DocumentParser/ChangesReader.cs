@@ -15,10 +15,15 @@ namespace ScheduleAPI.Other.DocumentParser
     public class ChangesReader
     {
         #region Область: Поля.
+
+        /// <summary>
+        /// Объект, содержащий документ, который будет прочитан для получения замен.
+        /// </summary>
         private XWPFDocument document;
         #endregion
 
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>
@@ -33,7 +38,9 @@ namespace ScheduleAPI.Other.DocumentParser
         #endregion
 
         #region Область: Методы.
+
         #region Подобласть: Получение только замен.
+
         /// <summary>
         /// Метод для получения ТОЛЬКО замен на день.
         /// </summary>
@@ -252,6 +259,7 @@ namespace ScheduleAPI.Other.DocumentParser
         #endregion
 
         #region Подобласть: Получение слитого с заменами расписания.
+
         /// <summary>
         /// Метод для получения расписания на день с учетом замен.
         /// </summary>
@@ -465,6 +473,7 @@ namespace ScheduleAPI.Other.DocumentParser
         #endregion
 
         #region Подобласть: Прочие методы.
+
         /// <summary>
         /// Внутренний метод, позволяющий раскрыть сокращенную запись номеров пар в полный вид.
         /// </summary>

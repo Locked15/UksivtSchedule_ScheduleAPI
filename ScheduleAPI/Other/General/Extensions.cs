@@ -15,6 +15,7 @@ namespace ScheduleAPI.Other.General
     public static class Extensions
     {
         #region Область: Делегаты.
+
         /// <summary>
         /// Делегат, инкапсулирующий метод, нужный для проверки содержания подстроки в строке.
         /// </summary>
@@ -24,6 +25,7 @@ namespace ScheduleAPI.Other.General
         #endregion
 
         #region Область: Методы расширения, связанные с датами.
+
         /// <summary>
         /// Метод расширения, позволяющий получить день по указанному индексу.
         /// </summary>
@@ -292,6 +294,7 @@ namespace ScheduleAPI.Other.General
         #endregion
 
         #region Область: Методы расширений, связанные с расписанием.
+
         /// <summary>
         /// Метод расширения для получения названия подпапки ассетов из названия группы.
         /// </summary>
@@ -424,6 +427,7 @@ namespace ScheduleAPI.Other.General
         #endregion
 
         #region Область: Методы расширений, связанные с парсом документа.
+
         /// <summary>
         /// Внутренний метод, нужный для конвертации нумератора в список.
         /// </summary>

@@ -13,6 +13,7 @@ namespace ScheduleAPI.Models.Getter
     public class AssetGetter
     {
         #region Область: Поля.
+
         /// <summary>
         /// Поле, содержащее объект, содержащий информацию о среде выполнения API.
         /// </summary>
@@ -30,6 +31,7 @@ namespace ScheduleAPI.Models.Getter
         #endregion
 
         #region Область: Конструкторы класса.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>
@@ -51,6 +53,7 @@ namespace ScheduleAPI.Models.Getter
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для получения списка с отделениями-папками из ассетов.
         /// </summary>

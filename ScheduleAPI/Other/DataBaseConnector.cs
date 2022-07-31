@@ -9,6 +9,7 @@ namespace ScheduleAPI.Other
     public class DataBaseConnector
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, содержащее подключение к Базе Данных.
         /// </summary>
@@ -16,6 +17,7 @@ namespace ScheduleAPI.Other
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Статический конструктор класса.
         /// </summary>
@@ -35,6 +37,7 @@ namespace ScheduleAPI.Other
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для проверки корректности подключения.
         /// </summary>

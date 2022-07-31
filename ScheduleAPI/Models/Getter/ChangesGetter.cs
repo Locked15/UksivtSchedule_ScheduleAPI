@@ -11,6 +11,7 @@ namespace ScheduleAPI.Models.Getter
     public class ChangesGetter
     {
         #region Область: Методы.
+
         /// <summary>
         /// Метод для получения замен на день.
         /// <br/>

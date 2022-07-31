@@ -8,6 +8,7 @@ namespace ScheduleAPI.Controllers.Folders
     public class FoldersController : FolderControllerAbstract
     {
         #region Область: Конструктор.
+
         /// <summary>
         /// Конструктор класса.
         /// </summary>
@@ -17,6 +18,7 @@ namespace ScheduleAPI.Controllers.Folders
         #endregion
 
         #region Область: Метод.
+
         /// <summary>
         /// Метод, представляющий Get-запрос на получение списка папок-отделений в ассетах.
         /// </summary>

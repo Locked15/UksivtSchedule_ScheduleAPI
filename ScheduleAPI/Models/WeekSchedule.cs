@@ -9,6 +9,7 @@ namespace ScheduleAPI.Models
     public class WeekSchedule
     {
         #region Область: Свойства.
+
         /// <summary>
         /// Свойство, содержащее название группы.
         /// </summary>
@@ -21,6 +22,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Конструкторы.
+
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
@@ -42,6 +44,7 @@ namespace ScheduleAPI.Models
         #endregion
 
         #region Область: Методы.
+
         /// <summary>
         /// Метод для сравнения двух объектов.
         /// </summary>
