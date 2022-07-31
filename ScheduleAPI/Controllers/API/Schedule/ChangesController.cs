@@ -45,7 +45,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
         public string Get(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
-            ChangesOfDay changes = new ChangesGetter().GetDayChanges(dayIndex, groupName);
+            ChangesOfDay changes = ChangesGetter.GetDayChanges(dayIndex, groupName);
 
             changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
             string value = JsonConvert.SerializeObject(changes);
@@ -94,7 +94,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
         [HttpGet]
         public string Get(string groupName = "19П-3")
         {
-            List<ChangesOfDay> changes = new ChangesGetter().GetWeekChanges(groupName);
+            List<ChangesOfDay> changes = ChangesGetter.GetWeekChanges(groupName);
 
             return JsonConvert.SerializeObject(changes);
         }

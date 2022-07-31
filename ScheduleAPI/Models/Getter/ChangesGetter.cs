@@ -2,14 +2,36 @@
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Controllers.Other.DocumentParser;
 using ScheduleAPI.Models.ScheduleElements;
+using ScheduleAPI.Models.Cache;
 
 namespace ScheduleAPI.Models.Getter
 {
     /// <summary>
     /// Класс, обертывающий функционал получения замен.
+    /// <br />
+    /// В связи с переработкой класс был изменен и переделан под статический.
     /// </summary>
-    public class ChangesGetter
+    public static class ChangesGetter
     {
+        #region Область: Поля.
+
+        /// <summary>
+        /// Хранилище кэша, содержащее кэшированные замены для расписаний.
+        /// </summary>
+        private static readonly CachedVault<ChangesOfDayCache, ChangesOfDay> cachedChanges;
+        #endregion
+
+        #region Область: Конструкторы.
+
+        /// <summary>
+        /// Статический конструктор класса.
+        /// </summary>
+        static ChangesGetter()
+        {
+            cachedChanges = new();
+        }
+        #endregion
+
         #region Область: Методы.
 
         /// <summary>
@@ -20,12 +42,30 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="dayIndex">Индекс дня.</param>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Объект, содержащий замены для группы.</returns>
-        public ChangesOfDay GetDayChanges(int dayIndex, string groupName)
+        public static ChangesOfDay GetDayChanges(int dayIndex, string groupName)
         {
             ChangeElement element = default;
             List<MonthChanges> changes = default;
 
+            #region Подобласть: Проверка сохраненного кэша.
+
+            var cachedElement = cachedChanges.Get(el => 
+            {
+                // Чтобы в случае чего даты по умолчанию не совпали, указываем разные значения в конструкторах.
+                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek().GetValueOrDefault(new DateTime(0)));
+                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(1)));
+
+                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.CachedElement.GroupName);
+            });
+
+            if (cachedElement != null)
+            {
+                return cachedElement;
+            }
+            #endregion
+
             #region Подобласть: Обрабатываем возможные ошибки.
+
             try
             {
                 changes = new Parser().ParseAvailableNodes();
@@ -34,21 +74,36 @@ namespace ScheduleAPI.Models.Getter
 
             catch (Exception ex)
             {
+                var exceptionReturn = new ChangesOfDay
+                {
+                    ChangesDate = dayIndex.GetDateTimeInWeek(),
+                    GroupName = groupName
+                };
+
                 Logger.WriteError(3, $"При получении замен произошла ошибка парса страницы: {ex.Message}.");
 
-                return new();
+                cachedChanges.Add(new(exceptionReturn));
+                return exceptionReturn;
             }
 
             if (element == null)
             {
+                var exceptionReturn = new ChangesOfDay
+                {
+                    ChangesDate = dayIndex.GetDateTimeInWeek(),
+                    GroupName = groupName
+                };
+
                 Logger.WriteError(4, $"При получении замен искомое значение не обнаружено:" +
                 $"День: {dayIndex}, Текущая дата — {DateTime.Now.ToShortDateString()}.");
 
-                return new();
+                cachedChanges.Add(new(exceptionReturn));
+                return exceptionReturn;
             }
             #endregion
 
             #region Подобласть: Работа с файлом замен.
+
             ChangesOfDay toReturn;
             string path = TryToDownloadFileFromGoogleDrive(element);
 
@@ -61,6 +116,7 @@ namespace ScheduleAPI.Models.Getter
                     toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
                     toReturn.ChangesDate = element.Date;
                     toReturn.ChangesFound = true;
+                    toReturn.GroupName = groupName;
                 }
 
                 catch (WrongDayInDocumentException exception)
@@ -108,9 +164,10 @@ namespace ScheduleAPI.Models.Getter
 
                 toReturn = new();
             }
-
-            return toReturn;
             #endregion
+
+            cachedChanges.Add(new ChangesOfDayCache(toReturn));
+            return toReturn;
         }
 
         /// <summary>
@@ -121,7 +178,7 @@ namespace ScheduleAPI.Models.Getter
         /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
         /// <param name="attempts">Максимальное число попыток скачать документ.</param>
         /// <returns>Путь к скачанному документу.</returns>
-        public string TryToDownloadFileFromGoogleDrive(ChangeElement element, int attempts = 3)
+        public static string TryToDownloadFileFromGoogleDrive(ChangeElement element, int attempts = 3)
         {
             int currentAttempt = 0;
             string path = string.Empty;
@@ -159,7 +216,7 @@ namespace ScheduleAPI.Models.Getter
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Список с объектами, содержащими замены на каждый день.</returns>
-        public List<ChangesOfDay> GetWeekChanges(string groupName)
+        public static List<ChangesOfDay> GetWeekChanges(string groupName)
         {
             List<ChangesOfDay> list = new(1);
 
