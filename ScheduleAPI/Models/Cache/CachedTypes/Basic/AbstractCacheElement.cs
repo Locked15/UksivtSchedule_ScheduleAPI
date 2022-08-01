@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Cache
+﻿namespace ScheduleAPI.Models.Cache.CachedTypes.Basic
 {
     /// <summary>
     /// Базовый класс любого элемента, который планируется кэшировать.

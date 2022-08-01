@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Cache
+﻿namespace ScheduleAPI.Models.Cache.CachedTypes.Basic
 {
     /// <summary>
     /// Контракт на реализацию безопасного получения кэшированного элемента.

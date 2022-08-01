@@ -1,4 +1,6 @@
-﻿namespace ScheduleAPI.Models.Cache
+﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+
+namespace ScheduleAPI.Models.Cache
 {
     /// <summary>
     /// Хранилище кэшированных данных. 

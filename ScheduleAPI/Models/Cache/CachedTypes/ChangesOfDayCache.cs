@@ -1,6 +1,7 @@
-﻿using ScheduleAPI.Models.ScheduleElements;
+﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+using ScheduleAPI.Models.ScheduleElements;
 
-namespace ScheduleAPI.Models.Cache
+namespace ScheduleAPI.Models.Cache.CachedTypes
 {
     /// <summary>
     /// Класс, наследный от универсального "AbstractCacheElement".
@@ -15,7 +16,7 @@ namespace ScheduleAPI.Models.Cache
         /// <param name="cachingValue">Замены, которые нужно кэшировать.</param>
         public ChangesOfDayCache(ChangesOfDay cachingValue) : base(cachingValue)
         {
-            
+
         }
 
         /// <summary>
