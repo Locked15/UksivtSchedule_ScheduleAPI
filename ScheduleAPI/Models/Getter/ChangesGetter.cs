@@ -3,6 +3,7 @@ using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Controllers.Other.DocumentParser;
 using ScheduleAPI.Models.ScheduleElements;
 using ScheduleAPI.Models.Cache;
+using ScheduleAPI.Models.Cache.CachedTypes;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -60,6 +61,9 @@ namespace ScheduleAPI.Models.Getter
 
             if (cachedElement != null)
             {
+                // TODO: Временный логгер, нужный для проверки удаленного кэширования.
+                Logger.WriteError(10, "Данные получены из кэша.");
+
                 return cachedElement;
             }
             #endregion
