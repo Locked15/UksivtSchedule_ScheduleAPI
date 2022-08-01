@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using ScheduleAPI.Controllers.Other.SiteParser;
 
 namespace ScheduleAPI.Controllers.Other.General
 {
@@ -36,13 +37,52 @@ namespace ScheduleAPI.Controllers.Other.General
         }
 
         /// <summary>
+        /// Метод, пытающийся скачать нужный файл с серверов Google Drive.
+        /// <br/>
+        /// Так как иногда сервер возвращает ошибку скачивания, это все нужно учитывать.
+        /// </summary>
+        /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
+        /// <param name="attempts">Максимальное число попыток скачать документ.</param>
+        /// <returns>Путь к скачанному документу.</returns>
+        public static string TryToDownloadFileFromGoogleDrive(ChangeElement element, int attempts = 3)
+        {
+            int currentAttempt = 0;
+            string path = string.Empty;
+
+            while (currentAttempt < attempts && string.IsNullOrEmpty(path))
+            {
+                try
+                {
+                    path = Helper.MakeAttemptToDownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
+
+                    if (string.IsNullOrEmpty(path))
+                    {
+                        Thread.Sleep(100);
+                    }
+                }
+
+                catch (ArgumentException e)
+                {
+                    Logger.WriteError(2, $"Преобразование ссылки прошло неудачно, точная информация: {e.Message}.", DateTime.Now);
+                }
+
+                finally
+                {
+                    currentAttempt++;
+                }
+            }
+
+            return path;
+        }
+
+        /// <summary>
         /// Метод для скачивания файла с заменами по обработанной ссылке.
         /// </summary>
         /// <param name="url">Ссылка на скачивание файла.</param>
         /// <param name="destination">Место, куда будет скачан файл.</param>
         /// <returns>Путь к скачанному файлу.</returns>
         /// <exception cref="ArgumentException">Отправленная ссылка была некорректна.</exception>
-        public static string DownloadFileFromURL(string url)
+        public static string MakeAttemptToDownloadFileFromURL(string url)
         {
             string fileName = Path.GetRandomFileName();
             fileName = Path.GetFileNameWithoutExtension(fileName) + ".docx";

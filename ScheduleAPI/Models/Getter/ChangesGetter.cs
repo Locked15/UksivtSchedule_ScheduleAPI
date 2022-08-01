@@ -106,7 +106,7 @@ namespace ScheduleAPI.Models.Getter
             #region Подобласть: Работа с файлом замен.
 
             ChangesOfDay toReturn;
-            string path = TryToDownloadFileFromGoogleDrive(element);
+            string path = Helper.TryToDownloadFileFromGoogleDrive(element);
 
             if (!string.IsNullOrEmpty(path))
             {
@@ -169,45 +169,6 @@ namespace ScheduleAPI.Models.Getter
 
             cachedChanges.Add(new ChangesOfDayCache(toReturn));
             return toReturn;
-        }
-
-        /// <summary>
-        /// Метод, пытающийся скачать нужный файл с серверов Google Drive.
-        /// <br/>
-        /// Так как иногда сервер возвращает ошибку скачивания, это все нужно учитывать.
-        /// </summary>
-        /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
-        /// <param name="attempts">Максимальное число попыток скачать документ.</param>
-        /// <returns>Путь к скачанному документу.</returns>
-        public static string TryToDownloadFileFromGoogleDrive(ChangeElement element, int attempts = 3)
-        {
-            int currentAttempt = 0;
-            string path = string.Empty;
-
-            while (currentAttempt < attempts && string.IsNullOrEmpty(path))
-            {
-                try
-                {
-                    path = Helper.DownloadFileFromURL(Helper.GetDownloadableFileLink(element.LinkToDocument));
-
-                    if (string.IsNullOrEmpty(path))
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-
-                catch (ArgumentException e)
-                {
-                    Logger.WriteError(2, $"Преобразование ссылки прошло неудачно, точная информация: {e.Message}.", DateTime.Now);
-                }
-
-                finally
-                {
-                    currentAttempt++;
-                }
-            }
-
-            return path;
         }
 
         /// <summary>
