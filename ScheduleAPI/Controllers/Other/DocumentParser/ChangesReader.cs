@@ -15,10 +15,10 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
         /// <summary>
         /// Объект, содержащий документ, который будет прочитан для получения замен.
         /// </summary>
-        private XWPFDocument document;
+        private readonly XWPFDocument document;
         #endregion
 
-        #region Область: Конструктор.
+        #region Область: Конструкторы.
 
         /// <summary>
         /// Конструктор класса.
@@ -30,6 +30,16 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
             StreamReader stream = new(path);
 
             document = new XWPFDocument(stream.BaseStream);
+        }
+
+        /// <summary>
+        /// Конструктор класса. <br/>
+        /// Может быть использован для восстановления документа из кэша.
+        /// </summary>
+        /// <param name="document">Документ, с которым предстоит работать.</param>
+        public ChangesReader(XWPFDocument document)
+        {
+            this.document = document;
         }
         #endregion
 

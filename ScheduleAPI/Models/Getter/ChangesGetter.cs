@@ -61,9 +61,6 @@ namespace ScheduleAPI.Models.Getter
 
             if (cachedElement != null)
             {
-                // TODO: Временный логгер, нужный для проверки удаленного кэширования.
-                Logger.WriteError(10, "Данные получены из кэша.");
-
                 return cachedElement;
             }
             #endregion
@@ -98,7 +95,7 @@ namespace ScheduleAPI.Models.Getter
                     GroupName = groupName
                 };
 
-                Logger.WriteError(4, $"При получении замен искомое значение не обнаружено:" +
+                Logger.WriteError(4, $"При получении замен искомое значение не обнаружено: " +
                 $"День: {dayIndex}, Текущая дата — {DateTime.Now.ToShortDateString()}.");
 
                 cachedChanges.Add(new(exceptionReturn));

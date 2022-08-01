@@ -41,10 +41,11 @@ namespace ScheduleAPI.Models.Cache
         #region Область: Конструктор.
 
         /// <summary>
-        /// Конструктор класса.
+        /// Конструктор класса. <br />
+        /// Так как возможности отредактировать "AppIdleTime" нет (время до выключения приложения), то о максимальном размере пула кэша можно не волноваться, поэтому значение по умолчанию изменено на 50.
         /// </summary>
         /// <param name="maxCachedCount">Максимальное количество элементов для кэширования. Значение по умолчанию: 10.</param>
-        public CachedVault(int maxCachedCount = 10)
+        public CachedVault(int maxCachedCount = 50)
         {
             MaxCachedCount = maxCachedCount;
             CachedValues = new List<T>(maxCachedCount);
