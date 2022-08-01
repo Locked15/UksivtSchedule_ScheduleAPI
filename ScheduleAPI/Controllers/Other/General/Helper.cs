@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text.RegularExpressions;
 using ScheduleAPI.Controllers.Other.SiteParser;
 
 namespace ScheduleAPI.Controllers.Other.General
@@ -11,10 +12,22 @@ namespace ScheduleAPI.Controllers.Other.General
         #region Область: Константы.
 
         /// <summary>
+        /// Константа, содержащая регулярное выражение для получения ID документа с заменами.
+        /// </summary>
+        private const string DocumentIdExtractionRegExp =
+                             @"[-\w]{25,}(?!.*[-\w]{25,})";
+
+        /// <summary>
+        /// Константа, содержащая ID "аварийного" документа с заменами, если получить ID из ссылки не удалось.
+        /// </summary>
+        private const string EmergencyDocumentId = 
+                             "1et_FwkiPJ1g18gWspyRswjFpcyXeUK0H";
+
+        /// <summary>
         /// Константа, содержащая шаблон для создания ссылки для скачивания файла с Google Drive.
         /// </summary>
         private const string GoogleDriveDownloadLinkTemplate =
-        "https://drive.google.com/uc?export=download&id=";
+                             "https://drive.google.com/uc?export=download&id=";
         #endregion
 
         #region Область: Методы.
@@ -28,12 +41,21 @@ namespace ScheduleAPI.Controllers.Other.General
         /// <returns>Обработанная и пригодная для скачивания ссылка.</returns>
         public static string GetDownloadableFileLink(string originalLink)
         {
-            //TODO: Переработать.
+            var idExtractor = new Regex(DocumentIdExtractionRegExp);
+            var result = idExtractor.Match(originalLink);
 
-            string id = originalLink[..originalLink.LastIndexOf('/')];
-            id = id[(id.LastIndexOf('/') + 1)..];
+            if (result.Success)
+            {
+                return string.Concat(GoogleDriveDownloadLinkTemplate, result.Groups[0].Value);
+            }
 
-            return GoogleDriveDownloadLinkTemplate + id;
+            else
+            {
+                Logger.WriteError(2, "При извлечении ID документа из ссылки произошла ошибка.\nОбращение к аварийному документу...");
+
+                // Чтобы избежать ошибок, мы указываем "безопасную" ссылку, к документу с заменами на 
+                return string.Concat(GoogleDriveDownloadLinkTemplate, EmergencyDocumentId);
+            }
         }
 
         /// <summary>
