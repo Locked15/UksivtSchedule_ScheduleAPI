@@ -6,21 +6,14 @@ builder.Services.AddControllersWithViews();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}");
 
+app.UseStaticFiles();
 app.MapControllers();
 app.Run();
