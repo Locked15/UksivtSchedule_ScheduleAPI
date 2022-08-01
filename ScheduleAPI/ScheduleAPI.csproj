@@ -9,6 +9,8 @@
     <UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
 	  
     <ApplicationInsightsResourceId>/subscriptions/c0502672-d9b2-4f69-a607-b7300fa5fb3e/resourceGroups/Subscriprion/providers/microsoft.insights/components/UksivtScheduleAPI</ApplicationInsightsResourceId>
+	  
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,5 +1,4 @@
 {
-  "short_name": "ScheduleAPI",
   "name": "ScheduleAPI",
   "background_color": "azure",
   "orientation": "portrait-primary",
@@ -16,11 +15,6 @@
       "src": "/icons/icon_48px.png",
       "type": "image/png",
       "sizes": "48x48"
-    },
-    {
-      "src": "/icons/icon_64px.png",
-      "type": "image/png",
-      "sizes": "64x64"
     },
     {
       "src": "/icons/icon_128px.png",
