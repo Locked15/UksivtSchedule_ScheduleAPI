@@ -223,7 +223,7 @@ namespace ScheduleAPI.Models.Cache
                     using var stream = new StreamWriter(pathToSavedCache, false, Encoding.Default);
 
                     var serializedValue = JsonConvert.SerializeObject(CachedValues, Formatting.Indented);
-                    stream.WriteLine(serializedValue);
+                    stream.Write(serializedValue);
                 }
 
                 catch (Exception ex)
@@ -240,7 +240,7 @@ namespace ScheduleAPI.Models.Cache
         private static string GetPathToSavedCacheFile()
         {
             string cachedValueClassName = typeof(T).Name;
-            string pathToSavedCache = Path.Combine(GetSolutionFolderPath(), "Assets", "!SavedCache", $"{cachedValueClassName}.cache");
+            string pathToSavedCache = Path.Combine(GetSiteRootFolderPath(), "Assets", "!SavedCache", $"{cachedValueClassName}.cache");
 
             return pathToSavedCache;
         }
@@ -248,12 +248,14 @@ namespace ScheduleAPI.Models.Cache
         /// <summary>
         /// Вычисляет путь к директории проекта (директория, отображаемая "Обозревателем решений"). <br />
         /// Если структура папок будет изменяться, необходимо корректировать данный файл.
+        /// <br /><br />
+        /// <b>ВНИМАНИЕ: На сервере структура размещаемого проекта отличается!</b> <br />
+        /// На сервере функция "GetCurrentDirectory()" возвращает корневой каталог сайта.
         /// </summary>
         /// <returns>Путь к директории проекта.</returns>
-        private static string GetSolutionFolderPath()
+        private static string GetSiteRootFolderPath()
         {
             string basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
-            basicAppPath = Directory.GetParent(basicAppPath)?.Parent?.Parent?.Parent?.FullName ?? string.Empty;
 
             return basicAppPath;
         }
