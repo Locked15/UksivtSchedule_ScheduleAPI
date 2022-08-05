@@ -1,4 +1,7 @@
-﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+﻿using System.Text;
+using Newtonsoft.Json;
+using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 
 namespace ScheduleAPI.Models.Cache
 {
@@ -38,21 +41,50 @@ namespace ScheduleAPI.Models.Cache
         public T this[int index] => CachedValues[index];
         #endregion
 
-        #region Область: Конструктор.
+        #region Область: Функции инициализации.
 
         /// <summary>
         /// Конструктор класса. <br />
         /// Так как возможности отредактировать "AppIdleTime" нет (время до выключения приложения), то о максимальном размере пула кэша можно не волноваться, поэтому значение по умолчанию изменено на 50.
         /// </summary>
-        /// <param name="maxCachedCount">Максимальное количество элементов для кэширования. Значение по умолчанию: 10.</param>
-        public CachedVault(int maxCachedCount = 50)
+        /// <param name="maxCachedCount">Максимальное количество элементов для кэширования. Значение по умолчанию: 15.</param>
+        public CachedVault(int maxCachedCount = 15)
         {
             MaxCachedCount = maxCachedCount;
             CachedValues = new List<T>(maxCachedCount);
         }
+
+        /// <summary>
+        /// Выполняет попытку восстановить кэшированные значения из сохраненной копии. <br />
+        /// Сохраненные копии кэша хранятся в ассетах.
+        /// </summary>
+        /// <returns>Успех восстановления.</returns>
+        public bool TryToRestoreCachedValues()
+        {
+            string pathToSavedCache = GetPathToSavedCacheFile();
+
+            if (File.Exists(pathToSavedCache))
+            {
+                try
+                {
+                    using var stream = new StreamReader(pathToSavedCache, Encoding.Default);
+                    CachedValues = JsonConvert.DeserializeObject<List<T>>(stream.ReadToEnd()) ??
+                                   throw new Exception("При попытке создать поток чтения сохраненного кэша было получено значение \'null\'.");
+
+                    return true;
+                }
+
+                catch (Exception ex)
+                {
+                    Logger.WriteError(5, $"При десериализации кэша из сохраненного значения произошла ошибка.\nТочный текст ошибки: {ex.Message}.");
+                }
+            }
+
+            return false;
+        }
         #endregion
 
-        #region Область: Методы.
+        #region Область: Функции работы с кэшем.
 
         /// <summary>
         /// Функция добавления нового элемента в список кэшированных элементов.
@@ -75,9 +107,11 @@ namespace ScheduleAPI.Models.Cache
                     CachedValues.Remove(CachedValues.First(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode()));
 
                 if (CachedValues.Count >= MaxCachedCount)
-                    UpdateValues();
+                    UpdateCachedValuesList();
 
                 CachedValues.Add(newElement);
+                UpdateSavedCacheAsync();
+
                 return true;
             }
         }
@@ -98,7 +132,9 @@ namespace ScheduleAPI.Models.Cache
 
                 if (result == null)
                 {
+                    // Чтобы оптимизировать работу (не проверять коллекцию полностью), удаляем только один устаревший элемент, после чего перезаписываем запись кэша.
                     CachedValues.Remove(predicatedCachedValue);
+                    UpdateSavedCacheAsync();
 
                     return null;
                 }
@@ -116,11 +152,47 @@ namespace ScheduleAPI.Models.Cache
         }
 
         /// <summary>
+        /// Выполняет полное обновление кэша текущего хранилища: <br/>
+        /// 1. Проверяет все значения в кэше и удаляет устаревшие; <br/>
+        /// 2. Обновляет файл с сохраненным кэшем.
+        /// </summary>
+        public void UpdateCurrentVaultCachedValues()
+        {
+            UpdateCachedValuesList();
+            UpdateSavedCacheAsync();
+        }
+
+        /// <summary>
+        /// Очищает текущее хранилище кэша.
+        /// </summary>
+        /// <param name="deleteSavedCache">Удалить сохраненные значения кэша текущего хранилища? Значение по умолчанию: True.</param>
+        public void ClearCurrentVaultCachedValues(bool deleteSavedCache = true)
+        {
+            CachedValues.Clear();
+
+            if (deleteSavedCache)
+            {
+                try
+                {
+                    File.Delete(GetPathToSavedCacheFile());
+                }
+
+                catch
+                {
+                    Logger.WriteError(5, "Удалить сохраненный кэш не удалось.");
+                }
+            }
+        }
+        #endregion
+
+        #region Область: Внутренние функции.
+
+        /// <summary>
         /// Полностью обновляет кэшированные элементы. <br />
         /// В процессе обновления все старые элементы удаляются.
         /// Если в кэше слишком много элементов, то производится его очистка.
         /// </summary>
-        public void UpdateValues()
+        private void UpdateCachedValuesList()
         {
             var toRemove = new List<T>(1);
 
@@ -135,6 +207,55 @@ namespace ScheduleAPI.Models.Cache
             });
 
             toRemove.ForEach(remove => CachedValues.Remove(remove));
+        }
+
+        /// <summary>
+        /// Асинхронно обновляет файл с сохраненными кэшированными значениями.
+        /// </summary>
+        private async void UpdateSavedCacheAsync()
+        {
+            await Task.Run(() =>
+            {
+                string pathToSavedCache = GetPathToSavedCacheFile();
+
+                try
+                {
+                    using var stream = new StreamWriter(pathToSavedCache, false, Encoding.Default);
+
+                    var serializedValue = JsonConvert.SerializeObject(CachedValues, Formatting.Indented);
+                    stream.WriteLine(serializedValue);
+                }
+
+                catch (Exception ex)
+                {
+                    Logger.WriteError(5, $"При сохранении значений кэша произошла ошибка. Точный текст: {ex.Message}.");
+                }
+            });
+        }
+
+        /// <summary>
+        /// Вычисляет путь до файла с сохранением значений кэша текущего хранилища.
+        /// </summary>
+        /// <returns>Путь к директории.</returns>
+        private static string GetPathToSavedCacheFile()
+        {
+            string cachedValueClassName = typeof(T).Name;
+            string pathToSavedCache = Path.Combine(GetSolutionFolderPath(), "Assets", "!SavedCache", $"{cachedValueClassName}.cache");
+
+            return pathToSavedCache;
+        }
+
+        /// <summary>
+        /// Вычисляет путь к директории проекта (директория, отображаемая "Обозревателем решений"). <br />
+        /// Если структура папок будет изменяться, необходимо корректировать данный файл.
+        /// </summary>
+        /// <returns>Путь к директории проекта.</returns>
+        private static string GetSolutionFolderPath()
+        {
+            string basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
+            basicAppPath = Directory.GetParent(basicAppPath)?.Parent?.Parent?.Parent?.FullName ?? string.Empty;
+
+            return basicAppPath;
         }
         #endregion
     }

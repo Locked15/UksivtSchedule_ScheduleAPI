@@ -58,7 +58,7 @@ namespace ScheduleAPI.Models.Getter
         /// <returns>Список с отделениями.</returns>
         public List<string> GetFolders()
         {
-            string currentPath = GetValues("19П-3").Item1 + Path.DirectorySeparatorChar + "Assets";
+            string currentPath = Path.Combine(GetValues("19П-3").Item1, Path.DirectorySeparatorChar.ToString(), "Assets");
             List<string> folders = Directory.GetDirectories(currentPath).ToList();
             folders = folders.Select(folder => folder.TrimEnd(Path.DirectorySeparatorChar)).ToList();
 

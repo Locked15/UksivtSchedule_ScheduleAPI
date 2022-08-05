@@ -15,6 +15,8 @@ namespace ScheduleAPI.Controllers.Other.General
     /// 3 — Ошибка, связанная с подключением к БД.
     /// <br/>
     /// 4 — Ошибка, связанная с парсом страницы.
+    /// <br/>
+    /// 5 — Ошибка, связанная с работой кэша.
     /// </i>
     /// </summary>
     public static class Logger
