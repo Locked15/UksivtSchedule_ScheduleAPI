@@ -181,10 +181,12 @@ namespace ScheduleAPI.Models.Getter
         {
             try
             {
-                (string, string, string) values = new();
-                values.Item1 = environment.ContentRootPath;
-                values.Item2 = groupName.GetPrefixFromName();
-                values.Item3 = groupName.GetSubFolderFromName();
+                (string, string, string) values = new()
+                {
+                    Item1 = environment.ContentRootPath,
+                    Item2 = groupName.GetPrefixFromName(),
+                    Item3 = groupName.GetSubFolderFromName()
+                };
 
                 values.Item1 = values.Item1[0..values.Item1.LastIndexOf(Path.DirectorySeparatorChar)];
 
