@@ -30,7 +30,6 @@ namespace ScheduleAPI.Models.Getter
         static ChangesGetter()
         {
             cachedChanges = new();
-            cachedChanges.ClearCurrentVaultCachedValues();
             cachedChanges.TryToRestoreCachedValues();
         }
         #endregion

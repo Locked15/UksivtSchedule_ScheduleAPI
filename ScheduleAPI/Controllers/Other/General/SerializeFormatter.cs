@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ScheduleAPI.Models.ScheduleElements;
 
-namespace ScheduleAPI.Models.Getter
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
     /// Класс форматтера, нужный для преобразования json в другое форматирование.
