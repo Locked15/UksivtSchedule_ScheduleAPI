@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Getter;
 using ScheduleAPI.Models.ScheduleElements;
@@ -42,15 +41,14 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet]
-        public string Get(int dayIndex = 0, string groupName = "19П-3")
+        public JsonResult Get(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ChangesOfDay changes = ChangesGetter.GetDayChanges(dayIndex, groupName);
 
             changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
-            string value = JsonConvert.SerializeObject(changes);
 
-            return value;
+            return new JsonResult(changes, SerializeFormatter.JsonOptions);
         }
         #endregion
     }
@@ -92,11 +90,11 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet]
-        public string Get(string groupName = "19П-3")
+        public JsonResult Get(string groupName = "19П-3")
         {
             List<ChangesOfDay> changes = ChangesGetter.GetWeekChanges(groupName);
 
-            return JsonConvert.SerializeObject(changes);
+            return new JsonResult(changes, SerializeFormatter.JsonOptions);
         }
         #endregion
     }

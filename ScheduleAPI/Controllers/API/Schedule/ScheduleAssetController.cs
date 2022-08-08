@@ -45,13 +45,13 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet]
-        [Obsolete("Аварийный контроллер. Позволяет получать данные из ассетов, вместо БД.")]
-        public string Get(int dayIndex = 0, string groupName = "19П-3")
+        public JsonResult Get(int dayIndex = 0, string groupName = "19П-3")
         {
+            groupName = groupName.RemoveStringChars();
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = getter.GetDaySchedule(dayIndex, groupName);
 
-            return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);
+            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
         }
         #endregion
     }
@@ -95,12 +95,11 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet]
-        [Obsolete("Аварийный контроллер. Позволяет получать данные из ассетов, вместо БД.")]
-        public string Get(string groupName = "19П-3")
+        public JsonResult Get(string groupName = "19П-3")
         {
             WeekSchedule schedule = getter.GetWeekSchedule(groupName);
 
-            return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);
+            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
         }
         #endregion
     }

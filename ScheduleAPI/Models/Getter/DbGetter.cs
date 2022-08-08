@@ -62,7 +62,7 @@ namespace ScheduleAPI.Models.Getter
         {
             #region Подобласть: Переменные для работы.
 
-            groupName = groupName.ToUpper();
+            groupName = groupName.ToUpper().RemoveStringChars();
             SqlConnection connect = DataBaseConnector.Connection;
 
             SqlCommand command = new(mainScheduleQuery, connect);

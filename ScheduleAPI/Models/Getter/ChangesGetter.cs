@@ -48,6 +48,7 @@ namespace ScheduleAPI.Models.Getter
         {
             ChangeElement element = default;
             List<MonthChanges> changes = default;
+            groupName = groupName.RemoveStringChars();
 
             #region Подобласть: Проверка сохраненного кэша.
 

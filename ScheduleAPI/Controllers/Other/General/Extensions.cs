@@ -216,6 +216,20 @@ namespace ScheduleAPI.Controllers.Other.General
 
             return dayIndex;
         }
+
+        /// <summary>
+        /// Метод расширения, удаляющий символы строки из отправленного значения. <br />
+        /// В первую очередь предназначен для нормализации названий групп, отправленных в API.
+        /// </summary>
+        /// <param name="groupName">Строка, в которой будут удалены символы ' и ".</param>
+        /// <returns>Новая строка без вхождений указанных элементов.</returns>
+        public static string RemoveStringChars(this string groupName)
+        {
+            groupName = groupName.Replace("\'", String.Empty);
+            groupName = groupName.Replace("\"", String.Empty);
+
+            return groupName;
+        }
         #endregion
 
         #region Область: Методы расширений, связанные с расписанием.

@@ -26,12 +26,12 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="selectUnsecure">Выбирать "небезопасные" значения из БД?</param>
         /// <returns>Строковое представление расписания на указанный день для указанной группы.</returns>
         [HttpGet]
-        public string Get(int dayIndex = 0, string groupName = "19П-3", bool selectUnsecure = false)
+        public JsonResult Get(int dayIndex = 0, string groupName = "19П-3", bool selectUnsecure = false)
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             DaySchedule schedule = DbGetter.GetDaySchedule(dayIndex, groupName, selectUnsecure);
 
-            return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);
+            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
         }
     }
 
@@ -57,11 +57,11 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="selectUnsecure">Выбирать "небезопасные" значения из БД?</param>
         /// <returns>Строковое представление расписания на неделю для указанной группы.</returns>
         [HttpGet]
-        public string Get(string groupName = "19П-3", bool selectUnsecure = false)
+        public JsonResult Get(string groupName = "19П-3", bool selectUnsecure = false)
         {
             WeekSchedule schedule = DbGetter.GetWeekSchedule(groupName, selectUnsecure);
 
-            return SerializeFormatter.ConvertToUnformattedJsonForm(schedule);
+            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
         }
     }
 }
