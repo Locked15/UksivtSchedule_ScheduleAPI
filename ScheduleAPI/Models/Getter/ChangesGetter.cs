@@ -17,7 +17,10 @@ namespace ScheduleAPI.Models.Getter
         #region Область: Поля.
 
         /// <summary>
-        /// Хранилище кэша, содержащее кэшированные замены для расписаний.
+        /// Хранилище кэша, содержащее кэшированные замены для расписаний. <br />
+        /// Прямое указание типов (вместо привязки к базовым элементам (как в "Dependency Inversion")), позволяет проще понять код.
+        /// <br /><br />
+        /// "ChangesOfDayCache" сразу видно, в отличие от "AbstractCacheElement<ChangesOfDay>".
         /// </summary>
         private static readonly CachedVault<ChangesOfDayCache, ChangesOfDay> cachedChanges;
         #endregion
@@ -30,7 +33,7 @@ namespace ScheduleAPI.Models.Getter
         static ChangesGetter()
         {
             cachedChanges = new();
-            var result = cachedChanges.TryToRestoreCachedValues();
+            cachedChanges.TryToRestoreCachedValues();
         }
         #endregion
 
