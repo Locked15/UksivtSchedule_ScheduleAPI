@@ -6,7 +6,8 @@ Instead of write getting schedule and changes algorithms on every platform, you 
 
 # Address
 Web API locates on:
-<strong>http://uksivtscheduleapi.azurewebsites.net/</strong>
+<strong>http://uksivtscheduleapi.azurewebsites.net/</strong> <br />
+Current online branch: <strong>Redesigned</strong>.
 
 <i>All controller parameters must be add after address part.</i>
 
