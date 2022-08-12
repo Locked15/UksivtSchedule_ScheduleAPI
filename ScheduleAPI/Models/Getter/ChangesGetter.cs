@@ -4,6 +4,7 @@ using ScheduleAPI.Controllers.Other.DocumentParser;
 using ScheduleAPI.Models.ScheduleElements;
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Cache.CachedTypes;
+using NPOI.XWPF.UserModel;
 
 namespace ScheduleAPI.Models.Getter
 {
@@ -23,6 +24,11 @@ namespace ScheduleAPI.Models.Getter
         /// "ChangesOfDayCache" сразу видно, в отличие от "AbstractCacheElement<ChangesOfDay>".
         /// </summary>
         private static readonly CachedVault<ChangesOfDayCache, ChangesOfDay> cachedChanges;
+
+        /// <summary>
+        /// Хранилище кэша, содержащее кэшированные документы с заменами для определенных дней.
+        /// </summary>
+        private static readonly CachedVault<ChangesDocumentCache, XWPFDocument> cachedDocuments;
         #endregion
 
         #region Область: Конструкторы.
@@ -34,10 +40,13 @@ namespace ScheduleAPI.Models.Getter
         {
             cachedChanges = new();
             cachedChanges.TryToRestoreCachedValues();
+
+            cachedDocuments = new(8);
+            cachedDocuments.TryToRestoreCachedValues();
         }
         #endregion
 
-        #region Область: Методы.
+        #region Область: Публичные методы.
 
         /// <summary>
         /// Метод для получения замен на день.
@@ -53,13 +62,12 @@ namespace ScheduleAPI.Models.Getter
             List<MonthChanges> changes = default;
             groupName = groupName.RemoveStringChars();
 
-            #region Подобласть: Проверка сохраненного кэша.
+            #region Подобласть: Проверка кэшированных замен.
 
-            var cachedElement = cachedChanges.Get(el => 
+            var cachedElement = cachedChanges.Get(el =>
             {
-                // Чтобы в случае чего даты по умолчанию не совпали, указываем разные значения в конструкторах.
-                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek().GetValueOrDefault(new DateTime(0)));
-                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(1)));
+                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
+                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
 
                 return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.GroupName);
             });
@@ -109,61 +117,26 @@ namespace ScheduleAPI.Models.Getter
             #region Подобласть: Работа с файлом замен.
 
             ChangesOfDay toReturn;
-            string path = Helper.TryToDownloadFileFromGoogleDrive(element);
 
-            if (!string.IsNullOrEmpty(path))
+            try
             {
-                try
-                {
-                    ChangesReader reader = new(path);
+                ChangesReader reader = InitializeReader(dayIndex, element, out bool deleteDocumentAfterWork, out string pathToDocument);
+                toReturn = GetChangesFromReader(reader, (dayIndex, groupName, element.Date));
 
-                    toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
-                    toReturn.ChangesDate = element.Date;
-                    toReturn.ChangesFound = true;
-                }
-
-                catch (WrongDayInDocumentException exception)
-                {
-                    Logger.WriteError(2, exception.Message);
-
-                    toReturn = new();
-                }
-
-                finally
-                {
-                    Task.Run(() =>
-                    {
-                        int delAttempts = 0;
-                        bool deleted = false;
-
-                        while (!deleted && delAttempts < 5)
-                        {
-                            try
-                            {
-                                File.Delete(path);
-
-                                deleted = true;
-                            }
-
-                            catch (IOException)
-                            {
-                                delAttempts++;
-
-                                Thread.Sleep(100);
-                            }
-                        }
-
-                        if (!deleted)
-                        {
-                            Logger.WriteError(2, "Удалить файл с заменам не удалось.");
-                        }
-                    });
-                }
+                if (deleteDocumentAfterWork)
+                    DeleteChangesDocumentAsync(pathToDocument);
             }
 
-            else
+            catch (HttpRequestException)
             {
-                Logger.WriteError(2, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.", DateTime.Now);
+                Logger.WriteError(2, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.");
+
+                toReturn = new();
+            }
+
+            catch (Exception exception)
+            {
+                Logger.WriteError(2, $"Произошла ошибка при работе с документом замен: {exception.Message}.");
 
                 toReturn = new();
             }
@@ -190,6 +163,138 @@ namespace ScheduleAPI.Models.Getter
             }
 
             return list;
+        }
+        #endregion
+
+        #region Область: Внутренние методы.
+
+        /// <summary>
+        /// Инициализирует экземпляр класса "ChangesReader", используемый для получения замен из документа. <br />
+        /// Если в процессе будет скачан новый документ, то он будет автоматически кэширован.
+        /// </summary>
+        /// <param name="dayIndex">Индекс дня, на который нужно получить замены (для сверки кэшированных документов).</param>
+        /// <param name="element">Элемент с заменой с сайта колледжа, который содержит ссылку на документ с заменами.</param>
+        /// <param name="deleteDocumentAfterWork">Возвращаемая переменная, отвечающая за то, будут ли проводиться попытки удалить документ с заменами после работы.</param>
+        /// <param name="pathToDocument">
+        /// Путь к документу с заменами. <br />
+        /// Если документ был найден в кэше — пустая строка. <br />
+        /// Иначе — полноценный путь.
+        /// </param>
+        /// <returns>Инициализированный экземпляр класса "ChangesReader", готовый к работе.</returns>
+        /// <exception cref="HttpRequestException"/>
+        private static ChangesReader InitializeReader(int dayIndex, ChangeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
+        {
+            DateOnly targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
+
+            #region Подобласть: Проверка кэшированных документов с заменами.
+
+            var cachedDocument = cachedDocuments.Get(doc => doc.DocumentDate.Equals(targetDate));
+
+            if (cachedDocument != null)
+            {
+                deleteDocumentAfterWork = false;
+                pathToDocument = string.Empty;
+
+                return new(cachedDocument);
+            }
+            #endregion
+
+            #region Подобласть: Получение нового документа с заменами.
+
+            pathToDocument = Helper.TryToDownloadFileFromGoogleDrive(element);
+            deleteDocumentAfterWork = true;
+
+            if (!string.IsNullOrEmpty(pathToDocument))
+            {
+                ChangesReader reader = new(pathToDocument);
+
+                cachedDocuments.Add(reader.CreateCachedValue(targetDate));
+                return reader;
+            }
+
+            else
+            {
+                throw new HttpRequestException("При попытке скачать документ произошла ошибка.");
+            }
+            #endregion
+        }
+
+        /// <summary>
+        /// Асинхронная функция. Пытается удалить файл по указанному пути. <br />
+        /// Предназначен для удаления документа с заменами, после завершения работы с ним.
+        /// </summary>
+        /// <param name="path">Путь, по которому находится документ с заменами.</param>
+        private static async void DeleteChangesDocumentAsync(string path)
+        {
+            await Task.Run(() =>
+            {
+                int delAttempts = 0;
+                bool deleted = false;
+
+                while (!deleted && delAttempts < 5)
+                {
+                    try
+                    {
+                        File.Delete(path);
+
+                        deleted = true;
+                    }
+
+                    catch (IOException)
+                    {
+                        delAttempts++;
+
+                        Thread.Sleep(100);
+                    }
+                }
+
+                if (!deleted)
+                {
+                    Logger.WriteError(2, "Удалить файл с заменами не удалось.");
+                }
+            });
+        }
+
+        /// <summary>
+        /// Выполняет работу по получению замен из отправленного экземпляра "ChangesReader".
+        /// </summary>
+        /// <param name="reader">Экземпляр класса "ChangedReader", с указанным документов для чтения замен.</param>
+        /// <param name="requiredData">
+        /// Необходимые данные для получения замен:
+        /// <list type="number">
+        /// <item>dayIndex — Индекс дня для получения замен;</item>
+        /// <item>groupName — Название группы для получения замен;</item>
+        /// <item>date — Дата, на которую предназначены замены.</item>
+        /// </list>
+        /// </param>
+        /// <returns>Замены, соответствующие указанной дате и группе.</returns>
+        private static ChangesOfDay GetChangesFromReader(ChangesReader reader, (int dayIndex, string groupName, DateTime? date) requiredData)
+        {
+            ChangesOfDay toReturn;
+
+            try
+            {
+                toReturn = reader.GetOnlyChanges(requiredData.dayIndex.GetDayByIndex(), requiredData.groupName);
+                toReturn.ChangesDate = requiredData.date;
+                toReturn.ChangesFound = true;
+            }
+
+            catch (WrongDayInDocumentException exception)
+            {
+                Logger.WriteError(2, $"При обработке документа обнаружилось несоответствие дат. Очередная ошибка составителей замен?\n" +
+                                     $"{exception.Message}.");
+
+                toReturn = new();
+            }
+
+            catch (Exception exception)
+            {
+                Logger.WriteError(2, exception.Message);
+
+                toReturn = new();
+            }
+
+            return toReturn;
         }
         #endregion
     }

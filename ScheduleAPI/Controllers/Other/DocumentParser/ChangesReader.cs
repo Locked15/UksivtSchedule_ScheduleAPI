@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using NPOI.XWPF.UserModel;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.ScheduleElements;
 
 namespace ScheduleAPI.Controllers.Other.DocumentParser
@@ -105,7 +106,7 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
 
                     if (!text.Contains(day.ToLower()))
                     {
-                        throw new WrongDayInDocumentException("День отправленного расписания и документа с заменами не совпадают.");
+                        throw new WrongDayInDocumentException($"Указанный в документе день: {text}.");
                     }
                 }
 
@@ -269,7 +270,7 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
         }
         #endregion
 
-        #region Подобласть: Получение слитого с заменами расписания.
+        #region Подобласть: Получение объединенного с заменами расписания.
 
         /// <summary>
         /// Метод для получения расписания на день с учетом замен.
@@ -301,6 +302,21 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
             var changes = GetOnlyChanges(day, groupName);
 
             return schedule.MergeChanges(changes.NewLessons, changes.AbsoluteChanges);
+        }
+        #endregion
+
+        #region Подобласть: Кэширование.
+
+        /// <summary>
+        /// Создает кэш для документа с заменами.
+        /// </summary>
+        /// <param name="targetDate">Для упрощения работы дата в документе вынесена в параметр.</param>
+        /// <returns>Кэшированное значение.</returns>
+        public ChangesDocumentCache CreateCachedValue(DateOnly targetDate)
+        {
+            var cache = new ChangesDocumentCache(document, targetDate);
+
+            return cache;
         }
         #endregion
 
