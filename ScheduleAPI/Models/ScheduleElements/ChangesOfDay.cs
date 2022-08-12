@@ -10,11 +10,6 @@
         #region Область: Свойства.
 
         /// <summary>
-        /// Свойство с названием группы, для которой предназначены замены.
-        /// </summary>
-        public string GroupName { get; set; }
-
-        /// <summary>
         /// Свойство, отвечающее за то, что элемент с заменами на указанный день найден.
         /// <br/>
         /// Это нужно, чтобы можно было выводить разные сообщения, в зависимости от того,
@@ -90,23 +85,6 @@
             ChangesDate = changesDate;
             NewLessons = newLessons;
         }
-
-        /// <summary>
-        /// Конструктор класса.
-        /// </summary>
-        /// <param name="groupName">Название группы.</param>
-        /// <param name="changesFound">Найден ли элемент с заменами на указанный день.</param>
-        /// <param name="absoluteChanges">Замены на весь день?</param>
-        /// <param name="changesDate">Дата (даже предполагаемая) замен.</param>
-        /// <param name="newLessons">Список с новыми парами.</param>
-        public ChangesOfDay(string groupName, bool changesFound, bool absoluteChanges, DateTime? changesDate, List<Lesson> newLessons)
-        {
-            GroupName = groupName;
-            ChangesFound = changesFound;
-            AbsoluteChanges = absoluteChanges;
-            ChangesDate = changesDate;
-            NewLessons = newLessons;
-        }
         #endregion
 
         #region Область: Методы.
@@ -119,7 +97,6 @@
         {
             int baseValue = 0;
 
-            baseValue += GroupName?.GetHashCode() ?? 0;
             baseValue += ChangesFound ? 100 : 50;
             baseValue += AbsoluteChanges ? 200 : 25;
             baseValue -= ChangesDate.GetValueOrDefault().GetHashCode();

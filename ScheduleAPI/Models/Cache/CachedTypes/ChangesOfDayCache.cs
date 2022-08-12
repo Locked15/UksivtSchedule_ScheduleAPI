@@ -11,12 +11,18 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
     public class ChangesOfDayCache : AbstractCacheElement<ChangesOfDay>
     {
         /// <summary>
+        /// Название группы, для которой предназначены замены.
+        /// </summary>
+        public string GroupName { get; private set; }
+
+        /// <summary>
         /// Конструктор класса.
         /// </summary>
         /// <param name="cachingValue">Замены, которые нужно кэшировать.</param>
-        public ChangesOfDayCache(ChangesOfDay cachingValue) : base(cachingValue)
+        /// <param name="groupName">Название группы, для которой предназначены замены.</param>
+        public ChangesOfDayCache(ChangesOfDay cachingValue, string groupName) : base(cachingValue)
         {
-
+            GroupName = groupName;
         }
 
         /// <summary>

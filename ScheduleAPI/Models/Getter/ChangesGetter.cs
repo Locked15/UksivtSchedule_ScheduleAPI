@@ -61,7 +61,7 @@ namespace ScheduleAPI.Models.Getter
                 var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek().GetValueOrDefault(new DateTime(0)));
                 var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(1)));
 
-                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.CachedElement.GroupName);
+                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.GroupName);
             });
 
             if (cachedElement != null)
@@ -82,13 +82,12 @@ namespace ScheduleAPI.Models.Getter
             {
                 var exceptionReturn = new ChangesOfDay
                 {
-                    ChangesDate = dayIndex.GetDateTimeInWeek(),
-                    GroupName = groupName
+                    ChangesDate = dayIndex.GetDateTimeInWeek()
                 };
 
                 Logger.WriteError(3, $"При получении замен произошла ошибка парса страницы: {ex.Message}.");
 
-                cachedChanges.Add(new(exceptionReturn));
+                cachedChanges.Add(new(exceptionReturn, groupName));
                 return exceptionReturn;
             }
 
@@ -96,14 +95,13 @@ namespace ScheduleAPI.Models.Getter
             {
                 var exceptionReturn = new ChangesOfDay
                 {
-                    ChangesDate = dayIndex.GetDateTimeInWeek(),
-                    GroupName = groupName
+                    ChangesDate = dayIndex.GetDateTimeInWeek()
                 };
 
                 Logger.WriteError(4, $"При получении замен искомое значение не обнаружено: " +
                 $"День: {dayIndex}, Текущая дата — {DateTime.Now.ToShortDateString()}.");
 
-                cachedChanges.Add(new(exceptionReturn));
+                cachedChanges.Add(new(exceptionReturn, groupName));
                 return exceptionReturn;
             }
             #endregion
@@ -122,7 +120,6 @@ namespace ScheduleAPI.Models.Getter
                     toReturn = reader.GetOnlyChanges(dayIndex.GetDayByIndex(), groupName);
                     toReturn.ChangesDate = element.Date;
                     toReturn.ChangesFound = true;
-                    toReturn.GroupName = groupName;
                 }
 
                 catch (WrongDayInDocumentException exception)
@@ -172,7 +169,7 @@ namespace ScheduleAPI.Models.Getter
             }
             #endregion
 
-            cachedChanges.Add(new ChangesOfDayCache(toReturn));
+            cachedChanges.Add(new ChangesOfDayCache(toReturn, groupName));
             return toReturn;
         }
 
