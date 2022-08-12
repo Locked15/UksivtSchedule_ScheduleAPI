@@ -155,21 +155,21 @@ namespace ScheduleAPI.Controllers.Other.General
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <returns>Полная дата.</returns>
-        public static DateTime? GetDateTimeInWeek(this int dayIndex)
+        public static DateTime GetDateTimeInWeek(this int dayIndex)
         {
             int currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
-            DateTime? current = DateTime.Now;
+            DateTime current = DateTime.Now;
 
             while (dayIndex > currentDayIndex)
             {
-                current = current.Value.AddDays(1);
+                current = current.AddDays(1);
 
                 ++currentDayIndex;
             }
 
             while (dayIndex < currentDayIndex)
             {
-                current = current.Value.AddDays(-1);
+                current = current.AddDays(-1);
 
                 --currentDayIndex;
             }
