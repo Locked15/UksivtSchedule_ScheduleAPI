@@ -228,7 +228,7 @@ namespace ScheduleAPI.Models.Cache
 
                 catch (Exception ex)
                 {
-                    Logger.WriteError(5, $"При сохранении значений кэша произошла ошибка. Точный текст: {ex.Message}.");
+                    Logger.WriteError(5, $"При сохранении значений кэша в постоянный файл произошла ошибка. Точный текст: {ex.Message}.");
                 }
             });
         }
@@ -247,15 +247,21 @@ namespace ScheduleAPI.Models.Cache
 
         /// <summary>
         /// Вычисляет путь к директории проекта (директория, отображаемая "Обозревателем решений"). <br />
-        /// Если структура папок будет изменяться, необходимо корректировать данный файл.
-        /// <br /><br />
-        /// <b>ВНИМАНИЕ: На сервере структура размещаемого проекта отличается!</b> <br />
-        /// На сервере функция "GetCurrentDirectory()" возвращает корневой каталог сайта.
         /// </summary>
         /// <returns>Путь к директории проекта.</returns>
         private static string GetSiteRootFolderPath()
         {
-            string basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
+            string basicAppPath;
+
+            // При разработке приложения используется опция сборки "Debug", так что будет исполняться этот код.
+#if DEBUG
+            basicAppPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName ?? string.Empty;
+#endif
+
+            // На сервере приложение работает под опцией сборки "Release", так что будет выполняться данный код.
+#if RELEASE
+            basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
+#endif
 
             return basicAppPath;
         }
