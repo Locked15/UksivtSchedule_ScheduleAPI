@@ -1,27 +1,27 @@
 {
-  "groupName" : "19ПД-3",
+  "groupName" : "21ПО-1",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "337"
+      "name" : "ТГП",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
     }, {
       "number" : 1,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "337"
+      "name" : "ДОУ",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 2,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "337"
+      "name" : "Математика",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 3,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "337"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -42,34 +42,34 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "История",
+      "teacher" : "Гадельшина А.И.",
+      "place" : "323а"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПИСО",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "14"
     }, {
       "number" : 2,
+      "name" : "ПИСО",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "14"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "214"
-    }, {
       "number" : 4,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -80,24 +80,24 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "343"
-    }, {
-      "number" : 1,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "343"
-    }, {
-      "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Пустовалова Э.У.",
-      "place" : "библ"
-    }, {
-      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "322"
+    }, {
+      "number" : 3,
+      "name" : "Труд право",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
     }, {
       "number" : 4,
       "name" : null,
@@ -118,29 +118,29 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 01.05",
-      "teacher" : "Хасанова Л.Ф.",
-      "place" : "111а"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 01.05",
-      "teacher" : "Хасанова Л.Ф.",
-      "place" : "111а"
+      "name" : "АП",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "13"
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
-      "place" : null
+      "name" : "Математика",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Констит право",
+      "teacher" : "Альмухаметов Г.А.",
+      "place" : "117"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПИСО",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "343"
     }, {
       "number" : 5,
       "name" : null,
@@ -156,34 +156,34 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "112"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "112"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "112"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТГП",
+      "teacher" : "Альмухаметов Г.А.",
+      "place" : "117"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гражд право",
+      "teacher" : "Фахретдинов И.М.",
+      "place" : "118"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Менеджмент",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 6,
       "name" : null,
@@ -194,19 +194,19 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "114"
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "216"
     }, {
       "number" : 1,
-      "name" : "УП 02.01",
-      "teacher" : "Афлятунов С.Х.",
-      "place" : "114"
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320"
     }, {
       "number" : 3,
       "name" : null,

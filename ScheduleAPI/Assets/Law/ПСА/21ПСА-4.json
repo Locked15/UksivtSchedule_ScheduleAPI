@@ -1,17 +1,17 @@
 {
-  "groupName" : "20ПД-5",
+  "groupName" : "21ПСА-4",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПИСО",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "16"
     }, {
       "number" : 2,
       "name" : null,
@@ -29,14 +29,14 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
@@ -47,29 +47,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гражд право",
+      "teacher" : "Фахретдинов И.М.",
+      "place" : "118"
     }, {
       "number" : 2,
+      "name" : "Гражд право",
+      "teacher" : "Фахретдинов И.М.",
+      "place" : "118"
+    }, {
+      "number" : 3,
+      "name" : "ТГП",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 4,
+      "name" : "ТГП",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "305"
-    }, {
-      "number" : 4,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "110"
-    }, {
-      "number" : 5,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "110"
     }, {
       "number" : 6,
       "name" : null,
@@ -85,34 +85,34 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
+      "name" : "История",
+      "teacher" : "Ахметшина Е.В.",
+      "place" : "337"
     }, {
       "number" : 4,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
+      "name" : "Информатика",
+      "teacher" : "Фатхелисламова Э.А.",
+      "place" : "216"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Информатика",
+      "teacher" : "Фатхелисламова Э.А.",
+      "place" : "216"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гражд процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "339"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -133,19 +133,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "110"
     }, {
       "number" : 4,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "Гражд право",
+      "teacher" : "Фахретдинов И.М.",
+      "place" : "118"
     }, {
       "number" : 5,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "ПИСО",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "13"
     }, {
       "number" : 6,
       "name" : null,
@@ -156,29 +156,29 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "БЖД",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "110"
+    }, {
+      "number" : 1,
+      "name" : "ТГП",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 2,
+      "name" : "ТГП",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 1,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "343"
-    }, {
-      "number" : 2,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
-    }, {
-      "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
-    }, {
       "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -194,29 +194,29 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гражд процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "3"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324"
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "118"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,

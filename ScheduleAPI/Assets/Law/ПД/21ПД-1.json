@@ -1,5 +1,5 @@
 {
-  "groupName" : "20ПД-5",
+  "groupName" : "21ПД-1",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
@@ -14,62 +14,62 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Экол право",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "117"
     }, {
       "number" : 4,
+      "name" : "История",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "112"
+    }, {
+      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 5,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
-    }, {
       "number" : 6,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гр.право и гр.процесс",
+      "teacher" : "Зайнуллина И.И.",
+      "place" : "110"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТГП",
+      "teacher" : "Султанов А.Х,",
+      "place" : "343"
     }, {
       "number" : 2,
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "305"
-    }, {
       "number" : 4,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -80,29 +80,29 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "Гр.право и гр.процесс",
+      "teacher" : "Зайнуллина И.И.",
+      "place" : "301"
+    }, {
+      "number" : 1,
+      "name" : "Гр.право и гр.процесс",
+      "teacher" : "Зайнуллина И.И.",
+      "place" : "301"
+    }, {
+      "number" : 2,
+      "name" : "Админ право",
+      "teacher" : "Султанов У.З.",
+      "place" : "203"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 1,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
-    }, {
-      "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
-    }, {
-      "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
-    }, {
       "number" : 4,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -128,24 +128,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Админ право",
+      "teacher" : "Султанов У.З.",
+      "place" : "336"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТГП",
+      "teacher" : "Султанов А.Х,",
+      "place" : "203"
     }, {
       "number" : 4,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "ТГП",
+      "teacher" : "Султанов А.Х,",
+      "place" : "203"
     }, {
       "number" : 5,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "Физ-ра",
+      "teacher" : "Галимов Ф.Х.",
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -161,24 +161,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "343"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
+      "name" : "Ин.яз",
+      "teacher" : "Ханова Л.В.",
+      "place" : "315"
     }, {
       "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "Экол право",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "339"
     }, {
       "number" : 5,
       "name" : null,
@@ -204,19 +204,19 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
-      "place" : null
+      "name" : "Админ право",
+      "teacher" : "Султанов У.З.",
+      "place" : "13"
     }, {
       "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "118"
+      "name" : "ТГП",
+      "teacher" : "Султанов А.Х,",
+      "place" : "214"
     }, {
       "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "История",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "343"
     }, {
       "number" : 5,
       "name" : null,

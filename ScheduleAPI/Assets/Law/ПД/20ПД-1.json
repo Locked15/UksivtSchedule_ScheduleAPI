@@ -1,334 +1,232 @@
 {
-  "groupName": "20ПД-1",
-  "days": [
-    {
-      "day": "Monday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 1,
-          "name": "БЖД",
-          "teacher": "Избаев А.Ш.",
-          "place": "118"
-        },
-        {
-          "number": 2,
-          "name": "ГП и ГПП",
-          "teacher": "Зайнуллина И.И.",
-          "place": "118"
-        },
-        {
-          "number": 3,
-          "name": "НПП",
-          "teacher": "Музафаров Ф.Ф.",
-          "place": "118"
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Tuesday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 1,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 2,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 3,
-          "name": "НПП",
-          "teacher": "Музафаров Ф.Ф.",
-          "place": "118"
-        },
-        {
-          "number": 4,
-          "name": "Трудовое право",
-          "teacher": "Воронина А.А.",
-          "place": "118"
-        },
-        {
-          "number": 5,
-          "name": "Основы философии",
-          "teacher": "Логинова А.И.",
-          "place": "118"
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Wednesday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": "Физ-ра",
-          "teacher": "Валиев Р.Ф.",
-          "place": null
-        },
-        {
-          "number": 1,
-          "name": "ГП и ГПП",
-          "teacher": "Зайнуллина И.И.",
-          "place": "118"
-        },
-        {
-          "number": 2,
-          "name": "ГП и ГПП",
-          "teacher": "Зайнуллина И.И.",
-          "place": "118"
-        },
-        {
-          "number": 3,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Thursday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": "ПИСО",
-          "teacher": "Габбасова Н.А.",
-          "place": "118"
-        },
-        {
-          "number": 1,
-          "name": "ПИСО",
-          "teacher": "Габбасова Н.А.",
-          "place": "118"
-        },
-        {
-          "number": 2,
-          "name": "Ин.яз",
-          "teacher": "Ханова Л.В.",
-          "place": "118"
-        },
-        {
-          "number": 3,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Friday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": "Информатика и ИТ в ПД",
-          "teacher": "Хасанова А.М.",
-          "place": "323а"
-        },
-        {
-          "number": 1,
-          "name": "Информатика и ИТ в ПД",
-          "teacher": "Хасанова А.М.",
-          "place": "323а"
-        },
-        {
-          "number": 2,
-          "name": "ПИСО",
-          "teacher": "Габбасова Н.А.",
-          "place": "323а"
-        },
-        {
-          "number": 3,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Saturday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": "Баш.яз",
-          "teacher": "Мухамедьянова Г.Ф.",
-          "place": "118"
-        },
-        {
-          "number": 1,
-          "name": "КП",
-          "teacher": "Султанов А.Х.",
-          "place": "118"
-        },
-        {
-          "number": 2,
-          "name": "КП",
-          "teacher": "Султанов А.Х.",
-          "place": "118"
-        },
-        {
-          "number": 3,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    },
-    {
-      "day": "Sunday",
-      "lessons": [
-        {
-          "number": 0,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 1,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 2,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 3,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 4,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 5,
-          "name": null,
-          "teacher": null,
-          "place": null
-        },
-        {
-          "number": 6,
-          "name": null,
-          "teacher": null,
-          "place": null
-        }
-      ]
-    }
-  ]
+  "groupName" : "20ПД-1",
+  "daySchedules" : [ {
+    "day" : "MONDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Спец техника",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "110"
+    }, {
+      "number" : 1,
+      "name" : "Ин.яз",
+      "teacher" : "Ханова Л.В.",
+      "place" : "315"
+    }, {
+      "number" : 2,
+      "name" : "ПО ОРД",
+      "teacher" : "Щеклеин А",
+      "place" : "111"
+    }, {
+      "number" : 3,
+      "name" : "Физ-ра",
+      "teacher" : "Галимов Ф.Х.",
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "TUESDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Угол право",
+      "teacher" : "Галиев А.Г.",
+      "place" : "13"
+    }, {
+      "number" : 3,
+      "name" : "Угол право",
+      "teacher" : "Галиев А.Г.",
+      "place" : "13"
+    }, {
+      "number" : 4,
+      "name" : "ПО ОРД",
+      "teacher" : "Щеклеин А",
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "WEDNESDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "Угол право",
+      "teacher" : "Галиев А.Г.",
+      "place" : "112"
+    }, {
+      "number" : 3,
+      "name" : "Угол право",
+      "teacher" : "Галиев А.Г.",
+      "place" : "112"
+    }, {
+      "number" : 4,
+      "name" : "Криминалистика",
+      "teacher" : "Фагманова Э.В.",
+      "place" : "112"
+    }, {
+      "number" : 5,
+      "name" : "Криминалистика",
+      "teacher" : "Фагманова Э.В.",
+      "place" : "112"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "THURSDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "ТСП",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "ТСП",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "FRIDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Криминология",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "339"
+    }, {
+      "number" : 1,
+      "name" : "Криминология",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "339"
+    }, {
+      "number" : 2,
+      "name" : "Спец техника",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "314"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "SATURDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Криминология",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "117"
+    }, {
+      "number" : 1,
+      "name" : "Криминология",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "117"
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  } ]
 }
