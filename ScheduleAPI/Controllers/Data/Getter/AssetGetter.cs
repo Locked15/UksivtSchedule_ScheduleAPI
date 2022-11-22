@@ -193,8 +193,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
                     Item3 = groupName.GetSubFolderFromName()
                 };
 
-                values.Item1 = values.Item1[0..values.Item1.LastIndexOf(Path.DirectorySeparatorChar)];
-
                 return values;
             }
 
