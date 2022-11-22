@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ScheduleAPI.Controllers.Data.Getter;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Getter;
-using ScheduleAPI.Models.ScheduleElements;
+using ScheduleAPI.Models.Elements.Schedule;
 
 namespace ScheduleAPI.Controllers.API.Schedule
 {
     /// <summary>
-    /// Класс-контроллер получения замен для расписания.
+    /// Класс-контроллер для получения замен.
+    /// <br/>
+    /// Ранее он был разбит на 2 класса: для одного дня и для недели. Теперь они объединены в один класс.
     /// </summary>
-    [Route("api/day/[controller]")]
-    [ApiController]
-    public class ChangesDayController : Controller
+    [Route("~/api/[controller]")]
+    public class ChangesController
     {
         #region Область: Поля.
 
@@ -20,19 +21,29 @@ namespace ScheduleAPI.Controllers.API.Schedule
         private IHostEnvironment environment;
         #endregion
 
+        #region Область: Свойства.
+
+        /// <summary>
+        /// Свойство с автоматически инициализированным логгером.
+        /// </summary>
+        public static ILogger<ChangesController>? Logger { get; private set; } = null;
+        #endregion
+
         #region Область: Конструкторы.
 
         /// <summary>
         /// Конструктор класса. Вызывается неявно при запуске API.
         /// </summary>
         /// <param name="env">Информация об окружении API.</param>
-        public ChangesDayController(IHostEnvironment env)
+        /// <param name="logger">Автоматически инициализированный сервис логгера для работы.</param>
+        public ChangesController(IHostEnvironment env, ILogger<ChangesController> logger)
         {
             environment = env;
+            Logger = logger;
         }
         #endregion
 
-        #region Область: Методы.
+        #region Область: Обработчики API.
 
         /// <summary>
         /// Метод, представляющий Get-запрос на получение замен.
@@ -41,7 +52,8 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet]
-        public JsonResult Get(int dayIndex = 0, string groupName = "19П-3")
+        [Route("~/api/[controller]/day")]
+        public JsonResult DayChanges(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ChangesOfDay changes = ChangesGetter.GetDayChanges(dayIndex, groupName);
@@ -50,39 +62,6 @@ namespace ScheduleAPI.Controllers.API.Schedule
 
             return new JsonResult(changes, SerializeFormatter.JsonOptions);
         }
-        #endregion
-    }
-
-    /// <summary>
-    /// Класс-контроллер получения замен для расписания.
-    /// <br/>
-    /// Позволяет получить замены на неделю.
-    /// </summary>
-    [Route("api/week/[controller]")]
-    [ApiController]
-    public class ChangesWeekController : Controller
-    {
-        #region Область: Поля.
-
-        /// <summary>
-        /// Поле, содержащее объект, содержащий данные о окружении приложения.
-        /// </summary>
-        private IHostEnvironment environment;
-        #endregion
-
-        #region Область: Конструкторы.
-
-        /// <summary>
-        /// Конструктор класса. Вызывается неявно при запуске API.
-        /// </summary>
-        /// <param name="env">Информация об окружении API.</param>
-        public ChangesWeekController(IHostEnvironment env)
-        {
-            environment = env;
-        }
-        #endregion
-
-        #region Область: Методы.
 
         /// <summary>
         /// Метод, представляющий Get-запрос на получение замен на неделю.
@@ -90,7 +69,8 @@ namespace ScheduleAPI.Controllers.API.Schedule
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet]
-        public JsonResult Get(string groupName = "19П-3")
+        [Route("~/api/[controller]/week")]
+        public JsonResult WeekChanges(string groupName = "19П-3")
         {
             List<ChangesOfDay> changes = ChangesGetter.GetWeekChanges(groupName);
 

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Models.Getter;
+using ScheduleAPI.Controllers.Data.Getter;
 
 namespace ScheduleAPI.Controllers.API.Folders
 {
