@@ -1,21 +1,21 @@
 {
-  "groupName" : "19СА-1",
+  "groupName" : "22уКСК-2",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Исмагилова Г.М.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
@@ -29,27 +29,27 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Инженерная графика",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Инженерная графика",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Пустовалова Э.У.",
+      "place" : "библ"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭВМ",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 2,
       "name" : null,
@@ -67,14 +67,14 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -90,24 +90,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : "общ"
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : "Основы электротехники",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 4,
-      "name" : "ПОПД",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "13"
+      "name" : "Основы электротехники",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы электротехники",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 6,
       "name" : null,
@@ -118,24 +118,24 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "НЭРТО",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 2,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "НЭРТО",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 3,
-      "name" : "ПОПД",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "324"
+      "name" : "Основы электротехники",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 4,
       "name" : null,
@@ -171,24 +171,24 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 5,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 4,
+      "name" : "УП 04.01",
+      "teacher" : "резерв",
+      "place" : "3"
+    }, {
+      "number" : 5,
+      "name" : "УП 04.01",
+      "teacher" : "резерв",
+      "place" : "3"
+    }, {
+      "number" : 6,
+      "name" : "УП 04.01",
+      "teacher" : "резерв",
+      "place" : "3"
     } ]
   }, {
     "day" : "SATURDAY",
@@ -199,24 +199,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Инженерная графика",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "218"
     }, {
       "number" : 2,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : "Электротех измерения",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 3,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : "Электротех измерения",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : "Основы электротехники",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "11"
     }, {
       "number" : 5,
       "name" : null,

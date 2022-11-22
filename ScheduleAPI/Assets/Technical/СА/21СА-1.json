@@ -1,22 +1,22 @@
 {
-  "groupName" : "20уКСК-2",
+  "groupName" : "21СА-1",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭВМ",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭВМ",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ИТ",
+      "teacher" : "Фатхелисламова Э.А.",
+      "place" : "216"
     }, {
       "number" : 3,
       "name" : null,
@@ -24,42 +24,42 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Пустовалова Э.У.",
-      "place" : "библ"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "2"
-    }, {
-      "number" : 2,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "2"
-    }, {
-      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 1,
+      "name" : "История",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "319"
+    }, {
+      "number" : 2,
+      "name" : "Физ-ра",
+      "teacher" : "Хабибов Р.Г.",
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "ЭВМ",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 4,
       "name" : null,
@@ -95,24 +95,24 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "2"
     }, {
       "number" : 4,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : "ОАИП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "2"
     }, {
       "number" : 5,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : "ОС",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
     }, {
       "number" : 6,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : "ОС",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -128,57 +128,57 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "2"
     }, {
       "number" : 3,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "ОС",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
     }, {
       "number" : 4,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "ОС",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
     }, {
       "number" : 5,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
     }, {
       "number" : 6,
-      "name" : "Физ-ра",
-      "teacher" : "Хабибов Р.Г.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "2"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "2"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Практика по прогр",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "2"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ИТ",
+      "teacher" : "Фатхелисламова Э.А.",
+      "place" : "216"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ИТ",
+      "teacher" : "Фатхелисламова Э.А.",
+      "place" : "216"
     }, {
       "number" : 5,
       "name" : null,
@@ -194,24 +194,24 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Психология общ",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "245"
     }, {
       "number" : 4,
       "name" : null,
