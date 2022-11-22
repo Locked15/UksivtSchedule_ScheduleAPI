@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.ViewsControllers;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 
 namespace ScheduleAPI.Models.Cache
@@ -17,6 +18,11 @@ namespace ScheduleAPI.Models.Cache
     /// <typeparam name="Y">Целевой тип, который будет храниться в кэше (для предыдущего примера таковым будет "ChangesOfDay").</typeparam>
     public class CachedVault<T, Y> where T : AbstractCacheElement<Y> where Y : class
     {
+        #region Область: Константы.
+
+        private const string CacheFolderName = ".saved-cache";
+        #endregion
+
         #region Область: Свойства.
 
         /// <summary>
@@ -76,7 +82,7 @@ namespace ScheduleAPI.Models.Cache
 
                 catch (Exception ex)
                 {
-                    Logger.WriteError(5, $"При десериализации кэша из сохраненного значения произошла ошибка.\nТочный текст ошибки: {ex.Message}.");
+                    HomeController.BaseLogger?.Log(LogLevel.Warning, "При десериализации кэша из сохраненного значения произошла ошибка.\nТочный текст ошибки: {message}.", ex.Message);
                 }
             }
 
@@ -179,7 +185,7 @@ namespace ScheduleAPI.Models.Cache
 
                 catch
                 {
-                    Logger.WriteError(5, "Удалить сохраненный кэш не удалось.");
+                    HomeController.BaseLogger?.Log(LogLevel.Warning, "Удалить сохраненный кэш не удалось.");
                 }
             }
         }
@@ -228,7 +234,7 @@ namespace ScheduleAPI.Models.Cache
 
                 catch (Exception ex)
                 {
-                    Logger.WriteError(5, $"При сохранении значений кэша в постоянный файл произошла ошибка. Точный текст: {ex.Message}.");
+                    HomeController.BaseLogger?.Log(LogLevel.Warning, "При сохранении значений кэша в постоянный файл произошла ошибка. Точный текст: {message}.", ex.Message);
                 }
             });
         }
@@ -240,30 +246,9 @@ namespace ScheduleAPI.Models.Cache
         private static string GetPathToSavedCacheFile()
         {
             string cachedValueClassName = typeof(T).Name;
-            string pathToSavedCache = Path.Combine(GetSiteRootFolderPath(), "Assets", "!SavedCache", $"{cachedValueClassName}.cache");
+            string pathToSavedCache = Path.Combine(Helper.GetSiteRootFolderPath(), "Assets", CacheFolderName, $"{cachedValueClassName}.cache");
 
             return pathToSavedCache;
-        }
-
-        /// <summary>
-        /// Вычисляет путь к директории проекта (директория, отображаемая "Обозревателем решений"). <br />
-        /// </summary>
-        /// <returns>Путь к директории проекта.</returns>
-        private static string GetSiteRootFolderPath()
-        {
-            string basicAppPath;
-
-            // При разработке приложения используется опция сборки "Debug", так что будет исполняться этот код.
-#if DEBUG
-            basicAppPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName ?? string.Empty;
-#endif
-
-            // На сервере приложение работает под опцией сборки "Release", так что будет выполняться данный код.
-#if RELEASE
-            basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
-#endif
-
-            return basicAppPath;
         }
         #endregion
     }
