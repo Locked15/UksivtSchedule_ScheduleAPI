@@ -1,7 +1,7 @@
 {
-  "groupName" : "21ПСА-4",
-  "days" : [ {
-    "day" : "Monday",
+  "groupName" : "22ПО-3",
+  "daySchedules" : [ {
+    "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -19,19 +19,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Лит-Ра",
-      "teacher" : "Кинзина А. З.",
-      "place" : "319"
+      "name" : "Лит-ра",
+      "teacher" : "Андреева Р.М.",
+      "place" : "314"
     }, {
       "number" : 4,
-      "name" : "Экономика",
-      "teacher" : "Антипина А. В.",
-      "place" : "319"
+      "name" : "Русский",
+      "teacher" : "Андреева Р.М.",
+      "place" : "314"
     }, {
       "number" : 5,
-      "name" : "Ин. Яз.",
-      "teacher" : "Сорокина Э. Г.",
-      "place" : "319"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -39,7 +39,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "Tuesday",
+    "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -57,47 +57,42 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Право",
-      "teacher" : "Альмухаметова Г. А.",
-      "place" : "319"
+      "name" : "экономика",
+      "teacher" : "Киселева М.В.",
+      "place" : "203"
     }, {
       "number" : 4,
-      "name" : "Общество",
-      "teacher" : "Анастасьев А. Г.",
-      "place" : "319"
+      "name" : "Баш.яз",
+      "teacher" : "Юмагулова Г.К.",
+      "place" : "312"
     }, {
       "number" : 5,
-      "name" : "Математика",
-      "teacher" : null,
-      "place" : "319"
+      "name" : "Русский",
+      "teacher" : "Андреева Р.М.",
+      "place" : "314"
     }, {
       "number" : 6,
-      "name" : "Математика",
+      "name" : null,
       "teacher" : null,
-      "place" : "319"
+      "place" : null
     } ]
   }, {
-    "day" : "Wednesday",
+    "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : "История",
-      "teacher" : "Галлямов Р. Р.",
-      "place" : "319"
+      "teacher" : "Гадельшина А.И.",
+      "place" : "313"
     }, {
       "number" : 1,
-      "name" : "Русский",
-      "teacher" : "Кинзина А. З.",
-      "place" : "319"
+      "name" : "Лит-ра",
+      "teacher" : "Андреева Р.М.",
+      "place" : "314"
     }, {
       "number" : 2,
-      "name" : "Лит-Ра (1 Неделя)",
-      "teacher" : "Кинзина А. З.",
-      "place" : "319"
-    }, {
-      "number" : 2,
-      "name" : "Ин. Яз. (2 Неделя)",
-      "teacher" : "Сорокина Э. Г.",
-      "place" : "319"
+      "name" : "Общество",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "общ"
     }, {
       "number" : 3,
       "name" : null,
@@ -120,7 +115,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "Thursday",
+    "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -139,74 +134,26 @@
     }, {
       "number" : 3,
       "name" : "Информатика",
-      "teacher" : "Защихина Е. В.",
-      "place" : "319"
+      "teacher" : "Давлетшина З.Д.",
+      "place" : "234"
     }, {
       "number" : 4,
-      "name" : "Физ-Ра (1 Неделя)",
-      "teacher" : "Гильманов Р. А.",
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "История (2 Неделя)",
-      "teacher" : "Галлямов Р. Р.",
-      "place" : "319"
-    }, {
-      "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    } ]
-  }, {
-    "day" : "Friday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Физ-Ра",
-      "teacher" : "Гильманов Р. А.",
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "Экология (1 Неделя)",
-      "teacher" : "Сафаргалиева Г. С.",
-      "place" : "319"
-    }, {
-      "number" : 4,
-      "name" : "Естествознание (2 Неделя)",
-      "teacher" : "Сыртланова Л. А.",
-      "place" : "319"
+      "name" : "Ин.яз",
+      "teacher" : "Каримова Г.Ф.",
+      "place" : "312"
     }, {
       "number" : 5,
       "name" : "Математика",
       "teacher" : null,
-      "place" : "319"
+      "place" : null
     }, {
       "number" : 6,
-      "name" : null,
+      "name" : "Математика",
       "teacher" : null,
       "place" : null
     } ]
   }, {
-    "day" : "Saturday",
+    "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -224,19 +171,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "ОБЖ",
-      "teacher" : "Кобелева С. В.",
-      "place" : "319"
+      "name" : "Ин.яз",
+      "teacher" : "Каримова Г.Ф.",
+      "place" : "библ"
     }, {
       "number" : 4,
-      "name" : "Баш. Яз.",
-      "teacher" : "Юмагулова Г. К.",
-      "place" : "319"
+      "name" : "Математика",
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Естествознание",
-      "teacher" : "Сыртланова Л. А.",
-      "place" : "319"
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -244,22 +191,22 @@
       "place" : null
     } ]
   }, {
-    "day" : "Sunday",
+    "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОБЖ",
+      "teacher" : "Исмаилова Р.Х.",
+      "place" : "319"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "география",
+      "teacher" : "Валиева Р.М.",
+      "place" : "309"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "география",
+      "teacher" : "Валиева Р.М.",
+      "place" : "309"
     }, {
       "number" : 3,
       "name" : null,

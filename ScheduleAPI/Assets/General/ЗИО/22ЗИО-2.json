@@ -1,7 +1,7 @@
 {
-  "groupName" : "21СА-1",
-  "days" : [ {
-    "day" : "Monday",
+  "groupName" : "22ЗИО-2",
+  "daySchedules" : [ {
+    "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -9,19 +9,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Астрономия",
-      "teacher" : "Таюпов М. М.",
-      "place" : "214"
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г,",
+      "place" : "324"
     }, {
       "number" : 2,
-      "name" : "Информатика",
-      "teacher" : "Васильева А. А.",
-      "place" : "7"
+      "name" : "Математика",
+      "teacher" : "Гущина М.В.",
+      "place" : "323а"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Информатика",
+      "teacher" : "Павловская Е.О.",
+      "place" : "223"
     }, {
       "number" : 4,
       "name" : null,
@@ -39,7 +39,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "Tuesday",
+    "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -47,166 +47,133 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Лит-Ра (1 Неделя)",
-      "teacher" : "Абдульманова А. С.",
-      "place" : "214"
+      "name" : "Математика",
+      "teacher" : "Гущина М.В.",
+      "place" : "323а"
     }, {
       "number" : 2,
-      "name" : "История",
-      "teacher" : "Ахметшина Е. В.",
-      "place" : "214"
+      "name" : "ОБЖ",
+      "teacher" : "Кобелева С.В.",
+      "place" : "313"
     }, {
       "number" : 3,
       "name" : "Химия",
-      "teacher" : "Гареева С. Т.",
-      "place" : "214"
+      "teacher" : "Акбарова Р.Х.",
+      "place" : "325"
     }, {
       "number" : 4,
-      "name" : "Ин. Яз. (2 Неделя)",
-      "teacher" : "Ахметова А. М.",
-      "place" : "214"
-    }, {
-      "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    } ]
-  }, {
-    "day" : "Wednesday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "ОБЖ",
-      "teacher" : "Кобелева С. В.",
-      "place" : "312"
-    }, {
-      "number" : 5,
-      "name" : "Баш. Яз.",
-      "teacher" : "Хисамутдинова Р. М.",
-      "place" : "312"
-    }, {
-      "number" : 6,
-      "name" : "Математика",
-      "teacher" : "Гарипова Р. М.",
-      "place" : "312"
-    } ]
-  }, {
-    "day" : "Thursday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "История (1 Неделя)",
-      "teacher" : "Ахметшина Е. В.",
-      "place" : "214"
-    }, {
-      "number" : 5,
-      "name" : "Физ-Ра",
-      "teacher" : "Баранов А. В.",
-      "place" : null
-    }, {
-      "number" : 6,
-      "name" : "Математика",
-      "teacher" : "Гарипова Р. М.",
-      "place" : "214"
-    } ]
-  }, {
-    "day" : "Friday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Общество",
-      "teacher" : "Ахметшина Е. В.",
-      "place" : "214"
-    }, {
-      "number" : 4,
-      "name" : "Ин. Яз.",
-      "teacher" : "Ахметова А. М.",
-      "place" : "214"
-    }, {
-      "number" : 5,
-      "name" : "Лит-Ра",
-      "teacher" : "Абдульманова А. С.",
-      "place" : "214"
-    }, {
-      "number" : 6,
       "name" : "Русский",
-      "teacher" : "Абдульманова А. С.",
-      "place" : "214"
+      "teacher" : "Мирасова И.В.",
+      "place" : "321"
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
-    "day" : "Saturday",
+    "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Математика",
-      "teacher" : "Гарипова Р. М.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Баш.яз",
+      "teacher" : "Юмагулова Г.К,",
+      "place" : "312"
+    }, {
+      "number" : 4,
+      "name" : "Русский",
+      "teacher" : "Мирасова И.В.",
+      "place" : "321"
+    }, {
+      "number" : 5,
+      "name" : "Астрономия",
+      "teacher" : "Сыртланова Л.А.",
+      "place" : "333"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 7,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "THURSDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : "Лит-ра",
+      "teacher" : "Мирасова И.В.",
+      "place" : "321"
+    }, {
+      "number" : 2,
+      "name" : "Астрономия",
+      "teacher" : "Сыртланова Л.А.",
+      "place" : "333"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 5,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "FRIDAY",
+    "lessons" : [ {
+      "number" : 0,
       "name" : "Физика",
-      "teacher" : "Нагаев Р. А.",
-      "place" : "214"
+      "teacher" : "Нагаев Р.А.",
+      "place" : "334"
+    }, {
+      "number" : 1,
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324"
     }, {
       "number" : 2,
-      "name" : "Экология",
-      "teacher" : "Акбарова Р. Х.",
-      "place" : "214"
+      "name" : "Информатика",
+      "teacher" : "Павловская Е.О.",
+      "place" : "223"
     }, {
       "number" : 3,
       "name" : null,
@@ -229,7 +196,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "Sunday",
+    "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -237,18 +204,18 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "История",
+      "teacher" : "Баранова Н.Г.",
+      "place" : "338"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Математика",
+      "teacher" : "Гущина М.В.",
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
       "place" : null
     }, {
       "number" : 4,
@@ -262,6 +229,11 @@
       "place" : null
     }, {
       "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 7,
       "name" : null,
       "teacher" : null,
       "place" : null

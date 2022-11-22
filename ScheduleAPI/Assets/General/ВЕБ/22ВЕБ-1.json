@@ -1,7 +1,7 @@
 {
-  "groupName" : "21П-3",
-  "days" : [ {
-    "day" : "Monday",
+  "groupName" : "22ВЕБ-1",
+  "daySchedules" : [ {
+    "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -19,128 +19,85 @@
       "place" : null
     }, {
       "number" : 3,
+      "name" : "Лит-ра",
+      "teacher" : "Бокарева С.Ф.",
+      "place" : "319"
+    }, {
+      "number" : 4,
+      "name" : "Информатика",
+      "teacher" : "Павловская Е.О.",
+      "place" : "223"
+    }, {
+      "number" : 5,
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
+    }, {
+      "number" : 6,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    } ]
+  }, {
+    "day" : "TUESDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
+    }, {
+      "number" : 1,
+      "name" : "Физика",
+      "teacher" : "Нагаев Р.А.",
+      "place" : "334"
+    }, {
+      "number" : 2,
+      "name" : "Химия",
+      "teacher" : "Гареева С.Т.",
+      "place" : "325"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Математика",
-      "teacher" : "Голуб И. А.",
-      "place" : "334"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Лит-Ра",
-      "teacher" : "Бокарева С. Ф.",
-      "place" : "334"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ОБЖ",
-      "teacher" : "Кобелева С. В.",
-      "place" : "334"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
-    "day" : "Tuesday",
+    "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : "История",
-      "teacher" : "Баранова Н. Г.",
-      "place" : "334"
-    }, {
-      "number" : 1,
-      "name" : "Баш. Яз.",
-      "teacher" : "Мухамедьянова Г. М.",
-      "place" : "334"
-    }, {
-      "number" : 2,
-      "name" : "История (1 Неделя)",
-      "teacher" : "Баранова Н. Г.",
-      "place" : "334"
-    }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    } ]
-  }, {
-    "day" : "Wednesday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Общество",
-      "teacher" : "Ахметшина Е. В.",
-      "place" : "334"
-    }, {
-      "number" : 4,
-      "name" : "Ин. Яз.",
-      "teacher" : "Сорокина Э. Г.",
-      "place" : "334"
-    }, {
-      "number" : 5,
-      "name" : "Физ-Ра (1 Неделя)",
-      "teacher" : "Баранов А. В.",
-      "place" : null
-    }, {
-      "number" : 5,
-      "name" : "Ин. Яз. (2 Неделя)",
-      "teacher" : "Сорокина Э. Г.",
-      "place" : "334"
-    }, {
-      "number" : 6,
-      "name" : "Экология",
-      "teacher" : "Акбарова Р. Х.",
-      "place" : "334"
-    } ]
-  }, {
-    "day" : "Thursday",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : "Химия",
-      "teacher" : "Акбарова Р. Х.",
-      "place" : "334"
+      "teacher" : "Баранова Н.Г.",
+      "place" : "338"
     }, {
       "number" : 1,
       "name" : "Астрономия",
-      "teacher" : "Таюпов М. М.",
-      "place" : "334"
+      "teacher" : "Сыртланова Л.А.",
+      "place" : "333"
     }, {
       "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Голуб И. А.",
-      "place" : "334"
+      "name" : "Лит-ра",
+      "teacher" : "Бокарева С.Ф.",
+      "place" : "319"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Русский",
+      "teacher" : "Бокарева С.Ф.",
+      "place" : "319"
     }, {
       "number" : 4,
       "name" : null,
@@ -156,9 +113,14 @@
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 7,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
-    "day" : "Friday",
+    "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -171,24 +133,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Голуб И. А.",
-      "place" : "334"
+      "name" : "ОБЖ",
+      "teacher" : "Кобелева С.В.",
+      "place" : "313"
     }, {
       "number" : 3,
-      "name" : "Физ-Ра",
-      "teacher" : "Баранов А. В.",
-      "place" : null
+      "name" : "Математика",
+      "teacher" : "Голуб И.А.",
+      "place" : "318"
     }, {
       "number" : 4,
-      "name" : "Русский",
-      "teacher" : "Бокарева С. Ф.",
-      "place" : "334"
+      "name" : "Математика",
+      "teacher" : "Голуб И.А.",
+      "place" : "318"
     }, {
       "number" : 5,
-      "name" : "Лит-Ра (2 Неделя)",
-      "teacher" : "Бокарева С. Ф.",
-      "place" : "334"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -196,21 +158,21 @@
       "place" : null
     } ]
   }, {
-    "day" : "Saturday",
+    "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Физика",
-      "teacher" : "Нагаев Р. А.",
-      "place" : "334"
+      "name" : "Математика",
+      "teacher" : "Голуб И.А.",
+      "place" : "318"
     }, {
       "number" : 1,
       "name" : "Информатика",
-      "teacher" : "Рысаева Э. Р.",
-      "place" : "334"
+      "teacher" : "Павловская Е.О.",
+      "place" : "223"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Хабибов Р.Г.",
       "place" : null
     }, {
       "number" : 3,
@@ -234,7 +196,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "Sunday",
+    "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
@@ -257,16 +219,21 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Астрономия",
+      "teacher" : "Сыртланова Л.А.",
+      "place" : "333"
     }, {
       "number" : 5,
+      "name" : "Баш.яз",
+      "teacher" : "Хисамутдинова Р.М.",
+      "place" : "318"
+    }, {
+      "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 6,
+      "number" : 7,
       "name" : null,
       "teacher" : null,
       "place" : null
