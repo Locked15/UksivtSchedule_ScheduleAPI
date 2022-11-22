@@ -26,13 +26,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Assets\!SavedCache\" />
-	  <Folder Include="Assets\Schedule\" />
+	  <Folder Include="Assets\.saved-cache\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="Assets\.saved-cache\ChangesDocumentCache.cache" />
+	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
 	</ItemGroup>
 
 	<ProjectExtensions>
-		<VisualStudio>
-			<UserProperties assets_4programming_4п_419п-3_1json__JsonSchema="https://appsemble.app/api.json" properties_4launchsettings_1json__JsonSchema="" />
-		</VisualStudio>
+		<VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio>
 	</ProjectExtensions>
 </Project>
