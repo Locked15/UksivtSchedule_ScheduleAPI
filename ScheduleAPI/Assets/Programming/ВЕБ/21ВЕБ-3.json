@@ -1,5 +1,5 @@
 {
-  "groupName" : "20БД-1",
+  "groupName" : "21ВЕБ-3",
   "daySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
@@ -9,19 +9,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ИТ",
+      "teacher" : "Давлетшина З.Д.",
+      "place" : "234"
     }, {
       "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Валеева З.М.",
-      "place" : "320"
+      "name" : "ИТ",
+      "teacher" : "Давлетшина З.Д.",
+      "place" : "234"
     }, {
       "number" : 4,
       "name" : null,
@@ -42,14 +42,14 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "УП",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -57,19 +57,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАИП",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 6,
       "name" : null,
@@ -80,62 +80,62 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Веб прогр",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
-    }, {
-      "number" : 1,
-      "name" : "Веб прогр",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
-    }, {
-      "number" : 2,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
-    }, {
-      "number" : 3,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
-    }, {
-      "number" : 4,
       "name" : null,
       "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320"
+    }, {
+      "number" : 4,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Психология общ",
+      "teacher" : "Никонова Е.А.",
+      "place" : "309"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Психология общ",
+      "teacher" : "Никонова Е.А.",
+      "place" : "309"
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ЭВМ",
+      "teacher" : "Голуб И.А",
+      "place" : "318"
     }, {
       "number" : 1,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ЭВМ",
+      "teacher" : "Голуб И.А",
+      "place" : "318"
     }, {
       "number" : 2,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "Граф диз",
+      "teacher" : "Васильева А.А.",
+      "place" : "9"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Архитектура",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 4,
       "name" : null,
@@ -161,24 +161,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320"
     }, {
       "number" : 2,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "История",
+      "teacher" : "Гадельшина А.И.",
+      "place" : "312"
     }, {
       "number" : 3,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ОСИС",
+      "teacher" : "Киреев И.С.",
+      "place" : "245"
     }, {
       "number" : 4,
-      "name" : "МДК 11.01",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ОСИС",
+      "teacher" : "Киреев И.С.",
+      "place" : "245"
     }, {
       "number" : 5,
       "name" : null,
@@ -194,14 +194,14 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ПП",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "Граф диз",
+      "teacher" : "Васильева А.А.",
+      "place" : "243"
     }, {
       "number" : 1,
-      "name" : "ПП",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "Граф диз",
+      "teacher" : "Васильева А.А.",
+      "place" : "243"
     }, {
       "number" : 2,
       "name" : null,
