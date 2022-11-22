@@ -27,6 +27,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Assets\!SavedCache\" />
+	  <Folder Include="Assets\Schedule\" />
 	</ItemGroup>
 
 	<ProjectExtensions>

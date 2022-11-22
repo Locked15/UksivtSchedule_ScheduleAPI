@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.ScheduleElements;
 
@@ -6,7 +6,6 @@ namespace ScheduleAPI.Models.Getter
 {
     /// <summary>
     /// Класс, нужный для получения данных посредством заложенных в приложение ассетов.
-    /// <br/>
     /// </summary>
     public class AssetGetter
     {
@@ -129,16 +128,18 @@ namespace ScheduleAPI.Models.Getter
             {
                 using (StreamReader reader = new(fullPath, System.Text.Encoding.Default))
                 {
-                    // Чтобы избавиться от форматирования полностью, придется сперва получить сериализованный объект.
-                    WeekSchedule? week = JsonConvert.DeserializeObject<WeekSchedule>(reader.ReadToEnd());
-                    week?.Days.ForEach(day => day.Day = day.Day.GetTranslatedDay());
+                    WeekSchedule? week = JsonSerializer.Deserialize<WeekSchedule>(reader.ReadToEnd(), new JsonSerializerOptions()
+                    {
+                        PropertyNameCaseInsensitive = true
+                    });
+                    week?.DaySchedules.ForEach(day => day.Day = day.Day.GetTranslatedDay());
 
-                    if (week == null || week.Days[dayIndex] == null)
+                    if (week == null || week.DaySchedules[dayIndex] == null)
                     {
                         Logger.WriteError(1, $"При получении данных (День) произошла ошибка: " +
-                        $"Группа — {week?.GroupName}, День — {week?.Days[dayIndex]?.Day}.");
+                        $"Группа — {week?.GroupName}, День — {week?.DaySchedules[dayIndex]?.Day}.");
                     }
-                    return week?.Days[dayIndex] ?? defaultDaySchedule;
+                    return week?.DaySchedules[dayIndex] ?? defaultDaySchedule;
                 }
             }
 
@@ -159,7 +160,7 @@ namespace ScheduleAPI.Models.Getter
 
             for (int i = 0; i < 7; i++)
             {
-               schedule.Add(GetDaySchedule(i, groupName));
+                schedule.Add(GetDaySchedule(i, groupName));
             }
 
             return new(groupName, schedule);

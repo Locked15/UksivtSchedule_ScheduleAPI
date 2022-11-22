@@ -282,7 +282,7 @@ namespace ScheduleAPI.Controllers.Other.DocumentParser
         public DaySchedule GetDayScheduleWithChanges(WeekSchedule schedule, string day)
         {
             string groupName = schedule.GroupName;
-            DaySchedule scheduleOfDay = schedule.Days[day.GetIndexByDay()];
+            DaySchedule scheduleOfDay = schedule.DaySchedules[day.GetIndexByDay()];
 
             return GetDayScheduleWithChanges(day, groupName, scheduleOfDay);
         }

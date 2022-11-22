@@ -18,7 +18,7 @@ namespace ScheduleAPI.Models.ScheduleElements
         /// <summary>
         /// Свойство, содержащее расписание группы на неделю.
         /// </summary>
-        public List<DaySchedule> Days { get; set; }
+        public List<DaySchedule> DaySchedules { get; set; }
         #endregion
 
         #region Область: Конструкторы.
@@ -35,11 +35,11 @@ namespace ScheduleAPI.Models.ScheduleElements
         /// Конструктор класса.
         /// </summary>
         /// <param name="groupName">Название группы.</param>
-        /// <param name="days">Список дней с расписанием.</param>
-        public WeekSchedule(string groupName, List<DaySchedule> days)
+        /// <param name="daySchedules">Список дней с расписанием.</param>
+        public WeekSchedule(string groupName, List<DaySchedule> daySchedules)
         {
             GroupName = groupName;
-            Days = days;
+            DaySchedules = daySchedules;
         }
         #endregion
 
@@ -52,14 +52,14 @@ namespace ScheduleAPI.Models.ScheduleElements
         /// <returns>Их равенство.</returns>
         public bool Equals(WeekSchedule obj)
         {
-            if (GroupName != obj.GroupName || Days.Count != obj.Days.Count)
+            if (GroupName != obj.GroupName || DaySchedules.Count != obj.DaySchedules.Count)
             {
                 return false;
             }
 
-            for (int i = 0; i < Days.Count; i++)
+            for (int i = 0; i < DaySchedules.Count; i++)
             {
-                if (obj.Days[i].ToString() != Days[i].ToString())
+                if (obj.DaySchedules[i].ToString() != DaySchedules[i].ToString())
                 {
                     return false;
                 }
