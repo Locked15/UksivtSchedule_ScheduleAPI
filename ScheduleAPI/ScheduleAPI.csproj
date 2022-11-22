@@ -12,6 +12,11 @@
 		<UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
 		<ApplicationInsightsResourceId>/subscriptions/c0502672-d9b2-4f69-a607-b7300fa5fb3e/resourceGroups/Subscriprion/providers/microsoft.insights/components/UksivtScheduleAPI</ApplicationInsightsResourceId>
 	</PropertyGroup>
+	
+	<ItemGroup>
+	  <None Include="Assets\.saved-cache\ChangesDocumentCache.cache" />
+	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="AngleSharp" Version="0.17.1" />
@@ -23,15 +28,6 @@
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Assets\.saved-cache\" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="Assets\.saved-cache\ChangesDocumentCache.cache" />
-	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
 	</ItemGroup>
 
 	<ProjectExtensions>

@@ -64,21 +64,8 @@ namespace ScheduleAPI.Controllers.Data.Getter
             List<MonthChanges>? changes = default;
             groupName = groupName.RemoveStringChars();
 
-            #region Подобласть: Проверка кэшированных замен.
-
-            var cachedElement = cachedChanges.Get(el =>
-            {
-                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
-                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
-
-                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.GroupName);
-            });
-
-            if (cachedElement != null)
-            {
-                return cachedElement;
-            }
-            #endregion
+            if (TryToRestoreCachedChanges(dayIndex, groupName) is var restored && restored != null)
+                return restored;
 
             #region Подобласть: Обрабатываем возможные ошибки.
 
@@ -96,8 +83,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
                 };
 
                 ChangesController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
-
-                cachedChanges.Add(new(exceptionReturn, groupName));
                 return exceptionReturn;
             }
 
@@ -110,8 +95,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
 
                 ChangesController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
                                               "День: {dayIndex}, Текущая дата — {time}.", dayIndex, DateTime.Now.ToShortDateString());
-
-                cachedChanges.Add(new(exceptionReturn, groupName));
                 return exceptionReturn;
             }
             #endregion
@@ -142,7 +125,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
             }
             #endregion
 
-            cachedChanges.Add(new ChangesOfDayCache(toReturn, groupName));
+            TryToAddValueToCachedVault(groupName, toReturn);
             return toReturn;
         }
 
@@ -185,19 +168,14 @@ namespace ScheduleAPI.Controllers.Data.Getter
         private static DocumentParser InitializeReader(int dayIndex, ChangeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
         {
             DateOnly targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
-
-            #region Подобласть: Проверка кэшированных документов с заменами.
-
-            var cachedDocument = cachedDocuments.Get(doc => doc.DocumentDate.Equals(targetDate));
-
-            if (cachedDocument != null)
+            // TODO: Решить проблему кэширования документов. ЗАТЕМ убрать блок "&& false".
+            if (TryToRestoreCachedDocument(targetDate) is var document && document != null && false)
             {
                 deleteDocumentAfterWork = false;
                 pathToDocument = string.Empty;
 
-                return new(cachedDocument);
+                return new(document);
             }
-            #endregion
 
             #region Подобласть: Получение нового документа с заменами.
 
@@ -271,7 +249,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
         private static ChangesOfDay GetChangesFromReader(DocumentParser reader, (int dayIndex, string groupName, DateTime? date) requiredData)
         {
             ChangesOfDay toReturn;
-
             try
             {
                 toReturn = reader.GetOnlyChanges(requiredData.dayIndex.GetDayByIndex(), requiredData.groupName);
@@ -294,6 +271,36 @@ namespace ScheduleAPI.Controllers.Data.Getter
 
             return toReturn;
         }
+
+        #region Подобласть: Работа с кэшэм.
+
+        private static ChangesOfDay? TryToRestoreCachedChanges(int dayIndex, string groupName)
+        {
+            var cachedElement = cachedChanges.Get(el =>
+            {
+                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
+                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
+
+                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.GroupName);
+            });
+
+            return cachedElement;
+        }
+
+        private static XWPFDocument? TryToRestoreCachedDocument(DateOnly targetDate)
+        {
+            var cachedDocument = cachedDocuments.Get(doc =>
+                                                     doc.DocumentDate.Equals(targetDate));
+
+            return cachedDocument;
+        }
+
+        private static void TryToAddValueToCachedVault(string groupName, ChangesOfDay cachingValue)
+        {
+            if (cachingValue.ChangesFound)
+                cachedChanges.Add(new ChangesOfDayCache(cachingValue, groupName));
+        }
+        #endregion
         #endregion
     }
 }

@@ -99,24 +99,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             // Самым последним параграфом идет имя исполнителя, поэтому его игнорируем:
             for (int i = 0; i < paragraphs.Count - 1; i++)
             {
-                string text;
-
-                // Пятым параграфом идет название дня и недели. Проверяем корректность:
-                if (i == 5)
+                if (CompletePreconditionChecks(i, day, paragraphs))
                 {
-                    text = paragraphs[i].Text.ToLower();
-
-                    if (!text.Contains(day.ToLower()))
-                    {
-                        throw new WrongDayInDocumentException($"Указанный в документе день: {text}.");
-                    }
-                }
-
-                // Первыми идут параграфы с инициалами администрации, игнорируем:
-                else if (i > 5)
-                {
-                    text = paragraphs[i].Text;
-
+                    var text = paragraphs[i].Text;
                     technicalString.Append(text);
                 }
             }
@@ -269,6 +254,27 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             }
 
             return new(absoluteChanges, newLessons);
+        }
+
+        private static bool CompletePreconditionChecks(int i, string day, List<XWPFParagraph> paragraphs, bool dayCheck = false)
+        {
+            if (i == 5 && dayCheck)
+            {
+                // Пятый параграф содержит сведения о дне недели, так что можно его проверить.
+                var text = paragraphs[i].Text.ToLower();
+
+                if (!text.Contains(day.ToLower()))
+                {
+                    throw new WrongDayInDocumentException($"Указанный в документе день: {text}.");
+                }
+            }
+            else if (i > 5)
+            {
+                // С пятого параграфа начинается нужная информация:
+                return true;
+            }
+
+            return false;
         }
         #endregion
 
