@@ -82,6 +82,7 @@
                 },
                 "virtualNetworkType": "None",
                 "certificates": null,
+                "enableClientCertificate": false,
                 "apiVersionConstraint": {
                   "minApiVersion": null
                 }
@@ -96,11 +97,11 @@
               "type": "Microsoft.ApiManagement/service/apis",
               "name": "ScheduleAPIapi/ScheduleAPI",
               "properties": {
-                "displayName": "ScheduleAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                "displayName": "ScheduleAPI, Version=1.5.0.0, Culture=neutral, PublicKeyToken=null",
                 "apiRevision": "1",
                 "description": null,
                 "subscriptionRequired": true,
-                "serviceUrl": "https://scheduleapi20220126123653.azurewebsites.net",
+                "serviceUrl": "https://uksivtscheduleapi.azurewebsites.net:80/",
                 "path": "scheduleapi",
                 "protocols": [
                   "https"
