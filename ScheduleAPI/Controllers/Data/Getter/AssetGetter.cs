@@ -52,10 +52,11 @@ namespace ScheduleAPI.Controllers.Data.Getter
         #region Область: Методы.
 
         /// <summary>
-        /// Метод для получения списка с отделениями-папками из ассетов.
+        /// Метод для получения списка с отделениями-папками из ассетов. <br />
+        /// Ранее называлось: 'GetFolders'.
         /// </summary>
         /// <returns>Список с отделениями.</returns>
-        public List<string> GetFolders()
+        public List<string> GetBranches()
         {
             string currentPath = Path.Combine(Helper.GetSiteRootFolderPath(), "Assets", "Schedule");
             List<string> folders = Directory.GetDirectories(currentPath).ToList();
@@ -65,11 +66,12 @@ namespace ScheduleAPI.Controllers.Data.Getter
         }
 
         /// <summary>
-        /// Метод для получения списка с названиями направлений обучения из ассетов.
+        /// Метод для получения списка с названиями направлений обучения из ассетов. <br />
+        /// Ранее называлось: 'GetSubFolders'.
         /// </summary>
         /// <param name="folder">Папка отделения обучения.</param>
         /// <returns>Список с названиями направлений.</returns>
-        public List<string> GetSubFolders(string folder)
+        public List<string> GetAffiliates(string folder)
         {
             try
             {

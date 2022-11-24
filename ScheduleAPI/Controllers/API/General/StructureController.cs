@@ -21,28 +21,28 @@ namespace ScheduleAPI.Controllers.API.General
         }
 
         [HttpGet]
-        [Route("~/api/[controller]/folders")]
-        public JsonResult GetFolders()
+        [Route("~/api/[controller]/branches")]
+        public JsonResult GetBranches()
         {
-            List<string> folders = getter.GetFolders();
+            List<string> folders = getter.GetBranches();
 
             return Json(folders);
         }
 
         [HttpGet]
-        [Route("~/api/[controller]/subfolders")]
-        public JsonResult GetSubFolders(string folder = "Programming")
+        [Route("~/api/[controller]/affiliates")]
+        public JsonResult GetAffiliates(string branch = "Programming")
         {
-            List<string> subFolders = getter.GetSubFolders(folder);
+            List<string> affiliates = getter.GetAffiliates(branch);
 
-            return Json(subFolders);
+            return Json(affiliates);
         }
 
         [HttpGet]
         [Route("~/api/[controller]/groups")]
-        public JsonResult GetGroups(string folder = "Programming", string subFolder = "П")
+        public JsonResult GetGroups(string branch = "Programming", string affiliate = "П")
         {
-            List<string> groups = getter.GetGroupNames(folder, subFolder);
+            List<string> groups = getter.GetGroupNames(branch, affiliate);
 
             return Json(groups);
         }
@@ -52,9 +52,9 @@ namespace ScheduleAPI.Controllers.API.General
         public JsonResult GetSummary()
         {
             List<string> groups = new List<string>(1);
-            foreach (var folder in getter.GetFolders())
+            foreach (var folder in getter.GetBranches())
             {
-                foreach (var subFolder in getter.GetSubFolders(folder))
+                foreach (var subFolder in getter.GetAffiliates(folder))
                 {
                     groups.AddRange(getter.GetGroupNames(folder, subFolder));
                 }
