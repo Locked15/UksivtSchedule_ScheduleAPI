@@ -169,7 +169,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
         {
             DateOnly targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             // TODO: Решить проблему кэширования документов. ЗАТЕМ убрать блок "&& false".
-            if (TryToRestoreCachedDocument(targetDate) is var document && document != null && false)
+            if (false && TryToRestoreCachedDocument(targetDate) is var document && document != null)
             {
                 deleteDocumentAfterWork = false;
                 pathToDocument = string.Empty;
@@ -186,7 +186,8 @@ namespace ScheduleAPI.Controllers.Data.Getter
             {
                 DocumentParser reader = new(pathToDocument);
 
-                cachedDocuments.Add(reader.CreateCachedValue(targetDate));
+                // TODO: Аналогично предыдущему пункту.
+                // cachedDocuments.Add(reader.CreateCachedValue(targetDate));
                 return reader;
             }
 
