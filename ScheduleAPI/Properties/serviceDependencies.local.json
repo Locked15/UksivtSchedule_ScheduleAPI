@@ -3,16 +3,15 @@
     "secrets1": {
       "type": "secrets.user"
     },
+    "apis1": {
+      "ignored": "True",
+      "type": "apis"
+    },
     "appInsights1": {
       "secretStore": "LocalSecretsFile",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/UksivtScheduleAPI",
       "type": "appInsights.azure",
-      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-      "dynamicId": null
-    },
-    "apis1": {
-      "ignored": "True",
-      "type": "apis"
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
     }
   }
 }
