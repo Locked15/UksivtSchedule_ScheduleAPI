@@ -22,6 +22,8 @@ namespace ScheduleAPI.Controllers.Other.General
 
         #region Область: Методы расширения, связанные с датами.
 
+        #region Подобласть: Расширения 'Int32'.
+
         /// <summary>
         /// Метод расширения, позволяющий получить день по указанному индексу.
         /// </summary>
@@ -43,6 +45,36 @@ namespace ScheduleAPI.Controllers.Other.General
                 _ => throw new IndexOutOfRangeException($"Введен некорректный индекс ({index})."),
             };
         }
+
+        /// <summary>
+        /// Метод расширения, позволяющий получить полную вариацию даты по указанному индексу дня в пределах текущей недели.
+        /// </summary>
+        /// <param name="dayIndex">Индекс нужного дня.</param>
+        /// <returns>Полная дата.</returns>
+        public static DateTime GetDateTimeInWeek(this int dayIndex)
+        {
+            int currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
+            DateTime current = DateTime.Now;
+
+            while (dayIndex > currentDayIndex)
+            {
+                current = current.AddDays(1);
+
+                ++currentDayIndex;
+            }
+
+            while (dayIndex < currentDayIndex)
+            {
+                current = current.AddDays(-1);
+
+                --currentDayIndex;
+            }
+
+            return current;
+        }
+        #endregion
+
+        #region Подобласть: Расширения 'String'.
 
         /// <summary>
         /// Метод расширения, позволяющий получить индекс по названию дня.
@@ -119,63 +151,9 @@ namespace ScheduleAPI.Controllers.Other.General
                 _ => throw new ArgumentException("Отправленное значение некорректно."),
             };
         }
+        #endregion
 
-        /// <summary>
-        /// Метод расширения, позволяющий получить дату начала недели.
-        /// </summary>
-        /// <param name="time">Дата, для которой нужно получить дату начала недели.</param>
-        /// <returns>Дата начала недели.</returns>
-        public static DateTime GetStartOfWeek(this DateTime time)
-        {
-            while (time.DayOfWeek != DayOfWeek.Monday)
-            {
-                time = time.AddDays(-1);
-            }
-
-            return time;
-        }
-
-        /// <summary>
-        /// Метод расширения, позволяющий получить дату конца недели.
-        /// </summary>
-        /// <param name="time">Дата, для которой нужно получить дату конца недели.</param>
-        /// <returns>Дата конца недели.</returns>
-        public static DateTime GetEndOfWeek(this DateTime time)
-        {
-            while (time.DayOfWeek != DayOfWeek.Sunday)
-            {
-                time = time.AddDays(1);
-            }
-
-            return time;
-        }
-
-        /// <summary>
-        /// Метод расширения, позволяющий получить полную вариацию даты по указанному индексу дня в пределах текущей недели.
-        /// </summary>
-        /// <param name="dayIndex">Индекс нужного дня.</param>
-        /// <returns>Полная дата.</returns>
-        public static DateTime GetDateTimeInWeek(this int dayIndex)
-        {
-            int currentDayIndex = DateTime.Now.DayOfWeek.GetIndexFromDayOfWeek();
-            DateTime current = DateTime.Now;
-
-            while (dayIndex > currentDayIndex)
-            {
-                current = current.AddDays(1);
-
-                ++currentDayIndex;
-            }
-
-            while (dayIndex < currentDayIndex)
-            {
-                current = current.AddDays(-1);
-
-                --currentDayIndex;
-            }
-
-            return current;
-        }
+        #region Подобласть: Расширения 'DayOfWeek', 'DateOnly', 'DateTime'.
 
         /// <summary>
         /// Метод для получения индекса дня из "DayOfWeek".
@@ -217,34 +195,35 @@ namespace ScheduleAPI.Controllers.Other.General
         }
 
         /// <summary>
-        /// Метод расширения, позволяющий 'скосить' лишнее значение индекса дня, если оно слишком большое.
+        /// Метод расширения, позволяющий получить дату начала недели.
         /// </summary>
-        /// <param name="dayIndex">Индекс дня.</param>
-        /// <returns>Проверенный индекс дня.</returns>
-        public static int CheckDayIndexFromOverflow(this int dayIndex)
+        /// <param name="time">Дата, для которой нужно получить дату начала недели.</param>
+        /// <returns>Дата начала недели.</returns>
+        public static DateTime GetStartOfWeek(this DateTime time)
         {
-            // Подготовка индекса, если он некорректен (больше 6 (это воскресенье)):
-            while (dayIndex > 6)
+            while (time.DayOfWeek != DayOfWeek.Monday)
             {
-                dayIndex -= 7;
+                time = time.AddDays(-1);
             }
 
-            return dayIndex;
+            return time;
         }
 
         /// <summary>
-        /// Метод расширения, удаляющий символы строки из отправленного значения. <br />
-        /// В первую очередь предназначен для нормализации названий групп, отправленных в API.
+        /// Метод расширения, позволяющий получить дату конца недели.
         /// </summary>
-        /// <param name="groupName">Строка, в которой будут удалены символы ' и ".</param>
-        /// <returns>Новая строка без вхождений указанных элементов.</returns>
-        public static string RemoveStringChars(this string groupName)
+        /// <param name="time">Дата, для которой нужно получить дату конца недели.</param>
+        /// <returns>Дата конца недели.</returns>
+        public static DateTime GetEndOfWeek(this DateTime time)
         {
-            groupName = groupName.Replace("\'", String.Empty);
-            groupName = groupName.Replace("\"", String.Empty);
+            while (time.DayOfWeek != DayOfWeek.Sunday)
+            {
+                time = time.AddDays(1);
+            }
 
-            return groupName;
+            return time;
         }
+        #endregion
         #endregion
 
         #region Область: Методы расширений, связанные с расписанием.
@@ -397,6 +376,39 @@ namespace ScheduleAPI.Controllers.Other.General
             }
 
             return paragraphs;
+        }
+        #endregion
+
+        #region Область: Методы расширения, связанные с обработкой входных данных.
+
+        /// <summary>
+        /// Метод расширения, позволяющий 'скосить' лишнее значение индекса дня, если оно слишком большое.
+        /// </summary>
+        /// <param name="dayIndex">Индекс дня.</param>
+        /// <returns>Проверенный индекс дня.</returns>
+        public static int CheckDayIndexFromOverflow(this int dayIndex)
+        {
+            // Подготовка индекса, если он некорректен (больше 6 (это воскресенье)):
+            while (dayIndex > 6)
+            {
+                dayIndex -= 7;
+            }
+
+            return dayIndex;
+        }
+
+        /// <summary>
+        /// Метод расширения, удаляющий символы строки из отправленного значения. <br />
+        /// В первую очередь предназначен для нормализации названий групп, отправленных в API.
+        /// </summary>
+        /// <param name="groupName">Строка, в которой будут удалены символы ' и ".</param>
+        /// <returns>Новая строка без вхождений указанных элементов.</returns>
+        public static string RemoveStringChars(this string groupName)
+        {
+            groupName = groupName.Replace("\'", String.Empty);
+            groupName = groupName.Replace("\"", String.Empty);
+
+            return groupName;
         }
         #endregion
     }

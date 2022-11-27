@@ -59,8 +59,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
                 var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
                 var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
 
-                return (basicTargetingDate.Equals(basicCachedValueDate) || basicTargetingDate.GetWeekNumber() < basicCachedValueDate.GetWeekNumber()) &&
-                       groupName.Equals(el.GroupName);
+                return (Helper.CheckDaysToEqualityIncludingFutureDates(basicTargetingDate, basicCachedValueDate) && groupName.Equals(el.GroupName));
             });
 
             return cachedElement;

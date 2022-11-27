@@ -27,6 +27,21 @@
 
             return basicAppPath;
         }
+
+        /// <summary>
+        /// Проверяет две даты на соответствие дней недели, с учетом следующих недель (и начала следующего месяца).
+        /// </summary>
+        /// <param name="first">Первая дата для проверки (потенциально прошлая/текущая).</param>
+        /// <param name="second">Вторая дата для проверки (потенциально текущая/будущая).</param>
+        /// <returns>Результат проверки на идентичность.</returns>
+        public static bool CheckDaysToEqualityIncludingFutureDates(DateOnly first, DateOnly second)
+        {
+            bool isFuture = first.GetWeekNumber() < second.GetWeekNumber() || 
+                            first.Month < second.Month;
+            bool daysAreEqual = first.DayOfWeek == second.DayOfWeek;
+
+            return first == second || (isFuture && daysAreEqual);
+        }
         #endregion
     }
 }
