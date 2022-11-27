@@ -1,51 +1,62 @@
-﻿using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Cache;
-using ScheduleAPI.Models.Cache.CachedTypes;
-using NPOI.XWPF.UserModel;
-using ScheduleAPI.Controllers.API.Schedule;
+﻿using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Data.Getter.Parsers;
-using ScheduleAPI.Models.Exceptions;
-using ScheduleAPI.Models.Elements.Site;
+using ScheduleAPI.Controllers.Data.Workers.Cache;
+using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Elements.Site;
+using ScheduleAPI.Models.Exceptions;
 
 namespace ScheduleAPI.Controllers.Data.Getter
 {
     /// <summary>
     /// Класс, обертывающий функционал получения замен.
     /// <br />
-    /// В связи с переработкой класс был изменен и переделан под статический.
+    /// Он был обычным, стал статическим, и вот он снова обычный.
+    /// Теперь статика применяется для работы с кэшем.
     /// </summary>
-    public static class ChangesGetter
+    public class ChangesGetter
     {
         #region Область: Поля.
 
         /// <summary>
-        /// Хранилище кэша, содержащее кэшированные замены для расписаний. <br />
-        /// Прямое указание типов (вместо привязки к базовым элементам (как в "Dependency Inversion")), позволяет проще понять код.
-        /// <br /><br />
-        /// "ChangesOfDayCache" сразу видно, в отличие от "AbstractCacheElement<ChangesOfDay>".
+        /// Содержит основные функции и поля, необходимые для работы с кэшем в данном классе. <br />
+        /// Ранее был частью. самого класса, но позже логика была вынесена в отдельный файл.
         /// </summary>
-        private static readonly CachedVault<ChangesOfDayCache, ChangesOfDay> cachedChanges;
+        private static ChangesGetterCacheWorker cacheWorker;
+        #endregion
+
+        #region Область: Свойства.
 
         /// <summary>
-        /// Хранилище кэша, содержащее кэшированные документы с заменами для определенных дней.
+        /// Индекс дня для поиска. <br />
+        /// Он игнорируется в случае поиска расписания для недели.
         /// </summary>
-        private static readonly CachedVault<ChangesDocumentCache, XWPFDocument> cachedDocuments;
+        public int DayIndex { get; set; }
+
+        /// <summary>
+        /// Название группы, которую предполагается искать.
+        /// </summary>
+        public string GroupName { get; set; }
         #endregion
 
         #region Область: Конструкторы.
 
         /// <summary>
-        /// Статический конструктор класса.
+        /// Инициализирует новый объект для получения замен.
         /// </summary>
-        static ChangesGetter()
+        /// <param name="dayIndex">Индекс дня, на который необходимы замены (0..6). Игнорируется, если необходимы замены на неделю.</param>
+        /// <param name="groupName">Название группы, для которой нужно извлечь замены.</param>
+        public ChangesGetter(int dayIndex, string groupName)
         {
-            cachedChanges = new();
-            cachedChanges.TryToRestoreCachedValues();
-
-            cachedDocuments = new(8);
-            cachedDocuments.TryToRestoreCachedValues();
+            DayIndex = dayIndex;
+            GroupName = groupName.RemoveStringChars();
         }
+
+        /// <summary>
+        /// Инициализирует объект для работы с кэшем.
+        /// </summary>
+        static ChangesGetter() =>
+               cacheWorker = new ChangesGetterCacheWorker();
         #endregion
 
         #region Область: Публичные методы.
@@ -55,16 +66,13 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// <br/>
         /// <strong>РЕКОМЕНДУЕТСЯ АСИНХРОННОЕ ВЫПОЛНЕНИЕ.</strong>
         /// </summary>
-        /// <param name="dayIndex">Индекс дня.</param>
-        /// <param name="groupName">Название группы.</param>
         /// <returns>Объект, содержащий замены для группы.</returns>
-        public static ChangesOfDay GetDayChanges(int dayIndex, string groupName)
+        public ChangesOfDay GetDayChanges()
         {
             ChangeElement? element = default;
             List<MonthChanges>? changes = default;
-            groupName = groupName.RemoveStringChars();
 
-            if (TryToRestoreCachedChanges(dayIndex, groupName) is var restored && restored != null)
+            if (cacheWorker.TryToFindTargetCachedChangesValue(DayIndex, GroupName) is var restored && restored != null)
                 return restored;
 
             #region Подобласть: Обрабатываем возможные ошибки.
@@ -72,14 +80,14 @@ namespace ScheduleAPI.Controllers.Data.Getter
             try
             {
                 changes = new SiteParser().ParseAvailableNodes();
-                element = changes.TryToFindElementByNameOfDayWithoutPreviousWeeks(dayIndex.GetDayByIndex());
+                element = changes.TryToFindElementByNameOfDayWithoutPreviousWeeks(DayIndex.GetDayByIndex());
             }
 
             catch (Exception ex)
             {
                 var exceptionReturn = new ChangesOfDay
                 {
-                    ChangesDate = dayIndex.GetDateTimeInWeek()
+                    ChangesDate = DayIndex.GetDateTimeInWeek()
                 };
 
                 ChangesController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
@@ -90,11 +98,11 @@ namespace ScheduleAPI.Controllers.Data.Getter
             {
                 var exceptionReturn = new ChangesOfDay
                 {
-                    ChangesDate = dayIndex.GetDateTimeInWeek()
+                    ChangesDate = DayIndex.GetDateTimeInWeek()
                 };
 
                 ChangesController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
-                                              "День: {dayIndex}, Текущая дата — {time}.", dayIndex, DateTime.Now.ToShortDateString());
+                                              "День: {dayIndex}, Текущая дата — {time}.", DayIndex, DateTime.Now.ToShortDateString());
                 return exceptionReturn;
             }
             #endregion
@@ -105,8 +113,8 @@ namespace ScheduleAPI.Controllers.Data.Getter
 
             try
             {
-                DocumentParser reader = InitializeReader(dayIndex, element, out bool deleteDocumentAfterWork, out string pathToDocument);
-                toReturn = GetChangesFromReader(reader, (dayIndex, groupName, element.Date));
+                DocumentParser reader = InitializeReader(DayIndex, element, out bool deleteDocumentAfterWork, out string pathToDocument);
+                toReturn = GetChangesFromReader(reader, element.Date);
 
                 if (deleteDocumentAfterWork)
                     DeleteChangesDocumentAsync(pathToDocument);
@@ -125,7 +133,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
             }
             #endregion
 
-            TryToAddValueToCachedVault(groupName, toReturn);
+            cacheWorker.TryToAddValueToCachedVault(toReturn, GroupName);
             return toReturn;
         }
 
@@ -136,13 +144,13 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Список с объектами, содержащими замены на каждый день.</returns>
-        public static List<ChangesOfDay> GetWeekChanges(string groupName)
+        public List<ChangesOfDay> GetWeekChanges()
         {
             List<ChangesOfDay> list = new(1);
 
             for (int i = 0; i < 7; i++)
             {
-                list.Add(GetDayChanges(i, groupName));
+                list.Add(GetDayChanges());
             }
 
             return list;
@@ -165,11 +173,10 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// </param>
         /// <returns>Инициализированный экземпляр класса "DocumentParser", готовый к работе.</returns>
         /// <exception cref="HttpRequestException"/>
-        private static DocumentParser InitializeReader(int dayIndex, ChangeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
+        private DocumentParser InitializeReader(int dayIndex, ChangeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
         {
             DateOnly targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
-            // TODO: Решить проблему кэширования документов. ЗАТЕМ убрать блок "&& false".
-            if (false && TryToRestoreCachedDocument(targetDate) is var document && document != null)
+            if (cacheWorker.TryToFindTargetCachedDocumentValue(targetDate) is var document && document != null)
             {
                 deleteDocumentAfterWork = false;
                 pathToDocument = string.Empty;
@@ -179,15 +186,14 @@ namespace ScheduleAPI.Controllers.Data.Getter
 
             #region Подобласть: Получение нового документа с заменами.
 
-            pathToDocument = Helper.TryToDownloadFileFromGoogleDrive(element);
+            pathToDocument = DocumentGetter.DownloadChangesDocument(element);
             deleteDocumentAfterWork = true;
 
+            // Если мы берем документ из кэша, то его путь будет пустым. Аналогичное происходит при неудачном скачивании документа.
             if (!string.IsNullOrEmpty(pathToDocument))
             {
-                DocumentParser reader = new(pathToDocument);
+                DocumentParser reader = ProcessNewReaderCreation(pathToDocument);
 
-                // TODO: Аналогично предыдущему пункту.
-                // cachedDocuments.Add(reader.CreateCachedValue(targetDate));
                 return reader;
             }
 
@@ -199,11 +205,57 @@ namespace ScheduleAPI.Controllers.Data.Getter
         }
 
         /// <summary>
+        /// Выполняет необходимые операции по генерации нового объекта чтения документа с заменами.
+        /// Создает объект, пытается кэшировать его.
+        /// </summary>
+        /// <param name="pathToDocument">Путь к скачанному документу.</param>
+        /// <returns>Объект для чтения документа.</returns>
+        private DocumentParser ProcessNewReaderCreation(string pathToDocument)
+        {
+            var reader = new DocumentParser(pathToDocument);
+            cacheWorker.TryToAddValueToCachedVault(reader.ChangesDocument);
+
+            return reader;
+        }
+
+        /// <summary>
+        /// Выполняет работу по получению замен из отправленного экземпляра "DocumentParser".
+        /// </summary>
+        /// <param name="reader">Экземпляр класса "ChangedReader", с указанным документов для чтения замен.</param>
+        /// <param name="date"></param>
+        /// <returns>Замены, соответствующие указанной дате и группе.</returns>
+        private ChangesOfDay GetChangesFromReader(DocumentParser reader, DateTime? date)
+        {
+            ChangesOfDay toReturn;
+            try
+            {
+                toReturn = reader.GetOnlyChanges(DayIndex.GetDayByIndex(), GroupName);
+                toReturn.ChangesDate = date;
+                toReturn.ChangesFound = true;
+            }
+
+            catch (WrongDayInDocumentException exception)
+            {
+                ChangesController.Logger?.Log(LogLevel.Information, "При обработке документа обнаружилось несоответствие дат. Очередная ошибка составителей замен?\n" +
+                                                                    "{message}.", exception.Message);
+                toReturn = new();
+            }
+
+            catch (Exception exception)
+            {
+                ChangesController.Logger?.Log(LogLevel.Error, "Произшла какая-то ошибка, при работе с заменами:\n{message}.", exception.Message);
+                toReturn = new();
+            }
+
+            return toReturn;
+        }
+
+        /// <summary>
         /// Асинхронная функция. Пытается удалить файл по указанному пути. <br />
         /// Предназначен для удаления документа с заменами, после завершения работы с ним.
         /// </summary>
         /// <param name="path">Путь, по которому находится документ с заменами.</param>
-        private static async void DeleteChangesDocumentAsync(string path)
+        private async void DeleteChangesDocumentAsync(string path)
         {
             await Task.Run(() =>
             {
@@ -233,75 +285,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
                 }
             });
         }
-
-        /// <summary>
-        /// Выполняет работу по получению замен из отправленного экземпляра "DocumentParser".
-        /// </summary>
-        /// <param name="reader">Экземпляр класса "ChangedReader", с указанным документов для чтения замен.</param>
-        /// <param name="requiredData">
-        /// Необходимые данные для получения замен:
-        /// <list type="number">
-        /// <item>dayIndex — Индекс дня для получения замен;</item>
-        /// <item>groupName — Название группы для получения замен;</item>
-        /// <item>date — Дата, на которую предназначены замены.</item>
-        /// </list>
-        /// </param>
-        /// <returns>Замены, соответствующие указанной дате и группе.</returns>
-        private static ChangesOfDay GetChangesFromReader(DocumentParser reader, (int dayIndex, string groupName, DateTime? date) requiredData)
-        {
-            ChangesOfDay toReturn;
-            try
-            {
-                toReturn = reader.GetOnlyChanges(requiredData.dayIndex.GetDayByIndex(), requiredData.groupName);
-                toReturn.ChangesDate = requiredData.date;
-                toReturn.ChangesFound = true;
-            }
-
-            catch (WrongDayInDocumentException exception)
-            {
-                ChangesController.Logger?.Log(LogLevel.Information, "При обработке документа обнаружилось несоответствие дат. Очередная ошибка составителей замен?\n" +
-                                                                    "{message}.", exception.Message);
-                toReturn = new();
-            }
-
-            catch (Exception exception)
-            {
-                ChangesController.Logger?.Log(LogLevel.Error, "Произшла какая-то ошибка, при работе с заменами:\n{message}.", exception.Message);
-                toReturn = new();
-            }
-
-            return toReturn;
-        }
-
-        #region Подобласть: Работа с кэшэм.
-
-        private static ChangesOfDay? TryToRestoreCachedChanges(int dayIndex, string groupName)
-        {
-            var cachedElement = cachedChanges.Get(el =>
-            {
-                var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
-                var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
-
-                return basicTargetingDate.Equals(basicCachedValueDate) && groupName.Equals(el.GroupName);
-            });
-
-            return cachedElement;
-        }
-
-        private static XWPFDocument? TryToRestoreCachedDocument(DateOnly targetDate)
-        {
-            var cachedDocument = cachedDocuments.Get(doc =>
-                                                     doc.DocumentDate.Equals(targetDate));
-
-            return cachedDocument;
-        }
-
-        private static void TryToAddValueToCachedVault(string groupName, ChangesOfDay cachingValue)
-        {
-            if (cachingValue.ChangesFound)
-                cachedChanges.Add(new ChangesOfDayCache(cachingValue, groupName));
-        }
-        #endregion
         #endregion
     }
 }

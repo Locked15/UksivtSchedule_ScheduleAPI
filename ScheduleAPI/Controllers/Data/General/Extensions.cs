@@ -202,6 +202,21 @@ namespace ScheduleAPI.Controllers.Other.General
         }
 
         /// <summary>
+        /// Возвращает номер недели для текущей даты. <br />
+        /// Это может быть полезно для проверки кэша со следующей недели.
+        /// </summary>
+        /// <param name="date">Текущая дата.</param>
+        /// <returns>Номер недели (начиная с 1).</returns>
+        public static int GetWeekNumber(this DateOnly date)
+        {
+            int result = date.Day / 7;
+            if (result == 0)
+                result++;
+
+            return result;
+        }
+
+        /// <summary>
         /// Метод расширения, позволяющий 'скосить' лишнее значение индекса дня, если оно слишком большое.
         /// </summary>
         /// <param name="dayIndex">Индекс дня.</param>
@@ -326,7 +341,7 @@ namespace ScheduleAPI.Controllers.Other.General
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public static ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthChanges> allChanges, string day)
+        public static ChangeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthChanges> allChanges, string day)
         {
             /* Так как в целях совместимости была использована структура "DateTime", а не "DateOnly", ...
                ... то в дело сравнения вмешивается ещё и время, что может нарушить работу.
@@ -347,14 +362,14 @@ namespace ScheduleAPI.Controllers.Other.General
                     {
                         continue;
                     }
-
                     //А если текущая дата МЕНЬШЕ, чем начало таргетированной недели, мы уже её прошли.
                     else if (change.Date < start)
                     {
                         return null;
                     }
 
-                    if (change.DayOfWeek.Equals(day) && change.CheckHavingChanges())
+                    if (change.DayOfWeek != null && change.DayOfWeek.Equals(day) && 
+                        change.CheckHavingChanges())
                     {
                         return change;
                     }

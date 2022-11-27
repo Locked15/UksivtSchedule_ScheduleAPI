@@ -2,7 +2,7 @@
 using NPOI.XWPF.UserModel;
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Cache.CachedTypes;
+using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Elements.Schedule;
 using ScheduleAPI.Models.Exceptions;
 
@@ -18,7 +18,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
         /// <summary>
         /// Объект, содержащий документ, который будет прочитан для получения замен.
         /// </summary>
-        private readonly XWPFDocument document;
+        public ChangesDocument ChangesDocument { get; init; }
         #endregion
 
         #region Область: Конструкторы.
@@ -32,7 +32,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
         {
             StreamReader stream = new(path);
 
-            document = new XWPFDocument(stream.BaseStream);
+            ChangesDocument = new ChangesDocument(new(stream.BaseStream));
         }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
         /// Может быть использован для восстановления документа из кэша.
         /// </summary>
         /// <param name="document">Документ, с которым предстоит работать.</param>
-        public DocumentParser(XWPFDocument document)
+        public DocumentParser(ChangesDocument document)
         {
-            this.document = document;
+            ChangesDocument = document;
         }
         #endregion
 
@@ -93,7 +93,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
 
             #region Подобласть: Список с параграфами.
 
-            List<XWPFParagraph> paragraphs = document.GetParagraphsEnumerator().GetParagraphs();
+            List<XWPFParagraph> paragraphs = ChangesDocument.Document?.GetParagraphsEnumerator().GetParagraphs() ?? 
+                                             Enumerable.Empty<XWPFParagraph>().ToList();
             #endregion
 
             // Самым последним параграфом идет имя исполнителя, поэтому его игнорируем:
@@ -125,7 +126,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             // Если группа НЕ на практике, то начинаем проверять таблицу с заменами:
             else
             {
-                IEnumerator<XWPFTable> tables = document.GetTablesEnumerator();
+                IEnumerator<XWPFTable> tables = ChangesDocument.Document.GetTablesEnumerator();
 
                 while (tables.MoveNext())
                 {
@@ -256,6 +257,15 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             return new(absoluteChanges, newLessons);
         }
 
+        /// <summary>
+        /// Выполняет первичные проверки перед полноценным парсом документа.
+        /// </summary>
+        /// <param name="i">Текущий номер параграфа.</param>
+        /// <param name="day">День, указанный в документе.</param>
+        /// <param name="paragraphs">Список со всеми параграфами в документе.</param>
+        /// <param name="dayCheck">Выполнять строгую проверку на соответствие дня?</param>
+        /// <returns>Результат проверки.</returns>
+        /// <exception cref="WrongDayInDocumentException">В случае выполнения проверки дня, это исключение выбрасывается, если день в документе не соответствует выбранному.</exception>
         private static bool CompletePreconditionChecks(int i, string day, List<XWPFParagraph> paragraphs, bool dayCheck = false)
         {
             if (i == 5 && dayCheck)
@@ -310,21 +320,6 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             var changes = GetOnlyChanges(day, groupName);
 
             return schedule.MergeChanges(changes.NewLessons, changes.AbsoluteChanges);
-        }
-        #endregion
-
-        #region Подобласть: Кэширование.
-
-        /// <summary>
-        /// Создает кэш для документа с заменами.
-        /// </summary>
-        /// <param name="targetDate">Для упрощения работы дата в документе вынесена в параметр.</param>
-        /// <returns>Кэшированное значение.</returns>
-        public ChangesDocumentCache CreateCachedValue(DateOnly targetDate)
-        {
-            var cache = new ChangesDocumentCache(document, targetDate);
-
-            return cache;
         }
         #endregion
 

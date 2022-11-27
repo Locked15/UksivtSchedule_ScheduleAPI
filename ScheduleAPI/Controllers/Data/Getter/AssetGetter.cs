@@ -18,14 +18,10 @@ namespace ScheduleAPI.Controllers.Data.Getter
         private readonly IHostEnvironment environment;
 
         /// <summary>
-        /// Поле, содержащее объект-расписание, возвращаемое по умолчанию при возникновении ошибок.
+        /// Поле, содержащее объект-расписание, возвращаемое по умолчанию при возникновении ошибок. <br />
+        /// Поля 'As-It', готово к выводу сразу, без дополнительных действий (вроде перевода названия дня).
         /// </summary>
         private static readonly DaySchedule defaultDaySchedule;
-
-        /// <summary>
-        /// Поле, содержащее объект-расписание на неделю, возвращаемое по умолчанию при возникновении ошибок.
-        /// </summary>
-        private static readonly WeekSchedule defaultWeekSchedule;
         #endregion
 
         #region Область: Конструкторы класса.
@@ -42,11 +38,8 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// <summary>
         /// Статический конструктор класса.
         /// </summary>
-        static AssetGetter()
-        {
-            defaultDaySchedule = new("Monday", Enumerable.Empty<Lesson>().ToList());
-            defaultWeekSchedule = new("19П-3", Enumerable.Empty<DaySchedule>().ToList());
-        }
+        static AssetGetter() =>
+               defaultDaySchedule = new("Воскресенье", Enumerable.Empty<Lesson>().ToList());
         #endregion
 
         #region Область: Методы.
@@ -138,18 +131,26 @@ namespace ScheduleAPI.Controllers.Data.Getter
                     });
                     week?.DaySchedules.ForEach(day => day.Day = day.Day.GetTranslatedDay());
 
-                    if (week == null || week.DaySchedules[dayIndex] == null)
+                    try
                     {
-                        ScheduleController.Logger?.Log(LogLevel.Error, "При получении данных (День) произошла ошибка: " +
-                                                       "Группа — {groupName}, День — {daySchedule}.",
-                                                       week?.GroupName, week?.DaySchedules[dayIndex]?.Day);
+                        if (week == null || week.DaySchedules[dayIndex] == null)
+                        {
+                            ScheduleController.Logger?.Log(LogLevel.Error, "При получении данных (День) произошла ошибка: " +
+                                                                           "Группа — {groupName}, День — {daySchedule}.",
+                                                           week?.GroupName, week?.DaySchedules[dayIndex]?.Day);
+                        }
+                        return week?.DaySchedules[dayIndex] ?? defaultDaySchedule;
                     }
-                    return week?.DaySchedules[dayIndex] ?? defaultDaySchedule;
+                    catch (Exception _) when (_ is ArgumentOutOfRangeException || _ is IndexOutOfRangeException)
+                    {
+                        ScheduleController.Logger?.Log(LogLevel.Error, "При возвращении расписания произошёл выход за пределы массива.");
+                        return defaultDaySchedule;
+                    }
                 }
             }
 
             ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
-                                           "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
+                                                           "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
                                            groupBranch, subFolder, groupName);
             return defaultDaySchedule;
         }
