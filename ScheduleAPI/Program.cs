@@ -7,7 +7,8 @@ builder.Services.AddControllersWithViews();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle.
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddApplicationInsightsTelemetry(builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
+builder.Services.AddApplicationInsightsTelemetry(options => 
+    options.ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
 
 var app = builder.Build();
 
