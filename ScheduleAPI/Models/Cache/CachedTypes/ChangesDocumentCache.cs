@@ -1,5 +1,5 @@
-﻿using NPOI.XWPF.UserModel;
-using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+using ScheduleAPI.Models.Elements.Documents;
 
 namespace ScheduleAPI.Models.Cache.CachedTypes
 {
@@ -7,21 +7,15 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
     /// Класс кэша для документа с заменами. <br />
     /// Так как Google Drive часто отказывает в скачивании документа с заменами, его кэширование может быть полезной мерой.
     /// </summary>
-    public class ChangesDocumentCache : AbstractCacheElement<XWPFDocument>
+    public class ChangesDocumentCache : AbstractCacheElement<ChangesDocument>
     {
-        /// <summary>
-        /// Дата, для которой предназначен данный документ.
-        /// </summary>
-        public DateOnly DocumentDate { get; private set; }
-
         /// <summary>
         /// Конструктор класса.
         /// </summary>
         /// <param name="cachingValue">Документ с заменами, который нужно кэшировать.</param>
-        /// <param name="documentDate">Дата, на которую предназначен данный документ.</param>
-        public ChangesDocumentCache(XWPFDocument cachingValue, DateOnly documentDate) : base(cachingValue)
+        public ChangesDocumentCache(ChangesDocument cachingValue) : base(cachingValue)
         {
-            DocumentDate = documentDate;
+
         }
 
         /// <summary>
@@ -38,7 +32,7 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <returns>Если кэш ещё актуален — его значение;
         /// В ином случае — "null".</returns>
-        public override XWPFDocument? GetCacheSafety()
+        public override ChangesDocument? GetCacheSafety()
         {
             return base.GetCacheSafety();
         }

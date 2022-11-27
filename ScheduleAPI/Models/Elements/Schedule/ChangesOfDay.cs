@@ -1,11 +1,15 @@
-﻿namespace ScheduleAPI.Models.Elements.Schedule
+﻿using ScheduleAPI.Models.Cache.CachedTypes;
+using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+using System.Text.Json.Serialization;
+
+namespace ScheduleAPI.Models.Elements.Schedule
 {
     /// <summary>
     /// Класс, представляющий сущность замен на один день.
     /// <br/>
     /// Нужно для работы API.
     /// </summary>
-    public class ChangesOfDay
+    public class ChangesOfDay : ICacheable<ChangesOfDay, ChangesOfDayCache>
     {
         #region Область: Свойства.
 
@@ -31,6 +35,9 @@
         /// Список с парами замен.
         /// </summary>
         public List<Lesson> NewLessons { get; set; }
+
+        [JsonIgnore]
+        public bool CachingIsEnabled { get; } = true;
         #endregion
 
         #region Область: Конструкторы.
@@ -107,6 +114,15 @@
             }
 
             return baseValue;
+        }
+
+        public ChangesOfDayCache? GenerateCachedValue(params object[] args)
+        {
+            var groupName = args.FirstOrDefault() as string ?? string.Empty;
+            if (CachingIsEnabled && ChangesFound)
+                return new ChangesOfDayCache(this, groupName);
+            else
+                return null;
         }
         #endregion
     }

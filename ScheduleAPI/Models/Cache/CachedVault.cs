@@ -14,9 +14,9 @@ namespace ScheduleAPI.Models.Cache
     /// <br /><br />
     /// Несоответствие отправленных типов будет расценено как ошибки компиляции.
     /// </summary>
-    /// <typeparam name="T">Любой специфический тип кэшированных данных (например: "ChangesOfDayCache").</typeparam>
-    /// <typeparam name="Y">Целевой тип, который будет храниться в кэше (для предыдущего примера таковым будет "ChangesOfDay").</typeparam>
-    public class CachedVault<T, Y> where T : AbstractCacheElement<Y> where Y : class
+    /// <typeparam name="T">Целевой тип, который будет храниться в кэше (для предыдущего примера таковым будет "ChangesOfDay").</typeparam>
+    /// <typeparam name="Y">Любой специфический тип кэшированных данных (например: "ChangesOfDayCache").</typeparam>
+    public class CachedVault<T, Y> where T : ICacheable<T, Y> where Y : AbstractCacheElement<T>
     {
         #region Область: Константы.
 
@@ -28,7 +28,7 @@ namespace ScheduleAPI.Models.Cache
         /// <summary>
         /// Список, содержащий кэшированные значения.
         /// </summary>
-        public List<T> CachedValues { get; set; }
+        public List<Y> CachedValues { get; set; }
 
         /// <summary>
         /// Максимальное количество кэшированных элементов.
@@ -44,7 +44,7 @@ namespace ScheduleAPI.Models.Cache
         /// </summary>
         /// <param name="index">Индекс элемента, который необходимо получить.</param>
         /// <returns>Элемент по указанному индексу.</returns>
-        public T this[int index] => CachedValues[index];
+        public Y this[int index] => CachedValues[index];
         #endregion
 
         #region Область: Функции инициализации.
@@ -57,7 +57,7 @@ namespace ScheduleAPI.Models.Cache
         public CachedVault(int maxCachedCount = 15)
         {
             MaxCachedCount = maxCachedCount;
-            CachedValues = new List<T>(maxCachedCount);
+            CachedValues = new List<Y>(maxCachedCount);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace ScheduleAPI.Models.Cache
                 try
                 {
                     using var stream = new StreamReader(pathToSavedCache, Encoding.Default);
-                    CachedValues = JsonConvert.DeserializeObject<List<T>>(stream.ReadToEnd()) ??
+                    CachedValues = JsonConvert.DeserializeObject<List<Y>>(stream.ReadToEnd()) ??
                                    throw new Exception("При попытке создать поток чтения сохраненного кэша было получено значение \'null\'.");
 
                     return true;
@@ -93,44 +93,60 @@ namespace ScheduleAPI.Models.Cache
         #region Область: Функции работы с кэшем.
 
         /// <summary>
-        /// Функция добавления нового элемента в список кэшированных элементов.
+        /// Функция добавления нового элемента в список кэшированных элементов. <br />
+        /// По умолчанию игнорирует пустые (null) элементы и не добавляет их в хранилище.
         /// </summary>
         /// <param name="newElement">Новый элемент в списке.</param>
+        /// <param name="insertNullValues">Определяет, будут ли вносится пустые (null) значения в хранилище кэша. Значение по умолчанию: false.</param>
         /// <returns>Был ли добавлен новый элемент (в кэше его не было), либо нет (он там уже есть).</returns>
-        public bool Add(T newElement)
+        public bool Add(Y newElement, bool insertNullValues = false)
         {
-            var repeating = CachedValues.Any(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode());
-            var oldValueExpirationState = repeating && CachedValues.First(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode()).CheckToRelevance();
-
-            if (repeating && !oldValueExpirationState)
+            if (newElement != null)
             {
-                return false;
+                var repeating = CachedValues.Any(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode());
+                var oldValueExpirationState = repeating && CachedValues.First(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode()).CheckToRelevance();
+
+                if (repeating && !oldValueExpirationState)
+                {
+                    return false;
+                }
+
+                else
+                {
+                    if (repeating)
+                        CachedValues.Remove(CachedValues.First(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode()));
+
+                    if (CachedValues.Count >= MaxCachedCount)
+                        UpdateCachedValuesList();
+
+                    CachedValues.Add(newElement);
+                    UpdateSavedCacheAsync();
+
+                    return true;
+                }
             }
-
-            else
+            else if (insertNullValues)
             {
-                if (repeating)
-                    CachedValues.Remove(CachedValues.First(el => el.GetCachedValueHashCode() == newElement.GetCachedValueHashCode()));
-
-                if (CachedValues.Count >= MaxCachedCount)
-                    UpdateCachedValuesList();
-
                 CachedValues.Add(newElement);
                 UpdateSavedCacheAsync();
 
                 return true;
             }
+
+            return false;
         }
 
         /// <summary>
-        /// Получает элемент из сводного кэша.
+        /// Получает элемент из сводного кэша. <br />
+        /// По умолчанию из выборки исключаются пустые элементы (null), но это поведение можно изменить.
         /// </summary>
         /// <param name="predicate">Предикат (логическое условие), по которому необходимо найти элемент.</param>
+        /// <param name="saveNullValues">Устанавливает, будут ли учитываться пустые (null) значения в выборке. Значение по умолчанию: false.</param>
         /// <returns>Значение кэшированного элемента. <br />
         /// Null, если он не был найден.</returns>
-        public Y? Get(Func<T, bool> predicate)
+        public T? Get(Func<Y, bool> predicate, bool saveNullValues = false)
         {
-            var predicatedCachedValue = CachedValues.FirstOrDefault(el => predicate(el));
+            var predicatedCachedValue = CachedValues.Where(el => el != null || saveNullValues).FirstOrDefault(el => predicate(el));
 
             if (predicatedCachedValue != null)
             {
@@ -142,7 +158,7 @@ namespace ScheduleAPI.Models.Cache
                     CachedValues.Remove(predicatedCachedValue);
                     UpdateSavedCacheAsync();
 
-                    return null;
+                    return default;
                 }
 
                 else
@@ -153,7 +169,7 @@ namespace ScheduleAPI.Models.Cache
 
             else
             {
-                return null;
+                return default;
             }
         }
 
@@ -200,7 +216,7 @@ namespace ScheduleAPI.Models.Cache
         /// </summary>
         private void UpdateCachedValuesList()
         {
-            var toRemove = new List<T>(1);
+            var toRemove = new List<Y>(1);
 
             CachedValues.ForEach(value =>
             {
@@ -245,7 +261,7 @@ namespace ScheduleAPI.Models.Cache
         /// <returns>Путь к директории.</returns>
         private static string GetPathToSavedCacheFile()
         {
-            string cachedValueClassName = typeof(T).Name;
+            string cachedValueClassName = typeof(Y).Name;
             string pathToSavedCache = Path.Combine(Helper.GetSiteRootFolderPath(), "Assets", CacheFolderName, $"{cachedValueClassName}.cache");
 
             return pathToSavedCache;
