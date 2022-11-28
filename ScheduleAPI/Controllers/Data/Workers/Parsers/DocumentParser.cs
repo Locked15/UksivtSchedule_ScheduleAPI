@@ -1,12 +1,12 @@
 ﻿using System.Text;
 using NPOI.XWPF.UserModel;
-using ScheduleAPI.Controllers.API.Schedule;
+using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Elements.Schedule;
 using ScheduleAPI.Models.Exceptions;
 
-namespace ScheduleAPI.Controllers.Data.Getter.Parsers
+namespace ScheduleAPI.Controllers.Data.Workers.Parsers
 {
     /// <summary>
     /// Класс, содержащий логику, нужную для работы с документом с заменами.
@@ -58,9 +58,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
         /// <returns>Замены на выбранный день.</returns>
         public ChangesOfDay GetOnlyChanges(WeekSchedule schedule, string day)
         {
-            string groupName = schedule.GroupName;
+            string? groupName = schedule.GroupName;
 
-            return GetOnlyChanges(day, groupName);
+            return GetOnlyChanges(day, groupName ?? string.Empty);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
 
             #region Подобласть: Список с параграфами.
 
-            List<XWPFParagraph> paragraphs = ChangesDocument.Document?.GetParagraphsEnumerator().GetParagraphs() ?? 
+            List<XWPFParagraph> paragraphs = ChangesDocument.Document?.GetParagraphsEnumerator().GetParagraphs() ??
                                              Enumerable.Empty<XWPFParagraph>().ToList();
             #endregion
 
@@ -118,7 +118,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
             // Проверяем участие проверяемой группы на "практику":
             if (onPractiseString.Contains(groupName.ToLower()))
             {
-                DaySchedule temp = DaySchedule.GetOnPractiseSchedule(day);
+                DaySchedule temp = Helper.GetOnPractiseSchedule(day);
 
                 return new ChangesOfDay(true, temp.Lessons);
             }
@@ -222,7 +222,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
                             // Проверяем участие проверяемой группы на "ликвидацию задолженностей":
                             if (changesListen && lowerText.Contains("ликвидация"))
                             {
-                                DaySchedule temp = DaySchedule.GetDebtLiquidationSchedule(day);
+                                DaySchedule temp = Helper.GetDebtLiquidationSchedule(day);
 
                                 return new ChangesOfDay(true, temp.Lessons);
                             }
@@ -299,10 +299,10 @@ namespace ScheduleAPI.Controllers.Data.Getter.Parsers
         /// <exception cref="WrongDayInDocumentException">Отправленный день не соответствует дню в документе.</exception>
         public DaySchedule GetDayScheduleWithChanges(WeekSchedule schedule, string day)
         {
-            string groupName = schedule.GroupName;
+            string? groupName = schedule.GroupName;
             DaySchedule scheduleOfDay = schedule.DaySchedules[day.GetIndexByDay()];
 
-            return GetDayScheduleWithChanges(day, groupName, scheduleOfDay);
+            return GetDayScheduleWithChanges(day, groupName ?? string.Empty, scheduleOfDay);
         }
 
         /// <summary>

@@ -1,10 +1,10 @@
-﻿using ScheduleAPI.Controllers.API.Schedule;
-using ScheduleAPI.Controllers.Data.Getter.Downloaders.Basic;
+﻿using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
 using ScheduleAPI.Models.Elements.Site;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace ScheduleAPI.Controllers.Data.Getter.Downloaders
+namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
 {
     /// <summary>
     /// Класс-скачиватель, нацеленный на платформу Google Drive.

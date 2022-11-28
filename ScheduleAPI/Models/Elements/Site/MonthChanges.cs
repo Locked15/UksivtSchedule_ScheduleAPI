@@ -28,7 +28,8 @@ namespace ScheduleAPI.Models.Elements.Site
         /// </summary>
         public MonthChanges()
         {
-
+            Month = string.Empty;
+            Changes = Enumerable.Empty<ChangeElement>().ToList();
         }
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public ChangeElement TryToFindElementByNameOfDayWithoutPreviousWeeks(string day)
+        public ChangeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(string day)
         {
             DateTime start = DateTime.Now.GetStartOfWeek().AddDays(-1);
             DateTime end = DateTime.Now.GetEndOfWeek().AddDays(1);
@@ -72,7 +73,7 @@ namespace ScheduleAPI.Models.Elements.Site
                     return null;
                 }
 
-                if (change.DayOfWeek.Equals(day) && change.CheckHavingChanges())
+                if (change.DayOfWeek?.Equals(day) ?? false && change.CheckHavingChanges())
                 {
                     return change;
                 }

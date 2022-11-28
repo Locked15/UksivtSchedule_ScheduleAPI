@@ -2,13 +2,13 @@
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Elements.Schedule;
-using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.API.Changes;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {
     /// <summary>
-    /// Содержит вынесенную логику для работы с хранилищами кэша из класса "ChangesGetter".
+    /// Содержит вынесенную логику для работы с хранилищами кэша из класса "TargetChangesGetter".
     /// </summary>
     public class ChangesGetterCacheWorker
     {
@@ -59,7 +59,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
                 var basicTargetingDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
                 var basicCachedValueDate = DateOnly.FromDateTime(el.CachedElement.ChangesDate.GetValueOrDefault(new DateTime(0)));
 
-                return (Helper.CheckDaysToEqualityIncludingFutureDates(basicTargetingDate, basicCachedValueDate) && groupName.Equals(el.GroupName));
+                return Helper.CheckDaysToEqualityIncludingFutureDates(basicTargetingDate, basicCachedValueDate) && groupName.Equals(el.GroupName);
             });
 
             return cachedElement;
@@ -98,7 +98,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
 
                 default:
                     ChangesController.Logger?.LogWarning("Попытка кэшировать значение, которое не поддерживает сохранение в кэш.\n" +
-                                                         "(ChangesGetter -> TryToAddValueToCachedVault: {type}).", cacheableValue.GetType() as Type);
+                                                         "(TargetChangesGetter -> TryToAddValueToCachedVault: {type}).", cacheableValue.GetType() as Type);
                     return false;
             }
         }

@@ -18,17 +18,35 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// <summary>
         /// Свойство, содержащее название пары.
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Свойство, содержащее имя преподавателя.
         /// </summary>
-        public string Teacher { get; set; }
+        public string? Teacher { get; set; }
 
         /// <summary>
         /// Свойство, содержащее место проведения пары.
         /// </summary>
-        public string Place { get; set; }
+        public string? Place { get; set; }
+
+        /// <summary>
+        /// Определяет, была ли пара изменена заменами.
+        /// </summary>
+        public bool Changed { get; set; } = false;
+        #endregion
+
+        #region Область: Константы.
+
+        /// <summary>
+        /// Постоянная, содержащая шаблон для получения строкового варианта объекта.
+        /// </summary>
+        private const string ToStringTemplate = """
+            Lesson Number: {0};
+            Lesson Name: {1};
+            Lesson Teacher: {2};
+            Lesson Place: {3}.
+            """;
         #endregion
 
         #region Область: Конструкторы.
@@ -38,7 +56,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// </summary>
         public Lesson()
         {
-
+            Number = 0;
         }
 
         /// <summary>
@@ -61,7 +79,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// <param name="name">Названия пары.</param>
         /// <param name="teacher">Имя преподавателя.</param>
         /// <param name="place">Место проведения.</param>
-        public Lesson(int number, string name, string teacher, string place)
+        public Lesson(int number, string? name, string? teacher, string? place)
         {
             Number = number;
             Name = name;
@@ -79,6 +97,11 @@ namespace ScheduleAPI.Models.Elements.Schedule
         public bool CheckHaveValue()
         {
             return Name != null;
+        }
+
+        public override string ToString()
+        {
+            return string.Format(ToStringTemplate, Number, Name, Teacher, Place);
         }
         #endregion
     }

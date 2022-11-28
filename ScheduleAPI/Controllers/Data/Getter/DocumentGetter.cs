@@ -1,7 +1,7 @@
-﻿using ScheduleAPI.Controllers.API.Schedule;
-using ScheduleAPI.Controllers.Data.Getter.Downloaders.Basic;
-using ScheduleAPI.Controllers.Data.Getter.Downloaders;
-using ScheduleAPI.Models.Elements.Site;
+﻿using ScheduleAPI.Models.Elements.Site;
+using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Controllers.Data.Workers.Downloaders;
+using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
 
 namespace ScheduleAPI.Controllers.Data.Getter
 {

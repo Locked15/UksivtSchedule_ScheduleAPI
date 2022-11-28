@@ -1,4 +1,6 @@
-﻿namespace ScheduleAPI.Controllers.Other.General
+﻿using ScheduleAPI.Models.Elements.Schedule;
+
+namespace ScheduleAPI.Controllers.Other.General
 {
     /// <summary>
     /// Класс-помощник, нужный для различных задач.
@@ -41,6 +43,81 @@
             bool daysAreEqual = first.DayOfWeek == second.DayOfWeek;
 
             return first == second || (isFuture && daysAreEqual);
+        }
+
+        /// <summary>
+        /// Если замены на весь день, то возвращаемое значение содержит только замены.
+        /// Чтобы добавить пустые пары, используется этот метод.
+        /// </summary>
+        /// <param name="lessons">Расписание замен.</param>
+        /// <returns>Расписание замен с заполнением.</returns>
+        public static List<Lesson> FillEmptyLessons(List<Lesson> lessons)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                bool missing = true;
+
+                foreach (Lesson lesson in lessons)
+                {
+                    if (lesson.Number == i)
+                    {
+                        missing = false;
+
+                        break;
+                    }
+                }
+
+                if (missing)
+                {
+                    lessons.Add(new Lesson(i));
+                }
+            }
+
+            //Добавленные "пустые" пары находятся в конце списка, так что ...
+            //... мы сортируем их в порядке номера пар:
+            lessons.OrderBy(lesson => lesson.Number);
+
+            return lessons;
+        }
+
+        /// <summary>
+        /// Статический метод, позволяющий получить расписание для группы с практикой.
+        /// </summary>
+        /// <param name="day">День недели для создания расписания.</param>
+        /// <returns>Расписание на день для группы с практикой.</returns>
+        public static DaySchedule GetOnPractiseSchedule(string day)
+        {
+            List<Lesson> lessons = new(7);
+
+            for (int i = 0; i < 7; i++)
+            {
+                lessons.Add(new Lesson(i, "Практика", null, null)
+                {
+                    Changed = true
+                });
+            }
+
+            return new DaySchedule(day, lessons);
+        }
+
+        /// <summary>
+        /// Статический метод, позволяющий получить расписание для группы с ликвидацией задолженностей.
+        /// </summary>
+        /// <param name="day">День недели для создания расписания.</param>
+        /// <returns>Расписание на день для группы с ликвидацией задолженностей.</returns>
+        public static DaySchedule GetDebtLiquidationSchedule(string day)
+        {
+            List<Lesson> lessons = new(7);
+
+            for (int i = 0; i < 7; i++)
+            {
+                lessons.Add(new Lesson(i, "Ликвидация задолженностей", null, null)
+                {
+                    Changed = true
+                });
+            }
+
+            return new DaySchedule(day, lessons);
         }
         #endregion
     }

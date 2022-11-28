@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Controllers.Data.Getter.Downloaders.Basic
+﻿namespace ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic
 {
     public abstract class AbstractPlatformDownloader
     {

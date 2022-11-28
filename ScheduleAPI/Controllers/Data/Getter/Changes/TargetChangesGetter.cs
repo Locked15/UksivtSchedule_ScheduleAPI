@@ -1,20 +1,21 @@
-﻿using ScheduleAPI.Controllers.API.Schedule;
-using ScheduleAPI.Controllers.Data.Getter.Parsers;
+﻿using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Data.Workers.Cache;
+using ScheduleAPI.Controllers.Data.Workers.Parsers;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
 using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Models.Exceptions;
 
-namespace ScheduleAPI.Controllers.Data.Getter
+namespace ScheduleAPI.Controllers.Data.Getter.Changes
 {
     /// <summary>
     /// Класс, обертывающий функционал получения замен.
+    /// Предназначен для получения таргетированных замен — замен для какой-либо группы (на день или неделю).
     /// <br />
     /// Он был обычным, стал статическим, и вот он снова обычный.
     /// Теперь статика применяется для работы с кэшем.
     /// </summary>
-    public class ChangesGetter
+    public class TargetChangesGetter
     {
         #region Область: Поля.
 
@@ -34,7 +35,8 @@ namespace ScheduleAPI.Controllers.Data.Getter
         public int DayIndex { get; set; }
 
         /// <summary>
-        /// Название группы, которую предполагается искать.
+        /// Название группы, которую предполагается искать. <br />
+        /// Игнорируется в случае поиска всех доступных замен.
         /// </summary>
         public string GroupName { get; set; }
         #endregion
@@ -46,7 +48,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// </summary>
         /// <param name="dayIndex">Индекс дня, на который необходимы замены (0..6). Игнорируется, если необходимы замены на неделю.</param>
         /// <param name="groupName">Название группы, для которой нужно извлечь замены.</param>
-        public ChangesGetter(int dayIndex, string groupName)
+        public TargetChangesGetter(int dayIndex, string groupName)
         {
             DayIndex = dayIndex;
             GroupName = groupName.RemoveStringChars();
@@ -55,7 +57,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// <summary>
         /// Инициализирует объект для работы с кэшем.
         /// </summary>
-        static ChangesGetter() =>
+        static TargetChangesGetter() =>
                cacheWorker = new ChangesGetterCacheWorker();
         #endregion
 
@@ -146,13 +148,16 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// <returns>Список с объектами, содержащими замены на каждый день.</returns>
         public List<ChangesOfDay> GetWeekChanges()
         {
+            var basicDayIndex = DayIndex;
             List<ChangesOfDay> list = new(1);
 
             for (int i = 0; i < 7; i++)
             {
+                DayIndex = i;
                 list.Add(GetDayChanges());
             }
 
+            DayIndex = basicDayIndex;
             return list;
         }
         #endregion

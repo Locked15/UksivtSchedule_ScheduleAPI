@@ -3,7 +3,7 @@ using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
 
-namespace ScheduleAPI.Controllers.Data.Getter
+namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {
     /// <summary>
     /// Класс, нужный для получения данных посредством заложенных в приложение ассетов.
@@ -129,7 +129,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
                     {
                         PropertyNameCaseInsensitive = true
                     });
-                    week?.DaySchedules.ForEach(day => day.Day = day.Day.GetTranslatedDay());
+                    week?.DaySchedules.ForEach(day => day.Day = day.Day?.GetTranslatedDay());
 
                     try
                     {

@@ -1,6 +1,6 @@
 ﻿using ScheduleAPI.Models.Elements.Site;
 
-namespace ScheduleAPI.Controllers.Data.Getter.Downloaders.Basic
+namespace ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic
 {
     /// <summary>
     /// Общий интерфейс для всех классов скачивания документов с различных платформ.

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Controllers.Data.Getter;
+using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
 
-namespace ScheduleAPI.Controllers.API.Schedule
+namespace ScheduleAPI.Controllers.API.Changes
 {
     /// <summary>
     /// Класс-контроллер для получения замен.
@@ -56,7 +56,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
         public JsonResult DayChanges(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
-            ChangesOfDay changes = new ChangesGetter(dayIndex, groupName).GetDayChanges();
+            ChangesOfDay changes = new TargetChangesGetter(dayIndex, groupName).GetDayChanges();
 
             changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
 
@@ -72,7 +72,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
         [Route("~/api/[controller]/week")]
         public JsonResult WeekChanges(string groupName = "19П-3")
         {
-            List<ChangesOfDay> changes = new ChangesGetter(default, groupName).GetWeekChanges();
+            List<ChangesOfDay> changes = new TargetChangesGetter(default, groupName).GetWeekChanges();
 
             return new JsonResult(changes, SerializeFormatter.JsonOptions);
         }

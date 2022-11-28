@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using ScheduleAPI.Controllers.Other.General;
+using System.Text;
 
 /// <summary>
 /// Область кода с расписанием на день.
@@ -15,12 +16,23 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// <summary>
         /// Свойство, содержащее название текущего дня.
         /// </summary>
-        public string Day { get; set; }
+        public string? Day { get; set; }
 
         /// <summary>
         /// Свойство, содержащее список пар для данного дня.
         /// </summary>
         public List<Lesson> Lessons { get; set; }
+        #endregion
+
+        #region Область: Константы.
+
+        private const string ToStringTemplate = """
+            Day: {0};
+            Lessons: 
+            (
+                {1}.
+            ).
+            """;
         #endregion
 
         #region Область: Конструкторы.
@@ -30,7 +42,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// </summary>
         public DaySchedule()
         {
-
+            Lessons = Enumerable.Empty<Lesson>().ToList();
         }
 
         /// <summary>
@@ -38,7 +50,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// </summary>
         /// <param name="day">День недели.</param>
         /// <param name="lessons">Пары в этот день.</param>
-        public DaySchedule(string day, List<Lesson> lessons)
+        public DaySchedule(string? day, List<Lesson> lessons)
         {
             Day = day;
             Lessons = lessons;
@@ -46,6 +58,14 @@ namespace ScheduleAPI.Models.Elements.Schedule
         #endregion
 
         #region Область: Методы.
+
+        public DaySchedule MergeChanges(ChangesOfDay? changes)
+        {
+            if (changes == null)
+                return new DaySchedule(Day, Lessons);
+            else
+                return MergeChanges(changes.NewLessons, changes.AbsoluteChanges);
+        }
 
         /// <summary>
         /// Метод, позволяющий произвести слияние оригинального расписания и замен.
@@ -61,91 +81,23 @@ namespace ScheduleAPI.Models.Elements.Schedule
             {
                 //Чтобы избавиться от возможных проблем со ссылками в будущем, ...
                 //... создаем новый объект:
-                return new DaySchedule(Day, FillEmptyLessons(changes));
+                var toReturn = new DaySchedule(Day, Helper.FillEmptyLessons(changes));
+                toReturn.Lessons.ForEach(les => les.Changed = true);
             }
 
             foreach (Lesson change in changes)
             {
                 int lessonIndex = change.Number;
-
-                if (change.Name.ToLower().Equals("нет"))
+                if (change.Name?.ToLower()?.Equals("нет") ?? false)
                 {
                     change.Name = null;
                 }
 
+                change.Changed = true;
                 mergedSchedule[lessonIndex] = change;
             }
 
             return new DaySchedule(Day, mergedSchedule);
-        }
-
-        /// <summary>
-        /// Если замены на весь день, то возвращаемое значение содержит только замены.
-        /// Чтобы добавить пустые пары, используется этот метод.
-        /// </summary>
-        /// <param name="lessons">Расписание замен.</param>
-        /// <returns>Расписание замен с заполнением.</returns>
-        private List<Lesson> FillEmptyLessons(List<Lesson> lessons)
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                bool missing = true;
-
-                foreach (Lesson lesson in lessons)
-                {
-                    if (lesson.Number == i)
-                    {
-                        missing = false;
-
-                        break;
-                    }
-                }
-
-                if (missing)
-                {
-                    lessons.Add(new Lesson(i));
-                }
-            }
-
-            //Добавленные "пустые" пары находятся в конце списка, так что ...
-            //... мы сортируем их в порядке номера пар:
-            lessons.OrderBy(lesson => lesson.Number);
-
-            return lessons;
-        }
-
-        /// <summary>
-        /// Статический метод, позволяющий получить расписание для группы с практикой.
-        /// </summary>
-        /// <param name="day">День недели для создания расписания.</param>
-        /// <returns>Расписание на день для группы с практикой.</returns>
-        public static DaySchedule GetOnPractiseSchedule(string day)
-        {
-            List<Lesson> lessons = new List<Lesson>(7);
-
-            for (int i = 0; i < 7; i++)
-            {
-                lessons.Add(new Lesson(i, "Практика", null, null));
-            }
-
-            return new DaySchedule(day, lessons);
-        }
-
-        /// <summary>
-        /// Статический метод, позволяющий получить расписание для группы с ликвидацией задолженностей.
-        /// </summary>
-        /// <param name="day">День недели для создания расписания.</param>
-        /// <returns>Расписание на день для группы с ликвидацией задолженностей.</returns>
-        public static DaySchedule GetDebtLiquidationSchedule(string day)
-        {
-            List<Lesson> lessons = new List<Lesson>(7);
-
-            for (int i = 0; i < 7; i++)
-            {
-                lessons.Add(new Lesson(i, "Ликвидация задолженностей", null, null));
-            }
-
-            return new DaySchedule(day, lessons);
         }
 
         /// <summary>
@@ -154,20 +106,11 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// <returns>Строковая репрезентация объекта.</returns>
         public override string ToString()
         {
-            StringBuilder toReturn = new(Day + ":\n" +
-            "{");
+            StringBuilder builder = new();
+            foreach (Lesson lesson in Lessons) 
+                builder.Append(lesson.ToString());
 
-            foreach (Lesson lesson in Lessons)
-            {
-                toReturn.Append("\n\t{").Append("\n\t\tНомер пары: ").Append(lesson.Number)
-                .Append("\n\t\t").Append("Название пары: ").Append(lesson.Name).Append("\n\t\t")
-                .Append("Кабинет: ").Append(lesson.Place).Append("\n\t\t")
-                .Append("Преподаватель: ").Append(lesson.Teacher).Append("\n\t}");
-            }
-
-            toReturn.Append("\n}");
-
-            return toReturn.ToString();
+            return string.Format(ToStringTemplate, Day, builder.ToString());
         }
 
         /// <summary>
@@ -175,20 +118,28 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// </summary>
         /// <param name="obj">Объект, с которым нужно провести сравнение.</param>
         /// <returns>Равенство объектов.</returns>
-        public bool Equals(DaySchedule obj)
+        public override bool Equals(object? obj)
         {
-            if (Lessons.Count != obj.Lessons.Count ||
-            Day != obj.Day)
+            if (obj is DaySchedule day)
             {
-                return false;
+                if (Lessons.Count != day.Lessons.Count || Day != day.Day)
+                    return false;
+                if (ToString() != day.ToString())
+                    return false;
+
+                return true;
             }
 
-            if (ToString() != obj.ToString())
-            {
-                return false;
-            }
+            return false;
+        }
 
-            return true;
+        /// <summary>
+        /// Метод для получения хэш-кода объекта.
+        /// </summary>
+        /// <returns>Хэш-код.</returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
         #endregion
     }

@@ -1,12 +1,12 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
 using Microsoft.Extensions.Logging;
-using ScheduleAPI.Controllers.API.Schedule;
+using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Models.Exceptions;
 
-namespace ScheduleAPI.Controllers.Data.Getter.Parsers
+namespace ScheduleAPI.Controllers.Data.Workers.Parsers
 {
     /// <summary>
     /// Класс, представляющий сущность парсера и его логику.
