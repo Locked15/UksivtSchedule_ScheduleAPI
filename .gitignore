@@ -362,8 +362,8 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-#Properties folder
+# Properties folder
 Properties/
 
-#Application settings (i.e. connection strings)
+# Application settings (i.e. connection strings)
 appsettings.json
