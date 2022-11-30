@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace ScheduleAPI.Controllers.Other.General
 {
@@ -21,6 +22,8 @@ namespace ScheduleAPI.Controllers.Other.General
             {
                 WriteIndented = true
             };
+
+            JsonOptions.Converters.Add(new JsonStringEnumConverter());
         }
     }
 }

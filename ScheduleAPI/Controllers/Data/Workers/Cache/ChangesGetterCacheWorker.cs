@@ -31,7 +31,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         #region Область: Конструкторы.
 
         /// <summary>
-        /// Статический конструктор класса.
+        /// Конструктор класса.
         /// </summary>
         public ChangesGetterCacheWorker()
         {

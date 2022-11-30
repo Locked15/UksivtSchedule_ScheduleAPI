@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.Metrics;
+using System.Text.Json;
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
@@ -24,6 +25,15 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         private static readonly DaySchedule defaultDaySchedule;
         #endregion
 
+        #region Область: Константы.
+
+        /// <summary>
+        /// Содержит название файла со всеми расписаниями. <br />
+        /// Включая расширение файла.
+        /// </summary>
+        private const string AllGroupsFileName = "AllGroups.json";
+        #endregion
+
         #region Область: Конструкторы класса.
 
         /// <summary>
@@ -42,7 +52,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
                defaultDaySchedule = new("Воскресенье", Enumerable.Empty<Lesson>().ToList());
         #endregion
 
-        #region Область: Методы.
+        #region Область: Общие Методы.
 
         /// <summary>
         /// Метод для получения списка с отделениями-папками из ассетов. <br />
@@ -111,6 +121,24 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         }
 
         /// <summary>
+        /// Метод для получения полного списка всех доступных групп, представленных в ассетах.
+        /// </summary>
+        /// <returns>Полный список с группами.</returns>
+        public List<string> GetAllAvailableGroups()
+        {
+            List<string> groups = new List<string>(1);
+            foreach (var folder in GetBranches())
+            {
+                foreach (var subFolder in GetAffiliates(folder))
+                {
+                    groups.AddRange(GetGroupNames(folder, subFolder));
+                }
+            }
+
+            return groups;
+        }
+
+        /// <summary>
         /// Метод для получения расписания на указанный день.
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
@@ -171,6 +199,101 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             }
 
             return new(groupName, schedule);
+        }
+
+        /// <summary>
+        /// Метод для получения ПОЛНОГО списка ВСЕХ доступных расписаний из ассетов. <br />
+        /// Может выполняться медленно, <strong>рекомендуется асинхронное выполнение</strong>.
+        /// </summary>
+        /// <returns>Список с объектами расписания на неделю.</returns>
+        public List<WeekSchedule>? GetAllAvailableSchedules()
+        {
+            var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
+
+            if (File.Exists(path))
+            {
+                return GetAllSchedulesFromUnitedFile();
+            }
+            else
+            {
+                var schedules = GetAllSchedulesFromCommonFiles();
+                WriteSchedulesToUnitedFile(schedules);
+
+                return GetAllSchedulesFromCommonFiles();
+            }
+        }
+
+        /// <summary>
+        /// Метод для получения списка всех доступных преподателей. <br />
+        /// Этот метод выполняет LINQ-запрос к общему списку расписания. <br />
+        /// Может выполняться медленно, <strong>рекомендуется асинхронное выполнение</strong>.
+        /// </summary>
+        /// <returns>Полный список со всеми преподавателями.</returns>
+        public List<string> GetAllTeachers()
+        {
+            var schedules = GetAllAvailableSchedules();
+            var teachers = new List<string>(schedules?.Count ?? 1);
+
+            schedules?.ForEach(week =>
+                               week.DaySchedules.ForEach(day =>
+                                                         day.Lessons.ForEach(lesson =>
+                                                                             teachers.Add(lesson?.Teacher ?? string.Empty))));
+            teachers = teachers.DistinctBy(teacher =>
+                                           teacher.RemoveStringChars(), StringComparer.OrdinalIgnoreCase).ToList();
+
+            return teachers;
+        }
+        #endregion
+
+        #region Область: Приватные Методы.
+
+        /// <summary>
+        /// Формирует список со всеми расписаниями на основе содержимого "объединенного" файла. <br />
+        /// Этот файл хранит в себе все расписания, размещенные в одном месте. 
+        /// <br /> <br />
+        /// Получение данных из объединенного файла работает быстрее, чем обычный алгоритм.
+        /// </summary>
+        /// <returns>Полный список со ВСЕМИ расписаниями ВСЕХ групп.</returns>
+        private List<WeekSchedule>? GetAllSchedulesFromUnitedFile()
+        {
+            var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
+            using StreamReader sr = new(path, System.Text.Encoding.Default);
+
+            return JsonSerializer.Deserialize<List<WeekSchedule>>(sr.ReadToEnd(), SerializeFormatter.JsonOptions);
+        }
+
+        /// <summary>
+        /// Формирует список со всеми расписаниями на основе содержимого обычных файлов расписания. <br />
+        /// Этот подход работает медленнее, чем "объединенный файл". <br />
+        /// С другой стороны, если объединенный файл недоступен — это единственный вариант получения списка расписаний.
+        /// </summary>
+        /// <returns>Полный список расписания для ВСЕХ групп.</returns>
+        private List<WeekSchedule>? GetAllSchedulesFromCommonFiles()
+        {
+            var groups = GetAllAvailableGroups();
+            var schedules = new List<WeekSchedule>(groups.Count);
+            foreach (var group in groups)
+            {
+                schedules.Add(GetWeekSchedule(group));
+            }
+
+            return schedules;
+        }
+
+        /// <summary>
+        /// Записывает указанные расписания в специфический файл.
+        /// </summary>
+        /// <param name="schedules">Расписания, которые будут записаны в файл.</param>
+        private void WriteSchedulesToUnitedFile(List<WeekSchedule>? schedules)
+        {
+            if (schedules != null)
+            {
+                var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
+                var value = Newtonsoft.Json.JsonConvert.SerializeObject(schedules, Newtonsoft.Json.Formatting.Indented);
+
+                using StreamWriter sw = new(path, false, System.Text.Encoding.Default);
+                sw.Write(value);
+            }
         }
 
         /// <summary>

@@ -1,23 +1,47 @@
-var builder = WebApplication.CreateBuilder(args);
+namespace ScheduleAPI
+{
+    public class Program
+    {
+        private static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+            ConfigureServices(builder);
 
-// Add services to the container.
-builder.Services.AddControllers();
-builder.Services.AddControllersWithViews();
+            var app = builder.Build();
+            SetRoutings(app);
+            ConfigureAppSettings(app);
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle.
-builder.Services.AddSwaggerGen();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddApplicationInsightsTelemetry(options => 
-    options.ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
+            app.Run();
+        }
 
-var app = builder.Build();
+        /// <summary>
+        /// Устанавливает сервисы, подключения и службы веб-приложения.
+        /// </summary>
+        /// <param name="builder">Builder для экземпляра веб-приложения.</param>
+        private static void ConfigureServices(WebApplicationBuilder builder)
+        {
+            builder.Services.AddMemoryCache();
+            builder.Services.AddControllers();
+            builder.Services.AddControllersWithViews();
 
-// Route your controllers here.
-app.UseRouting();
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}");
+            builder.Services.AddSwaggerGen();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddApplicationInsightsTelemetry(options =>
+                options.ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
+        }
 
-app.UseStaticFiles();
-app.MapControllers();
-app.Run();
+        private static void SetRoutings(WebApplication app)
+        {
+            app.UseRouting();
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}");
+        }
+
+        private static void ConfigureAppSettings(WebApplication app)
+        {
+            app.UseStaticFiles();
+            app.MapControllers();
+        }
+    }
+}

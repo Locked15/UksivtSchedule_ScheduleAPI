@@ -1,4 +1,6 @@
 ﻿using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Cache.CachedTypes;
+using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 
 namespace ScheduleAPI.Models.Elements.Schedule.Final
 {
@@ -8,7 +10,7 @@ namespace ScheduleAPI.Models.Elements.Schedule.Final
     /// <br /><br />
     /// Это нужно, чтобы используя контроллер итогового расписания можно было получать дополнительные сведения о расписании.
     /// </summary>
-    public class FinalDaySchedule
+    public class FinalDaySchedule : ICacheable<FinalDaySchedule, FinalDayScheduleCache>
     {
         #region Область: Свойства.
 
@@ -31,6 +33,11 @@ namespace ScheduleAPI.Models.Elements.Schedule.Final
         /// Итоговое расписания (с учетом замен) для указанного дня.
         /// </summary>
         public DaySchedule Schedule { get; set; }
+
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        public bool CachingIsEnabled { get; } = true;
         #endregion
 
         #region Область: Константы.
@@ -91,6 +98,21 @@ namespace ScheduleAPI.Models.Elements.Schedule.Final
         #endregion
 
         #region Область: Методы.
+
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        /// <param name="args"><inheritdoc /></param>
+        /// <returns><inheritdoc /></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public FinalDayScheduleCache? GenerateCachedValue(params object[] args)
+        {
+            var groupName = args.FirstOrDefault() as string ?? string.Empty;
+            if (CachingIsEnabled && ChangesFound)
+                return new FinalDayScheduleCache(this, groupName);
+            else
+                return null;
+        }
 
         /// <summary>
         /// Метод для преобразования объекта в его строковый вариант.

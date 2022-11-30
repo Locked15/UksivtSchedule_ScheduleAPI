@@ -51,14 +51,7 @@ namespace ScheduleAPI.Controllers.API.General
         [Route("~/api/[controller]/summary")]
         public JsonResult GetSummary()
         {
-            List<string> groups = new List<string>(1);
-            foreach (var folder in getter.GetBranches())
-            {
-                foreach (var subFolder in getter.GetAffiliates(folder))
-                {
-                    groups.AddRange(getter.GetGroupNames(folder, subFolder));
-                }
-            }
+            List<string> groups = getter.GetAllAvailableGroups();
 
             return Json(groups);
         }
