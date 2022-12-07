@@ -1,0 +1,26 @@
+﻿@using ScheduleAPI.Models.Exceptions.View
+
+@model ErrorModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="./content/css/shared/error.css" />
+<meta http-equiv="refresh" content="30; url=Home" />
+
+<div class="error-content">
+    <div class="error-header">
+        <p>ID: @Model.RequestID</p>
+        <p>Code: @Convert.ToInt32(Model.ErrorCode) @Model.ErrorCode</p>
+    </div>
+
+    <div class="error-message">
+        Overview:
+        <p>
+            @Model.Message
+        </p>
+        <p>
+            You will be returned to the main page in 30 seconds.
+        </p>
+    </div>
+</div>

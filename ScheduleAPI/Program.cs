@@ -36,12 +36,16 @@ namespace ScheduleAPI
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}");
+
+            app.UseExceptionHandler("/Home/Error");
         }
 
         private static void ConfigureAppSettings(WebApplication app)
         {
             app.UseStaticFiles();
             app.MapControllers();
+
+            app.UseStatusCodePagesWithReExecute("/Home/Status", "?code={0}");
         }
     }
 }
