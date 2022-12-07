@@ -9,7 +9,7 @@ Remember it. This is a feature.
 
 ## Address
 Web API locates on:
-<strong>https://uksivtscheduleapi.azurewebsites.net/</strong> <br />
+<strong>https://uksivt.azurewebsites.net/</strong> <br />
 Current online branch: <strong>Redesigned</strong>.
 
 <i>All controller parameters must be add after address part.</i>
@@ -49,10 +49,10 @@ Most part of controllers use 2 parameters:
      Default value: 19П-3.
 
 ## Examples
-  1. <b>https://uksivtscheduleapi.azurewebsites.net/api/schedule/day?dayIndex=0&groupName=19П-3</b> — Return monday schedule for group '19П-3';
-  2. <b>https://uksivtscheduleapi.azurewebsites.net/api/schedule/week?groupName=20ЗИО-2</b> — Return week schedule for group '20ЗИО-2';
-  3. <b>https://uksivtscheduleapi.azurewebsites.net/api/changes/day?dayIndex=0&groupName=19П-3</b> — Return monday changes for group '19П-3';
-  4. <b>https://uksivtscheduleapi.azurewebsites.net/api/structure/branches</b> — Return student branches;
-  5. <b>https://uksivtscheduleapi.azurewebsites.net/api/structure/affiliates?branch=General</b> — Return student directions for branch 'General';
-  6. <b>https://uksivtscheduleapi.azurewebsites.net/api/structure/groups?branch=Economy&affiliate=ЗИО</b> — Return student groups for branch 'Economy' and direction 'ЗИО';
-  7. <b>https://uksivtscheduleapi.azurewebsites.net/api/structure/summary</b> — Just returns a list with all groups.
+  1. <b>https://uksivt.azurewebsites.net/api/schedule/day?dayIndex=0&groupName=19П-3</b> — Return monday schedule for group '19П-3';
+  2. <b>https://uksivt.azurewebsites.net/api/schedule/week?groupName=20ЗИО-2</b> — Return week schedule for group '20ЗИО-2';
+  3. <b>https://uksivt.azurewebsites.net/api/changes/day?dayIndex=0&groupName=19П-3</b> — Return monday changes for group '19П-3';
+  4. <b>https://uksivt.azurewebsites.net/api/structure/branches</b> — Return student branches;
+  5. <b>https://uksivt.azurewebsites.net/api/structure/affiliates?branch=General</b> — Return student directions for branch 'General';
+  6. <b>https://uksivt.azurewebsites.net/api/structure/groups?branch=Economy&affiliate=ЗИО</b> — Return student groups for branch 'Economy' and direction 'ЗИО';
+  7. <b>https://uksivt.azurewebsites.net/api/structure/summary</b> — Just returns a list with all groups.
