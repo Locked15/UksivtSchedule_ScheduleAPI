@@ -1,6 +1,8 @@
 ﻿using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
+using System.Text.Json.Serialization;
 
 namespace ScheduleAPI.Models.Elements.Schedule.Final
 {
@@ -37,6 +39,7 @@ namespace ScheduleAPI.Models.Elements.Schedule.Final
         /// <summary>
         /// <inheritdoc />
         /// </summary>
+        [JsonIgnore]
         public bool CachingIsEnabled { get; } = true;
         #endregion
 

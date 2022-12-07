@@ -94,7 +94,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         /// Метод для проверки пары на полноту (наличие самой пары).
         /// </summary>
         /// <returns>Логическое значение, отвечающее за полноту.</returns>
-        public bool CheckHaveValue()
+        public bool CheckToContainValue()
         {
             return Name != null;
         }

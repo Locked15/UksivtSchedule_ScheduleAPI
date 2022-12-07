@@ -1,4 +1,6 @@
-﻿namespace ScheduleAPI.Models.Elements.Schedule.Final
+﻿using ScheduleAPI.Models.Elements.Schedule.Changes;
+
+namespace ScheduleAPI.Models.Elements.Schedule.Final
 {
     /// <summary>
     /// Класс-обертка для итогового расписания. <br />

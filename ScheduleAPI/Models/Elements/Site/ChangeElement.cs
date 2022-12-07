@@ -55,7 +55,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// Метод, позволяющий проверить определенный день на наличие замен.
         /// </summary>
         /// <returns>Логическое значение, отвечающее за наличие/отсутствие замен.</returns>
-        public Bool CheckHavingChanges()
+        public Bool CheckContainingChanges()
         {
             return LinkToDocument != null;
         }

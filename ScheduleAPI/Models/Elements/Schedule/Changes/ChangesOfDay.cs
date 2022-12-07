@@ -2,7 +2,7 @@
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 using System.Text.Json.Serialization;
 
-namespace ScheduleAPI.Models.Elements.Schedule
+namespace ScheduleAPI.Models.Elements.Schedule.Changes
 {
     /// <summary>
     /// Класс, представляющий сущность замен на один день.

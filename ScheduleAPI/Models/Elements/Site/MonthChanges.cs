@@ -73,7 +73,7 @@ namespace ScheduleAPI.Models.Elements.Site
                     return null;
                 }
 
-                if (change.DayOfWeek?.Equals(day) ?? false && change.CheckHavingChanges())
+                if (change.DayOfWeek?.Equals(day) ?? false && change.CheckContainingChanges())
                 {
                     return change;
                 }
