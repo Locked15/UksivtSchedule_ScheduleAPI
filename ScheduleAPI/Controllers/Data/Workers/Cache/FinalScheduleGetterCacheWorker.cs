@@ -32,13 +32,13 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         #region Область: Методы.
 
         /// <summary>
-        /// Пытается найти искомый объект замен среди кэшированных данных.
+        /// Пытается найти искомый объект итогового расписания среди кэшированных данных.
         /// Операция выполняется с помощью лямбда-операции, что при большом количестве данных может снизить производительность.
         /// </summary>
         /// <param name="dayIndex">Индекс дня, который необходимо найти.</param>
         /// <param name="groupName">Название группы, которую необходимо найти.</param>
         /// <returns>Результат поиска.</returns>
-        public FinalDaySchedule? TryToFindTargetCachedChangesValue(int dayIndex, string groupName)
+        public FinalDaySchedule? TryToFindTargetCachedFinalScheduleValue(int dayIndex, string groupName)
         {
             var cachedElement = cachedSchedules.Get(el =>
             {

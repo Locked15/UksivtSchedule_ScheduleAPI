@@ -4,7 +4,8 @@ using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Elements.Schedule;
-using ScheduleAPI.Models.Exceptions;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
+using ScheduleAPI.Models.Exceptions.Data;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Parsers
 {
@@ -234,7 +235,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                            ... мы раскрываем их и добавляем в список с заменами:      */
                         if (changesListen && !possibleNumbs.Equals(string.Empty))
                         {
-                            newLessons.AddRange(ExpandPossibleLessons(possibleNumbs, currentLesson));
+                            newLessons.AddRange(Helper.ExpandWrappedLesson(possibleNumbs, currentLesson));
                         }
 
                         // После прерывания первого цикла, прерываем и второй:
@@ -324,37 +325,6 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         #endregion
 
         #region Подобласть: Прочие методы.
-
-        /// <summary>
-        /// Внутренний метод, позволяющий раскрыть сокращенную запись номеров пар в полный вид.
-        /// </summary>
-        /// <param name="value">Сокращенный (возможно) вид записи номеров пар.</param>
-        /// <param name="lesson">Пара, которая должна быть проведена.</param>
-        /// <returns>Полный вид пар.</returns>
-        private static List<Lesson> ExpandPossibleLessons(string value, Lesson lesson)
-        {
-            /* Как показала практика, иногда в конце номеров пар могут оставить лишнюю запятую.
-               Например: '1,2,3,' и тогда будет вызвана ошибка. Нужно обработать этот случай и удалить лишние символы. */
-            string[] splatted = value.Trim(',').Split(new char[] { ',', '.' });
-            List<Lesson> toReturn = new(1);
-
-            /* В отличие от Java, C# способен преобразовать строки с пробелами в целые числа, ...
-               ... так что можно сразу переходить в развертке значений.                            */
-            foreach (string splattedOne in splatted)
-            {
-                if (int.TryParse(splattedOne, out int parsed))
-                {
-                    toReturn.Add(new Lesson(parsed, lesson.Name, lesson.Teacher, lesson.Place));
-                }
-
-                else
-                {
-                    ChangesController.Logger?.Log(LogLevel.Warning, "Не удалось преобразовать значение в числовой тип при раскрытии номеров пар.");
-                }
-            }
-
-            return toReturn;
-        }
 
         /// <summary>
         /// Метод, нужный для проверки таблицы на то, является ли таблица таблицей с заменами.

@@ -348,7 +348,7 @@ namespace ScheduleAPI.Controllers.Other.General
                     }
 
                     if (change.DayOfWeek != null && change.DayOfWeek.Equals(day) && 
-                        change.CheckHavingChanges())
+                        change.CheckContainingChanges())
                     {
                         return change;
                     }

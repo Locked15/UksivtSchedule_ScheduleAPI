@@ -1,6 +1,6 @@
 ﻿using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Data.Workers.Cache;
-using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
 using ScheduleAPI.Models.Elements.Schedule.Final;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
@@ -14,22 +14,10 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         private static FinalScheduleGetterCacheWorker cacheWorker;
         #endregion
 
-        #region Область: Свойства.
-
-        public int DayIndex { get; set; }
-
-        public string GroupName { get; set; }
-        #endregion
-
         #region Область: Конструкторы.
 
-        public FinalScheduleGetter(int dayIndex, string groupName, IHostEnvironment env) 
-        { 
-            DayIndex = dayIndex;
-            GroupName = groupName;
-
-            environment = env;
-        }
+        public FinalScheduleGetter(IHostEnvironment env) => 
+                environment = env;
 
         static FinalScheduleGetter() => 
                 cacheWorker = new FinalScheduleGetterCacheWorker();
@@ -37,37 +25,37 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 
         #region Область: Методы.
 
-        public FinalDaySchedule GetDaySchedule()
+        public FinalDaySchedule GetDaySchedule(int dayIndex, string groupName)
         {
-            if (cacheWorker.TryToFindTargetCachedChangesValue(DayIndex, GroupName) is FinalDaySchedule schedule && schedule != null)
+            if (cacheWorker.TryToFindTargetCachedFinalScheduleValue(dayIndex, groupName) is FinalDaySchedule schedule && schedule != null)
                 return schedule;
             else
-                return GenerateFinalDaySchedule();
+                return GenerateFinalDaySchedule(dayIndex, groupName);
         }
 
-        private FinalDaySchedule GenerateFinalDaySchedule()
+        private FinalDaySchedule GenerateFinalDaySchedule(int dayIndex, string groupName)
         {
             var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(DayIndex, GroupName);
+            var changesGetter = new TargetChangesGetter(dayIndex, groupName);
 
-            var schedule = baseGetter.GetDaySchedule(DayIndex, GroupName);
+            var schedule = baseGetter.GetDaySchedule(dayIndex, groupName);
             var changes = changesGetter.GetDayChanges();
 
             var toReturn = new FinalDaySchedule(schedule, changes);
-            cacheWorker.TryToAddValueToCachedVault(toReturn, GroupName);
+            cacheWorker.TryToAddValueToCachedVault(toReturn, groupName);
 
             return toReturn;
         }
 
-        public FinalWeekSchedule GetWeekSchedule()
+        public FinalWeekSchedule GetWeekSchedule(int dayIndex, string groupName)
         {
             var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(default, GroupName);
+            var changesGetter = new TargetChangesGetter(default, groupName);
 
-            var schedule = baseGetter.GetWeekSchedule(GroupName);
+            var schedule = baseGetter.GetWeekSchedule(groupName);
             var changes = changesGetter.GetWeekChanges();
 
-            return new FinalWeekSchedule(GroupName, schedule.DaySchedules, changes ?? Enumerable.Empty<ChangesOfDay>().ToList());
+            return new FinalWeekSchedule(groupName, schedule.DaySchedules, changes ?? Enumerable.Empty<ChangesOfDay>().ToList());
         }
         #endregion
     }

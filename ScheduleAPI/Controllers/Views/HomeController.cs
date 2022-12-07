@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ScheduleAPI.Models.Exceptions.View;
+using System.Net;
 
 namespace ScheduleAPI.Controllers.ViewsControllers
 {
@@ -28,6 +30,34 @@ namespace ScheduleAPI.Controllers.ViewsControllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Status(int code) =>
+                Error(code);
+
+        /// <summary>
+        /// Эта функция автоматически срабатывает в случае возникновения НЕ критической ошибки в работе API. <br />
+        /// Она перенаправляет пользователя на страницу с информацией.
+        /// </summary>
+        /// <returns>Страница с информацией об ошибке.</returns>
+        public IActionResult Error(int code = 0)
+        {
+            var model = new ErrorModel()
+            {
+                RequestID = Guid.NewGuid(),
+                ErrorCode = GetElementByCode(code),
+                Message = "Happend something bad.\n\nWe'll fix it as soon, as it possible."
+            };
+
+            return View("Error", model);
+        }
+
+        private static HttpStatusCode GetElementByCode(int code)
+        {
+            if (Enum.IsDefined(typeof(HttpStatusCode), code))
+                return (HttpStatusCode)code;
+
+            return HttpStatusCode.Forbidden;
         }
     }
 }

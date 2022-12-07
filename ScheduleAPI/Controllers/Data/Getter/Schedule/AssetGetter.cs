@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-using System.Text.Json;
+﻿using System.Text.Json;
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
@@ -146,7 +145,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         public DaySchedule GetDaySchedule(int dayIndex, string groupName)
         {
             groupName = groupName.ToUpper();
-            (string fullPath, string groupBranch, string subFolder) = GetValues(groupName);
+            (string fullPath, string groupBranch, string subFolder) = GetFolderStructureInfo(groupName);
             fullPath = Path.Combine(fullPath, "Assets", "Schedule", groupBranch, subFolder, $"{groupName}.json");
 
             if (File.Exists(fullPath))
@@ -308,7 +307,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         /// <br/>
         /// Название папки, разделяющей ассеты по названиям групп (П, ВЕБ, БД и т.д.).
         /// </returns>
-        private (string, string, string) GetValues(string groupName)
+        private (string, string, string) GetFolderStructureInfo(string groupName)
         {
             try
             {

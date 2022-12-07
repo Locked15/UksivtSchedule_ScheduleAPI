@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.API.Changes
 {

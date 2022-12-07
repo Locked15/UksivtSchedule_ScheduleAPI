@@ -1,9 +1,9 @@
 ﻿using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Elements.Documents;
-using ScheduleAPI.Models.Elements.Schedule;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {

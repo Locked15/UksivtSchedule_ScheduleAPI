@@ -10,17 +10,8 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
     /// Класс-скачиватель, нацеленный на платформу Google Drive.
     /// Позволяет скачивать документы с указанной платформы.
     /// </summary>
-    public class GoogleDriveDownloader : AbstractPlatformDownloader, IDownloader
+    public class GoogleDriveDownloader : AbstractPlatformDownloader
     {
-        #region Область: Свойства.
-
-        /// <summary>
-        /// <inheritdoc /> <br />
-        /// В случае Google Drive, базовое количество скачиваний — 3.
-        /// </summary>
-        public int Attempts { get; init; }
-        #endregion
-
         #region Область: Константы.
 
         /// <summary>
@@ -46,9 +37,9 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
         /// Инициализирует новый объект класса.
         /// </summary>
         /// <param name="attempts">Количество попыток на скачивание документа. Значение по умолчанию: 3.</param>
-        public GoogleDriveDownloader(int attempts = 3)
+        public GoogleDriveDownloader(int attempts = 3) : base(attempts)
         {
-            Attempts = attempts;
+
         }
         #endregion
 
@@ -62,7 +53,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
         /// <param name="element">Элемент замен, содержащий ссылку на документ с заменами.</param>
         /// <param name="attempts">Максимальное число попыток скачать документ.</param>
         /// <returns>Путь к скачанному документу.</returns>
-        public string BeginDocumentDownload(ChangeElement element)
+        public override string BeginDocumentDownload(ChangeElement element)
         {
             int currentAttempt = 0;
             string path = string.Empty;
@@ -134,7 +125,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
 
         /// <inheritdoc />
         /// <exception cref="ArgumentException">Отправленная ссылка не соответствует шаблону.</exception>
-        protected override string ProcessDownload(string url, string baseFileName)
+        protected override string ProcessDownload(string url, string baseDistonation)
         {
             // Чтобы предотвратить попытки скачать файл по оригинальной ссылке, делаем проверку:
             if (!url.Contains(GoogleDriveDownloadLinkTemplate))
@@ -147,12 +138,12 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
                 {
                     client.UseDefaultCredentials = true;
                     client.Headers.Add("user-agent", UserAgentForPlatform);
-                    while (File.Exists(baseFileName))
+                    while (File.Exists(baseDistonation))
                     {
-                        baseFileName = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
+                        baseDistonation = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
                     }
 
-                    client.DownloadFile(new Uri(url), baseFileName);
+                    client.DownloadFile(new Uri(url), baseDistonation);
                 }
 
                 catch (Exception e)
@@ -163,7 +154,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
                 }
             }
 
-            return baseFileName;
+            return baseDistonation;
         }
         #endregion
     }

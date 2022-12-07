@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScheduleAPI.Controllers.Data.Getter;
-using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Schedule;
-using ScheduleAPI.Models.Elements.Schedule.Final;
 
 namespace ScheduleAPI.Controllers.API.Schedule
 {
@@ -15,6 +11,11 @@ namespace ScheduleAPI.Controllers.API.Schedule
     public class FinalController : Controller
     {
         #region Область: Поля.
+
+        /// <summary>
+        /// Содержит объект, необходимый для получения данных о финальном расписании.
+        /// </summary>
+        private FinalScheduleGetter getter;
 
         /// <summary>
         /// Содержит сведения о локальной среде.
@@ -42,6 +43,8 @@ namespace ScheduleAPI.Controllers.API.Schedule
         {
             environment = env;
             Logger = logger;
+
+            getter = new(environment);
         }
         #endregion
 
@@ -60,13 +63,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             groupName = groupName.RemoveStringChars();
 
-            var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(dayIndex, groupName);
-
-            var schedule = baseGetter.GetDaySchedule(dayIndex, groupName);
-            var changes = changesGetter.GetDayChanges();
-
-            return new JsonResult(new FinalDaySchedule(schedule, changes), SerializeFormatter.JsonOptions);
+            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), SerializeFormatter.JsonOptions);
         }
 
         /// <summary>
@@ -80,14 +77,8 @@ namespace ScheduleAPI.Controllers.API.Schedule
         {
             groupName = groupName.RemoveStringChars();
 
-            var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(default, groupName);
-
-            var schedule = baseGetter.GetWeekSchedule(groupName);
-            var changes = changesGetter.GetWeekChanges();
-
-            return new JsonResult(new FinalWeekSchedule(groupName, schedule.DaySchedules, changes ?? Enumerable.Empty<ChangesOfDay>().ToList()), 
-                                  SerializeFormatter.JsonOptions);
+            var schedule = getter.GetWeekSchedule(default, groupName);
+            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
         }
         #endregion
     }

@@ -1,4 +1,5 @@
-﻿using ScheduleAPI.Models.Elements.Schedule;
+﻿using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Models.Elements.Schedule;
 
 namespace ScheduleAPI.Controllers.Other.General
 {
@@ -118,6 +119,37 @@ namespace ScheduleAPI.Controllers.Other.General
             }
 
             return new DaySchedule(day, lessons);
+        }
+
+        /// <summary>
+        /// Метод, позволяющий раскрыть сокращенную запись номеров пар в полный вид.
+        /// </summary>
+        /// <param name="lessonNumbers">Сокращенный (возможно) вид записи номеров пар.</param>
+        /// <param name="wrappedLesson">Пара, которая должна быть проведена.</param>
+        /// <returns>Полный вид пар.</returns>
+        public static List<Lesson> ExpandWrappedLesson(string lessonNumbers, Lesson wrappedLesson)
+        {
+            /* Как показала практика, иногда в конце номеров пар могут оставить лишнюю запятую.
+               Например: '1,2,3,' и тогда будет вызвана ошибка. Нужно обработать этот случай и удалить лишние символы. */
+            string[] splatted = lessonNumbers.Trim(',').Split(new char[] { ',', '.' });
+            List<Lesson> toReturn = new(1);
+
+            /* В отличие от Java, C# способен преобразовать строки с пробелами в целые числа, ...
+               ... так что можно сразу переходить в развертке значений.                            */
+            foreach (string splattedOne in splatted)
+            {
+                if (int.TryParse(splattedOne, out int parsed))
+                {
+                    toReturn.Add(new Lesson(parsed, wrappedLesson.Name, wrappedLesson.Teacher, wrappedLesson.Place));
+                }
+
+                else
+                {
+                    ChangesController.Logger?.Log(LogLevel.Warning, "Не удалось преобразовать значение в числовой тип при раскрытии номеров пар.");
+                }
+            }
+
+            return toReturn;
         }
         #endregion
     }
