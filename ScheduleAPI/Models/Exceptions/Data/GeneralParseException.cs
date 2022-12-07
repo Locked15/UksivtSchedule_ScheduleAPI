@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Exceptions
+﻿namespace ScheduleAPI.Models.Exceptions.Data
 {
     /// <summary>
     /// Класс, представляющий исключения парса страницы.

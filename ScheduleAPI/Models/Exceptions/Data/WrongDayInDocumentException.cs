@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Exceptions
+﻿namespace ScheduleAPI.Models.Exceptions.Data
 {
     /// <summary>
     /// Исключение, возникающее при несовпадении дней в сигнатуре метода и документе.
