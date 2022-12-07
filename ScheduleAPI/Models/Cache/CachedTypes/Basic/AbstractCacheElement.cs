@@ -71,7 +71,7 @@
         /// </summary>
         /// <returns>Если кэш актуален — его значение;
         /// В ином случае — "null".</returns>
-        public virtual T? GetCacheSafety()
+        public virtual T? GetCacheSafely()
         {
             if (CheckToRelevance())
                 return CachedElement;

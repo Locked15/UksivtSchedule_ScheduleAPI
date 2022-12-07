@@ -150,7 +150,7 @@ namespace ScheduleAPI.Models.Cache
 
             if (predicatedCachedValue != null)
             {
-                var result = predicatedCachedValue.GetCacheSafety();
+                var result = predicatedCachedValue.GetCacheSafely();
 
                 if (result == null)
                 {
@@ -220,7 +220,7 @@ namespace ScheduleAPI.Models.Cache
 
             CachedValues.ForEach(value =>
             {
-                var actual = value.GetCacheSafety();
+                var actual = value.GetCacheSafely();
 
                 if (actual == null || CachedValues.Count > MaxCachedCount)
                 {

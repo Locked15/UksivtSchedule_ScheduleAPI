@@ -32,9 +32,9 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <returns>Если кэш ещё актуален — его значение;
         /// В ином случае — "null".</returns>
-        public override ChangesDocument? GetCacheSafety()
+        public override ChangesDocument? GetCacheSafely()
         {
-            return base.GetCacheSafety();
+            return base.GetCacheSafely();
         }
     }
 }

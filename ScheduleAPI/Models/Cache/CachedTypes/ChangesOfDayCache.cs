@@ -1,5 +1,5 @@
 ﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
-using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Elements.Schedule.Changes;
 
 namespace ScheduleAPI.Models.Cache.CachedTypes
 {
@@ -39,9 +39,9 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <returns>Если кэш ещё актуален — его значение;
         /// В ином случае — "null".</returns>
-        public override ChangesOfDay? GetCacheSafety()
+        public override ChangesOfDay? GetCacheSafely()
         {
-            return base.GetCacheSafety();
+            return base.GetCacheSafely();
         }
     }
 }
