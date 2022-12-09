@@ -2,6 +2,7 @@
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Exceptions.Data;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {
@@ -142,6 +143,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <param name="groupName">Название нужной группы.</param>
+        /// <exception cref="GroupNotFoundException"/>
         public DaySchedule GetDaySchedule(int dayIndex, string groupName)
         {
             groupName = groupName.ToUpper();
@@ -175,11 +177,14 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
                     }
                 }
             }
+            else
+            {
+                ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
+                                               "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
+                               groupBranch, subFolder, groupName);
 
-            ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
-                                                           "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
-                                           groupBranch, subFolder, groupName);
-            return defaultDaySchedule;
+                return ProcessNotFoundSchedule();
+            }
         }
 
         /// <summary>
@@ -245,6 +250,17 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         #endregion
 
         #region Область: Приватные Методы.
+
+        /// <summary>
+        /// Выполняет определенную логику в случае, если указанная группа не была обнаружена в списке доступных расписаний. <br />
+        /// Таким образом эту логику можно легко переопределить.
+        /// </summary>
+        /// <returns>Расписание на день. В теории.</returns>
+        /// <exception cref="GroupNotFoundException"></exception>
+        private DaySchedule ProcessNotFoundSchedule()
+        {
+            throw new GroupNotFoundException();
+        }
 
         /// <summary>
         /// Формирует список со всеми расписаниями на основе содержимого "объединенного" файла. <br />
