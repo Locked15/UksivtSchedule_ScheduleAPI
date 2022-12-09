@@ -1,4 +1,4 @@
-namespace ScheduleAPI_Tests
+namespace ScheduleAPI.Tests
 {
     [TestClass]
     public class BasicTests
