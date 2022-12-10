@@ -114,7 +114,7 @@ namespace ScheduleAPI.Controllers.API.General
         /// <returns>Строковое представление результата поиска.</returns>
         [HttpGet]
         [Route("~/api/[controller]/teachers")]
-        public JsonResult GetTeachers(string request = "Сажод")
+        public JsonResult GetTeachers(string request = "Карим")
         {
             var result = getter.SearchTargetTeachers(request);
 

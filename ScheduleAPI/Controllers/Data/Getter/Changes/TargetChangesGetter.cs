@@ -71,72 +71,21 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// <returns>Объект, содержащий замены для группы.</returns>
         public ChangesOfDay GetDayChanges()
         {
-            ChangeElement? element = default;
-            List<MonthChanges>? changes = default;
-
             if (cacheWorker.TryToFindTargetCachedChangesValue(DayIndex, GroupName) is var restored && restored != null)
                 return restored;
 
-            #region Подобласть: Обрабатываем возможные ошибки.
-
-            try
+            if (GetTargetChangesElement() is ChangeElement changeElement)
             {
-                changes = new SiteParser().ParseAvailableNodes();
-                element = changes.TryToFindElementByNameOfDayWithoutPreviousWeeks(DayIndex.GetDayByIndex());
-            }
+                ChangesOfDay toReturn = CompleteWorkWithChangesDocument(changeElement);
+                toReturn.NewLessons.ForEach(lesson => lesson.Changed = true);
 
-            catch (Exception ex)
+                cacheWorker.TryToAddValueToCachedVault(toReturn, GroupName);
+                return toReturn;
+            }
+            else
             {
-                var exceptionReturn = new ChangesOfDay
-                {
-                    ChangesDate = DayIndex.GetDateTimeInWeek()
-                };
-
-                ChangesController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
-                return exceptionReturn;
+                return new();
             }
-
-            if (element == null)
-            {
-                var exceptionReturn = new ChangesOfDay
-                {
-                    ChangesDate = DayIndex.GetDateTimeInWeek()
-                };
-
-                ChangesController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
-                                              "День: {dayIndex}, Текущая дата — {time}.", DayIndex, DateTime.Now.ToShortDateString());
-                return exceptionReturn;
-            }
-            #endregion
-
-            #region Подобласть: Работа с файлом замен.
-
-            ChangesOfDay toReturn;
-
-            try
-            {
-                DocumentParser reader = InitializeReader(DayIndex, element, out bool deleteDocumentAfterWork, out string pathToDocument);
-                toReturn = GetChangesFromReader(reader, element.Date);
-
-                if (deleteDocumentAfterWork)
-                    DeleteChangesDocumentAsync(pathToDocument);
-            }
-
-            catch (HttpRequestException)
-            {
-                ChangesController.Logger?.Log(LogLevel.Error, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.");
-                toReturn = new();
-            }
-
-            catch (Exception exception)
-            {
-                ChangesController.Logger?.Log(LogLevel.Error, "Произошла ошибка при работе с документом замен: {message}.", exception.Message);
-                toReturn = new();
-            }
-            #endregion
-
-            cacheWorker.TryToAddValueToCachedVault(toReturn, GroupName);
-            return toReturn;
         }
 
         /// <summary>
@@ -163,6 +112,61 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         #endregion
 
         #region Область: Внутренние методы.
+
+        private ChangeElement? GetTargetChangesElement()
+        {
+            try
+            {
+                var changes = new SiteParser().ParseAvailableNodes();
+                var element = changes.TryToFindElementByNameOfDayWithoutPreviousWeeks(DayIndex.GetDayByIndex());
+
+                if (element == null)
+                {
+                    ChangesController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
+                                                                        "День: {dayIndex}, Текущая дата — {time}.", DayIndex, DateTime.Now.ToShortDateString());
+                }
+
+                return element;
+            }
+
+            catch (Exception ex)
+            {
+                ChangesController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
+
+                return null;
+            }
+        }
+
+        private ChangesOfDay CompleteWorkWithChangesDocument(ChangeElement? element)
+        {
+            ChangesOfDay toReturn;
+
+            try
+            {
+                DocumentParser reader = InitializeReader(DayIndex, element, out bool deleteDocumentAfterWork, out string pathToDocument);
+                toReturn = GetChangesFromReader(reader, element.Date);
+
+                if (deleteDocumentAfterWork)
+                    DeleteChangesDocumentAsync(pathToDocument);
+            }
+
+            catch (HttpRequestException)
+            {
+                ChangesController.Logger?.Log(LogLevel.Error, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.");
+                toReturn = new();
+            }
+
+            catch (Exception exception)
+            {
+                ChangesController.Logger?.Log(LogLevel.Error, "Произошла ошибка при работе с документом замен: {message}.", exception.Message);
+                toReturn = new();
+            }
+
+            return toReturn;
+        }
+
+
+        #region Подобласть: Работа с 'ридером'.
 
         /// <summary>
         /// Инициализирует экземпляр класса "DocumentParser", используемый для получения замен из документа. <br />
@@ -215,7 +219,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// </summary>
         /// <param name="pathToDocument">Путь к скачанному документу.</param>
         /// <returns>Объект для чтения документа.</returns>
-        private DocumentParser ProcessNewReaderCreation(string pathToDocument)
+        private static DocumentParser ProcessNewReaderCreation(string pathToDocument)
         {
             var reader = new DocumentParser(pathToDocument);
             cacheWorker.TryToAddValueToCachedVault(reader.ChangesDocument);
@@ -260,7 +264,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// Предназначен для удаления документа с заменами, после завершения работы с ним.
         /// </summary>
         /// <param name="path">Путь, по которому находится документ с заменами.</param>
-        private async void DeleteChangesDocumentAsync(string path)
+        private static async void DeleteChangesDocumentAsync(string path)
         {
             await Task.Run(() =>
             {
@@ -290,6 +294,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
                 }
             });
         }
+        #endregion
         #endregion
     }
 }
