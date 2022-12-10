@@ -1,5 +1,5 @@
 ﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Changes;
 
 namespace ScheduleAPI.Models.Cache.CachedTypes
 {

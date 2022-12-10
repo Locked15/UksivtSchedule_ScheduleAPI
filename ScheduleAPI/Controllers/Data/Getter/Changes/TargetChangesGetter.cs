@@ -2,9 +2,9 @@
 using ScheduleAPI.Controllers.Data.Workers.Cache;
 using ScheduleAPI.Controllers.Data.Workers.Parsers;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
 using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Models.Exceptions.Data;
+using ScheduleAPI.Models.Result.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Changes
 {

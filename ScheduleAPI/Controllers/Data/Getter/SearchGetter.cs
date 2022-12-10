@@ -1,7 +1,7 @@
 ﻿using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Search;
-using ScheduleAPI.Models.Elements.Search.Result;
+using ScheduleAPI.Models.Result.Search;
+using ScheduleAPI.Models.Result.Search.Result;
 
 namespace ScheduleAPI.Controllers.Data.Getter
 {

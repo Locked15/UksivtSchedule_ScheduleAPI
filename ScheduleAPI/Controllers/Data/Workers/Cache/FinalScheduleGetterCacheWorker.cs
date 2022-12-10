@@ -2,7 +2,7 @@
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache;
-using ScheduleAPI.Models.Elements.Schedule.Final;
+using ScheduleAPI.Models.Result.Schedule.Final;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {

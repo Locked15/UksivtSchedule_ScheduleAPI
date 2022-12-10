@@ -1,11 +1,11 @@
 ﻿using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Changes;
 using System.Text;
 
 /// <summary>
 /// Область кода с расписанием на день.
 /// </summary>
-namespace ScheduleAPI.Models.Elements.Schedule
+namespace ScheduleAPI.Models.Result.Schedule
 {
     /// <summary>
     /// Класс, представляющий расписание на один день.
@@ -108,7 +108,7 @@ namespace ScheduleAPI.Models.Elements.Schedule
         public override string ToString()
         {
             StringBuilder builder = new();
-            foreach (Lesson lesson in Lessons) 
+            foreach (Lesson lesson in Lessons)
                 builder.Append(lesson.ToString());
 
             return string.Format(ToStringTemplate, Day, builder.ToString());

@@ -3,9 +3,9 @@ using NPOI.XWPF.UserModel;
 using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements.Documents;
-using ScheduleAPI.Models.Elements.Schedule;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
 using ScheduleAPI.Models.Exceptions.Data;
+using ScheduleAPI.Models.Result.Schedule;
+using ScheduleAPI.Models.Result.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Parsers
 {

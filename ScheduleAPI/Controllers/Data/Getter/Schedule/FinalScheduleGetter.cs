@@ -1,7 +1,7 @@
 ﻿using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Data.Workers.Cache;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
-using ScheduleAPI.Models.Elements.Schedule.Final;
+using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Final;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {

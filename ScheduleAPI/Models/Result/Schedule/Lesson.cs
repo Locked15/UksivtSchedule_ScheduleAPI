@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Область с классом пары.
 /// </summary>
-namespace ScheduleAPI.Models.Elements.Schedule
+namespace ScheduleAPI.Models.Result.Schedule
 {
     /// <summary>
     /// Класс, представляющий сущность пары.

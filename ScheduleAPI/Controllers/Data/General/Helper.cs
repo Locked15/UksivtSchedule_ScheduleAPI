@@ -1,5 +1,5 @@
 ﻿using ScheduleAPI.Controllers.API.Changes;
-using ScheduleAPI.Models.Elements.Schedule;
+using ScheduleAPI.Models.Result.Schedule;
 
 namespace ScheduleAPI.Controllers.Other.General
 {

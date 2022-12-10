@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Caching.Memory;
 using ScheduleAPI.Controllers.Data.Getter;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Search;
+using ScheduleAPI.Models.Result.Search;
 
 namespace ScheduleAPI.Controllers.API.General
 {

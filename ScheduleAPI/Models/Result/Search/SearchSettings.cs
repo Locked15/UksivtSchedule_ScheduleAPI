@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Elements.Search
+﻿namespace ScheduleAPI.Models.Result.Search
 {
     public class SearchSettings
     {

@@ -2,7 +2,7 @@
 /// <summary>
 /// Область с классом недельного расписания.
 /// </summary>
-namespace ScheduleAPI.Models.Elements.Schedule
+namespace ScheduleAPI.Models.Result.Schedule
 {
     /// <summary>
     /// Класс, представляющий сущность Расписания на неделю.

@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Models.Elements.Schedule;
 using ScheduleAPI.Models.Exceptions.Data;
+using ScheduleAPI.Models.Result.Schedule;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {

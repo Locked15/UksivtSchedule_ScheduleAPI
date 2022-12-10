@@ -3,7 +3,7 @@ using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Controllers.API.Changes;
-using ScheduleAPI.Models.Elements.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {

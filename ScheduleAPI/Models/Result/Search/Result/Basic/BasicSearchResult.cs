@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Models.Elements.Search.Result.Basic
+﻿namespace ScheduleAPI.Models.Result.Search.Result.Basic
 {
     public abstract class BasicSearchResult<T>
     {

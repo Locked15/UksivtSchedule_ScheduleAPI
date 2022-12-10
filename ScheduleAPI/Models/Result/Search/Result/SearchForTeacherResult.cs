@@ -1,6 +1,6 @@
-﻿using ScheduleAPI.Models.Elements.Search.Result.Basic;
+﻿using ScheduleAPI.Models.Result.Search.Result.Basic;
 
-namespace ScheduleAPI.Models.Elements.Search.Result
+namespace ScheduleAPI.Models.Result.Search.Result
 {
     public class SearchForTeacherResult : BasicSearchResult<string>
     {

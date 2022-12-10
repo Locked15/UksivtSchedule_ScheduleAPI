@@ -1,6 +1,6 @@
-﻿using ScheduleAPI.Models.Elements.Schedule.Changes;
+﻿using ScheduleAPI.Models.Result.Schedule.Changes;
 
-namespace ScheduleAPI.Models.Elements.Schedule.Final
+namespace ScheduleAPI.Models.Result.Schedule.Final
 {
     /// <summary>
     /// Класс-обертка для итогового расписания. <br />
