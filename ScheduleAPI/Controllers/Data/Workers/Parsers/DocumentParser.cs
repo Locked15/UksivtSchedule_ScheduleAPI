@@ -31,8 +31,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// <exception cref="FileNotFoundException">Файл по указанному адресу не найден.</exception>
         public DocumentParser(string path)
         {
-            StreamReader stream = new(path);
-
+            using StreamReader stream = new(path);
             ChangesDocument = new ChangesDocument(new(stream.BaseStream));
         }
 
