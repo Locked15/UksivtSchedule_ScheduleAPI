@@ -66,7 +66,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
 
             DaySchedule schedule = getter.GetDaySchedule(dayIndex, groupName);
 
-            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
+            return new JsonResult(schedule, JsonSerializeBinder.JsonOptions);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
 
             WeekSchedule schedule = getter.GetWeekSchedule(groupName);
 
-            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
+            return new JsonResult(schedule, JsonSerializeBinder.JsonOptions);
         }
         #endregion
     }

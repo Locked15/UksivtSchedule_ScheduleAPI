@@ -58,9 +58,9 @@ namespace ScheduleAPI.Controllers.API.Changes
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ChangesOfDay changes = new TargetChangesGetter(dayIndex, groupName).GetDayChanges();
 
-            changes.ChangesDate = changes.ChangesDate.HasValue ? changes.ChangesDate : dayIndex.GetDateTimeInWeek();
+            changes.ChangesDate ??= dayIndex.GetDateTimeInWeek();
 
-            return new JsonResult(changes, SerializeFormatter.JsonOptions);
+            return new JsonResult(changes, JsonSerializeBinder.JsonOptions);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace ScheduleAPI.Controllers.API.Changes
         {
             List<ChangesOfDay> changes = new TargetChangesGetter(default, groupName).GetWeekChanges();
 
-            return new JsonResult(changes, SerializeFormatter.JsonOptions);
+            return new JsonResult(changes, JsonSerializeBinder.JsonOptions);
         }
         #endregion
     }

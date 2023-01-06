@@ -6,7 +6,7 @@ namespace ScheduleAPI.Controllers.Other.General
     /// <summary>
     /// Класс форматтера, нужный для преобразования json в другое форматирование.
     /// </summary>
-    public static class JsonSerializeModel
+    public static class JsonSerializeBinder
     {
         /// <summary>
         /// Параметры сериализации.
@@ -16,7 +16,7 @@ namespace ScheduleAPI.Controllers.Other.General
         /// <summary>
         /// Статический конструктор.
         /// </summary>
-        static JsonSerializeModel()
+        static JsonSerializeBinder()
         {
             JsonOptions = new JsonSerializerOptions()
             {

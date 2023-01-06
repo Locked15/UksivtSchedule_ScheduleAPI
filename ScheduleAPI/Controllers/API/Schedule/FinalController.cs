@@ -63,7 +63,10 @@ namespace ScheduleAPI.Controllers.API.Schedule
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             groupName = groupName.RemoveStringChars();
 
-            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), SerializeFormatter.JsonOptions);
+            var result = getter.GetDaySchedule(dayIndex, groupName);
+            result.ScheduleDate ??= dayIndex.GetDateTimeInWeek();
+
+            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), JsonSerializeBinder.JsonOptions);
         }
 
         /// <summary>
@@ -78,7 +81,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
             groupName = groupName.RemoveStringChars();
 
             var schedule = getter.GetWeekSchedule(default, groupName);
-            return new JsonResult(schedule, SerializeFormatter.JsonOptions);
+            return new JsonResult(schedule, JsonSerializeBinder.JsonOptions);
         }
         #endregion
     }

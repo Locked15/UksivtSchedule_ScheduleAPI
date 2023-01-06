@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
 using NPOI.XWPF.UserModel;
+using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Elements.Site;
 
 namespace ScheduleAPI.Controllers.Other.General
@@ -8,18 +9,8 @@ namespace ScheduleAPI.Controllers.Other.General
     /// <summary>
     /// Класс расширений.
     /// </summary>
-    public static class Extensions
+    public static partial class Extensions
     {
-        #region Область: Делегаты.
-
-        /// <summary>
-        /// Делегат, инкапсулирующий метод, нужный для проверки содержания подстроки в строке.
-        /// </summary>
-        /// <param name="value">Значение, наличие которого нужно проверить.</param>
-        /// <returns>Логическое значение, отвечающее за наличие подстроки в строке.</returns>
-        public delegate bool Check(string value);
-        #endregion
-
         #region Область: Методы расширения, связанные с датами.
 
         #region Подобласть: Расширения 'Int32'.
@@ -233,66 +224,39 @@ namespace ScheduleAPI.Controllers.Other.General
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Название подпапки (префикс).</returns>
-        public static string GetPrefixFromName(this string groupName)
+        public static string GetBranchName(this string groupName, List<AffiliationsInfo> affiliateInfo)
         {
-            groupName = groupName.ToLower();
-            string yearEnd;
+            string educationYearEnding = GetEducationYearEnding().ToString()[2..];
 
-            //Если сейчас второй семестр, то первый курс поступал в прошлом году.
-            if (DateTime.Now.Month <= 6)
-            {
-                yearEnd = DateTime.Now.AddYears(-1).Year.ToString()[2..];
-            }
-
-            //В ином случае, они поступили в этом году.
-            else
-            {
-                yearEnd = DateTime.Now.Year.ToString()[2..];
-            }
-
-            //Общеобразовательное.
-            if (groupName.Contains(yearEnd) && !groupName.Contains("укск"))
+            if (groupName.Contains(educationYearEnding) && !groupName.Contains("уКСК", StringComparison.InvariantCultureIgnoreCase))
             {
                 return "General";
             }
-
-            //Для красоты выделим прочие блоки в отдельную иерархию "if ... else if ... else".
             else
             {
-                //Для краткости записи определяем делегат:
-                Check check = (val) => groupName.Contains(val);
-
-                //Экономика и ЗИО.
-                if (check("зио") || check("э") || check("уэ") || check("ул"))
-                {
-                    return "Economy";
-                }
-
-                //Право.
-                else if (check("пд") || check("по") || check("пса"))
-                {
-                    return "Law";
-                }
-
-                //Информатика и Программирование.
-                else if (check("п") || check("ис") || check("и") || check("веб") ||
-                check("оиб") || check("бд"))
-                {
-                    return "Programming";
-                }
-
-                //Вычислительная техника.
-                else if (check("кск") || check("са") || check("укск"))
-                {
-                    return "Technical";
-                }
-
-                //Выброс исключения.
-                else
-                {
-                    throw new ArgumentException("Указанная группа не обнаружена в системе.");
-                }
+                return affiliateInfo.First(info =>
+                                           info.Affiliations.Any(affiliate =>
+                                                                 groupName.Contains(affiliate, StringComparison.InvariantCultureIgnoreCase))
+                                          ).BranchName;
             }
+        }
+
+        /// <summary>
+        /// Возвращает номер года с началом учебного года.
+        /// 
+        /// Учебный год начинается в сентябре и идёт до конца июня.
+        /// Таким образом в случае второго семестра текущий год необходимо уменьшить на 1.
+        /// </summary>
+        /// <returns></returns>
+        private static int GetEducationYearEnding()
+        {
+            //Если сейчас второй семестр, то первый курс поступал в прошлом году.
+            if (DateTime.Now.Month <= 6)
+                return DateTime.Now.AddYears(-1).Year;
+
+            //В ином случае, они поступили в этом году.
+            else
+                return DateTime.Now.Year;
         }
 
         /// <summary>
@@ -300,12 +264,10 @@ namespace ScheduleAPI.Controllers.Other.General
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Подпапка ассетов.</returns>
-        public static string GetSubFolderFromName(this string groupName)
+        public static string GetAffiliationName(this string groupName)
         {
             StringBuilder subFolderBuilder = new();
-            MatchCollection matches = Regex.Matches(groupName, "[а-яА-Я]");
-
-            foreach (Match match in matches)
+            foreach (Match match in AffiliationsInfo.BranchExtractionRegEx().Matches(groupName).Cast<Match>())
             {
                 subFolderBuilder.Append(match.Value);
             }
@@ -347,7 +309,7 @@ namespace ScheduleAPI.Controllers.Other.General
                         return null;
                     }
 
-                    if (change.DayOfWeek != null && change.DayOfWeek.Equals(day) && 
+                    if (change.DayOfWeek != null && change.DayOfWeek.Equals(day) &&
                         change.CheckContainingChanges())
                     {
                         return change;
@@ -405,8 +367,8 @@ namespace ScheduleAPI.Controllers.Other.General
         /// <returns>Новая строка без вхождений указанных элементов.</returns>
         public static string RemoveStringChars(this string groupName)
         {
-            groupName = groupName.Replace("\'", String.Empty);
-            groupName = groupName.Replace("\"", String.Empty);
+            groupName = groupName.Replace("\'", string.Empty);
+            groupName = groupName.Replace("\"", string.Empty);
 
             return groupName;
         }

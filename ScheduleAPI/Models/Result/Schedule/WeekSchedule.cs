@@ -1,4 +1,5 @@
 ﻿using System.Text;
+
 /// <summary>
 /// Область с классом недельного расписания.
 /// </summary>

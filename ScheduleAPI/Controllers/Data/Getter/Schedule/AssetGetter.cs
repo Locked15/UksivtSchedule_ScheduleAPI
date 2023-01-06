@@ -1,6 +1,8 @@
 ﻿using System.Text.Json;
+using ScheduleAPI.Controllers.API.General;
 using ScheduleAPI.Controllers.API.Schedule;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Exceptions.Data;
 using ScheduleAPI.Models.Result.Schedule;
 
@@ -53,6 +55,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         #endregion
 
         #region Область: Общие Методы.
+
+        #region Подобласть: Работа с Ассетами Структуры.
 
         /// <summary>
         /// Метод для получения списка с отделениями-папками из ассетов. <br />
@@ -139,6 +143,30 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         }
 
         /// <summary>
+        /// Метод для получения полного списка соотношений принадлежностей к отделениям обучения.
+        /// </summary>
+        /// <returns>Полный список соотношений.</returns>
+        public List<AffiliationsInfo> GetAffiliationInfos()
+        {
+            string currentPath = Path.Combine(Helper.GetSiteRootFolderPath(), "Assets", "Affiliates");
+            List<AffiliationsInfo> toReturn = new(1);
+
+            foreach (string file in Directory.GetFiles(currentPath).ToList())
+            {
+                var content = File.ReadAllText(file);
+                AffiliationsInfo? info = JsonSerializer.Deserialize<AffiliationsInfo>(content, JsonSerializeBinder.JsonOptions);
+
+                if (info != null)
+                    toReturn.Add(info);
+            }
+
+            return toReturn;
+        }
+        #endregion
+
+        #region Подобласть: Работа с Ассетами Расписания.
+
+        /// <summary>
         /// Метод для получения расписания на указанный день.
         /// </summary>
         /// <param name="dayIndex">Индекс нужного дня.</param>
@@ -146,45 +174,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         /// <exception cref="GroupNotFoundException"/>
         public DaySchedule GetDaySchedule(int dayIndex, string groupName)
         {
-            groupName = groupName.ToUpper();
-            (string fullPath, string groupBranch, string subFolder) = GetFolderStructureInfo(groupName);
-            fullPath = Path.Combine(fullPath, "Assets", "Schedule", groupBranch, subFolder, $"{groupName}.json");
+            var weekSchedule = GetWeekSchedule(groupName);
 
-            if (File.Exists(fullPath))
-            {
-                using (StreamReader reader = new(fullPath, System.Text.Encoding.Default))
-                {
-                    WeekSchedule? week = JsonSerializer.Deserialize<WeekSchedule>(reader.ReadToEnd(), new JsonSerializerOptions()
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-                    week?.DaySchedules.ForEach(day => day.Day = day.Day?.GetTranslatedDay());
-
-                    try
-                    {
-                        if (week == null || week.DaySchedules[dayIndex] == null)
-                        {
-                            ScheduleController.Logger?.Log(LogLevel.Error, "При получении данных (День) произошла ошибка: " +
-                                                                           "Группа — {groupName}, День — {daySchedule}.",
-                                                           week?.GroupName, week?.DaySchedules[dayIndex]?.Day);
-                        }
-                        return week?.DaySchedules[dayIndex] ?? defaultDaySchedule;
-                    }
-                    catch (Exception _) when (_ is ArgumentOutOfRangeException || _ is IndexOutOfRangeException)
-                    {
-                        ScheduleController.Logger?.Log(LogLevel.Error, "При возвращении расписания произошёл выход за пределы массива.");
-                        return defaultDaySchedule;
-                    }
-                }
-            }
-            else
-            {
-                ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
-                                               "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
-                               groupBranch, subFolder, groupName);
-
-                return ProcessNotFoundSchedule();
-            }
+            return weekSchedule.DaySchedules[dayIndex];
         }
 
         /// <summary>
@@ -195,14 +187,38 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         public WeekSchedule GetWeekSchedule(string groupName)
         {
             groupName = groupName.ToUpper();
-            List<DaySchedule> schedule = new(1);
+            (string fullPath, string groupBranch, string subFolder) = GetFolderStructureInfo(groupName);
+            fullPath = Path.Combine(fullPath, "Assets", "Schedule", groupBranch, subFolder, $"{groupName}.json");
 
-            for (int i = 0; i < 7; i++)
+            if (File.Exists(fullPath))
             {
-                schedule.Add(GetDaySchedule(i, groupName));
-            }
+                using (StreamReader reader = new(fullPath, System.Text.Encoding.Default))
+                {
+                    WeekSchedule? week = JsonSerializer.Deserialize<WeekSchedule>(reader.ReadToEnd(), JsonSerializeBinder.JsonOptions);
+                    week?.DaySchedules.ForEach(day => day.Day = day.Day?.GetTranslatedDay());
 
-            return new(groupName, schedule);
+                    if (week == null)
+                        throw new ArgumentNullException(nameof(week), "Возвращаемое расписание на неделю оказалось пустым ('NULL').");
+                    return week;
+                }
+            }
+            else
+            {
+                if (ScheduleController.Logger != null)
+                {
+                    ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
+                                                                   "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
+                                                   groupBranch, subFolder, groupName);
+                }
+                else if (SearchController.Logger != null)
+                {
+                    SearchController.Logger?.Log(LogLevel.Error, "При автоматическом обходе всех групп произошла ошибка: " +
+                                                                 "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
+                                                 groupBranch, subFolder, groupName);
+                }
+
+                return ProcessNotFoundSchedule();
+            }
         }
 
         /// <summary>
@@ -226,7 +242,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
                 return GetAllSchedulesFromCommonFiles();
             }
         }
-
+        
         /// <summary>
         /// Метод для получения списка всех доступных преподателей. <br />
         /// Этот метод выполняет LINQ-запрос к общему списку расписания. <br />
@@ -248,6 +264,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             return teachers;
         }
         #endregion
+        #endregion
 
         #region Область: Приватные Методы.
 
@@ -257,7 +274,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         /// </summary>
         /// <returns>Расписание на день. В теории.</returns>
         /// <exception cref="GroupNotFoundException"></exception>
-        private DaySchedule ProcessNotFoundSchedule()
+        private static WeekSchedule ProcessNotFoundSchedule()
         {
             throw new GroupNotFoundException();
         }
@@ -274,7 +291,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
             using StreamReader sr = new(path, System.Text.Encoding.Default);
 
-            return JsonSerializer.Deserialize<List<WeekSchedule>>(sr.ReadToEnd(), SerializeFormatter.JsonOptions);
+            return JsonSerializer.Deserialize<List<WeekSchedule>>(sr.ReadToEnd(), JsonSerializeBinder.JsonOptions);
         }
 
         /// <summary>
@@ -330,8 +347,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
                 (string, string, string) values = new()
                 {
                     Item1 = environment.ContentRootPath,
-                    Item2 = groupName.GetPrefixFromName(),
-                    Item3 = groupName.GetSubFolderFromName()
+                    Item2 = groupName.GetBranchName(GetAffiliationInfos()),
+                    Item3 = groupName.GetAffiliationName()
                 };
 
                 return values;
