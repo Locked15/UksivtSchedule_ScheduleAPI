@@ -9,18 +9,18 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Жилищное право",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "117"
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Ханова Л.В.",
-      "place" : "315"
+      "name" : "Экон организации",
+      "teacher" : "Ахметова Е.А.",
+      "place" : "339"
     }, {
       "number" : 3,
-      "name" : "Страховое дело",
-      "teacher" : "Киселева М.В.",
+      "name" : "Экон организации",
+      "teacher" : "Ахметова Е.А.",
       "place" : "339"
     }, {
       "number" : 4,
@@ -42,24 +42,24 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "МДК.02.01",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
+    }, {
+      "number" : 1,
+      "name" : "МДК.02.01",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
+    }, {
+      "number" : 2,
+      "name" : "Основы бухучета",
+      "teacher" : "Лаврентьева А.В.",
+      "place" : "203"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 1,
-      "name" : "ПСО",
-      "teacher" : "Кильсенбаев Э.Р.",
-      "place" : "114"
-    }, {
-      "number" : 2,
-      "name" : "Статистика",
-      "teacher" : "Ахатова Г.И.",
-      "place" : "308"
-    }, {
-      "number" : 3,
-      "name" : "Гражд процесс",
-      "teacher" : "Хасанова Г.Р.",
-      "place" : "общ"
     }, {
       "number" : 4,
       "name" : null,
@@ -80,34 +80,34 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Уголовный процесс",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Уголовное право",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "13"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "УП 01.01",
-      "teacher" : "Хамидова Д.С.",
-      "place" : "323"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "ИТ в ПД",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
+      "name" : "Гражд.процесс",
+      "teacher" : "Хасанова Г.Р.",
+      "place" : "112"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Жилищное право",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "114"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Жилищное право",
+      "teacher" : "Гареева Г.Ф.",
+      "place" : "114"
     }, {
       "number" : 6,
       "name" : null,
@@ -128,18 +128,18 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "ИТ в ПД",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
+      "name" : "МДК.02.01",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
     }, {
       "number" : 3,
-      "name" : "ПСО",
-      "teacher" : "Кильсенбаев Э.Р.",
-      "place" : "114"
+      "name" : "МДК.02.01",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
     }, {
       "number" : 4,
-      "name" : "Физ-ра",
-      "teacher" : "Гильманов Р.А.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 5,
@@ -156,29 +156,29 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
+      "name" : "Ин яз",
       "teacher" : null,
       "place" : null
     }, {
       "number" : 1,
+      "name" : "Гражд.процесс",
+      "teacher" : "Хасанова Г.Р.",
+      "place" : "118"
+    }, {
+      "number" : 2,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
+      "place" : null
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "УП 01.01",
-      "teacher" : "Хамидова Д.С.",
-      "place" : "323"
-    }, {
-      "number" : 3,
-      "name" : "УП 01.01",
-      "teacher" : "Хамидова Д.С.",
-      "place" : "323"
-    }, {
       "number" : 4,
-      "name" : "Уголовное право",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "333"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -194,39 +194,42 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП 01.01",
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "МДК.02.01",
       "teacher" : "Хамидова Д.С.",
       "place" : "323"
     }, {
-      "number" : 1,
-      "name" : "Уголовный процесс",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "118"
-    }, {
-      "number" : 2,
-      "name" : "Семейное право",
-      "teacher" : "Шангареева Г.Ф.",
-      "place" : "общ"
-    }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.02.01",
+      "teacher" : "Хамидова Д.С.",
+      "place" : "323"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы бухучета",
+      "teacher" : "Лаврентьева А.В.",
+      "place" : "341"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы бухучета",
+      "teacher" : "Толипова Р.С.  ",
+      "place" : "341"
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

@@ -9,19 +9,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "315"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.05",
+      "teacher" : "Хасанова Л.Ф.",
+      "place" : "111"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Хасанова Л.Ф.",
+      "place" : "111"
     }, {
       "number" : 4,
       "name" : null,
@@ -29,14 +29,14 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
@@ -57,24 +57,24 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "305"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "110"
+      "name" : "Прав осн ОРД",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 5,
       "name" : "Криминалистика",
       "teacher" : "Фагманова Э.В.",
-      "place" : "110"
+      "place" : "112"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Криминалистика",
+      "teacher" : "Фагманова Э.В.",
+      "place" : "112"
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -85,34 +85,34 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "110"
+      "name" : "УП.01.01",
+      "teacher" : "Хасанова Л.Ф.",
+      "place" : "111"
     }, {
       "number" : 4,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
+      "name" : "Уголовный процесс",
+      "teacher" : "Ахметова Э.Р.",
       "place" : "110"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовный процесс",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовный процесс",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -128,24 +128,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.04",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "110"
     }, {
       "number" : 3,
+      "name" : "МДК.01.02",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "110"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 4,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
-    }, {
       "number" : 5,
-      "name" : "ТСП",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -161,29 +161,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "343"
-    }, {
-      "number" : 2,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
-    }, {
-      "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Имаева  А.В.",
-      "place" : "111"
-    }, {
-      "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
-    }, {
-      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : "МДК.01.02",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "117"
+    }, {
+      "number" : 5,
+      "name" : "МДК.01.02",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "117"
     }, {
       "number" : 6,
       "name" : null,
@@ -204,29 +204,32 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Уголовное право",
-      "teacher" : "Сагидуллин Д.Р.",
-      "place" : "118"
-    }, {
-      "number" : 4,
-      "name" : "Спец техника",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
-    }, {
-      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 3,
+      "name" : "МДК.01.01",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "117"
+    }, {
+      "number" : 4,
+      "name" : "МДК.01.01",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "117"
+    }, {
+      "number" : 5,
+      "name" : "МДК.01.01",
+      "teacher" : "Драгомиров М.С.",
+      "place" : "117"
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

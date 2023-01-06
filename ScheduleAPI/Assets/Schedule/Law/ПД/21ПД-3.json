@@ -9,29 +9,29 @@
       "place" : null
     }, {
       "number" : 1,
+      "name" : "ИТ",
+      "teacher" : "Васильева А.А.",
+      "place" : "243"
+    }, {
+      "number" : 2,
+      "name" : "ИТ",
+      "teacher" : "Васильева А.А.",
+      "place" : "243"
+    }, {
+      "number" : 3,
+      "name" : "ПИСО",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "341"
+    }, {
+      "number" : 4,
+      "name" : "ПИСО",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "341"
+    }, {
+      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х,",
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "История",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : "112"
-    }, {
-      "number" : 4,
-      "name" : "Математика",
-      "teacher" : "Гарипова Р.М.",
-      "place" : "329"
-    }, {
-      "number" : 5,
-      "name" : "Экол право",
-      "teacher" : "Гареева Г.Ф.",
-      "place" : "117"
     }, {
       "number" : 6,
       "name" : null,
@@ -42,23 +42,23 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Конст право",
+      "teacher" : "Султанов А.Х.",
+      "place" : "316"
     }, {
       "number" : 1,
-      "name" : "Математика",
-      "teacher" : "Гарипова Р.М.",
-      "place" : "329"
+      "name" : "Конст право",
+      "teacher" : "Султанов А.Х.",
+      "place" : "316"
     }, {
       "number" : 2,
-      "name" : "Гр.право и гр.процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "110"
+      "name" : "Основы философии",
+      "teacher" : "Исмагилова Г.М,",
+      "place" : "315"
     }, {
       "number" : 3,
-      "name" : "ТГП",
-      "teacher" : "Султанов А.Х,",
+      "name" : "Гр право и гр процесс",
+      "teacher" : "Зайнуллина И.И.",
       "place" : "343"
     }, {
       "number" : 4,
@@ -85,29 +85,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Админ право",
-      "teacher" : "Султанов У.З.",
-      "place" : "203"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Гр.право и гр.процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "301"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Гр.право и гр.процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "301"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гр право и гр процесс",
+      "teacher" : "Зайнуллина И.И.",
+      "place" : "117"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Гр право и гр процесс",
+      "teacher" : "Зайнуллина И.И.",
+      "place" : "117"
     }, {
       "number" : 6,
       "name" : null,
@@ -118,14 +118,14 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПИСО",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "111а"
     }, {
       "number" : 2,
       "name" : null,
@@ -138,47 +138,47 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Админ право",
-      "teacher" : "Султанов У.З.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "ТГП",
-      "teacher" : "Султанов А.Х,",
-      "place" : "203"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ТГП",
-      "teacher" : "Султанов А.Х,",
-      "place" : "203"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "НПП",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 2,
+      "name" : "НПП",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "Экол право",
-      "teacher" : "Гареева Г.Ф.",
-      "place" : "339"
-    }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -194,19 +194,19 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Админ право",
-      "teacher" : "Султанов У.З.",
-      "place" : "13"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "ТГП",
-      "teacher" : "Султанов А.Х,",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "История",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : "343"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
       "name" : null,
@@ -214,19 +214,22 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Баш яз",
+      "teacher" : "Хисамутдинова Р.М.",
+      "place" : "321"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "110"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "110"
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

@@ -9,24 +9,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
       "place" : null
     }, {
       "number" : 2,
-      "name" : "ПИСО",
-      "teacher" : "Языкбаев А.Г.",
-      "place" : "16"
+      "name" : "Уголовное право",
+      "teacher" : "Имаева А.В.",
+      "place" : "305"
     }, {
       "number" : 3,
-      "name" : "Информатика",
-      "teacher" : "Защихина Е.В.",
-      "place" : "245"
+      "name" : "Уголовное право",
+      "teacher" : "Имаева А.В.",
+      "place" : "305"
     }, {
       "number" : 4,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "13"
+      "name" : "Основы философии",
+      "teacher" : "Каримова И.Р.",
+      "place" : "336"
     }, {
       "number" : 5,
       "name" : null,
@@ -47,24 +47,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "309"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "323"
+      "name" : "Уголовное право",
+      "teacher" : "Имаева А.В.",
+      "place" : "216"
     }, {
       "number" : 3,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "323"
+      "name" : "Уголовное право",
+      "teacher" : "Имаева А.В.",
+      "place" : "216"
     }, {
       "number" : 4,
-      "name" : "История",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : "338"
+      "name" : "Управл персоналом",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 5,
       "name" : null,
@@ -95,24 +95,24 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Гражд право",
-      "teacher" : "Хасанова Г.Р.",
-      "place" : "323а"
+      "name" : "Уголовный процесс",
+      "teacher" : "Сагидуллин Д.Р.",
+      "place" : "312"
     }, {
       "number" : 4,
-      "name" : "Гражд процесс",
-      "teacher" : "Маликов М.Г.",
-      "place" : "339"
+      "name" : "Уголовный процесс",
+      "teacher" : "Сагидуллин Д.Р.",
+      "place" : "312"
     }, {
       "number" : 5,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "118"
+      "name" : "Граж процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "216"
     }, {
       "number" : 6,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "118"
+      "name" : "Основы статистики",
+      "teacher" : "Попова И.А.",
+      "place" : "343"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -123,24 +123,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324"
     }, {
       "number" : 2,
+      "name" : "Конст право",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 3,
+      "name" : "Конст право",
+      "teacher" : "Альмухаметова Г.А.",
+      "place" : "117"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Информатика",
-      "teacher" : "Защихина Е.В.",
-      "place" : "217"
-    }, {
-      "number" : 4,
-      "name" : "ПИСО",
-      "teacher" : "Языкбаев А.Г.",
-      "place" : "13"
     }, {
       "number" : 5,
       "name" : null,
@@ -161,19 +161,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Гражд право",
-      "teacher" : "Хасанова Г.Р.",
-      "place" : "214"
+      "name" : "Труд право",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110"
     }, {
       "number" : 2,
-      "name" : "Гражд право",
-      "teacher" : "Хасанова Г.Р.",
-      "place" : "214"
+      "name" : "Админ право",
+      "teacher" : "Султанов У.З.",
+      "place" : "111"
     }, {
       "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -194,18 +194,18 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.04.01",
+      "teacher" : "Ардуванова Д.Р.",
+      "place" : "1Ф"
     }, {
       "number" : 1,
-      "name" : "Гражд процесс",
-      "teacher" : "Маликов М.Г.",
-      "place" : "3"
+      "name" : "МДК.04.02",
+      "teacher" : "Ардуванова Д.Р.",
+      "place" : "1Ф"
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Гильманов Р.А.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

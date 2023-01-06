@@ -14,62 +14,62 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы философии",
+      "teacher" : "Каримова И.Р.",
+      "place" : "336"
     }, {
       "number" : 3,
+      "name" : "Конст право",
+      "teacher" : "Султанов А.Х.",
+      "place" : "343"
+    }, {
+      "number" : 4,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
+      "place" : null
+    }, {
+      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 4,
-      "name" : "Гражд право",
-      "teacher" : "Фахретдинов И.М.",
-      "place" : "116"
-    }, {
-      "number" : 5,
-      "name" : "Информатика",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
-    }, {
       "number" : 6,
-      "name" : "Информатика",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.04.01",
+      "teacher" : "Хасанова Г.Р.",
+      "place" : "общ"
     }, {
       "number" : 1,
+      "name" : "МДК.04.02",
+      "teacher" : "Хасанова Г.Р.",
+      "place" : "общ"
+    }, {
+      "number" : 2,
+      "name" : "Управл персоналом",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Каримова Г.Ф.",
-      "place" : "320"
-    }, {
-      "number" : 3,
-      "name" : "Гражд право",
-      "teacher" : "Фахретдинов И.М.",
-      "place" : "118"
-    }, {
       "number" : 4,
-      "name" : "Гражд право",
-      "teacher" : "Фахретдинов И.М.",
-      "place" : "118"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "ПИСО",
-      "teacher" : "Ахметова Э.Р.",
-      "place" : "339"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -85,24 +85,24 @@
       "place" : null
     }, {
       "number" : 1,
+      "name" : "Труд право",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110"
+    }, {
+      "number" : 2,
+      "name" : "Граж процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "216"
+    }, {
+      "number" : 3,
+      "name" : "Основы статистики",
+      "teacher" : "Попова И.А.",
+      "place" : "343"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 2,
-      "name" : "Гражд процесс",
-      "teacher" : "Маликов М.Г.",
-      "place" : "339"
-    }, {
-      "number" : 3,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "118"
-    }, {
-      "number" : 4,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "118"
     }, {
       "number" : 5,
       "name" : null,
@@ -118,14 +118,14 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "БЖД",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "История",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : "315"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -133,19 +133,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Конст право",
+      "teacher" : "Султанов А.Х.",
+      "place" : "общ"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовное право",
+      "teacher" : "Корниенко А.А.",
+      "place" : "203"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовное право",
+      "teacher" : "Корниенко А.А.",
+      "place" : "203"
     }, {
       "number" : 6,
       "name" : null,
@@ -156,28 +156,28 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовное право",
+      "teacher" : "Корниенко А.А.",
+      "place" : "315"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Уголовное право",
+      "teacher" : "Корниенко А.А.",
+      "place" : "315"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин яз",
+      "teacher" : "Каримова Г.Ф.",
+      "place" : "324"
     }, {
       "number" : 3,
-      "name" : "ПИСО",
-      "teacher" : "Ахметова Э.Р.",
-      "place" : "14"
+      "name" : "Админ право",
+      "teacher" : "Султанов У.З.",
+      "place" : "111"
     }, {
       "number" : 4,
-      "name" : "Физ-ра",
-      "teacher" : "Гильманов Р.А.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 5,
@@ -199,34 +199,37 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "БЖД",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
-    }, {
-      "number" : 2,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "14"
-    }, {
-      "number" : 3,
-      "name" : "Гражд процесс",
-      "teacher" : "Маликов М.Г.",
-      "place" : "3"
-    }, {
-      "number" : 4,
-      "name" : "ТГП",
-      "teacher" : "Ишкильдина Г.Р.",
-      "place" : "14"
-    }, {
-      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 4,
+      "name" : "Уголовный процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "320"
+    }, {
+      "number" : 5,
+      "name" : "Уголовный процесс",
+      "teacher" : "Маликов М.Г.",
+      "place" : "320"
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

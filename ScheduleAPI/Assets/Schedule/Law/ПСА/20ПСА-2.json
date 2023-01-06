@@ -14,57 +14,57 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
+      "name" : "МДК.01.02",
+      "teacher" : "Шангареева Г.Ф.",
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
+      "name" : "МДК.02.02",
+      "teacher" : "Воронина А.А.",
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
+      "name" : "МДК.02.02",
+      "teacher" : "Воронина А.А.",
       "place" : null
     }, {
       "number" : 5,
-      "name" : "Инф системы судопр",
-      "teacher" : "Корниенко А.В.",
-      "place" : "2Ф"
+      "name" : "МДК.02.02",
+      "teacher" : "Воронина А.А.",
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Инф системы судопр",
-      "teacher" : "Корниенко А.В.",
-      "place" : "2Ф"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
+      "name" : "МДК.05.02",
+      "teacher" : "Шангареева Г.Ф.",
       "place" : null
     }, {
       "number" : 1,
+      "name" : "МДК.01.02",
+      "teacher" : "Шангареева Г.Ф.",
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : "МДК.01.02",
+      "teacher" : "Шангареева Г.Ф.",
+      "place" : null
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Ханова Л.В.",
-      "place" : "315"
-    }, {
-      "number" : 3,
-      "name" : "Физ-ра",
-      "teacher" : "Гильманов Р.А.",
-      "place" : null
-    }, {
       "number" : 4,
-      "name" : "Исполнит.произв",
-      "teacher" : "Шангареева Г.Ф.",
-      "place" : "309"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -100,19 +100,19 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Исполнит.произв",
-      "teacher" : "Шангареева Г.Ф.",
-      "place" : "2Ф"
+      "name" : "МДК.01.01",
+      "teacher" : "Тулибаева Н.Ф.",
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Исполнит.произв",
+      "name" : "МДК.05.02",
       "teacher" : "Шангареева Г.Ф.",
-      "place" : "2Ф"
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Исполнит.произв",
+      "name" : "МДК.05.02",
       "teacher" : "Шангареева Г.Ф.",
-      "place" : "2Ф"
+      "place" : null
     } ]
   }, {
     "day" : "THURSDAY",
@@ -123,23 +123,23 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 01.03",
-      "teacher" : "Корниенко А.В.",
-      "place" : "2Ф"
-    }, {
-      "number" : 2,
-      "name" : "Архивное дело",
-      "teacher" : "Воронина А.А.",
-      "place" : "2Ф"
-    }, {
-      "number" : 3,
-      "name" : "Архивное дело",
-      "teacher" : "Воронина А.А.",
-      "place" : "2Ф"
-    }, {
-      "number" : 4,
       "name" : null,
       "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Ин яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324"
+    }, {
+      "number" : 4,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
       "place" : null
     }, {
       "number" : 5,
@@ -171,42 +171,42 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "МДК 01.03",
-      "teacher" : "Корниенко А.В.",
-      "place" : "1Ф"
+      "name" : "МДК.01.02",
+      "teacher" : "Шангареева Г.Ф.",
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Суд.делопроизв",
+      "name" : "МДК.01.01",
       "teacher" : "Тулибаева Н.Ф.",
-      "place" : "1Ф"
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Суд.делопроизв",
+      "name" : "МДК.01.01",
       "teacher" : "Тулибаева Н.Ф.",
-      "place" : "1Ф"
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Суд.делопроизв",
-      "teacher" : "Тулибаева Н.Ф.",
-      "place" : "1Ф"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Архивное дело",
-      "teacher" : "Воронина А.А.",
-      "place" : "2Ф"
+      "name" : "МДК.01.04",
+      "teacher" : "Корниенко А.В.",
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 03.01",
-      "teacher" : "Воронина А.А.",
-      "place" : "2Ф"
+      "name" : "МДК.01.04",
+      "teacher" : "Корниенко А.В.",
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 03.01",
-      "teacher" : "Воронина А.А.",
-      "place" : "2Ф"
+      "name" : "МДК.01.04",
+      "teacher" : "Корниенко А.В.",
+      "place" : null
     }, {
       "number" : 3,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

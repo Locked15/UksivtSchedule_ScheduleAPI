@@ -9,29 +9,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Спец техника",
-      "teacher" : "Музафаров Ф.Ф.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Спец техника",
-      "teacher" : "Музафаров Ф.Ф.",
+      "name" : "МДК.01.05",
+      "teacher" : "Ахметова А.Р.",
       "place" : "110"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "110"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "110"
     }, {
       "number" : 6,
       "name" : null,
@@ -42,34 +42,34 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.04",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "118"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.01",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "118"
     }, {
       "number" : 2,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А",
-      "place" : null
+      "name" : "Прав осн ОРД",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 3,
-      "name" : "ПО ОРД",
-      "teacher" : "Щеклеин А",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Угол право",
-      "teacher" : "Галиев А.Г.",
-      "place" : "13"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Угол право",
-      "teacher" : "Галиев А.Г.",
-      "place" : "13"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -85,29 +85,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.02",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 2,
+      "name" : "Уголовный процесс",
+      "teacher" : "Галиев А.Г.",
+      "place" : "323"
+    }, {
+      "number" : 3,
+      "name" : "Уголовный процесс",
+      "teacher" : "Галиев А.Г.",
+      "place" : "323"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "ТСП",
-      "teacher" : "Музафаров Ф.Ф.",
-      "place" : "114"
-    }, {
-      "number" : 4,
-      "name" : "ТСП",
-      "teacher" : "Музафаров Ф.Ф.",
-      "place" : "114"
-    }, {
       "number" : 5,
-      "name" : "Ин.яз",
-      "teacher" : "Ханова Л.В.",
-      "place" : "325"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -118,14 +118,14 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Криминология",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "114"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Криминология",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "114"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -133,14 +133,14 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.01",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "111"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.01",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "111"
     }, {
       "number" : 5,
       "name" : null,
@@ -166,24 +166,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Угол право",
+      "name" : "Уголовный процесс",
       "teacher" : "Галиев А.Г.",
-      "place" : "203"
+      "place" : "114"
     }, {
       "number" : 3,
-      "name" : "Угол право",
-      "teacher" : "Галиев А.Г.",
-      "place" : "203"
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null
     }, {
       "number" : 4,
       "name" : "Криминалистика",
       "teacher" : "Фагманова Э.В.",
-      "place" : "114"
+      "place" : "112"
     }, {
       "number" : 5,
       "name" : "Криминалистика",
       "teacher" : "Фагманова Э.В.",
-      "place" : "114"
+      "place" : "112"
     }, {
       "number" : 6,
       "name" : null,
@@ -199,19 +199,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
+      "name" : "Иняз",
       "teacher" : null,
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Криминология",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "117"
+      "name" : "МДК.01.02",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 3,
-      "name" : "Криминология",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "117"
+      "name" : "МДК.01.02",
+      "teacher" : "Щеклеин А.",
+      "place" : "112"
     }, {
       "number" : 4,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }
