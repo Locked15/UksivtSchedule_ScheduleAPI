@@ -4,24 +4,24 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Суд защита ЗИП",
-      "teacher" : "Ахметова Э.Р.",
-      "place" : "323"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "УТИНИ",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "УТИНИ",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Каримова А.А.",
-      "place" : "чз"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -29,32 +29,32 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.02.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.02.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337"
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Кадастр",
+      "name" : "УП.02.01",
       "teacher" : "Нагаева З.Т.",
-      "place" : "337"
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Кадастр ",
+      "name" : "УП.02.01",
       "teacher" : "Нагаева З.Т.",
       "place" : "337"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Страх дело",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341"
     }, {
       "number" : 3,
       "name" : null,
@@ -80,24 +80,24 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП 0101",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "УП 0101",
-      "teacher" : "Акчева Д.М.",
+      "name" : "ПОПД",
+      "teacher" : "Ишкильдина Г.Р.",
       "place" : "331"
     }, {
       "number" : 2,
-      "name" : "ФДОИК",
-      "teacher" : "Засыпкин К.Н.",
-      "place" : "341"
+      "name" : "ПОПД",
+      "teacher" : "Ишкильдина Г.Р.",
+      "place" : "331"
     }, {
       "number" : 3,
-      "name" : "Эк анализ",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -118,19 +118,19 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Оценка недвиж имущ",
-      "teacher" : "Минниханова Г.Ф.",
-      "place" : "308"
+      "name" : "МДК.04.01",
+      "teacher" : "Миниханова Г.Ф.",
+      "place" : "337"
     }, {
       "number" : 1,
-      "name" : "Оценка недвиж имущ",
-      "teacher" : "Минниханова Г.Ф.",
-      "place" : "308"
+      "name" : "МДК.04.01",
+      "teacher" : "Миниханова Г.Ф.",
+      "place" : "337"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.04.01",
+      "teacher" : "Миниханова Г.Ф.",
+      "place" : "337"
     }, {
       "number" : 3,
       "name" : null,
@@ -156,24 +156,62 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ФДОИК",
-      "teacher" : "Засыпкин К.Н.",
-      "place" : "341"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Емельянова Л.Г.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 2,
-      "name" : "УП 0101",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Эк анализ",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : "Ин яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "14"
+    }, {
+      "number" : 4,
+      "name" : "Страх дело",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341"
+    }, {
+      "number" : 5,
+      "name" : "Страх дело",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341"
+    }, {
+      "number" : 6,
+      "name" : "Страх дело",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341"
+    } ]
+  }, {
+    "day" : "SATURDAY",
+    "lessons" : [ {
+      "number" : 0,
+      "name" : "МДК.02.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : null
+    }, {
+      "number" : 1,
+      "name" : "МДК.02.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337"
+    }, {
+      "number" : 2,
+      "name" : "МДК.02.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337"
+    }, {
+      "number" : 3,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -191,42 +229,7 @@
       "place" : null
     } ]
   }, {
-    "day" : "SATURDAY",
-    "lessons" : [ {
-      "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "БУ и НО",
-      "teacher" : "Гильмуранова Р.С.",
-      "place" : "203"
-    }, {
-      "number" : 5,
-      "name" : "БУ и НО",
-      "teacher" : "Гильмуранова Р.С.",
-      "place" : "203"
-    }, {
-      "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    } ]
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

@@ -14,19 +14,19 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 01.01",
-      "teacher" : "Кузнецов В.А.",
-      "place" : "317"
+      "name" : "Статистика",
+      "teacher" : "Ахатова Г.И.",
+      "place" : "308"
     }, {
       "number" : 3,
-      "name" : "Основы эк теории",
-      "teacher" : "Арсланова О.Н.",
-      "place" : "301"
+      "name" : "Статистика",
+      "teacher" : "Ахатова Г.И.",
+      "place" : "308"
     }, {
       "number" : 4,
-      "name" : "ИТ в ПД",
-      "teacher" : "Хасанова А.М.",
-      "place" : "227"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -52,23 +52,23 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Математика",
+      "name" : null,
       "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
-      "name" : "История",
-      "teacher" : "Логинова А.И.",
-      "place" : "11"
+      "name" : "Менеджмент",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 4,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Исмаилова Р.Х.",
+      "place" : "235"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     }, {
       "number" : 6,
@@ -80,19 +80,19 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ИТ в ПД",
-      "teacher" : "Хасанова А.М.",
-      "place" : "227"
+      "name" : "ДОУ",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 1,
-      "name" : "ИТ в ПД",
-      "teacher" : "Хасанова А.М.",
-      "place" : "227"
+      "name" : "Бух учет",
+      "teacher" : "Ахатова Г.И.",
+      "place" : "308"
     }, {
       "number" : 2,
-      "name" : "История",
-      "teacher" : "Логинова А.И.",
-      "place" : "313"
+      "name" : "Ценообразование",
+      "teacher" : "Лаврентьева А.В.",
+      "place" : "203"
     }, {
       "number" : 3,
       "name" : null,
@@ -118,62 +118,62 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
+      "name" : "Ин.яз",
       "teacher" : null,
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Маркетинг",
+      "teacher" : "Киселева М.В.",
+      "place" : "325"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.02",
+      "teacher" : "Кузнецов В.А.",
+      "place" : "317"
     }, {
       "number" : 3,
-      "name" : "МДК 02.01",
+      "name" : "МДК.01.02",
       "teacher" : "Кузнецов В.А.",
       "place" : "317"
     }, {
       "number" : 4,
-      "name" : "Основы эк теории",
-      "teacher" : "Арсланова О.Н.",
-      "place" : "301"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Математика",
+      "name" : null,
       "teacher" : null,
-      "place" : "331"
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Математика",
+      "name" : null,
       "teacher" : null,
-      "place" : "331"
+      "place" : null
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Эк. Организации",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 1,
-      "name" : "МДК 01.01",
-      "teacher" : "Кузнецов В.А.",
-      "place" : "317"
+      "name" : "Эк. Организации",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 2,
-      "name" : "МДК 02.01",
+      "name" : "УП.01.01",
       "teacher" : "Кузнецов В.А.",
       "place" : "317"
     }, {
       "number" : 3,
-      "name" : "Психология общ",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
+      "name" : "МДК.02.02",
+      "teacher" : "Кузнецов В.А.",
+      "place" : "317"
     }, {
       "number" : 4,
       "name" : null,
@@ -194,14 +194,14 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин.яз",
-      "teacher" : "Каримова А.А.",
-      "place" : "339"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Русский и КР",
-      "teacher" : "Андреева Р.М.",
-      "place" : "314"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -209,14 +209,14 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы философии",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "315"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Исмаилова Р.Х.",
+      "place" : "338"
     }, {
       "number" : 5,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

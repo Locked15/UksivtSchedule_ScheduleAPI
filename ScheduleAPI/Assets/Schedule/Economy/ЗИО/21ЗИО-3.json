@@ -4,28 +4,28 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "История",
-      "teacher" : "Логинова А.И.",
-      "place" : "203"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Эко основы природпольз",
-      "teacher" : "Юнусова Л.Р.",
-      "place" : "334"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
-      "place" : null
+      "name" : "Экон организации",
+      "teacher" : "Арсланова О,Н.",
+      "place" : "301"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
       "place" : null
     }, {
       "number" : 5,
@@ -42,39 +42,39 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "общ"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Осн философии",
+      "teacher" : "Ахметшина Е.В.",
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.01",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.01.01",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331"
     }, {
       "number" : 4,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 5,
-      "name" : "УТИНИ",
-      "teacher" : "Акчева Д.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Геодезия",
-      "teacher" : "Нагаева З.Т.",
-      "place" : "337"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -95,19 +95,19 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "История",
-      "teacher" : "Логинова А.И.",
-      "place" : "313"
+      "name" : "ДОУ",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 4,
-      "name" : "Основы эконом теории",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : "Экон организации",
+      "teacher" : "Арсланова О,Н.",
+      "place" : "301"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Осн мен и маркет",
+      "teacher" : "Алибаева Р.Р.",
+      "place" : "305"
     }, {
       "number" : 6,
       "name" : null,
@@ -118,18 +118,18 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Введение в ПД",
-      "teacher" : "Засыпкин К.Н.",
-      "place" : "341"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Геодезия",
-      "teacher" : "Нагаева З.Т.",
-      "place" : "337"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Хабибов Р.Г.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
@@ -138,19 +138,19 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Аввакумов А.А.",
+      "place" : "314"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Земельное право",
+      "teacher" : "Шангареева Г.Ф.",
+      "place" : "343"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Земельное право",
+      "teacher" : "Шангареева Г.Ф.",
+      "place" : "343"
     } ]
   }, {
     "day" : "FRIDAY",
@@ -171,24 +171,24 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Геодезия",
+      "name" : "Статистика",
+      "teacher" : "Ахатова Г.И.",
+      "place" : "308"
+    }, {
+      "number" : 4,
+      "name" : "Статистика",
+      "teacher" : "Ахатова Г.И.",
+      "place" : "308"
+    }, {
+      "number" : 5,
+      "name" : "ПСД",
       "teacher" : "Нагаева З.Т.",
       "place" : "337"
     }, {
-      "number" : 4,
-      "name" : "Введение в ПД",
-      "teacher" : "Засыпкин К.Н.",
-      "place" : "341"
-    }, {
-      "number" : 5,
-      "name" : "Основы эк теории",
-      "teacher" : "Акчева Д.",
-      "place" : "331"
-    }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337"
     } ]
   }, {
     "day" : "SATURDAY",
@@ -209,24 +209,27 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "ИТ в ПД",
-      "teacher" : "Дибаев А.Ф.",
-      "place" : "337"
+      "name" : "УП.03.01",
+      "teacher" : "Булатов А.Р.",
+      "place" : "305"
     }, {
       "number" : 5,
-      "name" : "ИТ в ПД",
-      "teacher" : "Дибаев А.Ф.",
-      "place" : "337"
+      "name" : "УП.03.01",
+      "teacher" : "Булатов А.Р.",
+      "place" : "305"
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }
