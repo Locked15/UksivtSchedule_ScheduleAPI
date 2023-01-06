@@ -4,34 +4,34 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ЭВМ",
-      "teacher" : "Гарипова Р.М.",
-      "place" : "329"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "ЭВМ",
-      "teacher" : "Гарипова Р.М.",
-      "place" : "329"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "ИТ",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТФУПД",
+      "teacher" : "Павлов Н.А.",
+      "place" : "14"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТФУПД",
+      "teacher" : "Павлов Н.А.",
+      "place" : "14"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Дискр математ",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 6,
       "name" : null,
@@ -47,19 +47,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "История",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : "319"
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Хабибов Р.Г.",
-      "place" : null
+      "name" : "ОТИ",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1"
     }, {
       "number" : 3,
-      "name" : "ЭВМ",
-      "teacher" : "Гарипова Р.М.",
-      "place" : "329"
+      "name" : "ОТИ",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1"
     }, {
       "number" : 4,
       "name" : null,
@@ -95,57 +95,57 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "ОАИП",
-      "teacher" : "Поглазов К.Ю.",
-      "place" : "2"
+      "name" : "Инж комп графика",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 4,
-      "name" : "ОАИП",
-      "teacher" : "Поглазов К.Ю.",
-      "place" : "2"
+      "name" : "Инж комп графика",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 5,
-      "name" : "ОС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : "ТВиМС",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 6,
-      "name" : "ОС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭВМ",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 1,
+      "name" : "ЭВМ",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
+    }, {
+      "number" : 2,
+      "name" : "Архитектура АС",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 3,
+      "name" : "Архитектура АС",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "ОАИП",
-      "teacher" : "Поглазов К.Ю.",
-      "place" : "2"
-    }, {
-      "number" : 3,
-      "name" : "ОС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 4,
-      "name" : "ОС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
       "number" : 5,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -161,24 +161,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     }, {
       "number" : 2,
+      "name" : "Основы облачных технолог",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
+    }, {
+      "number" : 3,
+      "name" : "Основы облачных технолог",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 3,
-      "name" : "ИТ",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
-    }, {
-      "number" : 4,
-      "name" : "ИТ",
-      "teacher" : "Фатхелисламова Э.А.",
-      "place" : "216"
     }, {
       "number" : 5,
       "name" : null,
@@ -204,19 +204,19 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Психология общ",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
-    }, {
-      "number" : 3,
-      "name" : "ОАИП",
-      "teacher" : "Поглазов К.Ю.",
-      "place" : "245"
-    }, {
-      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 3,
+      "name" : "ОПБД",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "1"
+    }, {
+      "number" : 4,
+      "name" : "ОПБД",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "1"
     }, {
       "number" : 5,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

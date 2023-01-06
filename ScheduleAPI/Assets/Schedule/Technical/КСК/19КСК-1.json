@@ -4,19 +4,19 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
       "name" : null,
@@ -24,19 +24,19 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Диагностика борт",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Диагностика борт",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     } ]
   }, {
     "day" : "TUESDAY",
@@ -52,47 +52,47 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "Экономика орг",
+      "teacher" : "Ахметова Е.А.",
+      "place" : "339"
     }, {
       "number" : 4,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "МДК.03.01 л/р",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01 л/р",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Экономика орг",
+      "teacher" : "Ахметова Е.А.",
+      "place" : "339"
     } ]
   }, {
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
       "name" : null,
@@ -100,19 +100,19 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01 к/п",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -133,37 +133,37 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
-    }, {
-      "number" : 4,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
-    }, {
-      "number" : 5,
-      "name" : "МПЦ",
-      "teacher" : "Лихарев И.А.",
-      "place" : "3"
-    }, {
-      "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 4,
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
+    }, {
+      "number" : 5,
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
+    }, {
+      "number" : 6,
+      "name" : "МДК.03.01 к/п",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 02.02",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -181,52 +181,55 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Пустовалова Э.У.",
+      "place" : "библ"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 1,
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
+    }, {
+      "number" : 2,
+      "name" : "МДК.03.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Каримова А.А.",
-      "place" : "339"
-    }, {
-      "number" : 3,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
-    }, {
       "number" : 4,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Практика по прогр",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

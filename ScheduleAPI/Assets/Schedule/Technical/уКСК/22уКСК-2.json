@@ -9,19 +9,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Метрология",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Психология",
+      "teacher" : "Никонова Е.А.",
+      "place" : "001в"
     }, {
       "number" : 4,
       "name" : null,
@@ -29,42 +29,42 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : "Инженерная графика",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "14"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Инженерная графика",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "14"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин.яз",
-      "teacher" : "Пустовалова Э.У.",
-      "place" : "библ"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
+      "name" : "История",
+      "teacher" : "Исмагилова Г.М.",
+      "place" : "315"
+    }, {
+      "number" : 2,
       "name" : "ЭВМ",
       "teacher" : "Бакирова А.Ю.",
       "place" : "327"
     }, {
-      "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭВМ",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ИТ",
+      "teacher" : "Хасанова А.М.",
+      "place" : "231"
     }, {
       "number" : 5,
       "name" : null,
@@ -90,29 +90,29 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Основы электротехники",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
-    }, {
-      "number" : 4,
-      "name" : "Основы электротехники",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
-    }, {
-      "number" : 5,
-      "name" : "Основы электротехники",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
-    }, {
-      "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 3,
+      "name" : "Теорет механика",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
+    }, {
+      "number" : 4,
+      "name" : "ПП.04.01",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
+    }, {
+      "number" : 5,
+      "name" : "ПП.04.01",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
+    }, {
+      "number" : 6,
+      "name" : "ПП.04.01",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
     } ]
   }, {
     "day" : "THURSDAY",
@@ -123,29 +123,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "НЭРТО",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "14"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "НЭРТО",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "14"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Основы электротехники",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Дискр матем",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Дискр матем",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 6,
       "name" : null,
@@ -156,19 +156,19 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.04.02",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.04.02",
+      "teacher" : "Кувшинников А.М.",
+      "place" : "14"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин яз",
+      "teacher" : "Пустовалова Э.У.",
+      "place" : "библ"
     }, {
       "number" : 3,
       "name" : null,
@@ -176,19 +176,19 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "УП 04.01",
-      "teacher" : "резерв",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "УП 04.01",
-      "teacher" : "резерв",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "УП 04.01",
-      "teacher" : "резерв",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
@@ -199,34 +199,37 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Инженерная графика",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "218"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Электротех измерения",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Электротех измерения",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Основы электротехники",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Архитектура",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Архитектура",
+      "teacher" : "Шарипов Н.Т.",
+      "place" : "001б"
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

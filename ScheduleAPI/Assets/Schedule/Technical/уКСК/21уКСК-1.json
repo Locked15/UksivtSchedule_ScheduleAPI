@@ -19,57 +19,57 @@
       "place" : null
     }, {
       "number" : 3,
+      "name" : "КС",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 4,
+      "name" : "КС",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 5,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
+      "place" : null
+    }, {
+      "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 4,
-      "name" : "ЦСТ",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
-    }, {
-      "number" : 5,
-      "name" : "ЦСТ",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
-    }, {
-      "number" : 6,
-      "name" : "ЦСТ",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Пр по прототип",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Пр по прототип",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Пр по прототип",
-      "teacher" : "Шарипов Н.Т.",
-      "place" : "001"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Прикладная элект",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Аввакумов А.А.",
+      "place" : "314"
     }, {
       "number" : 6,
       "name" : null,
@@ -80,34 +80,34 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ПЦУ",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "ТВИМС",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "ТВИМС",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы философии",
+      "teacher" : "Каримова И.Р.",
+      "place" : "336"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОСиС",
+      "teacher" : "Поглазов К.Ю",
+      "place" : "13"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОСиС",
+      "teacher" : "Поглазов К.Ю",
+      "place" : "13"
     }, {
       "number" : 6,
       "name" : null,
@@ -118,24 +118,24 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "Источники питания",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "3"
+    }, {
+      "number" : 1,
+      "name" : "МДК.01.02",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "3"
+    }, {
+      "number" : 2,
+      "name" : "МДК.01.02",
+      "teacher" : "Тяпкина Н.Б.",
+      "place" : "3"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 1,
-      "name" : "ТВИМС",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
-    }, {
-      "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
     }, {
       "number" : 4,
       "name" : null,
@@ -156,19 +156,19 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.01.01",
+      "teacher" : "Лихарев И.А.",
+      "place" : "001в"
     }, {
       "number" : 3,
       "name" : null,
@@ -176,37 +176,37 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "ПЦУ",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Прикладная электроника",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "Прикладная электроника",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАиП лаб.раб",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "1"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАиП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "1"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОАиП",
+      "teacher" : "Поглазов К.Ю.",
+      "place" : "1"
     }, {
       "number" : 3,
       "name" : null,
@@ -214,19 +214,22 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Прикладная электроника",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Прикладная электроника",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ЦСТ",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

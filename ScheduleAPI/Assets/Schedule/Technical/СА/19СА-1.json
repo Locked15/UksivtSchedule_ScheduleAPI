@@ -4,28 +4,28 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : null
+      "name" : "Экономика отрасли",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Экономика отрасли",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
       "place" : null
     }, {
       "number" : 5,
@@ -42,19 +42,19 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 3,
       "name" : null,
@@ -67,42 +67,42 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.02",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 1,
+      "name" : "МДК.03.02",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
+    }, {
+      "number" : 2,
+      "name" : "МДК.03.01",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 3,
+      "name" : "МДК.03.01",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Исмагилова Г.М.",
-      "place" : "общ"
-    }, {
-      "number" : 3,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 4,
-      "name" : "ПОПД",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "13"
     }, {
       "number" : 5,
       "name" : null,
@@ -118,24 +118,24 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
     }, {
       "number" : 1,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "МДК.03.02",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 2,
-      "name" : "УП 02.01.",
-      "teacher" : "Колесников Д.Н.",
-      "place" : "1"
+      "name" : "МДК.03.02",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 3,
-      "name" : "ПОПД",
-      "teacher" : "Дуйсенов И.А.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -156,34 +156,34 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.03.01",
+      "teacher" : "Тимашев Т.Р.",
+      "place" : "2"
     }, {
       "number" : 3,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 4,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "МДК 02.01",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -194,29 +194,29 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.03.01",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
     }, {
       "number" : 1,
+      "name" : "МДК.03.01",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235"
+    }, {
+      "number" : 2,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
-    }, {
       "number" : 3,
-      "name" : "ЭОСИ",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }
