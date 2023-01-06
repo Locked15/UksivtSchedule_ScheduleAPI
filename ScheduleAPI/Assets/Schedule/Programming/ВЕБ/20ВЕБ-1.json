@@ -4,19 +4,19 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.05.02",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.05.02",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322"
     }, {
       "number" : 3,
       "name" : null,
@@ -24,14 +24,14 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "МДК 0501",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
       "name" : null,
@@ -42,24 +42,24 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 0502",
+      "name" : "МДК 05.02",
       "teacher" : "Дмитриева Е.К.",
       "place" : "9"
     }, {
       "number" : 1,
-      "name" : "МДК 0502",
+      "name" : "МДК 05.02",
       "teacher" : "Дмитриева Е.К.",
       "place" : "9"
     }, {
       "number" : 2,
-      "name" : "УП",
-      "teacher" : "Дмитриева Е.К.",
-      "place" : "9"
+      "name" : "МДК 09.01",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 3,
-      "name" : "ОПБД",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -85,72 +85,72 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "314"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БЖД",
+      "teacher" : "Акчев С.А.",
+      "place" : "314"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "Физ-ра",
-      "teacher" : "Хабибов Р.Г.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 6,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 09.01",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.09.01",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП.05.01",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 3,
+      "name" : "ПП.05.01",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
+    }, {
+      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 4,
-      "name" : "МДК 0501",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
-    }, {
       "number" : 5,
-      "name" : "МДК 0501",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "МДК 0501",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "FRIDAY",
@@ -166,29 +166,29 @@
       "place" : null
     }, {
       "number" : 2,
+      "name" : "МДК.05.03",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
+    }, {
+      "number" : 3,
+      "name" : "МДК.05.03",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
+    }, {
+      "number" : 4,
+      "name" : "МДК.05.03",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
+    }, {
+      "number" : 5,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "УП",
-      "teacher" : "Дмитриева Е.К.",
-      "place" : "9"
-    }, {
-      "number" : 4,
-      "name" : "УП",
-      "teacher" : "Дмитриева Е.К.",
-      "place" : "9"
-    }, {
-      "number" : 5,
-      "name" : "УП",
-      "teacher" : "Дмитриева Е.К.",
-      "place" : "9"
-    }, {
       "number" : 6,
-      "name" : "УП",
-      "teacher" : "Дмитриева Е.К.",
-      "place" : "9"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
@@ -204,14 +204,14 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "ОПБД",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ПП.05.01",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 3,
-      "name" : "ОПБД",
-      "teacher" : "Стюкова Я.Д.",
-      "place" : "217"
+      "name" : "ПП.05.01",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 4,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

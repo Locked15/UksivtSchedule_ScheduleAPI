@@ -4,24 +4,24 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "ОПБД",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 1,
+      "name" : "ОПБД",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 2,
+      "name" : "ОАиП",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "241"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 1,
-      "name" : "Ин.яз",
-      "teacher" : "Валеева З.М.",
-      "place" : "320"
-    }, {
-      "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
-    }, {
-      "number" : 3,
-      "name" : "История",
-      "teacher" : "Сафуанова З.А.",
-      "place" : "309"
     }, {
       "number" : 4,
       "name" : null,
@@ -42,29 +42,29 @@
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320"
     }, {
       "number" : 1,
+      "name" : "ОАиП",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 2,
+      "name" : "ОАиП",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "ЭВМ",
-      "teacher" : "Голуб И.А.",
-      "place" : "318"
-    }, {
-      "number" : 3,
-      "name" : "ИТ",
-      "teacher" : "Хасанова А.М.",
-      "place" : "229"
-    }, {
       "number" : 4,
-      "name" : "ИТ",
-      "teacher" : "Хасанова А.М.",
-      "place" : "229"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -85,24 +85,24 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Архитектура АС",
-      "teacher" : "Павлов Н.А.",
-      "place" : "1"
-    }, {
-      "number" : 2,
-      "name" : "ЭВМ",
-      "teacher" : "Голуб И.А.",
-      "place" : "318"
-    }, {
-      "number" : 3,
-      "name" : "Психология общ",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
-    }, {
-      "number" : 4,
       "name" : null,
       "teacher" : null,
       "place" : null
+    }, {
+      "number" : 2,
+      "name" : "МДК.05.01",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 3,
+      "name" : "МДК.05.01",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
+    }, {
+      "number" : 4,
+      "name" : "МДК.05.01",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232"
     }, {
       "number" : 5,
       "name" : null,
@@ -118,39 +118,39 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЧМ",
+      "teacher" : "Лахмуткина Т.Г.",
+      "place" : "218"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.02.03",
+      "teacher" : "Лахмуткина Т.Г.",
+      "place" : "218"
     }, {
       "number" : 2,
+      "name" : "ТВиМС",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
+    }, {
+      "number" : 3,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 3,
-      "name" : "КС",
-      "teacher" : "Гильзер Е.М.",
-      "place" : "216"
-    }, {
       "number" : 4,
-      "name" : "КС",
-      "teacher" : "Гильзер Е.М.",
-      "place" : "216"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "ОСИС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ОСИС",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "FRIDAY",
@@ -166,19 +166,19 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "ИТ",
-      "teacher" : "Хасанова А.М.",
-      "place" : "229"
+      "name" : "УП.02.01",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 3,
-      "name" : "ОАИП",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : "УП.02.01",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 4,
-      "name" : "ОАИП",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : "Дискретная мат-ка",
+      "teacher" : "Бакирова А.Ю.",
+      "place" : "327"
     }, {
       "number" : 5,
       "name" : null,
@@ -209,24 +209,27 @@
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Психология общ",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "ОАИП",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : "ПП.02.01",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП.02.01",
+      "teacher" : "Уразаева А.А.",
+      "place" : "227"
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

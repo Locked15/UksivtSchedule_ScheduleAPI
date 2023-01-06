@@ -9,29 +9,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Веб прогр",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Веб прогр",
-      "teacher" : "Файзулова А.И.",
-      "place" : "237"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Стандартизация",
+      "teacher" : "Фатхулова О.В.",
+      "place" : "221"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Стандартизация",
+      "teacher" : "Фатхулова О.В.",
+      "place" : "221"
     }, {
       "number" : 6,
       "name" : null,
@@ -52,24 +52,24 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Пустовалова Э.У.",
-      "place" : null
+      "name" : "Менеджмент",
+      "teacher" : "Киселева М.В.",
+      "place" : "223"
     }, {
       "number" : 3,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : "Менеджмент",
+      "teacher" : "Киселева М.В.",
+      "place" : "223"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПОПД",
+      "teacher" : "Дуйсенов И.А.",
+      "place" : "214"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПОПД",
+      "teacher" : "Дуйсенов И.А.",
+      "place" : "214"
     }, {
       "number" : 6,
       "name" : null,
@@ -80,23 +80,23 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 07 01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "Веб",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 1,
-      "name" : "УП 07",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "Веб",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 2,
-      "name" : "УП 07",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "Веб",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Ин.яз",
+      "teacher" : "Пустовалова Э.У,",
       "place" : null
     }, {
       "number" : 4,
@@ -118,24 +118,24 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 07 01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 07 01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "УП 07",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "УП 07",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -143,14 +143,14 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Веб",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Веб",
+      "teacher" : "Файзулова А.И.",
+      "place" : "237"
     } ]
   }, {
     "day" : "FRIDAY",
@@ -176,17 +176,17 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "МДК 07 01",
+      "name" : "МДК 07 02",
       "teacher" : "Набиева Л.Р.",
       "place" : "232"
     }, {
       "number" : 5,
-      "name" : "МДК 03.02",
+      "name" : "МДК 07 02",
       "teacher" : "Набиева Л.Р.",
       "place" : "232"
     }, {
       "number" : 6,
-      "name" : "МДК 03.02",
+      "name" : "МДК 07 02",
       "teacher" : "Набиева Л.Р.",
       "place" : "232"
     } ]
@@ -194,29 +194,29 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 03.01",
-      "teacher" : "Набиева Л.Р.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 1,
-      "name" : "УП 03.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Гашева Н.В.",
-      "place" : null
+      "name" : "Экономика отрасли",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Экономика отрасли",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
+      "place" : "301"
     }, {
       "number" : 5,
       "name" : null,
@@ -228,5 +228,8 @@
       "teacher" : null,
       "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

@@ -9,29 +9,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Спец курс",
-      "teacher" : "Каримова Р.Ф.",
-      "place" : "233"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "ОПБД",
-      "teacher" : "Каримова Р.Ф.",
-      "place" : "233"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "ОПБД",
+      "name" : "МДК.11.01",
       "teacher" : "Каримова Р.Ф.",
       "place" : "233"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.02.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 6,
       "name" : null,
@@ -47,23 +47,23 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 0103",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : "Основы философии",
+      "teacher" : "Каримова И.Р.",
+      "place" : "336"
     }, {
       "number" : 2,
-      "name" : "Поддержка и тестирование",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : "БЖД",
+      "teacher" : "Исмаилова Р.Х.",
+      "place" : "235"
     }, {
       "number" : 3,
-      "name" : "Поддержка и тестирование",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
       "place" : null
     }, {
       "number" : 5,
@@ -80,19 +80,19 @@
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.02.03",
+      "teacher" : "Лахмуткина Т.Г.",
+      "place" : "218"
     }, {
       "number" : 3,
       "name" : null,
@@ -100,21 +100,16 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "ПП",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "ПП",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "ПП",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
-    }, {
-      "number" : 7,
       "name" : null,
       "teacher" : null,
       "place" : null
@@ -123,29 +118,29 @@
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин.яз",
-      "teacher" : "Валеева З.М.",
-      "place" : "320"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 0103",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 0103",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : "Спецкурс",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Спецкурс",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Веб",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 5,
       "name" : null,
@@ -161,19 +156,19 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП.11.01",
+      "teacher" : "Каримова Р.Ф.",
+      "place" : "233"
     }, {
       "number" : 3,
       "name" : null,
@@ -181,47 +176,47 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Физ-ра",
-      "teacher" : "Гашева Н.В.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 5,
-      "name" : "МДК 0103",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "МДК 0103",
-      "teacher" : "Зиганшина Р.С.",
-      "place" : "241"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Веб",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
     }, {
       "number" : 1,
+      "name" : "Веб",
+      "teacher" : "Дмитриева Е.К.",
+      "place" : "9"
+    }, {
+      "number" : 2,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 2,
-      "name" : "Поддержка и тестирование",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
-    }, {
       "number" : 3,
-      "name" : "Поддержка и тестирование",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "ПП",
-      "teacher" : "Храмов Л.А.",
-      "place" : "5"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -232,11 +227,9 @@
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 7,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }

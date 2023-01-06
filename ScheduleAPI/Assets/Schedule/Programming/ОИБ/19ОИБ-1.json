@@ -4,14 +4,14 @@
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
       "name" : null,
@@ -29,32 +29,32 @@
       "place" : null
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
       "place" : null
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0301",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "243"
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0301",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "243"
     }, {
       "number" : 3,
       "name" : null,
@@ -62,37 +62,37 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : "УП 0301",
-      "teacher" : "Белозерцев Л.Н.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
-      "name" : "МДК 0301",
-      "teacher" : "Белозерцев Л.Н.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 6,
-      "name" : "МДК 0301",
-      "teacher" : "Белозерцев Л.Н.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     } ]
   }, {
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
       "name" : null,
@@ -100,42 +100,42 @@
       "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "Экономика и упр",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 2,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "Экономика и упр",
+      "teacher" : "Арсланова О.Н.",
+      "place" : "301"
     }, {
       "number" : 3,
-      "name" : "МДК 03.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
       "name" : null,
@@ -161,72 +161,75 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Гашева Н.В.",
+      "name" : null,
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : "Основы философии",
-      "teacher" : "Каримова И.Р.",
-      "place" : "336"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Корпоративная защ.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245"
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК 0301",
-      "teacher" : "Белозерцев Л.Н.",
-      "place" : "234"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "МДК 0301",
-      "teacher" : "Белозерцев Л.Н.",
-      "place" : "234"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
+      "name" : null,
+      "teacher" : null,
+      "place" : null
+    }, {
+      "number" : 3,
       "name" : "МДК 0301",
       "teacher" : "Белозерцев Л.Н.",
       "place" : "234"
     }, {
-      "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
-    }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0301",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0301",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234"
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0301",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234"
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }
