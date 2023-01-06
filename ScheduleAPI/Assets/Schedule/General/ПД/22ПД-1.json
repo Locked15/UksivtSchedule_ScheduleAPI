@@ -9,29 +9,29 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "ОБЖ",
-      "teacher" : "Кобелева С.В.",
-      "place" : "313"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Лит-ра",
-      "teacher" : "Постнова Д.В.",
-      "place" : "316"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Информатика",
+      "teacher" : "Павловская Е.О.",
+      "place" : "223"
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 6,
       "name" : null,
@@ -47,19 +47,19 @@
       "place" : null
     }, {
       "number" : 1,
-      "name" : "Ин.яз",
-      "teacher" : "Ханова Л.В.",
-      "place" : "315"
+      "name" : "География",
+      "teacher" : "Юнусова Л.Р.",
+      "place" : "325"
     }, {
       "number" : 2,
-      "name" : "Лит-ра",
-      "teacher" : "Постнова Д.В.",
-      "place" : "316"
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 3,
-      "name" : "Общество",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : "338"
+      "name" : "Математика",
+      "teacher" : "Гарипова Р.М.",
+      "place" : "329"
     }, {
       "number" : 4,
       "name" : null,
@@ -90,19 +90,19 @@
       "place" : null
     }, {
       "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
+      "name" : "Ин яз",
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 3,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
+      "name" : "Ин яз",
+      "teacher" : null,
       "place" : null
     }, {
       "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Ханова Л.В.",
-      "place" : "315"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -113,34 +113,29 @@
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 7,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "География",
-      "teacher" : "Юнусова Л.Р.",
-      "place" : "305"
+      "name" : "Экономика",
+      "teacher" : "Киселева М.В.",
+      "place" : "325"
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Галимов Ф.Х.",
-      "place" : null
-    }, {
-      "number" : 2,
       "name" : "История",
       "teacher" : "Гумерова Э.Г.",
-      "place" : "322"
+      "place" : "13"
+    }, {
+      "number" : 2,
+      "name" : "Обществознание",
+      "teacher" : "Ахметшина Е.В.",
+      "place" : "321"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Баш яз",
+      "teacher" : "Юмагулова Г.К.",
+      "place" : "312"
     }, {
       "number" : 4,
       "name" : null,
@@ -161,29 +156,29 @@
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
+      "name" : "ОБЖ",
+      "teacher" : "Кобелева С.В.",
+      "place" : "313"
+    }, {
+      "number" : 1,
+      "name" : "Астрономия",
+      "teacher" : "Сыртланова Л.А.",
+      "place" : "333"
+    }, {
+      "number" : 2,
       "name" : null,
       "teacher" : null,
       "place" : null
     }, {
-      "number" : 1,
-      "name" : "География",
-      "teacher" : "Юнусова Л.Р.",
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Сафронкина Е.С.",
-      "place" : null
-    }, {
       "number" : 3,
-      "name" : "Русский",
-      "teacher" : "Постнова Д.В.",
-      "place" : "316"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 4,
-      "name" : "Информатика",
-      "teacher" : "Павловская Е.О.",
-      "place" : "223"
+      "name" : null,
+      "teacher" : null,
+      "place" : null
     }, {
       "number" : 5,
       "name" : null,
@@ -199,24 +194,24 @@
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Баш.яз",
-      "teacher" : "Юмагулова Г.К.",
-      "place" : "312"
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
+      "place" : null
     }, {
       "number" : 1,
-      "name" : "Экономика",
-      "teacher" : "Киселева М.В.",
-      "place" : "331"
+      "name" : "Физ-ра",
+      "teacher" : "Гашева Н.В.",
+      "place" : null
     }, {
       "number" : 2,
-      "name" : "Русский",
+      "name" : "Русский яз",
       "teacher" : "Постнова Д.В.",
       "place" : "316"
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Литература",
+      "teacher" : "Постнова Д.В.",
+      "place" : "316"
     }, {
       "number" : 4,
       "name" : null,
@@ -232,11 +227,9 @@
       "name" : null,
       "teacher" : null,
       "place" : null
-    }, {
-      "number" : 7,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
     } ]
+  }, {
+    "day" : "SUNDAY",
+    "lessons" : [ ]
   } ]
 }
