@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+    <title>Заглавная — ScheduleAPI</title>
+    <meta charset="utf-8" />
+
+    <!-- Общие мета-теги. -->
+    <meta name="robots" content="follow" />
+    <meta name="description" content="Сайт расписания УКСИВТа, позволяющий получать актуальные данные о заменах, и основном расписании для любой группы колледжа." />
+    <meta name="keywords" content="Расписание, Schedule, УКСИВТ, UKSIVT, Замены, Changes, Replacements, ASP.NET, ASP.NET Core, Web Schedule" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Специализированные мета-теги для социальных сетей. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ScheduleAPI" />
+    <meta property="og:image" content="~/icons/icon_256px.png" />
+    <meta property="og:image:width" content="256" />
+    <meta property="og:image:height" content="256" />
+    <meta property="og:description" content="Удобный API для получения данных о расписании колледжа и не только!" />
+    <meta property="og:url" content="http://uksivtscheduleapi.azurewebsites.net" />
+    <meta property="og:site_name" content="ScheduleAPI" />
+
+    <link rel="manifest" href="~/site-manifest.json" />
+
+    @await RenderSectionAsync("Scripts", required: false)
+</head>
+
+<body>
+    <header>
+        Hello, There!
+    </header>
+
+    <div>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        Current version: v2.0.4.
+    </footer>
+</body>
+</html>

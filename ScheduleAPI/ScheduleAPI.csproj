@@ -1,23 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-	  
-    <Nullable>enable</Nullable>
-	  
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7</TargetFramework>
+		<Version>2.0.3</Version>
+		<Authors>Locked15</Authors>
+		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
 
-  <ItemGroup>
-    <PackageReference Include="AngleSharp" Version="0.16.1" />
-	  
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	  
-    <PackageReference Include="NPOI" Version="2.5.5" />
-	  
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
-	  
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-  </ItemGroup>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
 
-  <ProjectExtensions><VisualStudio><UserProperties assets_4programming_4п_419п-3_1json__JsonSchema="https://appsemble.app/api.json" properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+		<UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
+		<ApplicationInsightsResourceId>/subscriptions/c0502672-d9b2-4f69-a607-b7300fa5fb3e/resourceGroups/Subscriprion/providers/microsoft.insights/components/UksivtScheduleAPI</ApplicationInsightsResourceId>
+		<DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+		<DockerComposeProjectPath>..\Docker-Compose.dcproj</DockerComposeProjectPath>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <None Include="Assets\.saved-cache\ChangesDocumentCache.cache" />
+	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
+	  <None Include="Assets\.saved-cache\FinalDayScheduleCache.cache" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AngleSharp" Version="0.17.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+
+		<PackageReference Include="NPOI" Version="2.6.0" />
+
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\PublishProfiles\" />
+	</ItemGroup>
+
+	<ProjectExtensions>
+		<VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio>
+	</ProjectExtensions>
 </Project>

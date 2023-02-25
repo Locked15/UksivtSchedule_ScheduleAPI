@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  scheduleapi:
+    image: ${DOCKER_REGISTRY-}scheduleapi
+    build:
+      context: .
+      dockerfile: ..\ScheduleAPI\Dockerfile

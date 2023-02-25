@@ -1,0 +1,26 @@
+.error-content {
+    font-family: 'Agency FB';
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16em;
+}
+
+.error-header {
+    font-size: larger;
+
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-message {
+    font-size: medium;
+
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    align-items: center;
+}

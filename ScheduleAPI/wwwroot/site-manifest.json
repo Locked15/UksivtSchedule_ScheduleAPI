@@ -1,0 +1,30 @@
+{
+  "name": "ScheduleAPI",
+  "background_color": "azure",
+  "orientation": "portrait-primary",
+  "display": "standalone",
+  "scope": "/",
+  "description": "Сайт-API, для получения данных о расписании.",
+  "icons": [
+    {
+      "src": "/icons/icon_32px.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/icons/icon_48px.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/icons/icon_128px.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons/icon_256px.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ]
+}
