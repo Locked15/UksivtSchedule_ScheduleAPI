@@ -131,7 +131,7 @@ namespace ScheduleAPI.Controllers.Other.General
         {
             /* Как показала практика, иногда в конце номеров пар могут оставить лишнюю запятую.
                Например: '1,2,3,' и тогда будет вызвана ошибка. Нужно обработать этот случай и удалить лишние символы. */
-            string[] splatted = lessonNumbers.Trim(',').Split(new char[] { ',', '.' });
+            string[] splatted = lessonNumbers.Trim(',', '.').Split(new char[] { ',', '.' });
             List<Lesson> toReturn = new(1);
 
             /* В отличие от Java, C# способен преобразовать строки с пробелами в целые числа, ...

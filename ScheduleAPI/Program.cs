@@ -2,6 +2,10 @@ namespace ScheduleAPI
 {
     public class Program
     {
+        /// <summary>
+        /// Точка входа в программу.
+        /// </summary>
+        /// <param name="args">Аргументы приложения.</param>
         private static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +34,11 @@ namespace ScheduleAPI
                 options.ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
         }
 
+        /// <summary>
+        /// Устанавливает значения маршрутизации для API.
+        /// В данном случае нужен для установки маршрутов до действий по умолчанию.
+        /// </summary>
+        /// <param name="app">Экземпляр веб-приложения, которое настраивается.</param>
         private static void SetRoutings(WebApplication app)
         {
             app.UseRouting();
@@ -40,6 +49,10 @@ namespace ScheduleAPI
             app.UseExceptionHandler("/Home/Error");
         }
 
+        /// <summary>
+        /// Устанавливает настройки веб-приложения.
+        /// </summary>
+        /// <param name="app">Настраиваемое веб-приложение.</param>
         private static void ConfigureAppSettings(WebApplication app)
         {
             app.UseStaticFiles();
