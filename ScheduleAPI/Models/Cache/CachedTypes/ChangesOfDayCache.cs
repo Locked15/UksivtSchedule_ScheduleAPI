@@ -31,7 +31,8 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// <returns>Хэш-код.</returns>
         public override int GetCachedValueHashCode()
         {
-            return CachedElement.GetHashCode();
+            // Добавляем к основному хэшу результат хэширования названия группы (чтобы избежать коллизии).
+            return CachedElement.GetHashCode() + GroupName.GetHashCode();
         }
 
         /// <summary>

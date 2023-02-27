@@ -20,7 +20,7 @@ namespace ScheduleAPI.Models.Cache
     {
         #region Область: Константы.
 
-        private const string CacheFolderName = ".saved-cache";
+        private const string CacheFolderName = "#saved-cache";
         #endregion
 
         #region Область: Свойства.
