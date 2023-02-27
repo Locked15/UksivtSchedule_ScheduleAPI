@@ -35,7 +35,7 @@
 	  <Folder Include="Properties\PublishProfiles\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="Assets\.saved-cache\ReadMe.txt" />
+	  <None Include="Assets\.saved-cache\!ReadMe.txt" />
 	</ItemGroup>
 
 	<ProjectExtensions>
