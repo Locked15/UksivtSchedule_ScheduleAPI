@@ -26,7 +26,8 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// <returns>Хэш-код.</returns>
         public override int GetCachedValueHashCode()
         {
-            return CachedElement.GetHashCode();
+            // Аналогично кэшу замен (см. ChangesOfDayCache) добавляем результат хэширования названия группы, во избежание коллизий.
+            return CachedElement.GetHashCode() + GroupName.GetHashCode();
         }
 
         /// <summary>
