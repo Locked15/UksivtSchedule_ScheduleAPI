@@ -9,8 +9,8 @@ Remember it. This is a feature.
 
 ## Address
 Web API locates on:
-<strong>https://uksivt.azurewebsites.net/</strong> <br />
-Current online branch: <strong>Redesigned</strong>.
+  1. <strong>https://uksivt.azurewebsites.net/</strong> (<strong>Preview</strong>);
+  2. <strong>http://uksivt.info/</strong> (<strong>Stable</strong>).
 
 <i>All controller parameters must be add after address part.</i>
 
