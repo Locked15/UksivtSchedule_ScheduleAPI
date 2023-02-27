@@ -4,13 +4,15 @@
 		<Version>2.0.4.1</Version>
 		<Authors>Locked15</Authors>
 		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
-
+		
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
-
+		
+		<PublishReadyToRun>true</PublishReadyToRun>
 		<UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
 		<ApplicationInsightsResourceId>/subscriptions/c0502672-d9b2-4f69-a607-b7300fa5fb3e/resourceGroups/Subscriprion/providers/microsoft.insights/components/UksivtScheduleAPI</ApplicationInsightsResourceId>
+		
 		<DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
 		<DockerComposeProjectPath>..\Docker-Compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
