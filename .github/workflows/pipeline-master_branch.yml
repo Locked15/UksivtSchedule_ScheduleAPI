@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'webschedule'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3F70CB8F1CC42129CDE122A950A4464 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6C996EAFBF6741ECB88A7DA91896961D }}
           package: .
