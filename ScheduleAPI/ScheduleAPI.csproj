@@ -18,7 +18,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-	  <Compile Remove="Assets\#saved-cache\ChangesOfDayCache.cache\**" />
+	  <Compile Remove="Assets\.saved-cache\ChangesOfDayCache.cache\**" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="AngleSharp" Version="0.17.1" />
@@ -33,6 +33,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Properties\PublishProfiles\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="Assets\.saved-cache\ReadMe.txt" />
 	</ItemGroup>
 
 	<ProjectExtensions>
