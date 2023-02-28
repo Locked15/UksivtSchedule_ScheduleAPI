@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<TargetFramework>net7</TargetFramework>
 		<Version>2.0.4.1</Version>
@@ -8,6 +8,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 		
 		<PublishReadyToRun>true</PublishReadyToRun>
 		<UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
