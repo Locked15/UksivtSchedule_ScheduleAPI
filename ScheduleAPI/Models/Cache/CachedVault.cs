@@ -1,8 +1,9 @@
 ﻿using System.Text;
-using Newtonsoft.Json;
+using System.Text.Json;
 using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Controllers.ViewsControllers;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
+using ScheduleAPI.Models.Elements;
 
 namespace ScheduleAPI.Models.Cache
 {
@@ -74,7 +75,7 @@ namespace ScheduleAPI.Models.Cache
                 try
                 {
                     using var stream = new StreamReader(pathToSavedCache, Encoding.Default);
-                    CachedValues = JsonConvert.DeserializeObject<List<Y>>(stream.ReadToEnd()) ??
+                    CachedValues = JsonSerializer.Deserialize<List<Y>>(stream.ReadToEnd()) ??
                                    throw new Exception("При попытке создать поток чтения сохраненного кэша было получено значение \'null\'.");
 
                     return true;
@@ -244,7 +245,7 @@ namespace ScheduleAPI.Models.Cache
                 {
                     using var stream = new StreamWriter(pathToSavedCache, false, Encoding.Default);
 
-                    var serializedValue = JsonConvert.SerializeObject(CachedValues, Formatting.Indented);
+                    var serializedValue = JsonSerializer.Serialize(CachedValues, JsonSettingsModel.JsonOptions);
                     stream.Write(serializedValue);
                 }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.Getter.Changes;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Schedule.Changes;
 
 namespace ScheduleAPI.Controllers.API.Changes
@@ -60,7 +61,7 @@ namespace ScheduleAPI.Controllers.API.Changes
 
             changes.ChangesDate ??= dayIndex.GetDateTimeInWeek();
 
-            return new JsonResult(changes, JsonSerializeBinder.JsonOptions);
+            return new JsonResult(changes, JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace ScheduleAPI.Controllers.API.Changes
         {
             List<ChangesOfDay> changes = new TargetChangesGetter(default, groupName).GetWeekChanges();
 
-            return new JsonResult(changes, JsonSerializeBinder.JsonOptions);
+            return new JsonResult(changes, JsonSettingsModel.JsonOptions);
         }
         #endregion
     }

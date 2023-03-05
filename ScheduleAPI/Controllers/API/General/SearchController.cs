@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ScheduleAPI.Controllers.Data.Getter;
-using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Search;
 
 namespace ScheduleAPI.Controllers.API.General
@@ -90,7 +90,7 @@ namespace ScheduleAPI.Controllers.API.General
             UpdateGetterSettings(options);
             cacheWorker.Set("getter", getter);
 
-            return new JsonResult("Settings succefully applied.", JsonSerializeBinder.JsonOptions);
+            return new JsonResult("Settings succefully applied.", JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace ScheduleAPI.Controllers.API.General
         {
             var result = getter.SearchTargetGroups(request);
 
-            return new JsonResult(result, JsonSerializeBinder.JsonOptions);
+            return new JsonResult(result, JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace ScheduleAPI.Controllers.API.General
         {
             var result = getter.SearchTargetTeachers(request);
 
-            return new JsonResult(result, JsonSerializeBinder.JsonOptions);
+            return new JsonResult(result, JsonSettingsModel.JsonOptions);
         }
         #endregion
 

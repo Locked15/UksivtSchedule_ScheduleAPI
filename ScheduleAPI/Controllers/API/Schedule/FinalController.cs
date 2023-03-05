@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Models.Elements;
 
 namespace ScheduleAPI.Controllers.API.Schedule
 {
@@ -66,7 +67,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
             var result = getter.GetDaySchedule(dayIndex, groupName);
             result.ScheduleDate ??= dayIndex.GetDateTimeInWeek();
 
-            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), JsonSerializeBinder.JsonOptions);
+            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
             groupName = groupName.RemoveStringChars();
 
             var schedule = getter.GetWeekSchedule(default, groupName);
-            return new JsonResult(schedule, JsonSerializeBinder.JsonOptions);
+            return new JsonResult(schedule, JsonSettingsModel.JsonOptions);
         }
         #endregion
     }

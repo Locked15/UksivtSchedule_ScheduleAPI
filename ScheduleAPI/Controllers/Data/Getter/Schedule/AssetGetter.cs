@@ -154,7 +154,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             foreach (string file in Directory.GetFiles(currentPath).ToList())
             {
                 var content = File.ReadAllText(file);
-                AffiliationsInfo? info = JsonSerializer.Deserialize<AffiliationsInfo>(content, JsonSerializeBinder.JsonOptions);
+                AffiliationsInfo? info = JsonSerializer.Deserialize<AffiliationsInfo>(content, JsonSettingsModel.JsonOptions);
 
                 if (info != null)
                     toReturn.Add(info);
@@ -194,7 +194,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             {
                 using (StreamReader reader = new(fullPath, System.Text.Encoding.Default))
                 {
-                    WeekSchedule? week = JsonSerializer.Deserialize<WeekSchedule>(reader.ReadToEnd(), JsonSerializeBinder.JsonOptions);
+                    WeekSchedule? week = JsonSerializer.Deserialize<WeekSchedule>(reader.ReadToEnd(), JsonSettingsModel.JsonOptions);
                     week?.DaySchedules.ForEach(day => day.Day = day.Day?.GetTranslatedDay());
 
                     if (week == null)
@@ -291,7 +291,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
             using StreamReader sr = new(path, System.Text.Encoding.Default);
 
-            return JsonSerializer.Deserialize<List<WeekSchedule>>(sr.ReadToEnd(), JsonSerializeBinder.JsonOptions);
+            return JsonSerializer.Deserialize<List<WeekSchedule>>(sr.ReadToEnd(), JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             if (schedules != null)
             {
                 var path = Path.Combine(environment.ContentRootPath, "Assets", "Schedule", AllGroupsFileName);
-                var value = Newtonsoft.Json.JsonConvert.SerializeObject(schedules, Newtonsoft.Json.Formatting.Indented);
+                var value = JsonSerializer.Serialize(schedules, JsonSettingsModel.JsonOptions);
 
                 using StreamWriter sw = new(path, false, System.Text.Encoding.Default);
                 sw.Write(value);
