@@ -24,8 +24,6 @@
 		<PackageReference Include="AngleSharp" Version="0.17.1" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
 
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-
 		<PackageReference Include="NPOI" Version="2.6.0" />
 
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
@@ -36,6 +34,8 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Assets\.saved-cache\!ReadMe.txt" />
+	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
+	  <None Include="Assets\.saved-cache\FinalDayScheduleCache.cache" />
 	</ItemGroup>
 
 	<ProjectExtensions>
