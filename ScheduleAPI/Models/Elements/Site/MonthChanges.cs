@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.Data.General;
 
 namespace ScheduleAPI.Models.Elements.Site
 {

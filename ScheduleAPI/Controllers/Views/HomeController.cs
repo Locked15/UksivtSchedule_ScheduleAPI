@@ -2,7 +2,7 @@
 using ScheduleAPI.Models.Exceptions.View;
 using System.Net;
 
-namespace ScheduleAPI.Controllers.ViewsControllers
+namespace ScheduleAPI.Controllers.Views
 {
     /// <summary>
     /// Класс-контроллер для домашней страницы API.

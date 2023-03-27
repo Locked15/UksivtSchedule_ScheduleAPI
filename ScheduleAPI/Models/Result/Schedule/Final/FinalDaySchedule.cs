@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.Other.General;
+﻿using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 using ScheduleAPI.Models.Result.Schedule.Changes;

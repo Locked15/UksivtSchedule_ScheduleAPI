@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using NPOI.XWPF.UserModel;
 using ScheduleAPI.Controllers.API.Changes;
-using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Exceptions.Data;
 using ScheduleAPI.Models.Result.Schedule;

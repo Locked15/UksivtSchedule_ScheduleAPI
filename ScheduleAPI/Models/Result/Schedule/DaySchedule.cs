@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.Other.General;
+﻿using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Result.Schedule.Changes;
 using System.Text;
 

@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using ScheduleAPI.Controllers.API.General;
 using ScheduleAPI.Controllers.API.Schedule;
-using ScheduleAPI.Controllers.Other.General;
+using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Exceptions.Data;
 using ScheduleAPI.Models.Result.Schedule;

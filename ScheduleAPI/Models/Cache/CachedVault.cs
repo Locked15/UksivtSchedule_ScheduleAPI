@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using System.Text.Json;
-using ScheduleAPI.Controllers.Other.General;
-using ScheduleAPI.Controllers.ViewsControllers;
+using ScheduleAPI.Controllers.Data.General;
+using ScheduleAPI.Controllers.Views;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 using ScheduleAPI.Models.Elements;
 

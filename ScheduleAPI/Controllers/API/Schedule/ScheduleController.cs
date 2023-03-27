@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
-using ScheduleAPI.Controllers.Other.General;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Schedule;
 
