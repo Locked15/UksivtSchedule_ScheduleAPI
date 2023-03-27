@@ -10,6 +10,11 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic
         public int Attempts { get; init; } = 3;
 
         /// <summary>
+        /// Contains extension of the changes document.
+        /// </summary>
+        protected const string DocumentExtension = "docx";
+
+        /// <summary>
         /// Свойство, содержащее оптимальное значение переменной 'UserAgent' для выбранной платформы.
         /// </summary>
         protected string UserAgentForPlatform { get; } = "";

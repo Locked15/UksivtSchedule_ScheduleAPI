@@ -1,5 +1,5 @@
-﻿using ScheduleAPI.Controllers.Data.Getter.Schedule;
-using ScheduleAPI.Controllers.Other.General;
+﻿using ScheduleAPI.Controllers.Data.General;
+using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Models.Result.Search;
 using ScheduleAPI.Models.Result.Search.Result;
 

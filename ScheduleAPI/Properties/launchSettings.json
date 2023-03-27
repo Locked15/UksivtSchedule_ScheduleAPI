@@ -1,5 +1,14 @@
 {
   "profiles": {
+    "Native": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "http://localhost:5174",
+      "dotnetRunMessages": true
+    },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
@@ -7,24 +16,11 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    "ScheduleAPI (With Start Page)": {
-      "commandName": "Project",
+    "Docker": {
+      "commandName": "Docker",
       "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
-      },
-      "applicationUrl": "http://localhost:5174",
-      "dotnetRunMessages": true
-    },
-    "ScheduleAPI (With Swagger)": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production"
-      },
-      "applicationUrl": "http://localhost:5174",
-      "dotnetRunMessages": true
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "publishAllPorts": true
     },
     "WSL": {
       "commandName": "WSL2",
@@ -35,12 +31,6 @@
         "ASPNETCORE_URLS": "http://localhost:5174"
       },
       "distributionName": ""
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",

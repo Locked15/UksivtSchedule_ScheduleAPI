@@ -1,7 +1,7 @@
 ﻿using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Models.Result.Schedule;
 
-namespace ScheduleAPI.Controllers.Other.General
+namespace ScheduleAPI.Controllers.Data.General
 {
     /// <summary>
     /// Класс-помощник, нужный для различных задач.
@@ -39,11 +39,11 @@ namespace ScheduleAPI.Controllers.Other.General
         /// <returns>Результат проверки на идентичность.</returns>
         public static bool CheckDaysToEqualityIncludingFutureDates(DateOnly first, DateOnly second)
         {
-            bool isFuture = first.GetWeekNumber() < second.GetWeekNumber() || 
+            bool isFuture = first.GetWeekNumber() < second.GetWeekNumber() ||
                             first.Month < second.Month;
             bool daysAreEqual = first.DayOfWeek == second.DayOfWeek;
 
-            return first == second || (isFuture && daysAreEqual);
+            return first == second || isFuture && daysAreEqual;
         }
 
         /// <summary>

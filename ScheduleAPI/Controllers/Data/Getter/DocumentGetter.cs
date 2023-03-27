@@ -11,11 +11,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
     public static class DocumentGetter
     {
         /// <summary>
-        /// Константа, содержащая ключевые элементы ссылки, определяющие платформу как Google Drive.
-        /// </summary>
-        private const string GoogleTemplate = "google";
-
-        /// <summary>
         /// Выполняет цепочку вызовов, что приводит к скачиванию документа с указанной платформы.
         /// </summary>
         /// <param name="element">Элемент замены, полученный во время парса сайта колледжа.</param>
@@ -48,8 +43,11 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// <exception cref="InvalidOperationException">Платформа с документом не поддерживается.</exception>
         private static IDownloader GetDownloaderInstanceByDocumentLink(string originalLink)
         {
-            if (originalLink.Contains(GoogleTemplate))
+            if (LinkTemplates.CheckLinkToPresent(originalLink, LinkTemplates.GoogleTemplates))
                 return new GoogleDriveDownloader();
+            else if (LinkTemplates.CheckLinkToPresent(originalLink, LinkTemplates.UksivtStorageTemplate))
+                return new UksivtStorageDownloader();
+
             else
                 throw new InvalidOperationException();
         }

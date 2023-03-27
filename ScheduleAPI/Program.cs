@@ -1,6 +1,8 @@
+using Serilog;
+
 namespace ScheduleAPI
 {
-    public class Program
+    public static class Program
     {
         /// <summary>
         /// Точка входа в программу.
@@ -8,8 +10,11 @@ namespace ScheduleAPI
         /// <param name="args">Аргументы приложения.</param>
         private static void Main(string[] args)
         {
+            ConfigureEnvironment();
+
             var builder = WebApplication.CreateBuilder(args);
-            ConfigureServices(builder);
+            ConfigureServices(builder.Services,
+                builder.Configuration.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING") ?? string.Empty);
 
             var app = builder.Build();
             SetRoutings(app);
@@ -19,19 +24,28 @@ namespace ScheduleAPI
         }
 
         /// <summary>
+        /// Устанавливает настройки окружения перед запуском приложения.
+        /// </summary>
+        private static void ConfigureEnvironment()
+        {
+            Log.Logger = new LoggerConfiguration().WriteTo
+                                                  .Console()
+                                                  .CreateLogger();
+        }
+
+        /// <summary>
         /// Устанавливает сервисы, подключения и службы веб-приложения.
         /// </summary>
         /// <param name="builder">Builder для экземпляра веб-приложения.</param>
-        private static void ConfigureServices(WebApplicationBuilder builder)
+        private static void ConfigureServices(IServiceCollection services, string appInsightsConnectionString)
         {
-            builder.Services.AddMemoryCache();
-            builder.Services.AddControllers();
-            builder.Services.AddControllersWithViews();
+            services.AddMemoryCache();
+            services.AddControllers();
+            services.AddControllersWithViews();
 
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddApplicationInsightsTelemetry(options =>
-                options.ConnectionString = builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"]);
+            services.AddEndpointsApiExplorer();
+            services.AddApplicationInsightsTelemetry(options =>
+                options.ConnectionString = appInsightsConnectionString);
         }
 
         /// <summary>

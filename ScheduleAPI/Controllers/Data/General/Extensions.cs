@@ -4,7 +4,7 @@ using NPOI.XWPF.UserModel;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Elements.Site;
 
-namespace ScheduleAPI.Controllers.Other.General
+namespace ScheduleAPI.Controllers.Data.General
 {
     /// <summary>
     /// Класс расширений.
