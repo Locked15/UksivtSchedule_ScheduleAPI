@@ -1,4 +1,5 @@
 ﻿using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Controllers.Data.Getter;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
 using ScheduleAPI.Models.Elements.Site;
 using System.Net;
@@ -118,7 +119,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
         protected override string TryToDownloadDocument(string url)
         {
             string fileName = Path.GetRandomFileName();
-            fileName = Path.GetFileNameWithoutExtension(fileName) + ".docx";
+            fileName = $"{Path.GetFileNameWithoutExtension(fileName)}.{DocumentExtension}";
 
             return ProcessDownload(url, fileName);
         }
@@ -140,12 +141,11 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
                     client.Headers.Add("user-agent", UserAgentForPlatform);
                     while (File.Exists(baseDistonation))
                     {
-                        baseDistonation = Path.GetFileNameWithoutExtension(Path.GetRandomFileName()) + ".docx";
+                        baseDistonation = $"{Path.GetFileNameWithoutExtension(Path.GetRandomFileName())}.{DocumentExtension}";
                     }
 
                     client.DownloadFile(new Uri(url), baseDistonation);
                 }
-
                 catch (Exception e)
                 {
                     ChangesController.Logger?.Log(LogLevel.Error, "Обнаружена ошибка при скачивании файла с заменами: {message}.", e.Message);
