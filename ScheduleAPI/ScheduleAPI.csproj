@@ -1,49 +1,67 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+	<!-- Project Execution Settings -->
 	<PropertyGroup>
-		<TargetFramework>net7</TargetFramework>
-		<Version>2.0.4.1</Version>
-		<Authors>Locked15</Authors>
-		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
-		
+		<TargetFramework>net7.0-windows10.0.22000.0</TargetFramework>
+		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
-		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
-		
+	</PropertyGroup>
+
+	<!-- Project Info -->
+	<PropertyGroup>
+		<Version>2.0.4.1</Version>
+		<Authors>Locked15</Authors>
+		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
+	</PropertyGroup>
+
+	<!-- Building Beautifier Settings -->
+	<PropertyGroup>
+		<DisableBeauty>False</DisableBeauty>
+		<BeautyLibsDir>./libraries</BeautyLibsDir>
+		<BeautyOnPublishOnly>False</BeautyOnPublishOnly>
+	</PropertyGroup>
+
+	<!-- Secrets and Insights Connection Info -->
+	<PropertyGroup>
 		<UserSecretsId>fb1bc107-3aa0-4ca9-a6a3-c98059f4646f</UserSecretsId>
 		<ApplicationInsightsResourceId>/subscriptions/c0502672-d9b2-4f69-a607-b7300fa5fb3e/resourceGroups/Subscriprion/providers/microsoft.insights/components/UksivtScheduleAPI</ApplicationInsightsResourceId>
-		
+	</PropertyGroup>
+
+	<!-- Docker Support Info -->
+	<PropertyGroup>
 		<DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
 		<DockerComposeProjectPath>..\Docker-Compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
-	  <Compile Remove="Assets\.saved-cache\ChangesOfDayCache.cache\**" />
+		<Compile Remove="Assets\.saved-cache\ChangesOfDayCache.cache\**" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="AngleSharp" Version="1.0.1" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
 
 		<PackageReference Include="NPOI" Version="2.6.0" />
-
-		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
-
-		<PackageReference Include="nulastudio.NetCoreBeauty" Version="1.2.9.3" />
+		<PackageReference Include="AngleSharp" Version="1.0.1" />
+		<PackageReference Include="nulastudio.NetBeauty" Version="2.1.1" />
 
 		<PackageReference Include="Serilog" Version="2.12.0" />
-
 		<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
 	</ItemGroup>
+
 	<ItemGroup>
-	  <Folder Include="Properties\PublishProfiles\" />
+		<Folder Include="Properties\PublishProfiles\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="Assets\.saved-cache\!ReadMe.txt" />
-	  <None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
-	  <None Include="Assets\.saved-cache\FinalDayScheduleCache.cache" />
+		<None Include="Assets\.saved-cache\!ReadMe.txt" />
+		<None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
+		<None Include="Assets\.saved-cache\FinalDayScheduleCache.cache" />
 	</ItemGroup>
 
 	<ProjectExtensions>
-		<VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio>
+		<VisualStudio>
+			<UserProperties properties_4launchsettings_1json__JsonSchema="" />
+		</VisualStudio>
 	</ProjectExtensions>
 </Project>
