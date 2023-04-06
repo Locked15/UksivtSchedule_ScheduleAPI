@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Serilog;
 
 namespace ScheduleAPI
@@ -39,6 +40,9 @@ namespace ScheduleAPI
         /// <param name="builder">Builder для экземпляра веб-приложения.</param>
         private static void ConfigureServices(IServiceCollection services, string appInsightsConnectionString)
         {
+            services.AddCors(options =>
+                             options.AddPolicy("CORS-Policy", GenerateCors()));
+
             services.AddMemoryCache();
             services.AddControllers();
             services.AddControllersWithViews();
@@ -74,5 +78,16 @@ namespace ScheduleAPI
 
             app.UseStatusCodePagesWithReExecute("/Home/Status", "?code={0}");
         }
+
+        #region Standalone Functions.
+
+        private static CorsPolicy GenerateCors()
+        {
+            var corsBuilder = new CorsPolicyBuilder().AllowAnyHeader()
+                                                     .AllowAnyMethod()
+                                                     .AllowAnyOrigin();
+            return corsBuilder.Build();
+        }
+        #endregion
     }
 }
