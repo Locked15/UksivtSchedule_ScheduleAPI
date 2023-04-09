@@ -22,38 +22,38 @@ namespace ScheduleAPI.Controllers.API.General
 
         [HttpGet]
         [Route("~/api/[controller]/branches")]
-        public JsonResult GetBranches()
+        public IActionResult GetBranches()
         {
             List<string> folders = getter.GetBranches();
 
-            return Json(folders);
+            return Ok(folders);
         }
 
         [HttpGet]
         [Route("~/api/[controller]/affiliates")]
-        public JsonResult GetAffiliates(string branch = "Programming")
+        public IActionResult GetAffiliates(string branch = "Programming")
         {
             List<string> affiliates = getter.GetAffiliates(branch);
 
-            return Json(affiliates);
+            return Ok(affiliates);
         }
 
         [HttpGet]
         [Route("~/api/[controller]/groups")]
-        public JsonResult GetGroups(string branch = "Programming", string affiliate = "П")
+        public IActionResult GetGroups(string branch = "Programming", string affiliate = "П")
         {
             List<string> groups = getter.GetGroupNames(branch, affiliate);
 
-            return Json(groups);
+            return Ok(groups);
         }
 
         [HttpGet]
         [Route("~/api/[controller]/summary")]
-        public JsonResult GetSummary()
+        public IActionResult GetSummary()
         {
             List<string> groups = getter.GetAllAvailableGroups();
 
-            return Json(groups);
+            return Ok(groups);
         }
     }
 }
