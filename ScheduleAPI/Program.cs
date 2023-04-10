@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Serilog;
 
 namespace ScheduleAPI
 {
     public static class Program
     {
+        private const string CorsPolicyName = "Cross-Domain CORS";
+
         /// <summary>
         /// Точка входа в программу.
         /// </summary>
@@ -11,10 +14,7 @@ namespace ScheduleAPI
         private static void Main(string[] args)
         {
             ConfigureEnvironment();
-
-            var builder = WebApplication.CreateBuilder(args);
-            ConfigureServices(builder.Services,
-                builder.Configuration.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING") ?? string.Empty);
+            WebApplicationBuilder builder = CreateAndConfigureAppBuilder(args);
 
             var app = builder.Build();
             SetRoutings(app);
@@ -33,12 +33,24 @@ namespace ScheduleAPI
                                                   .CreateLogger();
         }
 
+        private static WebApplicationBuilder CreateAndConfigureAppBuilder(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+            ConfigureServices(builder.Services,
+                builder.Configuration.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING") ?? string.Empty);
+
+            return builder;
+        }
+
         /// <summary>
         /// Устанавливает сервисы, подключения и службы веб-приложения.
         /// </summary>
         /// <param name="builder">Builder для экземпляра веб-приложения.</param>
         private static void ConfigureServices(IServiceCollection services, string appInsightsConnectionString)
         {
+            services.AddCors(options =>
+                             options.AddPolicy(CorsPolicyName, GenerateCors()));
+
             services.AddMemoryCache();
             services.AddControllers();
             services.AddControllersWithViews();
@@ -69,10 +81,23 @@ namespace ScheduleAPI
         /// <param name="app">Настраиваемое веб-приложение.</param>
         private static void ConfigureAppSettings(WebApplication app)
         {
+            app.UseCors(CorsPolicyName);
+
             app.UseStaticFiles();
             app.MapControllers();
 
             app.UseStatusCodePagesWithReExecute("/Home/Status", "?code={0}");
         }
+
+        #region Standalone Functions.
+
+        private static CorsPolicy GenerateCors()
+        {
+            var corsBuilder = new CorsPolicyBuilder().AllowAnyHeader()
+                                                     .AllowAnyMethod()
+                                                     .AllowAnyOrigin();
+            return corsBuilder.Build();
+        }
+        #endregion
     }
 }
