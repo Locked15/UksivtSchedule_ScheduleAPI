@@ -7,13 +7,13 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
     /// Класс кэша для документа с заменами. <br />
     /// Так как Google Drive часто отказывает в скачивании документа с заменами, его кэширование может быть полезной мерой.
     /// </summary>
-    public class ChangesDocumentCache : AbstractCacheElement<ChangesDocument>
+    public class ReplacementsDocumentCache : AbstractCacheElement<ReplacementsDocument>
     {
         /// <summary>
         /// Конструктор класса.
         /// </summary>
         /// <param name="cachingValue">Документ с заменами, который нужно кэшировать.</param>
-        public ChangesDocumentCache(ChangesDocument cachingValue) : base(cachingValue)
+        public ReplacementsDocumentCache(ReplacementsDocument cachingValue) : base(cachingValue)
         {
 
         }
@@ -32,7 +32,7 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <returns>Если кэш ещё актуален — его значение;
         /// В ином случае — "null".</returns>
-        public override ChangesDocument? GetCacheSafely()
+        public override ReplacementsDocument? GetCacheSafely()
         {
             return base.GetCacheSafely();
         }

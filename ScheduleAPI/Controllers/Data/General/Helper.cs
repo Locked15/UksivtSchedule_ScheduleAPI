@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.API.Changes;
+﻿using ScheduleAPI.Controllers.API.Replacements;
 using ScheduleAPI.Models.Result.Schedule;
 
 namespace ScheduleAPI.Controllers.Data.General
@@ -145,7 +145,7 @@ namespace ScheduleAPI.Controllers.Data.General
 
                 else
                 {
-                    ChangesController.Logger?.Log(LogLevel.Warning, "Не удалось преобразовать значение в числовой тип при раскрытии номеров пар.");
+                    ReplacementsController.Logger?.Log(LogLevel.Warning, "Не удалось преобразовать значение в числовой тип при раскрытии номеров пар.");
                 }
             }
 

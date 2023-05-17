@@ -1,18 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.General;
-using ScheduleAPI.Controllers.Data.Getter.Changes;
+using ScheduleAPI.Controllers.Data.Getter.Replacements;
 using ScheduleAPI.Models.Elements;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
-namespace ScheduleAPI.Controllers.API.Changes
+namespace ScheduleAPI.Controllers.API.Replacements
 {
     /// <summary>
     /// Класс-контроллер для получения замен.
+    /// Для сохранения обратной совместимости после переименования контроллера старый маршрут был сохранён (вместе с новым).
     /// <br/>
     /// Ранее он был разбит на 2 класса: для одного дня и для недели. Теперь они объединены в один класс.
     /// </summary>
-    [Route("~/api/[controller]")]
-    public class ChangesController
+    [Route("~/api/changes/")]
+    [Route("~/api/[controller]/")]
+    public class ReplacementsController : Controller
     {
         #region Область: Поля.
 
@@ -27,7 +29,7 @@ namespace ScheduleAPI.Controllers.API.Changes
         /// <summary>
         /// Свойство с автоматически инициализированным логгером.
         /// </summary>
-        public static ILogger<ChangesController>? Logger { get; private set; } = null;
+        public static ILogger<ReplacementsController>? Logger { get; private set; } = null;
         #endregion
 
         #region Область: Конструкторы.
@@ -37,7 +39,7 @@ namespace ScheduleAPI.Controllers.API.Changes
         /// </summary>
         /// <param name="env">Информация об окружении API.</param>
         /// <param name="logger">Автоматически инициализированный сервис логгера для работы.</param>
-        public ChangesController(IHostEnvironment env, ILogger<ChangesController> logger)
+        public ReplacementsController(IHostEnvironment env, ILogger<ReplacementsController> logger)
         {
             environment = env;
             Logger = logger;
@@ -52,16 +54,15 @@ namespace ScheduleAPI.Controllers.API.Changes
         /// <param name="dayIndex">Индекс дня.</param>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/day")]
-        public JsonResult DayChanges(int dayIndex = 0, string groupName = "19П-3")
+        [HttpGet("day")]
+        public IActionResult DayReplacements(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
-            ChangesOfDay changes = new TargetChangesGetter(dayIndex, groupName).GetDayChanges();
+            ReplacementsOfDay replacements = new TargetReplacementsGetter(dayIndex, groupName).GetDayReplacements();
 
-            changes.ChangesDate ??= dayIndex.GetDateTimeInWeek();
+            replacements.ChangesDate ??= dayIndex.GetDateTimeInWeek();
 
-            return new JsonResult(changes, JsonSettingsModel.JsonOptions);
+            return Json(replacements, JsonSettingsModel.JsonOptions);
         }
 
         /// <summary>
@@ -69,13 +70,12 @@ namespace ScheduleAPI.Controllers.API.Changes
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/week")]
-        public JsonResult WeekChanges(string groupName = "19П-3")
+        [HttpGet("week")]
+        public IActionResult WeekReplacements(string groupName = "19П-3")
         {
-            List<ChangesOfDay> changes = new TargetChangesGetter(default, groupName).GetWeekChanges();
+            List<ReplacementsOfDay> replacements = new TargetReplacementsGetter(default, groupName).GetWeekReplacements();
 
-            return new JsonResult(changes, JsonSettingsModel.JsonOptions);
+            return Json(replacements, JsonSettingsModel.JsonOptions);
         }
         #endregion
     }

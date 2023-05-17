@@ -1,16 +1,16 @@
 ﻿using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Elements.Documents;
-using ScheduleAPI.Controllers.API.Changes;
-using ScheduleAPI.Models.Result.Schedule.Changes;
 using ScheduleAPI.Controllers.Data.General;
+using ScheduleAPI.Controllers.API.Replacements;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {
     /// <summary>
-    /// Содержит вынесенную логику для работы с хранилищами кэша из класса "TargetChangesGetter".
+    /// Содержит вынесенную логику для работы с хранилищами кэша из класса "ReplacementsGetter".
     /// </summary>
-    public class ChangesGetterCacheWorker
+    public class ReplacementsGetterCacheWorker
     {
         #region Область: Поля.
 
@@ -18,14 +18,14 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         /// Хранилище кэша, содержащее кэшированные замены для расписаний. <br />
         /// Прямое указание типов (вместо привязки к базовым элементам (как в "Dependency Inversion")), позволяет проще понять код.
         /// <br /><br />
-        /// "ChangesOfDayCache" сразу видно, в отличие от "AbstractCacheElement<ChangesOfDay>".
+        /// "ChangesOfDayCache" сразу видно, в отличие от "AbstractCacheElement<ReplacementsOfDay>".
         /// </summary>
-        private readonly CachedVault<ChangesOfDay, ChangesOfDayCache> cachedChanges;
+        private readonly CachedVault<ReplacementsOfDay, ChangesOfDayCache> cachedChanges;
 
         /// <summary>
         /// Хранилище кэша, содержащее кэшированные документы с заменами для определенных дней.
         /// </summary>
-        private readonly CachedVault<ChangesDocument, ChangesDocumentCache> cachedDocuments;
+        private readonly CachedVault<ReplacementsDocument, ReplacementsDocumentCache> cachedDocuments;
         #endregion
 
         #region Область: Конструкторы.
@@ -33,7 +33,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         /// <summary>
         /// Конструктор класса.
         /// </summary>
-        public ChangesGetterCacheWorker()
+        public ReplacementsGetterCacheWorker()
         {
             cachedChanges = new();
             cachedChanges.TryToRestoreCachedValues();
@@ -52,7 +52,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         /// <param name="dayIndex">Индекс дня, который необходимо найти.</param>
         /// <param name="groupName">Название группы, которую необходимо найти.</param>
         /// <returns>Результат поиска.</returns>
-        public ChangesOfDay? TryToFindTargetCachedChangesValue(int dayIndex, string groupName)
+        public ReplacementsOfDay? TryToFindTargetCachedChangesValue(int dayIndex, string groupName)
         {
             var cachedElement = cachedChanges.Get(el =>
             {
@@ -71,7 +71,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         /// </summary>
         /// <param name="targetDate">Дата, на которую нужно найти документ с заменами.</param>
         /// <returns>Результат поиска.</returns>
-        public ChangesDocument? TryToFindTargetCachedDocumentValue(DateOnly targetDate)
+        public ReplacementsDocument? TryToFindTargetCachedDocumentValue(DateOnly targetDate)
         {
             var cachedDocument = cachedDocuments.Get(doc =>
                                                      doc.CachedElement.DocumentDate.Equals(targetDate));
@@ -89,16 +89,16 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
         {
             switch (cacheableValue)
             {
-                case ChangesOfDay changes:
+                case ReplacementsOfDay changes:
                     cachedChanges.Add(changes.GenerateCachedValue(args));
                     return true;
-                case ChangesDocument document:
+                case ReplacementsDocument document:
                     cachedDocuments.Add(document.GenerateCachedValue(args));
                     return true;
 
                 default:
-                    ChangesController.Logger?.LogWarning("Попытка кэшировать значение, которое не поддерживает сохранение в кэш.\n" +
-                                                         "(TargetChangesGetter -> TryToAddValueToCachedVault: {type}).", cacheableValue.GetType() as Type);
+                    ReplacementsController.Logger?.LogWarning("Попытка кэшировать значение, которое не поддерживает сохранение в кэш.\n" +
+                                                         "(TargetReplacementsGetter -> TryToAddValueToCachedVault: {type}).", cacheableValue.GetType() as Type);
                     return false;
             }
         }

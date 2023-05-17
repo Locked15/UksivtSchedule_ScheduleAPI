@@ -1,5 +1,5 @@
 ﻿using ScheduleAPI.Controllers.Data.General;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 using System.Text;
 
 /// <summary>
@@ -60,7 +60,7 @@ namespace ScheduleAPI.Models.Result.Schedule
 
         #region Область: Методы.
 
-        public DaySchedule MergeChanges(ChangesOfDay? changes)
+        public DaySchedule MergeChanges(ReplacementsOfDay? changes)
         {
             if (changes == null)
                 return new DaySchedule(Day, Lessons);

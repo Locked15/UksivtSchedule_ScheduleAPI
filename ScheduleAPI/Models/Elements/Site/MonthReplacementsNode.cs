@@ -6,7 +6,7 @@ namespace ScheduleAPI.Models.Elements.Site
     /// <summary>
     /// Класс замен за месяц.
     /// </summary>
-    public class MonthChanges
+    public class MonthReplacementsNode
     {
         #region Область: Свойства.
 
@@ -18,7 +18,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// <summary>
         /// Поле, содержащее список замен на данный месяц.
         /// </summary>
-        public List<ChangeElement> Changes { get; set; }
+        public List<ReplacementNodeElement> Changes { get; set; }
         #endregion
 
         #region Область: Конструкторы класса.
@@ -26,10 +26,10 @@ namespace ScheduleAPI.Models.Elements.Site
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public MonthChanges()
+        public MonthReplacementsNode()
         {
             Month = string.Empty;
-            Changes = Enumerable.Empty<ChangeElement>().ToList();
+            Changes = Enumerable.Empty<ReplacementNodeElement>().ToList();
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// </summary>
         /// <param name="month">Название месяца.</param>
         /// <param name="changes">Список замен.</param>
-        public MonthChanges(string month, List<ChangeElement> changes)
+        public MonthReplacementsNode(string month, List<ReplacementNodeElement> changes)
         {
             Month = month;
             Changes = changes;
@@ -54,14 +54,14 @@ namespace ScheduleAPI.Models.Elements.Site
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public ChangeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(string day)
+        public ReplacementNodeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(string day)
         {
             DateTime start = DateTime.Now.GetStartOfWeek().AddDays(-1);
             DateTime end = DateTime.Now.GetEndOfWeek().AddDays(1);
 
             Changes = Changes.OrderByDescending(change => change.Date).ToList();
 
-            foreach (ChangeElement change in Changes)
+            foreach (ReplacementNodeElement change in Changes)
             {
                 if (change.Date > end)
                 {
@@ -95,7 +95,7 @@ namespace ScheduleAPI.Models.Elements.Site
             "Changes:" +
             "\n{");
 
-            foreach (ChangeElement change in Changes)
+            foreach (ReplacementNodeElement change in Changes)
             {
                 toReturn.Append(change.ToString("\t"));
             }

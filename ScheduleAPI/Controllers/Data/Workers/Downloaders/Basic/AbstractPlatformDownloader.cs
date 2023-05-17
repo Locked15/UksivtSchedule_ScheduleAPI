@@ -33,7 +33,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic
         /// </summary>
         /// <param name="element"><inheritdoc /></param>
         /// <returns><inheritdoc /></returns>
-        public abstract string BeginDocumentDownload(ChangeElement element);
+        public abstract string BeginDocumentDownload(ReplacementNodeElement element);
 
         /// <summary>
         /// Парсит строку с ссылкой на документ и преобразует её, подготавливая к скачиванию. <br />

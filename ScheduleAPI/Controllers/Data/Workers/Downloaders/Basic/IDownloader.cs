@@ -24,7 +24,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic
         /// </summary>
         /// <param name="element">Элемент замены, полученный с сайта колледжа.</param>
         /// <returns>Путь к скачанному документу.</returns>
-        string BeginDocumentDownload(ChangeElement element);
+        string BeginDocumentDownload(ReplacementNodeElement element);
         #endregion
     }
 }

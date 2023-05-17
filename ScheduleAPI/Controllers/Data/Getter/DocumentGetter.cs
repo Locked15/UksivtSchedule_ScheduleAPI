@@ -1,7 +1,7 @@
 ﻿using ScheduleAPI.Models.Elements.Site;
-using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
+using ScheduleAPI.Controllers.API.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Getter
 {
@@ -15,7 +15,7 @@ namespace ScheduleAPI.Controllers.Data.Getter
         /// </summary>
         /// <param name="element">Элемент замены, полученный во время парса сайта колледжа.</param>
         /// <returns>Путь к скачанному документу.</returns>
-        public static string DownloadChangesDocument(ChangeElement element)
+        public static string DownloadChangesDocument(ReplacementNodeElement element)
         {
             try
             {
@@ -25,11 +25,11 @@ namespace ScheduleAPI.Controllers.Data.Getter
             }
             catch (InvalidOperationException)
             {
-                ChangesController.Logger?.LogError("Не найдено определение класса для скачивания документа с текущей платформы.\nСсылка: {link}.", element.LinkToDocument);
+                ReplacementsController.Logger?.LogError("Не найдено определение класса для скачивания документа с текущей платформы.\nСсылка: {link}.", element.LinkToDocument);
             }
             catch (Exception ex)
             {
-                ChangesController.Logger?.LogError("Произошла ошибка при скачивании документа: {error}.", ex.Message);
+                ReplacementsController.Logger?.LogError("Произошла ошибка при скачивании документа: {error}.", ex.Message);
             }
 
             return string.Empty;

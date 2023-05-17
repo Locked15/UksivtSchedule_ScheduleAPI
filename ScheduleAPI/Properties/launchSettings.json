@@ -1,6 +1,26 @@
 {
   "profiles": {
-    "Native": {
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:5174",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production",
+        "ASPNETCORE_URLS": "http://localhost:5174"
+      },
+      "distributionName": ""
+    },
+    "Native (Local DB)": {
+      "commandName": "Project",
+      "commandLineArgs": "--DB Local",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "http://localhost:5174",
+      "dotnetRunMessages": true
+    },
+    "Native (Remote DB)": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
@@ -15,22 +35,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
-    },
-    "Docker": {
-      "commandName": "Docker",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true
-    },
-    "WSL": {
-      "commandName": "WSL2",
-      "launchBrowser": true,
-      "launchUrl": "http://localhost:5174",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Production",
-        "ASPNETCORE_URLS": "http://localhost:5174"
-      },
-      "distributionName": ""
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",

@@ -282,7 +282,7 @@ namespace ScheduleAPI.Controllers.Data.General
         /// </summary>
         /// <param name="day">Название дня для поиска.</param>
         /// <returns>Элемент замен с указанным днем.</returns>
-        public static ChangeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthChanges> allChanges, string day)
+        public static ReplacementNodeElement? TryToFindElementByNameOfDayWithoutPreviousWeeks(this List<MonthReplacementsNode> allChanges, string day)
         {
             /* Так как в целях совместимости была использована структура "DateTime", а не "DateOnly", ...
                ... то в дело сравнения вмешивается ещё и время, что может нарушить работу.
@@ -291,12 +291,12 @@ namespace ScheduleAPI.Controllers.Data.General
             DateTime end = DateTime.Now.GetEndOfWeek().AddDays(1);
 
             //Месяцы идут в порядке убывания (Декабрь -> Ноябрь -> ...).
-            foreach (MonthChanges monthChanges in allChanges)
+            foreach (MonthReplacementsNode monthChanges in allChanges)
             {
                 //А вот дни - наоборот, в порядке возрастания, так что их надо инвертировать.
-                List<ChangeElement> changes = monthChanges.Changes.OrderByDescending(change => change.Date).ToList();
+                List<ReplacementNodeElement> changes = monthChanges.Changes.OrderByDescending(change => change.Date).ToList();
 
-                foreach (ChangeElement change in changes)
+                foreach (ReplacementNodeElement change in changes)
                 {
                     //Если текущая дата больше конца таргетированной недели, мы ещё не добрались до нужной даты.
                     if (change.Date > end)

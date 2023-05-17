@@ -1,12 +1,12 @@
-﻿using ScheduleAPI.Controllers.API.Changes;
+﻿using ScheduleAPI.Controllers.API.Replacements;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Workers.Cache;
 using ScheduleAPI.Controllers.Data.Workers.Parsers;
 using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Models.Exceptions.Data;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
-namespace ScheduleAPI.Controllers.Data.Getter.Changes
+namespace ScheduleAPI.Controllers.Data.Getter.Replacements
 {
     /// <summary>
     /// Класс, обертывающий функционал получения замен.
@@ -15,7 +15,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
     /// Он был обычным, стал статическим, и вот он снова обычный.
     /// Теперь статика применяется для работы с кэшем.
     /// </summary>
-    public class TargetChangesGetter
+    public class TargetReplacementsGetter
     {
         #region Область: Поля.
 
@@ -23,7 +23,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// Содержит основные функции и поля, необходимые для работы с кэшем в данном классе. <br />
         /// Ранее был частью. самого класса, но позже логика была вынесена в отдельный файл.
         /// </summary>
-        private static ChangesGetterCacheWorker cacheWorker;
+        private static ReplacementsGetterCacheWorker cacheWorker;
         #endregion
 
         #region Область: Свойства.
@@ -48,7 +48,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// </summary>
         /// <param name="dayIndex">Индекс дня, на который необходимы замены (0..6). Игнорируется, если необходимы замены на неделю.</param>
         /// <param name="groupName">Название группы, для которой нужно извлечь замены.</param>
-        public TargetChangesGetter(int dayIndex, string groupName)
+        public TargetReplacementsGetter(int dayIndex, string groupName)
         {
             DayIndex = dayIndex;
             GroupName = groupName.RemoveStringChars();
@@ -57,8 +57,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// <summary>
         /// Инициализирует объект для работы с кэшем.
         /// </summary>
-        static TargetChangesGetter() =>
-               cacheWorker = new ChangesGetterCacheWorker();
+        static TargetReplacementsGetter() =>
+               cacheWorker = new ReplacementsGetterCacheWorker();
         #endregion
 
         #region Область: Публичные методы.
@@ -69,14 +69,14 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// <strong>РЕКОМЕНДУЕТСЯ АСИНХРОННОЕ ВЫПОЛНЕНИЕ.</strong>
         /// </summary>
         /// <returns>Объект, содержащий замены для группы.</returns>
-        public ChangesOfDay GetDayChanges()
+        public ReplacementsOfDay GetDayReplacements()
         {
             if (cacheWorker.TryToFindTargetCachedChangesValue(DayIndex, GroupName) is var restored && restored != null)
                 return restored;
 
-            if (GetTargetChangesElement() is ChangeElement changeElement)
+            if (GetTargetChangesElement() is ReplacementNodeElement changeElement)
             {
-                ChangesOfDay toReturn = CompleteWorkWithChangesDocument(changeElement);
+                ReplacementsOfDay toReturn = CompleteWorkWithChangesDocument(changeElement);
                 toReturn.NewLessons.ForEach(lesson => lesson.Changed = true);
 
                 cacheWorker.TryToAddValueToCachedVault(toReturn, GroupName);
@@ -95,15 +95,15 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// </summary>
         /// <param name="groupName">Название группы.</param>
         /// <returns>Список с объектами, содержащими замены на каждый день.</returns>
-        public List<ChangesOfDay> GetWeekChanges()
+        public List<ReplacementsOfDay> GetWeekReplacements()
         {
             var basicDayIndex = DayIndex;
-            List<ChangesOfDay> list = new(1);
+            List<ReplacementsOfDay> list = new(1);
 
             for (int i = 0; i < 7; i++)
             {
                 DayIndex = i;
-                list.Add(GetDayChanges());
+                list.Add(GetDayReplacements());
             }
 
             DayIndex = basicDayIndex;
@@ -113,7 +113,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
         #region Область: Внутренние методы.
 
-        private ChangeElement? GetTargetChangesElement()
+        private ReplacementNodeElement? GetTargetChangesElement()
         {
             try
             {
@@ -122,7 +122,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
                 if (element == null)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
+                    ReplacementsController.Logger?.Log(LogLevel.Information, "При получении замен искомое значение не обнаружено: " +
                                                                         "День: {dayIndex}, Текущая дата — {time}.", DayIndex, DateTime.Now.ToShortDateString());
                 }
 
@@ -131,15 +131,15 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
             catch (Exception ex)
             {
-                ChangesController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
+                ReplacementsController.Logger?.LogError(3, "При получении замен произошла ошибка парса страницы: {message}.", ex.Message);
 
                 return null;
             }
         }
 
-        private ChangesOfDay CompleteWorkWithChangesDocument(ChangeElement? element)
+        private ReplacementsOfDay CompleteWorkWithChangesDocument(ReplacementNodeElement? element)
         {
-            ChangesOfDay toReturn;
+            ReplacementsOfDay toReturn;
 
             try
             {
@@ -152,13 +152,13 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
             catch (HttpRequestException)
             {
-                ChangesController.Logger?.Log(LogLevel.Error, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.");
+                ReplacementsController.Logger?.Log(LogLevel.Error, "Удалённый сервер хранения документов замен (Google Drive) оказался недоступен.");
                 toReturn = new();
             }
 
             catch (Exception exception)
             {
-                ChangesController.Logger?.Log(LogLevel.Error, "Произошла ошибка при работе с документом замен: {message}.", exception.Message);
+                ReplacementsController.Logger?.Log(LogLevel.Error, "Произошла ошибка при работе с документом замен: {message}.", exception.Message);
                 toReturn = new();
             }
 
@@ -182,7 +182,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// </param>
         /// <returns>Инициализированный экземпляр класса "DocumentParser", готовый к работе.</returns>
         /// <exception cref="HttpRequestException"/>
-        private DocumentParser InitializeReader(int dayIndex, ChangeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
+        private DocumentParser InitializeReader(int dayIndex, ReplacementNodeElement element, out bool deleteDocumentAfterWork, out string pathToDocument)
         {
             DateOnly targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             if (cacheWorker.TryToFindTargetCachedDocumentValue(targetDate) is var document && document != null)
@@ -233,9 +233,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
         /// <param name="reader">Экземпляр класса "ChangedReader", с указанным документов для чтения замен.</param>
         /// <param name="date"></param>
         /// <returns>Замены, соответствующие указанной дате и группе.</returns>
-        private ChangesOfDay GetChangesFromReader(DocumentParser reader, DateTime? date)
+        private ReplacementsOfDay GetChangesFromReader(DocumentParser reader, DateTime? date)
         {
-            ChangesOfDay toReturn;
+            ReplacementsOfDay toReturn;
             try
             {
                 toReturn = reader.GetOnlyChanges(DayIndex.GetDayByIndex(), GroupName);
@@ -245,14 +245,14 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
             catch (WrongDayInDocumentException exception)
             {
-                ChangesController.Logger?.Log(LogLevel.Information, "При обработке документа обнаружилось несоответствие дат. Очередная ошибка составителей замен?\n" +
+                ReplacementsController.Logger?.Log(LogLevel.Information, "При обработке документа обнаружилось несоответствие дат. Очередная ошибка составителей замен?\n" +
                                                                     "{message}.", exception.Message);
                 toReturn = new();
             }
 
             catch (Exception exception)
             {
-                ChangesController.Logger?.Log(LogLevel.Error, "Произшла какая-то ошибка, при работе с заменами:\n{message}.", exception.Message);
+                ReplacementsController.Logger?.Log(LogLevel.Error, "Произшла какая-то ошибка, при работе с заменами:\n{message}.", exception.Message);
                 toReturn = new();
             }
 
@@ -290,7 +290,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Changes
 
                 if (!deleted)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Warning, "Удалить файл с заменами не удалось.");
+                    ReplacementsController.Logger?.Log(LogLevel.Warning, "Удалить файл с заменами не удалось.");
                 }
             });
         }

@@ -10,6 +10,11 @@
     },
     "apis1": {
       "type": "apis"
+    },
+    "postgresql1": {
+      "type": "postgresql",
+      "connectionId": "DB.Lite.ConnectionString",
+      "dynamicId": null
     }
   }
 }

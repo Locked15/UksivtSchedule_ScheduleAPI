@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ScheduleAPI.Models.Entities;
 using ScheduleAPI.Models.Exceptions.View;
 using System.Net;
 
@@ -18,7 +19,7 @@ namespace ScheduleAPI.Controllers.Views
         /// Конструктор класса. Неявно вызывается при первом обращении к API.
         /// </summary>
         /// <param name="logger">Настроенный сервис логирования.</param>
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, DataContext context)
         {
             BaseLogger = logger;
         }
@@ -32,8 +33,14 @@ namespace ScheduleAPI.Controllers.Views
             return View();
         }
 
+        /// <summary>
+        /// Обрабатывает какой-либо статусный код при обращении к серверу.
+        /// Возвращает представление, соответствующее отправленному HTTP-коду.
+        /// </summary>
+        /// <param name="code">Статусный код.</param>
+        /// <returns>Представление, содержащее данные об отправленном HTTP-коде.</returns>
         public IActionResult Status(int code) =>
-                Error(code);
+               Error(code);
 
         /// <summary>
         /// Эта функция автоматически срабатывает в случае возникновения НЕ критической ошибки в работе API. <br />
@@ -46,12 +53,20 @@ namespace ScheduleAPI.Controllers.Views
             {
                 RequestID = Guid.NewGuid(),
                 ErrorCode = GetElementByCode(code),
-                Message = "Happend something bad.\n\nWe'll fix it as soon, as it possible."
+                Message = "Happened something bad.\n\nWe'll fix it as soon, as it possible."
             };
 
             return View("Error", model);
         }
 
+        /// <summary>
+        /// Выполняет приведение целочисленного значения HTTP-кода к типу перечисления.
+        /// Данное перечисление больше соответствует необходимым требованиям.
+        /// <br />
+        /// Если соответствующий элемент перечисления не найден, будет возвращён код 403 (Forbidden).
+        /// </summary>
+        /// <param name="code">Целочисленный HTTP-код (404, 403, 500, т.д.).</param>
+        /// <returns>Элемент перечисления, соответствующий отправленному коду.</returns>
         private static HttpStatusCode GetElementByCode(int code)
         {
             if (Enum.IsDefined(typeof(HttpStatusCode), code))

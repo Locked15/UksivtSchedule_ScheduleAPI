@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.API.Changes;
+﻿using ScheduleAPI.Controllers.API.Replacements;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
 using ScheduleAPI.Models.Elements.Site;
 using System.Net;
@@ -13,7 +13,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
         {
         }
 
-        public override string BeginDocumentDownload(ChangeElement element)
+        public override string BeginDocumentDownload(ReplacementNodeElement element)
         {
             int currentAttempt = 0;
             string path = string.Empty;
@@ -31,7 +31,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
 
                 catch (ArgumentException e)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Warning, "Преобразование ссылки прошло неудачно, точная информация: {message}.", e.Message);
+                    ReplacementsController.Logger?.Log(LogLevel.Warning, "Преобразование ссылки прошло неудачно, точная информация: {message}.", e.Message);
                 }
 
                 finally
@@ -47,7 +47,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
         {
             if (originalLink.Contains("../"))
             {
-                ChangesController.Logger?.LogWarning("Обнаружена относительная ссылка в объявлении замен.\nНормализация ссылки...");
+                ReplacementsController.Logger?.LogWarning("Обнаружена относительная ссылка в объявлении замен.\nНормализация ссылки...");
                 while (originalLink.Contains("../"))
                 {
                     originalLink = originalLink.Replace("../", string.Empty);
@@ -84,7 +84,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Downloaders
                 }
                 catch (Exception e)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Error, "Обнаружена ошибка при скачивании файла с заменами: {message}.", e.Message);
+                    ReplacementsController.Logger?.Log(LogLevel.Error, "Обнаружена ошибка при скачивании файла с заменами: {message}.", e.Message);
 
                     return string.Empty;
                 }

@@ -20,7 +20,7 @@ namespace ScheduleAPI.Controllers.API.General
         private SearchGetter getter;
 
         /// <summary>
-        /// Содержит объект, необходимый для работы с кэшем сесси. <br />
+        /// Содержит объект, необходимый для работы с кэшем сессии. <br />
         /// Конкретнее, для сохранения состояния настроек поиска.
         /// </summary>
         private IMemoryCache cacheWorker;

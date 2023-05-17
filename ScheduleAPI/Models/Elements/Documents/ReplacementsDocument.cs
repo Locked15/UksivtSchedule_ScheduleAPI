@@ -9,7 +9,7 @@ namespace ScheduleAPI.Models.Elements.Documents
     /// Класс, оборачивающий в себя документ с заменами. <br />
     /// Кроме самого документа содержит дату, на которую предназначен документ.
     /// </summary>
-    public class ChangesDocument : ICacheable<ChangesDocument, ChangesDocumentCache>
+    public class ReplacementsDocument : ICacheable<ReplacementsDocument, ReplacementsDocumentCache>
     {
         #region Область: Свойства.
 
@@ -33,7 +33,7 @@ namespace ScheduleAPI.Models.Elements.Documents
         /// Конструктор класса.
         /// </summary>
         /// <param name="document">Документ, содержащий замены.</param>
-        public ChangesDocument(XWPFDocument document)
+        public ReplacementsDocument(XWPFDocument document)
         {
             Document = document;
         }
@@ -43,7 +43,7 @@ namespace ScheduleAPI.Models.Elements.Documents
         /// </summary>
         /// <param name="document">Документ с заменами.</param>
         /// <param name="documentDate">Дата, на которую предназначен документ.</param>
-        public ChangesDocument(XWPFDocument document, DateOnly documentDate)
+        public ReplacementsDocument(XWPFDocument document, DateOnly documentDate)
         {
             Document = document;
             DocumentDate = documentDate;
@@ -52,10 +52,10 @@ namespace ScheduleAPI.Models.Elements.Documents
 
         #region Область: Методы.
 
-        public ChangesDocumentCache? GenerateCachedValue(params object[] args)
+        public ReplacementsDocumentCache? GenerateCachedValue(params object[] args)
         {
             if (CachingIsEnabled)
-                return new ChangesDocumentCache(this);
+                return new ReplacementsDocumentCache(this);
             else
                 return null;
         }

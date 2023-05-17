@@ -2,14 +2,14 @@
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
 using System.Text.Json.Serialization;
 
-namespace ScheduleAPI.Models.Result.Schedule.Changes
+namespace ScheduleAPI.Models.Result.Schedule.Replacements
 {
     /// <summary>
     /// Класс, представляющий сущность замен на один день.
     /// <br/>
     /// Нужно для работы API.
     /// </summary>
-    public class ChangesOfDay : ICacheable<ChangesOfDay, ChangesOfDayCache>
+    public class ReplacementsOfDay : ICacheable<ReplacementsOfDay, ChangesOfDayCache>
     {
         #region Область: Свойства.
 
@@ -47,7 +47,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Changes
         /// <br/>
         /// Нужен для заполнения значений через инициализацию.
         /// </summary>
-        public ChangesOfDay()
+        public ReplacementsOfDay()
         {
             ChangesFound = false;
             AbsoluteChanges = false;
@@ -59,7 +59,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Changes
         /// </summary>
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="lessons">Список с новыми парами.</param>
-        public ChangesOfDay(bool absoluteChanges, List<Lesson> lessons)
+        public ReplacementsOfDay(bool absoluteChanges, List<Lesson> lessons)
         {
             AbsoluteChanges = absoluteChanges;
             NewLessons = lessons;
@@ -71,7 +71,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Changes
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="changesDate">Дата, для которой предназначены замены.</param>
         /// <param name="lessons">Список с новыми парами.</param>
-        public ChangesOfDay(bool absoluteChanges, DateTime? changesDate, List<Lesson> lessons)
+        public ReplacementsOfDay(bool absoluteChanges, DateTime? changesDate, List<Lesson> lessons)
         {
             AbsoluteChanges = absoluteChanges;
             ChangesDate = changesDate;
@@ -85,7 +85,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Changes
         /// <param name="absoluteChanges">Замены на весь день?</param>
         /// <param name="changesDate">Дата (даже предполагаемая) замен.</param>
         /// <param name="newLessons">Список с новыми парами.</param>
-        public ChangesOfDay(bool changesFound, bool absoluteChanges, DateTime? changesDate, List<Lesson> newLessons)
+        public ReplacementsOfDay(bool changesFound, bool absoluteChanges, DateTime? changesDate, List<Lesson> newLessons)
         {
             ChangesFound = changesFound;
             AbsoluteChanges = absoluteChanges;

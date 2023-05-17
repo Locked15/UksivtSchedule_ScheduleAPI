@@ -5,7 +5,7 @@ namespace ScheduleAPI.Models.Elements.Site
     /// <summary>
     /// Класс, представляющий один элемент с заменами.
     /// </summary>
-    public class ChangeElement
+    public class ReplacementNodeElement
     {
         #region Область: Свойства.
 
@@ -30,7 +30,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// <summary>
         /// Конструктор класса по умолчанию.
         /// </summary>
-        public ChangeElement()
+        public ReplacementNodeElement()
         {
 
         }
@@ -41,7 +41,7 @@ namespace ScheduleAPI.Models.Elements.Site
         /// <param name="dayOfMonth">День месяца (число).</param>
         /// <param name="dayOfWeek">День недели.</param>
         /// <param name="linkToDocument">Ссылка на документ с заменами.</param>
-        public ChangeElement(DateTime date, string? dayOfWeek, string? linkToDocument)
+        public ReplacementNodeElement(DateTime date, string? dayOfWeek, string? linkToDocument)
         {
             Date = date;
             DayOfWeek = dayOfWeek;
@@ -68,7 +68,7 @@ namespace ScheduleAPI.Models.Elements.Site
         public string ToString(string append)
         {
             //Реализация прямиком из Java:
-            return "\n" + append + "ChangeElement: \n" +
+            return "\n" + append + "ReplacementNodeElement: \n" +
             append + "DayOfMonth = " + Date.Day + ";\n" +
             append + "LinkToDocument = " + LinkToDocument + ";\n" +
             append + "CurrentDay = " + DayOfWeek + ".\n";

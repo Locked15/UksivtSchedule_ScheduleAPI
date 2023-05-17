@@ -1,14 +1,14 @@
 ﻿using ScheduleAPI.Models.Cache.CachedTypes.Basic;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Models.Cache.CachedTypes
 {
     /// <summary>
     /// Класс, наследный от универсального "AbstractCacheElement".
     /// <br /> <br />
-    /// Специально предназначен для работы с объектами типа "ChangesOfDay".
+    /// Специально предназначен для работы с объектами типа "ReplacementsOfDay".
     /// </summary>
-    public class ChangesOfDayCache : AbstractCacheElement<ChangesOfDay>
+    public class ChangesOfDayCache : AbstractCacheElement<ReplacementsOfDay>
     {
         /// <summary>
         /// Название группы, для которой предназначены замены.
@@ -20,7 +20,7 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <param name="cachingValue">Замены, которые нужно кэшировать.</param>
         /// <param name="groupName">Название группы, для которой предназначены замены.</param>
-        public ChangesOfDayCache(ChangesOfDay cachingValue, string groupName) : base(cachingValue)
+        public ChangesOfDayCache(ReplacementsOfDay cachingValue, string groupName) : base(cachingValue)
         {
             GroupName = groupName;
         }
@@ -40,7 +40,7 @@ namespace ScheduleAPI.Models.Cache.CachedTypes
         /// </summary>
         /// <returns>Если кэш ещё актуален — его значение;
         /// В ином случае — "null".</returns>
-        public override ChangesOfDay? GetCacheSafely()
+        public override ReplacementsOfDay? GetCacheSafely()
         {
             return base.GetCacheSafely();
         }
