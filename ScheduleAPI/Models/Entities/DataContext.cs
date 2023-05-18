@@ -196,6 +196,7 @@ public partial class DataContext : DbContext
             entity.Property(e => e.TargetCycle).HasColumnName("target_cycle");
             entity.Property(e => e.TargetGroup).HasColumnName("target_group");
         });
+
         modelBuilder.HasSequence<int>("lesson_id_seq");
         modelBuilder.HasSequence<int>("replacement_id_seq");
         modelBuilder.HasSequence<int>("schedule_id_seq");
