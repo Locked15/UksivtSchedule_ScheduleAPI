@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
 
-namespace ScheduleAPI.Controllers.API.General
+namespace ScheduleAPI.Controllers.API.V1.General
 {
     [Route("~/api/[controller]")]
+    [Route("~/api/v1/[controller]")]
     public class StructureController : Controller
     {
         private AssetGetter getter;

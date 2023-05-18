@@ -3,12 +3,13 @@ using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Models.Elements;
 
-namespace ScheduleAPI.Controllers.API.Schedule
+namespace ScheduleAPI.Controllers.API.V1.Schedule
 {
     /// <summary>
     /// Класс-контроллер, позволяющий сразу получить итоговое расписание, с учетом замен.
     /// </summary>
     [Route("~/api/[controller]")]
+    [Route("~/api/v1/[controller]")]
     public class FinalController : Controller
     {
         #region Область: Поля.

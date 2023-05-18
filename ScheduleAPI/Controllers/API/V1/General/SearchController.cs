@@ -4,12 +4,13 @@ using ScheduleAPI.Controllers.Data.Getter;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Search;
 
-namespace ScheduleAPI.Controllers.API.General
+namespace ScheduleAPI.Controllers.API.V1.General
 {
     /// <summary>
     /// Контроллер для выполнения различных операций поиска.
     /// </summary>
     [Route("~/api/[controller]")]
+    [Route("~/api/v1/[controller]")]
     public class SearchController : Controller
     {
         #region Область: Поля.

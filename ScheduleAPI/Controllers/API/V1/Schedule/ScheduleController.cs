@@ -4,7 +4,7 @@ using ScheduleAPI.Controllers.Data.Getter.Schedule;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Schedule;
 
-namespace ScheduleAPI.Controllers.API.Schedule
+namespace ScheduleAPI.Controllers.API.V1.Schedule
 {
     /// <summary>
     /// Класс-контроллер для получения данных о расписании.
@@ -13,6 +13,7 @@ namespace ScheduleAPI.Controllers.API.Schedule
     /// Теперь получение через БД удалено, а День/Неделя объединены в один класс.
     /// </summary>
     [Route("~/api/[controller]")]
+    [Route("~/api/v1/[controller]")]
     public class ScheduleController : Controller
     {
         #region Область: Поля.
