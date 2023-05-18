@@ -185,6 +185,26 @@ namespace ScheduleAPI.Controllers.Data.General
             return result;
         }
 
+        public static DateOnly GetStartOfWeek(this DateOnly date)
+        {
+            while (date.DayOfWeek != DayOfWeek.Monday)
+            {
+                date = date.AddDays(-1);
+            }
+
+            return date;
+        }
+
+        public static DateOnly GetEndOfWeek(this DateOnly date)
+        {
+            while (date.DayOfWeek != DayOfWeek.Sunday)
+            {
+                date = date.AddDays(1);
+            }
+
+            return date;
+        }
+
         /// <summary>
         /// Метод расширения, позволяющий получить дату начала недели.
         /// </summary>
