@@ -1,4 +1,4 @@
-﻿namespace ScheduleAPI.Controllers.Data.Getter;
+﻿namespace ScheduleAPI.Controllers.Data.Getter.Document;
 
 internal static class LinkTemplates
 {

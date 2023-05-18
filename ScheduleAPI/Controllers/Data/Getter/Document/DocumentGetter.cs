@@ -1,9 +1,9 @@
 ﻿using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
-using ScheduleAPI.Controllers.API.Replacements;
+using ScheduleAPI.Controllers.API.V1.Replacements;
 
-namespace ScheduleAPI.Controllers.Data.Getter
+namespace ScheduleAPI.Controllers.Data.Getter.Document
 {
     /// <summary>
     /// Класс, предназначенный для выкачки документов.
@@ -47,7 +47,6 @@ namespace ScheduleAPI.Controllers.Data.Getter
                 return new GoogleDriveDownloader();
             else if (LinkTemplates.CheckLinkToPresent(originalLink, LinkTemplates.UksivtStorageTemplate))
                 return new UksivtStorageDownloader();
-
             else
                 throw new InvalidOperationException();
         }
