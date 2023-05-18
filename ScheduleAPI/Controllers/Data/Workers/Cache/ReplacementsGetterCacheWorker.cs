@@ -2,8 +2,8 @@
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Controllers.Data.General;
-using ScheduleAPI.Controllers.API.Replacements;
 using ScheduleAPI.Models.Result.Schedule.Replacements;
+using ScheduleAPI.Controllers.API.V1.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {

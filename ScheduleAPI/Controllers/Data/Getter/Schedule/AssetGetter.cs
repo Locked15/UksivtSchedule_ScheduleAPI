@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
-using ScheduleAPI.Controllers.API.General;
-using ScheduleAPI.Controllers.API.Schedule;
+using ScheduleAPI.Controllers.API.V1.General;
+using ScheduleAPI.Controllers.API.V1.Schedule;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Exceptions.Data;

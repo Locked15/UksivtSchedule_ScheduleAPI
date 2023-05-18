@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.API.Replacements;
+﻿using ScheduleAPI.Controllers.API.V1.Replacements;
 using ScheduleAPI.Models.Result.Schedule;
 
 namespace ScheduleAPI.Controllers.Data.General
