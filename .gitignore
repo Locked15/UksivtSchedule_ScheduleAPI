@@ -369,3 +369,4 @@ Properties/
 
 # Application settings (i.e. connection strings)
 appsettings.json
+/ScheduleAPI/Properties/serviceDependencies.json
