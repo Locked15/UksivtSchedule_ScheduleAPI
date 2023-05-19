@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.API.V1.Replacements;
+﻿using ScheduleAPI.Controllers.API.V1.Schedule.Replacements;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Getter.Document;
 using ScheduleAPI.Controllers.Data.Workers.Cache;

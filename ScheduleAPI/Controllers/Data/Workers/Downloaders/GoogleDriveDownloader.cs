@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Controllers.API.V1.Replacements;
+﻿using ScheduleAPI.Controllers.API.V1.Schedule.Replacements;
 using ScheduleAPI.Controllers.Data.Getter;
 using ScheduleAPI.Controllers.Data.Workers.Downloaders.Basic;
 using ScheduleAPI.Models.Elements.Site;

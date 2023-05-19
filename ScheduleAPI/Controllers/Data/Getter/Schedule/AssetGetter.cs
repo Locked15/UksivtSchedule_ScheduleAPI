@@ -92,7 +92,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 
             catch (DirectoryNotFoundException)
             {
-                ScheduleController.Logger?.Log(LogLevel.Warning, "Попытка обратиться к папке, которой не существует.");
+                BasicController.Logger?.Log(LogLevel.Warning, "Попытка обратиться к папке, которой не существует.");
 
                 return Enumerable.Empty<string>().ToList();
             }
@@ -118,7 +118,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 
             catch (DirectoryNotFoundException)
             {
-                ScheduleController.Logger?.Log(LogLevel.Warning, "Попытка обратиться к папке, которой не существует.");
+                BasicController.Logger?.Log(LogLevel.Warning, "Попытка обратиться к папке, которой не существует.");
 
                 return Enumerable.Empty<string>().ToList();
             }
@@ -204,9 +204,9 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
             }
             else
             {
-                if (ScheduleController.Logger != null)
+                if (BasicController.Logger != null)
                 {
-                    ScheduleController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
+                    BasicController.Logger?.Log(LogLevel.Error, "Файл с расписанием не обнаружен: " +
                                                                    "Отделение — {groupBranch}, Подраздел — {subFolder}, Группа — {groupName}.",
                                                    groupBranch, subFolder, groupName);
                 }
