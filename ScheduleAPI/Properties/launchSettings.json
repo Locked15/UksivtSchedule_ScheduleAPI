@@ -12,7 +12,7 @@
     },
     "Native (Local DB)": {
       "commandName": "Project",
-      "commandLineArgs": "--DB Local",
+      "commandLineArgs": "--DB-Type Local",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
