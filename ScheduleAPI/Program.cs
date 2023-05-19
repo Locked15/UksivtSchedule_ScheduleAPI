@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using ScheduleAPI.Controllers.Data.General.Secrets;
 using ScheduleAPI.Models.Entities;
 using Serilog;
 
 namespace ScheduleAPI
 {
-    public class Program
+    public static class Program
     {
         #region Константы приложения.
 
@@ -18,7 +19,7 @@ namespace ScheduleAPI
         /// Внутренняя константа, содержащая название ключа для пользовательских секретов (User Secrets).
         /// Данное значение хранит API-Ключ для Application Insights.
         /// </summary>
-        private const string ApplicationInsightSecretKey = "APPLICATIONINSIGHTS_CONNECTION_STRING";
+        private const string ApplicationInsightSecretKey = "ApplicationInsight.APIKey";
 
         /// <summary>
         /// Внутренняя константа, содержащая название ключа для пользовательских секретов (User Secrets).
@@ -66,12 +67,14 @@ namespace ScheduleAPI
         private static WebApplicationBuilder CreateAndConfigureAppBuilder(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Configuration.AddUserSecrets<Program>();
+            var secretsManager = new ApplicationSecretsManager(SecretType.Connection);
 
+            /* На этапе конфигурации сервисов приложения, указанные строки никогда не будут 'NULL'.
+               Потому что значение по умолчанию всегда "string.Empty"). */
             builder.Host.UseSerilog();
             ConfigureServices(builder.Services,
-                              builder.Configuration.GetValue<string>(GetConnectionStringSecretKeyByArguments(args)) ?? string.Empty,
-                              builder.Configuration.GetValue<string>(ApplicationInsightSecretKey) ?? string.Empty);
+                              secretsManager.GetValue(GetConnectionStringSecretKeyByArguments(args), string.Empty)!,
+                              secretsManager.GetValue(ApplicationInsightSecretKey, string.Empty)!);
 
             Log.Debug("Application builder set up is completed.");
             return builder;
@@ -80,7 +83,6 @@ namespace ScheduleAPI
         /// <summary>
         /// Устанавливает сервисы, подключения и службы веб-приложения.
         /// </summary>
-        /// <param name="builder">Builder для экземпляра веб-приложения.</param>
         private static void ConfigureServices(IServiceCollection services, string dbConnectionString, string appInsightsConnectionString)
         {
             services.AddCors(options =>
@@ -96,7 +98,7 @@ namespace ScheduleAPI
 
             services.AddEndpointsApiExplorer();
             services.AddApplicationInsightsTelemetry(options =>
-                options.ConnectionString = appInsightsConnectionString);
+                                                     options.ConnectionString = appInsightsConnectionString);
 
             Log.Debug("Application services are configured.");
         }
@@ -123,8 +125,6 @@ namespace ScheduleAPI
         private static void ConfigureAppSettings(WebApplication app)
         {
             app.UseCors(CorsPolicyName);
-
-            app.UseStaticFiles();
             app.MapControllers();
 
             app.UseStatusCodePagesWithReExecute("/Home/Status", "?code={0}");
