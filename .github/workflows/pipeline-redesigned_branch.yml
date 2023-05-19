@@ -5,9 +5,10 @@ name: Auto-Deploy to Cloud (Preview)
 
 on:
   push:
+    # Because GitHub doesn't work with 'Property' folder (it's excluded), this way to deploy ain't works correct, when application works with user secrets.
     branches:
-      - Preview
-      - Redesigned
+      - \!\ Preview
+      - \!\ Redesigned
   workflow_dispatch:
 
 jobs:
