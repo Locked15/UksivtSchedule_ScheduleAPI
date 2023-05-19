@@ -4,7 +4,7 @@ using ScheduleAPI.Controllers.Data.Getter.Replacements;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Schedule.Replacements;
 
-namespace ScheduleAPI.Controllers.API.V1.Replacements
+namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
 {
     /// <summary>
     /// Класс-контроллер для получения замен.
@@ -12,10 +12,8 @@ namespace ScheduleAPI.Controllers.API.V1.Replacements
     /// <br/>
     /// Ранее он был разбит на 2 класса: для одного дня и для недели. Теперь они объединены в один класс.
     /// </summary>
-    [Route("~/api/changes/")]
-    [Route("~/api/v1/changes/")]
-    [Route("~/api/[controller]/")]
-    [Route("~/api/v1/[controller]")]
+    [Route("~/api/v1/[controller]/")]
+    [Route("~/api/v1/schedule/[controller]/")]
     public class ReplacementsController : Controller
     {
         #region Область: Поля.

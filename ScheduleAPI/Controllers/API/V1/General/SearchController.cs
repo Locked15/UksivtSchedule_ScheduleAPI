@@ -9,8 +9,8 @@ namespace ScheduleAPI.Controllers.API.V1.General
     /// <summary>
     /// Контроллер для выполнения различных операций поиска.
     /// </summary>
-    [Route("~/api/[controller]")]
-    [Route("~/api/v1/[controller]")]
+    [Route("~/api/v1/[controller]/")]
+    [Route("~/api/v1/general/[controller]/")]
     public class SearchController : Controller
     {
         #region Область: Поля.
@@ -84,8 +84,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         /// </summary>
         /// <param name="options">Объект содержащий настройки поиска.</param>
         /// <returns>Результат установки настроек.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/settings")]
+        [HttpGet("settings")]
         public JsonResult SetSettings(SearchSettings options)
         {
             UpdateGetterSettings(options);
@@ -99,8 +98,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         /// </summary>
         /// <param name="request">Строка, которая должна содержаться в названии группы.</param>
         /// <returns>Строковое представление объекта.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/groups")]
+        [HttpGet("groups")]
         public JsonResult GetGroups(string request = "П")
         {
             var result = getter.SearchTargetGroups(request);
@@ -113,8 +111,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         /// </summary>
         /// <param name="request">Строка запроса. ФИО преподавателя должно содержать это значение.</param>
         /// <returns>Строковое представление результата поиска.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/teachers")]
+        [HttpGet("teachers")]
         public JsonResult GetTeachers(string request = "Карим")
         {
             var result = getter.SearchTargetTeachers(request);

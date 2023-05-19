@@ -3,8 +3,8 @@ using ScheduleAPI.Controllers.Data.Getter.Schedule;
 
 namespace ScheduleAPI.Controllers.API.V1.General
 {
-    [Route("~/api/[controller]")]
-    [Route("~/api/v1/[controller]")]
+    [Route("~/api/v1/[controller]/")]
+    [Route("~/api/v1/general/[controller]/")]
     public class StructureController : Controller
     {
         private AssetGetter getter;
@@ -21,8 +21,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             getter = new(environment);
         }
 
-        [HttpGet]
-        [Route("~/api/[controller]/branches")]
+        [HttpGet("branches")]
         public IActionResult GetBranches()
         {
             List<string> folders = getter.GetBranches();
@@ -30,8 +29,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             return Ok(folders);
         }
 
-        [HttpGet]
-        [Route("~/api/[controller]/affiliates")]
+        [HttpGet("affiliates")]
         public IActionResult GetAffiliates(string branch = "Programming")
         {
             List<string> affiliates = getter.GetAffiliates(branch);
@@ -39,8 +37,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             return Ok(affiliates);
         }
 
-        [HttpGet]
-        [Route("~/api/[controller]/groups")]
+        [HttpGet("groups")]
         public IActionResult GetGroups(string branch = "Programming", string affiliate = "П")
         {
             List<string> groups = getter.GetGroupNames(branch, affiliate);
@@ -48,8 +45,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             return Ok(groups);
         }
 
-        [HttpGet]
-        [Route("~/api/[controller]/summary")]
+        [HttpGet("summary")]
         public IActionResult GetSummary()
         {
             List<string> groups = getter.GetAllAvailableGroups();

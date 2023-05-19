@@ -12,9 +12,9 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
     /// Ранее он был разделен на 4 класса: для получения данных через БД/Ассеты и на День/Неделю.
     /// Теперь получение через БД удалено, а День/Неделя объединены в один класс.
     /// </summary>
-    [Route("~/api/[controller]")]
-    [Route("~/api/v1/[controller]")]
-    public class ScheduleController : Controller
+    [Route("~/api/v1/[controller]/")]
+    [Route("~/api/v1/schedule/[controller]/")]
+    public class BasicController : Controller
     {
         #region Область: Поля.
 
@@ -29,7 +29,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <summary>
         /// Свойство с автоматически инициализированным логгером.
         /// </summary>
-        public static ILogger<ScheduleController>? Logger { get; private set; } = null;
+        public static ILogger<BasicController>? Logger { get; private set; } = null;
         #endregion
 
         #region Область: Конструкторы.
@@ -40,7 +40,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <param name="environment">Сведения об окружении, в котором работает приложение.
         /// Необходимо для корректной работы с файлами-ассетами.</param>
         /// <param name="logger">Автоматически инициализированный сервис логгера для работы.</param>
-        public ScheduleController(IHostEnvironment environment, ILogger<ScheduleController> logger)
+        public BasicController(IHostEnvironment environment, ILogger<BasicController> logger)
         {
             getter = new(environment);
             Logger = logger;
@@ -59,8 +59,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <br/>
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/day")]
+        [HttpGet("day")]
         public JsonResult GetDaySchedule(int dayIndex = 0, string groupName = "19П-3")
         {
             groupName = groupName.RemoveStringChars();
@@ -78,12 +77,10 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <br/>
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/week")]
+        [HttpGet("week")]
         public JsonResult GetWeekSchedule(string groupName = "19П-3")
         {
             groupName = groupName.RemoveStringChars();
-
             WeekSchedule schedule = getter.GetWeekSchedule(groupName);
 
             return new JsonResult(schedule, JsonSettingsModel.JsonOptions);

@@ -8,8 +8,8 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
     /// <summary>
     /// Класс-контроллер, позволяющий сразу получить итоговое расписание, с учетом замен.
     /// </summary>
-    [Route("~/api/[controller]")]
-    [Route("~/api/v1/[controller]")]
+    [Route("~/api/v1/[controller]/")]
+    [Route("~/api/v1/schedule/[controller]/")]
     public class FinalController : Controller
     {
         #region Область: Поля.
@@ -58,9 +58,8 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <param name="dayIndex">Индекс нужного дня.</param>
         /// <param name="groupName">Название нужной группы.</param>
         /// <returns>Итоговое расписания с учётом доступных замен.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/day")]
-        public JsonResult GetFinalDaySchedule(int dayIndex = 0, string groupName = "19П-3")
+        [HttpGet("day")]
+        public IActionResult GetFinalDaySchedule(int dayIndex = 0, string groupName = "19П-3")
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             groupName = groupName.RemoveStringChars();
@@ -76,9 +75,8 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// </summary>
         /// <param name="groupName">Название нужной группы.</param>
         /// <returns>Итоговое расписание на неделю, с учётом всех доступных замен.</returns>
-        [HttpGet]
-        [Route("~/api/[controller]/week")]
-        public JsonResult GetFinalWeekSchedule(string groupName = "19П-3")
+        [HttpGet("week")]
+        public IActionResult GetFinalWeekSchedule(string groupName = "19П-3")
         {
             groupName = groupName.RemoveStringChars();
 
