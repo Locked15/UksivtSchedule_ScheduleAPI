@@ -7,6 +7,8 @@ namespace ScheduleAPI
 {
     public class Program
     {
+        #region Константы приложения.
+
         /// <summary>
         /// Внутренняя константа, содержащая название целевой политики CORS.
         /// </summary>
@@ -14,15 +16,17 @@ namespace ScheduleAPI
 
         /// <summary>
         /// Внутренняя константа, содержащая название ключа для пользовательских секретов (User Secrets).
-        /// Данное значение хранит строку подключения к БД.
-        /// </summary>
-        private const string ConnectionStringSecretKey = "DB.Local.Lite.ConnectionString";
-
-        /// <summary>
-        /// Внутренняя константа, содержащая название ключа для пользовательских секретов (User Secrets).
         /// Данное значение хранит API-Ключ для Application Insights.
         /// </summary>
         private const string ApplicationInsightSecretKey = "APPLICATIONINSIGHTS_CONNECTION_STRING";
+
+        /// <summary>
+        /// Внутренняя константа, содержащая название ключа для пользовательских секретов (User Secrets).
+        /// Данное значение хранит строку подключения к БД. В отличие от прочих ключей, этот является шаблоном.
+        /// Итоговый ключ выстраивается на основе отправленных параметров приложения.
+        /// </summary>
+        private const string ConnectionStringSecretKeyTemplate = "DB{0}.Lite.ConnectionString";
+        #endregion
 
         /// <summary>
         /// Точка входа в программу.
@@ -66,7 +70,7 @@ namespace ScheduleAPI
 
             builder.Host.UseSerilog();
             ConfigureServices(builder.Services,
-                              builder.Configuration.GetValue<string>(ConnectionStringSecretKey) ?? string.Empty,
+                              builder.Configuration.GetValue<string>(GetConnectionStringSecretKeyByArguments(args)) ?? string.Empty,
                               builder.Configuration.GetValue<string>(ApplicationInsightSecretKey) ?? string.Empty);
 
             Log.Debug("Application builder set up is completed.");
@@ -128,6 +132,28 @@ namespace ScheduleAPI
         #endregion
 
         #region Прочие Функции.
+
+        /// <summary>
+        /// Создаёт итоговый вариант ключа к значению в файле секретов, содержащем строку подключения.
+        /// В зависимости от аргументов приложения, итоговая строка может вести к различным базам данных.
+        /// </summary>
+        /// <param name="args">Отправленные параметры приложения.</param>
+        /// <returns>Построенная по шаблону строка подключения к БД.</returns>
+        private static string GetConnectionStringSecretKeyByArguments(string[] args)
+        {
+            var dbTypePrefix = string.Empty;
+            var targetIndex = Array.FindIndex(args, arg =>
+                                                    arg.Equals("--db-type", StringComparison.OrdinalIgnoreCase));
+            if (targetIndex != -1 && args.ElementAtOrDefault(targetIndex + 1) is string rawPrefix)
+            {
+                rawPrefix = rawPrefix.Trim().ToLower();
+                dbTypePrefix = string.Concat('.', char.ToUpper(rawPrefix[0]), rawPrefix[1..]);
+
+                Log.Debug($"Default DB destination was overwritten with new ({dbTypePrefix}) target.");
+            }
+
+            return string.Format(ConnectionStringSecretKeyTemplate, dbTypePrefix);
+        }
 
         /// <summary>
         /// Создаёт объект, представляющий собой набор CORS-правил.
