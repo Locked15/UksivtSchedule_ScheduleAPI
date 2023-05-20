@@ -1,8 +1,8 @@
-﻿using ScheduleAPI.Controllers.API.Changes;
-using ScheduleAPI.Models.Cache.CachedTypes;
+﻿using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache;
 using ScheduleAPI.Models.Result.Schedule.Final;
 using ScheduleAPI.Controllers.Data.General;
+using ScheduleAPI.Controllers.API.V1.Schedule.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Cache
 {
@@ -66,7 +66,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Cache
                     return true;
 
                 default:
-                    ChangesController.Logger?.LogWarning("Попытка кэшировать значение, которое не поддерживает сохранение в кэш.\n" +
+                    ReplacementsController.Logger?.LogWarning("Попытка кэшировать значение, которое не поддерживает сохранение в кэш.\n" +
                                                          "(FinalScheduleGetterCacheWorker -> TryToAddValueToCachedVault: {type}).", cacheableValue.GetType() as Type);
                     return false;
             }

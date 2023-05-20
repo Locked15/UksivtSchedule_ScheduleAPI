@@ -15,7 +15,7 @@ namespace ScheduleAPI.Models.Cache
     /// <br /><br />
     /// Несоответствие отправленных типов будет расценено как ошибки компиляции.
     /// </summary>
-    /// <typeparam name="T">Целевой тип, который будет храниться в кэше (для предыдущего примера таковым будет "ChangesOfDay").</typeparam>
+    /// <typeparam name="T">Целевой тип, который будет храниться в кэше (для предыдущего примера таковым будет "ReplacementsOfDay").</typeparam>
     /// <typeparam name="Y">Любой специфический тип кэшированных данных (например: "ChangesOfDayCache").</typeparam>
     public class CachedVault<T, Y> where T : ICacheable<T, Y> where Y : AbstractCacheElement<T>
     {

@@ -1,7 +1,7 @@
-﻿using ScheduleAPI.Controllers.Data.Getter.Changes;
+﻿using ScheduleAPI.Controllers.Data.Getter.Replacements;
 using ScheduleAPI.Controllers.Data.Workers.Cache;
-using ScheduleAPI.Models.Result.Schedule.Changes;
 using ScheduleAPI.Models.Result.Schedule.Final;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {
@@ -36,10 +36,10 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         private FinalDaySchedule GenerateFinalDaySchedule(int dayIndex, string groupName)
         {
             var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(dayIndex, groupName);
+            var changesGetter = new TargetReplacementsGetter(dayIndex, groupName);
 
             var schedule = baseGetter.GetDaySchedule(dayIndex, groupName);
-            var changes = changesGetter.GetDayChanges();
+            var changes = changesGetter.GetDayReplacements();
 
             var toReturn = new FinalDaySchedule(schedule, changes);
             cacheWorker.TryToAddValueToCachedVault(toReturn, groupName);
@@ -50,12 +50,12 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
         public FinalWeekSchedule GetWeekSchedule(int dayIndex, string groupName)
         {
             var baseGetter = new AssetGetter(environment);
-            var changesGetter = new TargetChangesGetter(default, groupName);
+            var changesGetter = new TargetReplacementsGetter(default, groupName);
 
             var schedule = baseGetter.GetWeekSchedule(groupName);
-            var changes = changesGetter.GetWeekChanges();
+            var changes = changesGetter.GetWeekReplacements();
 
-            return new FinalWeekSchedule(groupName, schedule.DaySchedules, changes ?? Enumerable.Empty<ChangesOfDay>().ToList());
+            return new FinalWeekSchedule(groupName, schedule.DaySchedules, changes ?? Enumerable.Empty<ReplacementsOfDay>().ToList());
         }
         #endregion
     }

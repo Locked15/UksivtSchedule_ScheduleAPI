@@ -1,4 +1,4 @@
-﻿using ScheduleAPI.Models.Result.Schedule.Changes;
+﻿using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Models.Result.Schedule.Final
 {
@@ -31,7 +31,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Final
             FinalSchedules = finalSchedules;
         }
 
-        public FinalWeekSchedule(string? groupName, List<DaySchedule> baseSchedules, List<ChangesOfDay> changesList)
+        public FinalWeekSchedule(string? groupName, List<DaySchedule> baseSchedules, List<ReplacementsOfDay> changesList)
         {
             GroupName = groupName;
             FinalSchedules = new List<FinalDaySchedule>(1);

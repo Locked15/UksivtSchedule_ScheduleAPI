@@ -1,7 +1,7 @@
 ﻿using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Cache.CachedTypes;
 using ScheduleAPI.Models.Cache.CachedTypes.Basic;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 using System.Text.Json.Serialization;
 
 namespace ScheduleAPI.Models.Result.Schedule.Final
@@ -90,7 +90,7 @@ namespace ScheduleAPI.Models.Result.Schedule.Final
         /// </summary>
         /// <param name="baseSchedule">Базовое расписание.</param>
         /// <param name="changes">Замены для базового расписания.</param>
-        public FinalDaySchedule(DaySchedule baseSchedule, ChangesOfDay? changes)
+        public FinalDaySchedule(DaySchedule baseSchedule, ReplacementsOfDay? changes)
         {
             ChangesFound = changes?.ChangesFound ?? false;
             ActualChanges = changes?.NewLessons.Any() ?? false;

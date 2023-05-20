@@ -1,11 +1,10 @@
 ﻿using System.Text;
 using NPOI.XWPF.UserModel;
-using ScheduleAPI.Controllers.API.Changes;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements.Documents;
 using ScheduleAPI.Models.Exceptions.Data;
 using ScheduleAPI.Models.Result.Schedule;
-using ScheduleAPI.Models.Result.Schedule.Changes;
+using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Controllers.Data.Workers.Parsers
 {
@@ -19,7 +18,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// <summary>
         /// Объект, содержащий документ, который будет прочитан для получения замен.
         /// </summary>
-        public ChangesDocument ChangesDocument { get; init; }
+        public ReplacementsDocument ChangesDocument { get; init; }
         #endregion
 
         #region Область: Конструкторы.
@@ -32,7 +31,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         public DocumentParser(string path)
         {
             using StreamReader stream = new(path);
-            ChangesDocument = new ChangesDocument(new(stream.BaseStream));
+            ChangesDocument = new ReplacementsDocument(new(stream.BaseStream));
         }
 
         /// <summary>
@@ -40,7 +39,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// Может быть использован для восстановления документа из кэша.
         /// </summary>
         /// <param name="document">Документ, с которым предстоит работать.</param>
-        public DocumentParser(ChangesDocument document)
+        public DocumentParser(ReplacementsDocument document)
         {
             ChangesDocument = document;
         }
@@ -56,7 +55,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// <param name="schedule">Расписание на неделю.</param>
         /// <param name="day">Нужный день.</param>
         /// <returns>Замены на выбранный день.</returns>
-        public ChangesOfDay GetOnlyChanges(WeekSchedule schedule, string day)
+        public ReplacementsOfDay GetOnlyChanges(WeekSchedule schedule, string day)
         {
             string? groupName = schedule.GroupName;
 
@@ -70,7 +69,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// <param name="groupName">Название группы.</param>
         /// <returns>Объект с заменами на выбранный день.</returns>
         /// <exception cref="WrongDayInDocumentException"></exception>
-        public ChangesOfDay GetOnlyChanges(string day, string groupName)
+        public ReplacementsOfDay GetOnlyChanges(string day, string groupName)
         {
             #region Подобласть: Переменные для проверки групп на "Практику".
 
@@ -120,7 +119,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
             {
                 DaySchedule temp = Helper.GetOnPractiseSchedule(day);
 
-                return new ChangesOfDay(true, temp.Lessons);
+                return new ReplacementsOfDay(true, temp.Lessons);
             }
 
             // Если группа НЕ на практике, то начинаем проверять таблицу с заменами:
@@ -224,7 +223,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                             {
                                 DaySchedule temp = Helper.GetDebtLiquidationSchedule(day);
 
-                                return new ChangesOfDay(true, temp.Lessons);
+                                return new ReplacementsOfDay(true, temp.Lessons);
                             }
 
                             ++cellNumber;
@@ -250,7 +249,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                ... ведь у группы, возможно, вообще нет замен.                            */
             if (!newLessons.Any())
             {
-                // Вызываем конструктор и создаем новый объект, чтобы не затрагивать значения "ChangesOfDay.DefaultChanges".
+                // Вызываем конструктор и создаем новый объект, чтобы не затрагивать значения "ReplacementsOfDay.DefaultChanges".
                 return new();
             }
 

@@ -1,7 +1,7 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
 using Microsoft.Extensions.Logging;
-using ScheduleAPI.Controllers.API.Changes;
+using ScheduleAPI.Controllers.API.V1.Schedule.Replacements;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements.Site;
 using ScheduleAPI.Models.Exceptions.Data;
@@ -62,7 +62,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
         /// <param name="limit">Количество месяцев, которые нужно получить.</param>
         /// <returns>Список с доступными заменами по месяцам.</returns>
         /// <exception cref="GeneralParseException">Общее исключение парса страницы.</exception>
-        public List<MonthChanges> ParseAvailableNodes(int limit = 2)
+        public List<MonthReplacementsNode> ParseAvailableNodes(int limit = 2)
         {
             #region Подобласть: Переменные считывания доступных замен.
 
@@ -71,8 +71,8 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
             int currentYear = DateTime.Now.Year;
             string currentMonth = "Январь";
 
-            List<ChangeElement> changes = new(30);
-            List<MonthChanges> monthChanges = new(2);
+            List<ReplacementNodeElement> changes = new(30);
+            List<MonthReplacementsNode> monthChanges = new(2);
             #endregion
 
             #region Подобласть: Переменные парса веб-страницы.
@@ -86,12 +86,12 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
             {
                 if (generalChange == null)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Information, "GeneralChange был \'null\', а селектор: {selector}.", selector);
+                    ReplacementsController.Logger?.Log(LogLevel.Information, "GeneralChange был \'null\', а селектор: {selector}.", selector);
                 }
 
                 if (listOfChanges == null)
                 {
-                    ChangesController.Logger?.Log(LogLevel.Information, "ListOfChanges был \'null\', а селектор: {selector}.", selector);
+                    ReplacementsController.Logger?.Log(LogLevel.Information, "ListOfChanges был \'null\', а селектор: {selector}.", selector);
                 }
 
                 throw new GeneralParseException("В процессе обработки страницы произошла ошибка.");
@@ -109,7 +109,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                     //В первой итерации программа также зайдет сюда, обрабатываем этот случай:
                     if (changes.Any())
                     {
-                        monthChanges.Add(new MonthChanges(currentMonth, changes));
+                        monthChanges.Add(new MonthReplacementsNode(currentMonth, changes));
                     }
 
                     changes = new(30);
@@ -162,7 +162,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                             //В некоторых ячейках (дни без замен) нет содержимого, так что учитываем это.
                             if (tableCell.Children.Length < 1)
                             {
-                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
+                                changes.Add(new ReplacementNodeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
                                                               dayCounter.GetDayByIndex(), null)
                                 );
                             }
@@ -173,7 +173,7 @@ namespace ScheduleAPI.Controllers.Data.Workers.Parsers
                                 IElement? link = tableCell.FirstElementChild;
 
                                 //На всякий случай обрабатываем возможную ошибку с получением атрибута:
-                                changes.Add(new ChangeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
+                                changes.Add(new ReplacementNodeElement(new DateTime(currentYear, currentMonth.GetMonthNumber(), i),
                                                               dayCounter.GetDayByIndex(), link?.GetAttribute("href") ?? string.Empty)
                                 );
                             }

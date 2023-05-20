@@ -5,7 +5,7 @@ namespace ScheduleAPI.Models.Cache.CachedTypes.Basic
     /// <summary>
     /// Определяет класс как пригодный для кэширования.
     /// </summary>
-    /// <typeparam name="T">Тип, который пригоден для кэширования. Может быть практически любым (например, 'ChangesOfDay').</typeparam>
+    /// <typeparam name="T">Тип, который пригоден для кэширования. Может быть практически любым (например, 'ReplacementsOfDay').</typeparam>
     /// <typeparam name="Y">Соответствующий тип кэша, аналогичный базовому типу. Для приведенного ранее примера таковым является 'ChangesOfDayCache'.</typeparam>
     public interface ICacheable<T, Y> where Y : AbstractCacheElement<T>
     {

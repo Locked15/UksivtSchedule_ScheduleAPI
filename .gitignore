@@ -364,6 +364,7 @@ FodyWeavers.xsd
 
 # Properties folder
 Properties/
+Properties/serviceDependencies*
 
 # Application settings (i.e. connection strings)
 appsettings.json
