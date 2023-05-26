@@ -90,7 +90,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             UpdateGetterSettings(options);
             cacheWorker.Set("getter", getter);
 
-            return new JsonResult("Settings succefully applied.", JsonSettingsModel.JsonOptions);
+            return new JsonResult("Settings succefully applied.");
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         {
             var result = getter.SearchTargetGroups(request);
 
-            return new JsonResult(result, JsonSettingsModel.JsonOptions);
+            return new JsonResult(result);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         {
             var result = getter.SearchTargetTeachers(request);
 
-            return new JsonResult(result, JsonSettingsModel.JsonOptions);
+            return new JsonResult(result);
         }
         #endregion
 

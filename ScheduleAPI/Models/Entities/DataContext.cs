@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
 using ScheduleAPI.Models.Entities.Tables;
 using ScheduleAPI.Models.Entities.Views;
-using Serilog;
 
 namespace ScheduleAPI.Models.Entities;
 
@@ -12,10 +10,11 @@ public partial class DataContext : DbContext
     {
     }
 
-    public DataContext(DbContextOptions<DataContext> options)
-        : base(options)
+    public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
     }
+
+    public virtual DbSet<BasicSchedule> BasicSchedules { get; set; } = null!;
 
     public virtual DbSet<FinalSchedule> FinalSchedules { get; set; } = null!;
 
@@ -38,6 +37,30 @@ public partial class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.UseCollation("Russian_Russia.1251");
+
+        modelBuilder.Entity<BasicSchedule>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("basic_schedule_pkey");
+
+            entity.ToTable("basic_schedule");
+
+            entity.HasIndex(e => e.CommitHash, "basic_schedule_commit_hash_key").IsUnique();
+
+            entity.HasIndex(e => e.TargetGroup, "basic_schedule_group_index");
+
+            entity.HasIndex(e => new { e.TargetGroup, e.CycleId, e.DayIndex }, "basic_schedule_target_group_cycle_id_day_index_key").IsUnique();
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.CommitHash).HasColumnName("commit_hash");
+            entity.Property(e => e.CycleId).HasColumnName("cycle_id");
+            entity.Property(e => e.DayIndex).HasColumnName("day_index");
+            entity.Property(e => e.TargetGroup).HasColumnName("target_group");
+
+            entity.HasOne(d => d.Cycle).WithMany(p => p.BasicSchedules)
+                .HasForeignKey(d => d.CycleId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("basic_schedule_cycle_id_fkey");
+        });
 
         modelBuilder.Entity<FinalSchedule>(entity =>
         {
@@ -67,26 +90,33 @@ public partial class DataContext : DbContext
 
             entity.ToTable("lesson");
 
+            entity.HasIndex(e => e.BasicId, "idx_lesson_basic_id");
+
+            entity.HasIndex(e => e.BasicId, "idx_lesson_final_id");
+
             entity.HasIndex(e => e.ReplacementId, "idx_lesson_replacement_id");
 
-            entity.HasIndex(e => e.ScheduleId, "idx_lesson_schedule_id");
-
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BasicId).HasColumnName("basic_id");
+            entity.Property(e => e.FinalId).HasColumnName("final_id");
             entity.Property(e => e.IsChanged).HasColumnName("is_changed");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Number).HasColumnName("number");
             entity.Property(e => e.Place).HasColumnName("place");
             entity.Property(e => e.ReplacementId).HasColumnName("replacement_id");
-            entity.Property(e => e.ScheduleId).HasColumnName("schedule_id");
             entity.Property(e => e.TeacherId).HasColumnName("teacher_id");
+
+            entity.HasOne(d => d.Basic).WithMany(p => p.Lessons)
+                .HasForeignKey(d => d.BasicId)
+                .HasConstraintName("lesson_basic_id_fkey");
+
+            entity.HasOne(d => d.Final).WithMany(p => p.Lessons)
+                .HasForeignKey(d => d.FinalId)
+                .HasConstraintName("lesson_final_id_fkey");
 
             entity.HasOne(d => d.Replacement).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.ReplacementId)
                 .HasConstraintName("lesson_replacement_id_fkey");
-
-            entity.HasOne(d => d.Schedule).WithMany(p => p.Lessons)
-                .HasForeignKey(d => d.ScheduleId)
-                .HasConstraintName("lesson_schedule_id_fkey");
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Lessons)
                 .HasForeignKey(d => d.TeacherId)
