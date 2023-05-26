@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Entities;
 using ScheduleAPI.Models.Entities.Tables;
 using ScheduleAPI.Models.Entities.Wrappers;
@@ -32,7 +33,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
 
         #region Область: Обработчики Данных.
 
-        #region Область: Поиск Преподавателей.
+        #region Подобласть: Поиск Преподавателей.
 
         public List<Teacher> GetAllTeachers() =>
                dataContext.Teachers.OrderBy(teacher =>
@@ -55,7 +56,26 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
         }
         #endregion
 
-        #region Область: Работа с Группами.
+        #region Подобласть: Работа с Группами.
+
+        public GroupBasicScheduleWrapper GetBasicScheduleForGroup(string targetGroup, DateOnly targetDate)
+        {
+            var parameters = FormattableStringFactory.Create(StoredFunctionsInfo.TargetGroupFunctionsInfo.GetGroupBasicScheduleFunctionParameters,
+                                                             EscapeFunctionParameter(targetGroup),
+                                                             EscapeFunctionParameter(targetDate));
+            var query = FormattableStringFactory.Create(SelectFromFunctionQueryTemplate,
+                                                        StoredFunctionsInfo.TargetGroupFunctionsInfo.GetGroupBasicScheduleFunctionName,
+                                                        parameters);
+
+            var requestData = GetTargetDataForBasicScheduleRequest(targetDate);
+            var basicScheduleData = dataContext.BasicSchedules.FirstOrDefault(schedule =>
+                                                                              schedule.CycleId == requestData.Item2 &&
+                                                                              schedule.DayIndex == requestData.Item1 &&
+                                                                              EF.Functions.ILike(schedule.TargetGroup, targetGroup));
+            var lessonsData = dataContext.UtilityLessonGroups.FromSqlRaw(query.ToString()).ToList();
+
+            return new GroupBasicScheduleWrapper(requestData.Item1, targetDate, basicScheduleData, lessonsData);
+        }
 
         public GroupReplacementsWrapper GetReplacementsForGroup(string targetGroup, DateOnly targetDate)
         {
@@ -96,7 +116,44 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
         }
         #endregion
 
-        #region Область: Работа с Преподавателями.
+        #region Подобласть: Работа с Преподавателями.
+
+        public TeacherScheduleDataWrapper GetBasicScheduleForTeacher(int teacherId, DateOnly targetDate)
+        {
+            var parameters = FormattableStringFactory.Create(StoredFunctionsInfo.TargetTeacherFunctionsInfo.GetTeacherBasicScheduleFunctionParametersById,
+                                                             EscapeFunctionParameter(teacherId),
+                                                             EscapeFunctionParameter(targetDate));
+            var query = FormattableStringFactory.Create(SelectFromFunctionQueryTemplate,
+                                                        StoredFunctionsInfo.TargetTeacherFunctionsInfo.GetTeacherBasicScheduleFunctionName,
+                                                        parameters);
+
+            var isTargetDataAvailable = dataContext.UtilityAtomicDates.First()
+                                                                      .ToDateOnly() >= targetDate;
+            var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
+
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
+        }
+
+        public TeacherScheduleDataWrapper GetBasicScheduleForTeacher(string? name, string? surname, string? patronymic, DateOnly targetDate)
+        {
+            var normalizedTargetTeacherBio = NormalizeAndConvertTeacherBioData(name, surname, patronymic);
+            var parameters = FormattableStringFactory.Create(StoredFunctionsInfo.TargetTeacherFunctionsInfo.GetTeacherBasicScheduleFunctionParametersByBio,
+                                                             EscapeFunctionParameter(normalizedTargetTeacherBio.Item1),
+                                                             EscapeFunctionParameter(normalizedTargetTeacherBio.Item2),
+                                                             EscapeFunctionParameter(normalizedTargetTeacherBio.Item3),
+                                                             EscapeFunctionParameter(targetDate));
+            var query = FormattableStringFactory.Create(SelectFromFunctionQueryTemplate,
+                                                        StoredFunctionsInfo.TargetTeacherFunctionsInfo.GetTeacherBasicScheduleFunctionName,
+                                                        parameters);
+
+            var isTargetDataAvailable = dataContext.UtilityAtomicDates.First()
+                                                                      .ToDateOnly() >= targetDate;
+            var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
+
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
+        }
 
         public TeacherScheduleDataWrapper GetReplacementsForTeacher(int teacherId, DateOnly targetDate)
         {
@@ -111,7 +168,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
                                                                        schedule.ScheduleDate) >= targetDate;
             var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
 
-            return new TeacherScheduleDataWrapper(targetDate, isTargetDataAvailable, lessonsData);
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
         }
 
         public TeacherScheduleDataWrapper GetReplacementsForTeacher(string? name, string? surname, string? patronymic, DateOnly targetDate)
@@ -130,7 +188,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
                                                                              replacement.ReplacementDate) >= targetDate;
             var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
 
-            return new TeacherScheduleDataWrapper(targetDate, isTargetDataAvailable, lessonsData);
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
         }
 
         public TeacherScheduleDataWrapper GetFinalScheduleForTeacher(int teacherId, DateOnly targetDate)
@@ -146,7 +205,8 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
                                                                        schedule.ScheduleDate) >= targetDate;
             var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
 
-            return new TeacherScheduleDataWrapper(targetDate, isTargetDataAvailable, lessonsData);
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
         }
 
         public TeacherScheduleDataWrapper GetFinalScheduleForTeacher(string? name, string? surname, string? patronymic, DateOnly targetDate)
@@ -165,12 +225,27 @@ namespace ScheduleAPI.Controllers.Data.Getter.Db
                                                                        schedule.ScheduleDate) >= targetDate;
             var lessonsData = dataContext.UtilityLessonTeachers.FromSqlRaw(query.ToString()).ToList();
 
-            return new TeacherScheduleDataWrapper(targetDate, isTargetDataAvailable, lessonsData);
+            return new TeacherScheduleDataWrapper(targetDate.DayOfWeek.GetIndexFromDayOfWeek(), targetDate,
+                                                  isTargetDataAvailable, lessonsData);
         }
         #endregion
         #endregion
 
         #region Область: Внутренние Функции.
+
+        private (int, int) GetTargetDataForBasicScheduleRequest(DateOnly targetDate)
+        {
+            (int dayIndex, int cycleId) result;
+            result.dayIndex = targetDate.DayOfWeek.GetIndexFromDayOfWeek();
+
+            var targetSemester = 3M - Math.Ceiling(targetDate.Month / 6M);
+            var dbCycleId = dataContext.TargetCycles.FirstOrDefault(cycle =>
+                                                                     cycle.Year == targetDate.Year &&
+                                                                     cycle.Semester == targetSemester)?.Id;
+            result.cycleId = dbCycleId ?? -1;
+
+            return result;
+        }
 
         private static (string?, string?, string?) NormalizeAndConvertTeacherBioData(string? name, string? surname, string? patronymic)
         {
