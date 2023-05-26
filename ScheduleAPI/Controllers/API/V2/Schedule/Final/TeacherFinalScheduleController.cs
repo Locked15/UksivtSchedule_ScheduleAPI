@@ -35,7 +35,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
 
         #region Область: Обработчики API.
 
-        #region Дневные Расписания.
+        #region Подоблать: Дневные Расписания.
 
         [HttpGet("day/index-id")]
         public IActionResult GetTeacherFinalDayScheduleByDayIndexAndTeacherId(int dayIndex = 0, int teacherId = 0)
@@ -70,7 +70,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
         }
         #endregion
 
-        #region Недельные Расписания.
+        #region Подоблать: Недельные Расписания.
 
         [HttpGet("week/id")]
         [HttpGet("week/index-id")]

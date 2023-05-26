@@ -35,7 +35,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
 
         #region Область: Обработчики API.
 
-        #region Дневные Замены.
+        #region Подоблать: Дневные Замены.
 
         [HttpGet("day/index-id")]
         public IActionResult GetTeacherDayReplacementsByDayIndexAndTeacherId(int dayIndex = 0, int teacherId = 0)
@@ -70,7 +70,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
         #endregion
 
-        #region Недельные Замены.
+        #region Подоблать: Недельные Замены.
 
         [HttpGet("week/id")]
         [HttpGet("week/index-id")]
