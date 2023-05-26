@@ -67,7 +67,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
             var result = getter.GetDaySchedule(dayIndex, groupName);
             result.ScheduleDate ??= dayIndex.GetDateTimeInWeek();
 
-            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName), JsonSettingsModel.JsonOptions);
+            return new JsonResult(getter.GetDaySchedule(dayIndex, groupName));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
             groupName = groupName.RemoveStringChars();
 
             var schedule = getter.GetWeekSchedule(default, groupName);
-            return new JsonResult(schedule, JsonSettingsModel.JsonOptions);
+            return new JsonResult(schedule);
         }
         #endregion
     }

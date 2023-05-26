@@ -62,7 +62,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
 
             replacements.ChangesDate ??= dayIndex.GetDateTimeInWeek();
 
-            return Json(replacements, JsonSettingsModel.JsonOptions);
+            return Json(replacements);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
         {
             List<ReplacementsOfDay> replacements = new TargetReplacementsGetter(default, groupName).GetWeekReplacements();
 
-            return Json(replacements, JsonSettingsModel.JsonOptions);
+            return Json(replacements);
         }
         #endregion
     }

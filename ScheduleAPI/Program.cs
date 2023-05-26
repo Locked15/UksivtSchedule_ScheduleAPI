@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using ScheduleAPI.Controllers.Data.General.Secrets;
+using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Entities;
 using Serilog;
+using System.Text.Json.Serialization;
 
 namespace ScheduleAPI
 {
@@ -92,11 +95,16 @@ namespace ScheduleAPI
                                                       .UseLazyLoadingProxies()
                                                       .LogTo(Log.Logger.Information, LogLevel.Information));
 
-            services.AddMemoryCache();
-            services.AddControllers();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                    .AddJsonOptions(options => 
+                    {
+                        options.JsonSerializerOptions.WriteIndented = true;
+                        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+                        options.JsonSerializerOptions.Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
 
-            services.AddEndpointsApiExplorer();
+                        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                    });
+
             services.AddApplicationInsightsTelemetry(options =>
                                                      options.ConnectionString = appInsightsConnectionString);
 
