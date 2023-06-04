@@ -11,7 +11,7 @@
 
 	<!-- Project Info -->
 	<PropertyGroup>
-		<Version>2.0.4.1</Version>
+		<Version>2.1.1</Version>
 		<Authors>Locked15</Authors>
 		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
 	</PropertyGroup>
