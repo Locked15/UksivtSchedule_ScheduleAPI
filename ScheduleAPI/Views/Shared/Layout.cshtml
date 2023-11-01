@@ -38,7 +38,17 @@
     </div>
 
     <footer>
-        Current version: v2.0.4 (Hotfix-1).
+        Current version: @{
+            var metadata = System.Reflection.Assembly.GetEntryAssembly()?.GetName()?.Version;
+            var majorVersion = metadata?.Major ?? 1;
+            var minorVersion = metadata?.Minor ?? 0;
+            var build = metadata?.Build ?? 0;
+            var revision = metadata?.Revision ?? 0;
+
+            @string.Concat(majorVersion, '.', minorVersion, '.', build, 
+                           revision != 0 ? string.Concat(" (Rev-", revision, ").") :
+                                           '.');
+        }
     </footer>
 </body>
 </html>

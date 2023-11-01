@@ -11,7 +11,7 @@
 
 	<!-- Project Info -->
 	<PropertyGroup>
-		<Version>2.1.1</Version>
+		<Version>2.1.2</Version>
 		<Authors>Locked15</Authors>
 		<Description>ScheduleAPI предназначена для получения данных о расписании и смежных данных для колледжа УКСиВТ.</Description>
 	</PropertyGroup>
@@ -48,21 +48,22 @@
 	<!-- Dependencies -->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
-		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
 
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.9" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9">
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.13" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
 
-		<PackageReference Include="NPOI" Version="2.6.1" />
-		<PackageReference Include="AngleSharp" Version="1.0.4" />
+		<PackageReference Include="NPOI" Version="2.6.2" />
+		<PackageReference Include="AngleSharp" Version="1.0.5" />
 
 		<PackageReference Include="Serilog" Version="3.0.1" />
 		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.3" />
 
 		<!-- This should be ignored, when targeted to Azure Cloud Platform.
 		<PackageReference Include="nulastudio.NetBeauty" Version="2.1.1" /> -->
