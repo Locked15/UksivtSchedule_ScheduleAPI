@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Getter.Schedule;
-using ScheduleAPI.Models.Elements;
 
 namespace ScheduleAPI.Controllers.API.V1.Schedule
 {

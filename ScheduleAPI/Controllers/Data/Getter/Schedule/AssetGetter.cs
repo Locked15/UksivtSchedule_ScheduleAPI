@@ -1,10 +1,10 @@
-﻿using System.Text.Json;
-using ScheduleAPI.Controllers.API.V1.General;
+﻿using ScheduleAPI.Controllers.API.V1.General;
 using ScheduleAPI.Controllers.API.V1.Schedule;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Exceptions.Data;
 using ScheduleAPI.Models.Result.Schedule;
+using System.Text.Json;
 
 namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 {
@@ -242,7 +242,7 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
                 return GetAllSchedulesFromCommonFiles();
             }
         }
-        
+
         /// <summary>
         /// Метод для получения списка всех доступных преподателей. <br />
         /// Этот метод выполняет LINQ-запрос к общему списку расписания. <br />

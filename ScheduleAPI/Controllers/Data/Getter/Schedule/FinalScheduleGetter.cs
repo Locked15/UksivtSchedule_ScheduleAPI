@@ -16,10 +16,10 @@ namespace ScheduleAPI.Controllers.Data.Getter.Schedule
 
         #region Область: Конструкторы.
 
-        public FinalScheduleGetter(IHostEnvironment env) => 
+        public FinalScheduleGetter(IHostEnvironment env) =>
                 environment = env;
 
-        static FinalScheduleGetter() => 
+        static FinalScheduleGetter() =>
                 cacheWorker = new FinalScheduleGetterCacheWorker();
         #endregion
 

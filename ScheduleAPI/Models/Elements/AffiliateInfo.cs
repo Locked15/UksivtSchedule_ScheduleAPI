@@ -8,7 +8,7 @@ namespace ScheduleAPI.Models.Elements
 
         public List<string> Affiliations { get; set; }
 
-        public AffiliationsInfo(string branchName, List<string> affiliations) 
+        public AffiliationsInfo(string branchName, List<string> affiliations)
         {
             BranchName = branchName;
             Affiliations = affiliations;

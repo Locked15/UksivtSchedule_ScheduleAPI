@@ -1,6 +1,5 @@
 ﻿using AngleSharp;
 using AngleSharp.Dom;
-using Microsoft.Extensions.Logging;
 using ScheduleAPI.Controllers.API.V1.Schedule.Replacements;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Models.Elements.Site;

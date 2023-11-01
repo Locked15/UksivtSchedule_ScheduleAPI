@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using ScheduleAPI.Controllers.Data.General.Secrets;
-using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Entities;
 using Serilog;
 using System.Text.Json.Serialization;
@@ -96,7 +94,7 @@ namespace ScheduleAPI
                                                       .LogTo(Log.Logger.Information, LogLevel.Information));
 
             services.AddControllersWithViews()
-                    .AddJsonOptions(options => 
+                    .AddJsonOptions(options =>
                     {
                         options.JsonSerializerOptions.WriteIndented = true;
                         options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
