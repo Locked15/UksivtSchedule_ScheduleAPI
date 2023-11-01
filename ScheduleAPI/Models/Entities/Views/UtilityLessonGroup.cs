@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ScheduleAPI.Models.Entities.Views;
+﻿namespace ScheduleAPI.Models.Entities.Views;
 
 public partial class UtilityLessonGroup
 {

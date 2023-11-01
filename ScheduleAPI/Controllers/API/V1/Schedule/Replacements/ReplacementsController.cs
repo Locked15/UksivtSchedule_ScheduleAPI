@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleAPI.Controllers.Data.General;
 using ScheduleAPI.Controllers.Data.Getter.Replacements;
-using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Schedule.Replacements;
 
 namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements

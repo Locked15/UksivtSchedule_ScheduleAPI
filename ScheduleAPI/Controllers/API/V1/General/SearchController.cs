@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using ScheduleAPI.Controllers.Data.Getter;
-using ScheduleAPI.Models.Elements;
 using ScheduleAPI.Models.Result.Search;
 
 namespace ScheduleAPI.Controllers.API.V1.General
