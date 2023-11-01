@@ -7,6 +7,9 @@ using System.Text.Json.Serialization;
 
 namespace ScheduleAPI
 {
+    /// <summary>
+    /// Главный класс программы.
+    /// </summary>
     public static class Program
     {
         #region Константы приложения.
