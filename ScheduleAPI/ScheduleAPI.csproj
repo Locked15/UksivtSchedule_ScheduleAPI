@@ -45,6 +45,23 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
+	<!-- Site Meta-Files Settings -->
+	<ItemGroup>
+		<Content Update="wwwroot\favicon.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\robots.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\site-manifest.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Assets\.saved-cache\!ReadMe.txt" />
+	</ItemGroup>
+
 	<!-- Dependencies -->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
@@ -67,9 +84,5 @@
 
 		<!-- This should be ignored, when targeted to Azure Cloud Platform. -->
 		<!-- <PackageReference Include="nulastudio.NetBeauty" Version="2.1.4.1" /> -->
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="Assets\.saved-cache\!ReadMe.txt" />
 	</ItemGroup>
 </Project>
