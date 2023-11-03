@@ -1,80 +1,94 @@
 {
   "groupName" : "21ЗИО-3",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Суд защита ЗИП",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Экон организации",
-      "teacher" : "Арсланова О,Н.",
-      "place" : "301"
+      "name" : "ФДОИК",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Физ-ра",
-      "teacher" : "Емельянова Л.Г.",
-      "place" : null
+      "name" : "ОНИ",
+      "teacher" : "Булатов А.Р.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "общ"
+      "name" : "Кадастр",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Осн философии",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : null
+      "name" : "Кадастр",
+      "teacher" : "Нагаева З.Т.",
+      "place" : "337",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.01.01",
+      "name" : "Эк анализ",
       "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "place" : "331",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "МДК.01.01",
-      "teacher" : "Акчева Д.М.",
-      "place" : "331"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -82,75 +96,107 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БУ и НО",
+      "teacher" : "Киселева М.В.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "ДОУ",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
+      "name" : "Ин.яз",
+      "teacher" : "Каримова Г.Ф.",
+      "place" : "324",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Экон организации",
-      "teacher" : "Арсланова О,Н.",
-      "place" : "301"
+      "name" : "ФДОиК",
+      "teacher" : "Засыпкин К.Н.",
+      "place" : "341",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "Осн мен и маркет",
-      "teacher" : "Алибаева Р.Р.",
-      "place" : "305"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 7,
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 8,
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 9,
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Эк анализ",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "БУ и НО",
+      "teacher" : "Киселева М.В.",
+      "place" : "337",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "314"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "Земельное право",
-      "teacher" : "Шангареева Г.Ф.",
-      "place" : "343"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : "Земельное право",
-      "teacher" : "Шангареева Г.Ф.",
-      "place" : "343"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
@@ -158,37 +204,44 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УТИНИ",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Статистика",
-      "teacher" : "Ахатова Г.И.",
-      "place" : "308"
+      "name" : "ОНИ",
+      "teacher" : "Булатов А.Р.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Статистика",
-      "teacher" : "Ахатова Г.И.",
-      "place" : "308"
+      "name" : "УТИНИ",
+      "teacher" : "Акчева Д.М.",
+      "place" : "331",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "ПСД",
-      "teacher" : "Нагаева З.Т.",
-      "place" : "337"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : "МДК.03.01",
-      "teacher" : "Нагаева З.Т.",
-      "place" : "337"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
@@ -196,37 +249,62 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "УП.03.01",
-      "teacher" : "Булатов А.Р.",
-      "place" : "305"
+      "name" : "УП 01",
+      "teacher" : "Дибаев А.Ф.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "УП.03.01",
-      "teacher" : "Булатов А.Р.",
-      "place" : "305"
+      "name" : "УП 01",
+      "teacher" : "Дибаев А.Ф.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 6,
+      "name" : "УП 01",
+      "teacher" : "Дибаев А.Ф.",
+      "place" : "339",
+      "isChanged" : false
+    }, {
+      "number" : 7,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 8,
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 9,
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

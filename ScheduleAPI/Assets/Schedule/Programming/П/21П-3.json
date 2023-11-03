@@ -1,232 +1,274 @@
 {
   "groupName" : "21П-3",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ТВиМС",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.01.04",
-      "teacher" : "Каюмов С.А.",
-      "place" : "229"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.01.04",
-      "teacher" : "Каюмов С.А.",
-      "place" : "229"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОПБД",
+      "teacher" : "Фатхулова О.В.",
+      "place" : "221",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ОПБД",
+      "teacher" : "Фатхулова О.В.",
+      "place" : "221",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "МДК.01.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "МДК.01.01 л/р",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "МДК.01.01 л/р",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.01.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "ПП",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Валеева З.М.",
-      "place" : "320"
+      "name" : "ПП",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПП",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "УП.01.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "УП.01.01",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "МДК 0102",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Спецкурс",
-      "teacher" : "Набиева Л.Р.",
-      "place" : "232"
+      "name" : "МДК 0102",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 0102",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Спец курс",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.04 л/р",
-      "teacher" : "Каюмов С.А.",
-      "place" : "229"
+      "name" : "МДК 0103",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "УП.01.02",
-      "teacher" : "Каюмов С.А.",
-      "place" : "229"
+      "name" : "МДК 0103",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Диск.мат-ка",
-      "teacher" : "Бакирова А.Ю,",
-      "place" : "327"
+      "name" : "МДК 0103",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Комп.сети",
-      "teacher" : "Гильзер Е.М.",
-      "place" : "3"
+      "name" : "МДК 0102",
+      "teacher" : "Каюмов С.А.",
+      "place" : "5",
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Численные методы",
-      "teacher" : "Лахмуткина Т.Г.",
-      "place" : "218"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов",
-      "place" : null
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Спецкурс",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Спецкурс",
+      "teacher" : "Набиева Л.Р.",
+      "place" : "232",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

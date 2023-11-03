@@ -71,7 +71,5 @@
 
 	<ItemGroup>
 		<None Include="Assets\.saved-cache\!ReadMe.txt" />
-		<None Include="Assets\.saved-cache\ChangesOfDayCache.cache" />
-		<None Include="Assets\.saved-cache\FinalDayScheduleCache.cache" />
 	</ItemGroup>
 </Project>
