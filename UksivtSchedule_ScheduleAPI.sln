@@ -13,20 +13,27 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Azure|Any CPU = Azure|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Azure|Any CPU.ActiveCfg = Azure|Any CPU
+		{BBBFA9FC-762A-47BB-A7E2-EF3C30AE754C}.Azure|Any CPU.Build.0 = Azure|Any CPU
 		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Azure|Any CPU.ActiveCfg = Release|Any CPU
+		{51581C33-35AF-46FC-AF15-7E4BA392EC8A}.Azure|Any CPU.Build.0 = Release|Any CPU
 		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Azure|Any CPU.ActiveCfg = Release|Any CPU
+		{B768DCC4-55C0-4A9D-9C16-C5ED6DCE866C}.Azure|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

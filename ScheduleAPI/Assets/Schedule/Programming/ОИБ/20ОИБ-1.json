@@ -1,80 +1,94 @@
 {
   "groupName" : "20ОИБ-1",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.02.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Ин.яз",
-      "teacher" : "Ахметова А.М.",
-      "place" : "322"
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.02.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "МДК 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "МДК 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "МДК 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -82,151 +96,179 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Физ-ра",
-      "teacher" : "Емельянова Л.Г.",
-      "place" : null
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "УП.01.02",
-      "teacher" : "Гильзер Е.М.",
-      "place" : "3"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "УП.01.02",
-      "teacher" : "Гильзер Е.М.",
-      "place" : "3"
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.02.01",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "Ин.яз",
+      "teacher" : "Ахметова А.М.",
+      "place" : "322",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.02.02",
-      "teacher" : "Файзулов М.И.",
-      "place" : "245"
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.04",
+      "name" : "МДК 03.01",
       "teacher" : "Белозерцев Л.Н.",
-      "place" : "234"
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.01.04",
+      "name" : "МДК 03.01",
       "teacher" : "Белозерцев Л.Н.",
-      "place" : "234"
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.01.04",
+      "name" : "МДК 03.01",
       "teacher" : "Белозерцев Л.Н.",
-      "place" : "234"
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 03.02",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 03.01",
+      "teacher" : "Белозерцев Л.Н.",
+      "place" : "234",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "319"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "319"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

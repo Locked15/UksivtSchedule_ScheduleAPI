@@ -1,42 +1,49 @@
 {
   "groupName" : "20СА-1",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Стандарттизация",
-      "teacher" : "Кувшинников А.М.",
-      "place" : "16"
+      "name" : "Ин.яз",
+      "teacher" : "Пустовалова Э.У.",
+      "place" : "2",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.02.03",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : "ПОПД",
+      "teacher" : "Ишкильдина Г.Р.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.02.03",
-      "teacher" : "Лепеева Д.И.",
-      "place" : "235"
+      "name" : "Физ-ра",
+      "teacher" : "Баранов А.В.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПОПД",
+      "teacher" : "Ишкильдина Г.Р.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
@@ -44,75 +51,89 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Баранов А.В.",
-      "place" : null
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "УП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : "16"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "УП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : "16"
+      "name" : "ЭОСИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "УП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : "16"
+      "name" : "ЭОСИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.02.01",
+      "name" : "МДК 0201",
       "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.02.01",
+      "name" : "МДК 0201",
       "teacher" : "Озерова Р.А.",
-      "place" : "231"
+      "place" : "231",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "ПП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "ПП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : "1"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
@@ -120,113 +141,134 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Ин.яз",
-      "teacher" : "Пустовалова Э.У.",
-      "place" : "библ"
-    }, {
-      "number" : 3,
-      "name" : "МДК.02.02",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 4,
-      "name" : "МДК.02.02",
-      "teacher" : "Озерова Р.А.",
-      "place" : "231"
-    }, {
-      "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 3,
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
+    }, {
+      "number" : 4,
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
+    }, {
+      "number" : 5,
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Основы фил",
+      "teacher" : "Каримова И.Р.",
+      "place" : "336",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "ПП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : " 001б"
+      "name" : "МДК 0201",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "ПП.01.01",
-      "teacher" : "Павлов Н.А.",
-      "place" : " 001б"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ЭОСИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "319"
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "БЖД",
-      "teacher" : "Аввакумов А.А.",
-      "place" : "319"
+      "name" : "УП 0201",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

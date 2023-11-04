@@ -23,8 +23,8 @@ namespace ScheduleAPI.Controllers.Data.General
             basicAppPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName ?? string.Empty;
 #endif
 
-            // На сервере приложение работает под опцией сборки "Release", так что будет выполняться данный код.
-#if RELEASE
+            // На сервере приложение работает под опциями сборки "Release" или "Azure", так что будет выполняться данный код.
+#if RELEASE || AZURE
             basicAppPath = AppDomain.CurrentDomain.BaseDirectory;
 #endif
 

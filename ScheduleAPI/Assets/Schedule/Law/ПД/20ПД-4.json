@@ -1,80 +1,94 @@
 {
   "groupName" : "20ПД-4",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Делопроизв и РС",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Делопроизв и РС",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "114"
+      "name" : "Физ-ра",
+      "teacher" : "Гильманов Р.А.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : "Криминалистика",
-      "teacher" : "Фагманова Э.В.",
-      "place" : "114"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.05",
-      "teacher" : "Ахметова А.Р.",
-      "place" : null
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "УП.01.01",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "110"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "117",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "УП.01.01",
-      "teacher" : "Ахметова А.Р.",
-      "place" : "110"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "117",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Прав осн ОРД",
-      "teacher" : "Щеклеин А.",
-      "place" : "112"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "117",
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -82,151 +96,179 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Делопроизв и РС",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Уголовный процесс",
-      "teacher" : "Галиев А.Г.",
-      "place" : "323"
+      "name" : "Делопроизв и РС",
+      "teacher" : "Ахметова А.Р.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "Уголовный процесс",
-      "teacher" : "Галиев А.Г.",
-      "place" : "323"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.04",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "324",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.01.02",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "110"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "117",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Иняз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "117",
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Уголовный процесс",
-      "teacher" : "Галиев А.Г.",
-      "place" : "114"
-    }, {
-      "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Гильманов Р.А.",
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : "МДК.01.02",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "117"
-    }, {
-      "number" : 3,
-      "name" : "МДК.01.02",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "117"
-    }, {
-      "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 1,
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
+    }, {
+      "number" : 2,
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
+    }, {
+      "number" : 3,
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
+    }, {
+      "number" : 4,
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "МДК.01.01",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "117"
+      "name" : "УП 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "МДК.01.01",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "117"
+      "name" : "УП 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "МДК.01.01",
-      "teacher" : "Драгомиров М.С.",
-      "place" : "117"
+      "name" : "МДК 0201",
+      "teacher" : "Языкбаев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

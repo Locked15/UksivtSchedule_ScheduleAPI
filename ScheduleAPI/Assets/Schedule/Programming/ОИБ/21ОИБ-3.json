@@ -1,80 +1,94 @@
 {
   "groupName" : "21ОИБ-3",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Элект. и схемот.",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Элект. и схемот.",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "ОИБ",
-      "teacher" : "Мусина Г.А.",
-      "place" : "7"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Операционные системы",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "СИСПИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 01.01",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "УП 01.01",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Элект. и схемот.",
-      "teacher" : "Тяпкина Н.Б.",
-      "place" : "11"
+      "name" : "УП 01.01",
+      "teacher" : "Колесников Д.Н.",
+      "place" : "1",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "История",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : "319"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "История",
-      "teacher" : "Ахметшина Е.В.",
-      "place" : "319"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -82,37 +96,44 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Физ-ра",
-      "teacher" : "Емельянова Л.Г.",
-      "place" : null
-    }, {
-      "number" : 2,
-      "name" : "Математика",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
-    }, {
-      "number" : 3,
-      "name" : "Математика",
-      "teacher" : "Бакирова А.Ю.",
-      "place" : "327"
-    }, {
-      "number" : 4,
-      "name" : "Ин.яз",
-      "teacher" : "Валеева З.М.",
-      "place" : "320"
-    }, {
-      "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 2,
+      "name" : "СИСПИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
+    }, {
+      "number" : 3,
+      "name" : "СИСПИ",
+      "teacher" : "Лепеева Д.И.",
+      "place" : "235",
+      "isChanged" : false
+    }, {
+      "number" : 4,
+      "name" : "Операционные системы",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231",
+      "isChanged" : false
+    }, {
+      "number" : 5,
+      "name" : "Операционные системы",
+      "teacher" : "Озерова Р.А.",
+      "place" : "231",
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
@@ -120,37 +141,44 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Валеева З.М.",
+      "place" : "320",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Базы данных",
+      "teacher" : "Стюкова Я.Д.",
+      "place" : "217",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Базы данных",
+      "teacher" : "Стюкова Я.Д.",
+      "place" : "217",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "МДК.04.01",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "МДК.04.01",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
@@ -158,75 +186,89 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "ПП.04.01",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
-    }, {
-      "number" : 5,
-      "name" : "УП.04.01",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
-    }, {
-      "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 5,
+      "name" : "МДК 02.02.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
+    }, {
+      "number" : 6,
+      "name" : "МДК 02.02.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "ОАИП",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "ОАИП",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "ОАИП",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "214"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "ОАИП",
-      "teacher" : "Хасипов Р.Х.",
-      "place" : "214"
+      "name" : "Базы данных",
+      "teacher" : "Стюкова Я.Д.",
+      "place" : "217",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 02.02.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "МДК 02.02.",
+      "teacher" : "Файзулов М.И.",
+      "place" : "245",
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

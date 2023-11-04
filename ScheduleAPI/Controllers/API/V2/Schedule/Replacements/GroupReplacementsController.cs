@@ -8,7 +8,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
 {
     [Route("~/api/v2/[controller]/")]
     [Route("~/api/v2/schedule/{word:regex(replacement[[s]]?)}/group/")]
-    public class GroupReplacementsController : Controller
+    public class GroupReplacementsController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -36,7 +36,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         #region Область: Обработчики API.
 
         [HttpGet("day")]
-        public IActionResult GetGroupDayReplacementsByDayIndex(int dayIndex = 0, string targetGroup = "19П-3")
+        public IActionResult GetGroupDayReplacementsByDayIndex(int dayIndex = IScheduleController.DefaultDayIndex, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.CheckDayIndexFromOverflow().GetDateTimeInWeek());
             var result = dataGetter.GetReplacementsForGroup(targetGroup, targetDate);
@@ -45,14 +45,14 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
 
         [HttpGet("day/date")]
-        public IActionResult GetGroupDayReplacementsByDate(DateOnly targetDate, string targetGroup = "19П-3")
+        public IActionResult GetGroupDayReplacementsByDate(DateOnly targetDate, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var result = dataGetter.GetReplacementsForGroup(targetGroup, targetDate);
             return Json(result);
         }
 
         [HttpGet("week")]
-        public IActionResult GetGroupWeekReplacements(string targetGroup = "19П-3")
+        public IActionResult GetGroupWeekReplacements(string targetGroup = IScheduleController.DefaultGroupName)
         {
             var results = new List<GroupReplacementsWrapper>(1);
             for (int i = 0; i < 7; i++)
@@ -65,7 +65,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
 
         [HttpGet("week/date")]
-        public IActionResult GetGroupWeekReplacementsByDate(DateOnly targetDate, string targetGroup = "19П-3")
+        public IActionResult GetGroupWeekReplacementsByDate(DateOnly targetDate, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var results = new List<GroupReplacementsWrapper>(7);
             (DateOnly currentDate, DateOnly targetWeekEndingDate) dates = (targetDate.GetStartOfWeek(),

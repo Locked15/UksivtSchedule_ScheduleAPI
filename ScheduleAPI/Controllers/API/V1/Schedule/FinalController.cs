@@ -9,7 +9,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
     /// </summary>
     [Route("~/api/v1/[controller]/")]
     [Route("~/api/v1/schedule/[controller]/")]
-    public class FinalController : Controller
+    public class FinalController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -58,7 +58,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <param name="groupName">Название нужной группы.</param>
         /// <returns>Итоговое расписания с учётом доступных замен.</returns>
         [HttpGet("day")]
-        public IActionResult GetFinalDaySchedule(int dayIndex = 0, string groupName = "19П-3")
+        public IActionResult GetFinalDaySchedule(int dayIndex = IScheduleController.DefaultDayIndex, string groupName = IScheduleController.DefaultGroupName)
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             groupName = groupName.RemoveStringChars();
@@ -75,7 +75,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// <param name="groupName">Название нужной группы.</param>
         /// <returns>Итоговое расписание на неделю, с учётом всех доступных замен.</returns>
         [HttpGet("week")]
-        public IActionResult GetFinalWeekSchedule(string groupName = "19П-3")
+        public IActionResult GetFinalWeekSchedule(string groupName = IScheduleController.DefaultGroupName)
         {
             groupName = groupName.RemoveStringChars();
 

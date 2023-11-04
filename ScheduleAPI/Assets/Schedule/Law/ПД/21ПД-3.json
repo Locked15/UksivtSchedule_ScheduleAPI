@@ -1,80 +1,94 @@
 {
   "groupName" : "21ПД-3",
-  "daySchedules" : [ {
+  "targetedDaySchedules" : [ {
     "day" : "MONDAY",
     "lessons" : [ {
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "ИТ",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "ИТ",
-      "teacher" : "Васильева А.А.",
-      "place" : "243"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "ПИСО",
-      "teacher" : "Языкбаев А.Г.",
-      "place" : "341"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "ПИСО",
-      "teacher" : "Языкбаев А.Г.",
-      "place" : "341"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Ин.яз",
+      "teacher" : "Сорокина Э.Г.",
+      "place" : "320",
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Криминалистика",
+      "teacher" : "Фагманова Э.В.",
+      "place" : "118",
+      "isChanged" : false
     } ]
   }, {
     "day" : "TUESDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Конст право",
-      "teacher" : "Султанов А.Х.",
-      "place" : "316"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "Конст право",
-      "teacher" : "Султанов А.Х.",
-      "place" : "316"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : "Основы философии",
-      "teacher" : "Исмагилова Г.М,",
-      "place" : "315"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : "Гр право и гр процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "343"
+      "name" : "Спец техника",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "114",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Спец техника",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "114",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ПО ОРД",
+      "teacher" : "Юмагулов И.Т.",
+      "place" : "339",
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Криминалистика",
+      "teacher" : "Фагманова Э.В.",
+      "place" : "117",
+      "isChanged" : false
     } ]
   }, {
     "day" : "WEDNESDAY",
@@ -82,113 +96,134 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Криминология",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Криминология",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110",
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Гр право и гр процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "117"
+      "name" : "УП",
+      "teacher" : "Галиев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "Гр право и гр процесс",
-      "teacher" : "Зайнуллина И.И.",
-      "place" : "117"
+      "name" : "УП",
+      "teacher" : "Галиев А.Г.",
+      "place" : "112",
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "THURSDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Ин яз",
-      "teacher" : "Сорокина Э.Г.",
-      "place" : "324"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
-      "name" : "ПИСО",
-      "teacher" : "Языкбаев А.Г.",
-      "place" : "111а"
+      "name" : "ТСП",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 2,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "ТСП",
+      "teacher" : "Музафаров Ф.Ф.",
+      "place" : "343",
+      "isChanged" : false
     }, {
       "number" : 3,
-      "name" : null,
-      "teacher" : null,
-      "place" : null
+      "name" : "Физ-ра",
+      "teacher" : "Емельянова Л.Г.",
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "FRIDAY",
     "lessons" : [ {
       "number" : 0,
-      "name" : "Физ-ра",
-      "teacher" : "Емельянова Л.Г.",
-      "place" : null
-    }, {
-      "number" : 1,
-      "name" : "НПП",
-      "teacher" : "Щеклеин А.",
-      "place" : "112"
-    }, {
-      "number" : 2,
-      "name" : "НПП",
-      "teacher" : "Щеклеин А.",
-      "place" : "112"
-    }, {
-      "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
+    }, {
+      "number" : 1,
+      "name" : "ПО ОРД",
+      "teacher" : "Юмагулов И.Т.",
+      "place" : "118",
+      "isChanged" : false
+    }, {
+      "number" : 2,
+      "name" : "УП",
+      "teacher" : "Галиев А.Г.",
+      "place" : "323",
+      "isChanged" : false
+    }, {
+      "number" : 3,
+      "name" : "УП",
+      "teacher" : "Галиев А.Г.",
+      "place" : "323",
+      "isChanged" : false
     }, {
       "number" : 4,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 5,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 6,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SATURDAY",
@@ -196,37 +231,44 @@
       "number" : 0,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 1,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 2,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 3,
       "name" : null,
       "teacher" : null,
-      "place" : null
+      "place" : null,
+      "isChanged" : false
     }, {
       "number" : 4,
-      "name" : "Баш яз",
-      "teacher" : "Хисамутдинова Р.М.",
-      "place" : "321"
+      "name" : "Криминология",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110",
+      "isChanged" : false
     }, {
       "number" : 5,
-      "name" : "БЖД",
-      "teacher" : "Акчев С.А.",
-      "place" : "110"
+      "name" : "Криминология",
+      "teacher" : "Ахметова Э.Р.",
+      "place" : "110",
+      "isChanged" : false
     }, {
       "number" : 6,
-      "name" : "БЖД",
-      "teacher" : "Акчев С.А.",
-      "place" : "110"
+      "name" : null,
+      "teacher" : null,
+      "place" : null,
+      "isChanged" : false
     } ]
   }, {
     "day" : "SUNDAY",

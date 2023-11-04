@@ -8,7 +8,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
 {
     [Route("~/api/v2/[controller]/")]
     [Route("~/api/v2/schedule/{word:regex(replacement[[s]]?)}/teacher/")]
-    public class TeacherReplacementsController : Controller
+    public class TeacherReplacementsController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -38,7 +38,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         #region Подоблать: Дневные Замены.
 
         [HttpGet("day/index-id")]
-        public IActionResult GetTeacherDayReplacementsByDayIndexAndTeacherId(int dayIndex = 0, int teacherId = 0)
+        public IActionResult GetTeacherDayReplacementsByDayIndexAndTeacherId(int dayIndex = IScheduleController.DefaultDayIndex, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             var result = dataGetter.GetReplacementsForTeacher(teacherId, targetDate);
@@ -47,7 +47,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
 
         [HttpGet("day/index-bio")]
-        public IActionResult GetTeacherDayReplacementByDayIndexAndBio(string? name, string? surname, string? patronymic, int dayIndex = 0)
+        public IActionResult GetTeacherDayReplacementByDayIndexAndBio(string? name, string? surname, string? patronymic, int dayIndex = IScheduleController.DefaultDayIndex)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             var result = dataGetter.GetReplacementsForTeacher(name, surname, patronymic, targetDate);
@@ -56,7 +56,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
 
         [HttpGet("day/date-id")]
-        public IActionResult GetTeacherDayReplacementsByDateAndTeacherId(DateOnly targetDate, int teacherId = 0)
+        public IActionResult GetTeacherDayReplacementsByDateAndTeacherId(DateOnly targetDate, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var result = dataGetter.GetReplacementsForTeacher(teacherId, targetDate);
             return Json(result);
@@ -74,7 +74,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
 
         [HttpGet("week/id")]
         [HttpGet("week/index-id")]
-        public IActionResult GetTeacherWeekReplacementsByTeacherId(int teacherId = 0)
+        public IActionResult GetTeacherWeekReplacementsByTeacherId(int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var results = new List<TeacherScheduleDataWrapper>(7);
             for (int i = 0; i < 7; i++)
@@ -101,7 +101,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Replacements
         }
 
         [HttpGet("week/date-id")]
-        public IActionResult GetTeacherWeekReplacementsByDateAndTeacherId(DateOnly targetDate, int teacherId = 0)
+        public IActionResult GetTeacherWeekReplacementsByDateAndTeacherId(DateOnly targetDate, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var results = new List<TeacherScheduleDataWrapper>(7);
             (DateOnly currentDate, DateOnly targetWeekEndingDate) dates = (targetDate.GetStartOfWeek(),
