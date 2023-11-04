@@ -58,7 +58,7 @@
 		<Content Update="wwwroot\robots.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<Content Update="wwwroot\site-manifest.json">
+		<Content Update="wwwroot\site-manifest.webmanifest">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
