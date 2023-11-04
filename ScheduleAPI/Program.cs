@@ -43,8 +43,8 @@ namespace ScheduleAPI
             WebApplicationBuilder builder = CreateAndConfigureAppBuilder(args);
 
             var app = builder.Build();
-            SetRoutings(app);
             ConfigureAppSettings(app);
+            ConfigureAppRoutesAndMaps(app);
 
             Log.Debug("Application is started up.");
             app.Run();
@@ -113,29 +113,28 @@ namespace ScheduleAPI
         }
 
         /// <summary>
-        /// Устанавливает значения маршрутизации для API.
-        /// В данном случае нужен для установки маршрутов до действий по умолчанию.
-        /// </summary>
-        /// <param name="app">Экземпляр веб-приложения, которое настраивается.</param>
-        private static void SetRoutings(WebApplication app)
-        {
-            app.UseRouting();
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}");
-
-            app.UseExceptionHandler("/Home/Error");
-        }
-
-        /// <summary>
         /// Устанавливает настройки веб-приложения.
         /// </summary>
         /// <param name="app">Настраиваемое веб-приложение.</param>
         private static void ConfigureAppSettings(WebApplication app)
         {
             app.UseCors(CorsPolicyName);
-            app.MapControllers();
+            app.UseStaticFiles();
+            app.UseRouting();
+        }
 
+        /// <summary>
+        /// Устанавливает значения маршрутизации для API.
+        /// В данном случае нужен для установки маршрутов до действий по умолчанию.
+        /// </summary>
+        /// <param name="app">Экземпляр веб-приложения, которое настраивается.</param>
+        private static void ConfigureAppRoutesAndMaps(WebApplication app)
+        {
+            app.MapControllers();
+            app.MapControllerRoute(name: "default",
+                                   pattern: "{controller=Home}/{action=Index}");
+
+            app.UseExceptionHandler("/Home/Error");
             app.UseStatusCodePagesWithReExecute("/Home/Status", "?code={0}");
         }
         #endregion
