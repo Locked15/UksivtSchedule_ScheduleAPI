@@ -2,6 +2,8 @@
 	<!-- Project Execution Settings -->
 	<PropertyGroup>
 		<TargetFramework>net7.0-windows10.0.22000.0</TargetFramework>
+		
+		<Configurations>Debug; Release; Azure</Configurations>
 		<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 
 		<Nullable>enable</Nullable>
@@ -45,8 +47,11 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
-	<!-- Site Meta-Files Settings -->
+	<!-- Site Content Settings -->
 	<ItemGroup>
+		<None Include="Assets\.saved-cache\!ReadMe.txt" />
+
+		<!-- Meta-Files settings. -->
 		<Content Update="wwwroot\favicon.ico">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -56,10 +61,6 @@
 		<Content Update="wwwroot\site-manifest.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="Assets\.saved-cache\!ReadMe.txt" />
 	</ItemGroup>
 
 	<!-- Dependencies -->
@@ -82,7 +83,7 @@
 		<PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
 		<PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.3" />
 
-		<!-- This should be ignored, when targeted to Azure Cloud Platform. -->
-		<!-- <PackageReference Include="nulastudio.NetBeauty" Version="2.1.4.1" /> -->
+		<!-- This library doesn't work on Azure Cloud Platform. -->
+		<PackageReference Condition="'$(PublishProfileName)' != 'Azure'" Include="nulastudio.NetBeauty" Version="2.1.4.1" />
 	</ItemGroup>
 </Project>
