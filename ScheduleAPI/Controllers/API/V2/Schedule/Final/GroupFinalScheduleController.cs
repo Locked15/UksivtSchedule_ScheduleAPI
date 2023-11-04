@@ -8,7 +8,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
 {
     [Route("~/api/v2/[controller]/")]
     [Route("~/api/v2/schedule/{word:regex(final[[s]]?)}/group/")]
-    public class GroupFinalScheduleController : Controller
+    public class GroupFinalScheduleController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -36,7 +36,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
         #region Область: Обработчики API.
 
         [HttpGet("day")]
-        public IActionResult GetGroupFinalDayScheduleByDayIndex(int dayIndex = 0, string targetGroup = "19П-3")
+        public IActionResult GetGroupFinalDayScheduleByDayIndex(int dayIndex = IScheduleController.DefaultDayIndex, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             var result = dataGetter.GetFinalScheduleForGroup(targetGroup, targetDate);
@@ -45,14 +45,14 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
         }
 
         [HttpGet("day/date")]
-        public IActionResult GetGroupFinalDayScheduleByDate(DateOnly targetDate, string targetGroup = "19П-3")
+        public IActionResult GetGroupFinalDayScheduleByDate(DateOnly targetDate, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var result = dataGetter.GetFinalScheduleForGroup(targetGroup, targetDate);
             return Json(result);
         }
 
         [HttpGet("week")]
-        public IActionResult GetGroupFinalWeekSchedule(string targetGroup = "19П-3")
+        public IActionResult GetGroupFinalWeekSchedule(string targetGroup = IScheduleController.DefaultGroupName)
         {
             var results = new List<GroupFinalScheduleWrapper>(7);
             for (int i = 0; i < 7; i++)
@@ -65,7 +65,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Final
         }
 
         [HttpGet("week/date")]
-        public IActionResult GetGroupFinalWeekScheduleByDate(DateOnly targetDate, string targetGroup = "19П-3")
+        public IActionResult GetGroupFinalWeekScheduleByDate(DateOnly targetDate, string targetGroup = IScheduleController.DefaultGroupName)
         {
             var results = new List<GroupFinalScheduleWrapper>(7);
             (DateOnly currentDate, DateOnly targetWeekEndingDate) dates = (targetDate.GetStartOfWeek(),

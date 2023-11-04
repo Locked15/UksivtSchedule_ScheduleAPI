@@ -5,7 +5,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
 {
     [Route("~/api/v1/[controller]/")]
     [Route("~/api/v1/general/[controller]/")]
-    public class StructureController : Controller
+    public class StructureController : Controller, IScheduleController
     {
         private AssetGetter getter;
 
@@ -30,7 +30,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         }
 
         [HttpGet("affiliates")]
-        public IActionResult GetAffiliates(string branch = "Programming")
+        public IActionResult GetAffiliates(string branch = IScheduleController.DefaultBranch)
         {
             List<string> affiliates = getter.GetAffiliates(branch);
 
@@ -38,7 +38,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         }
 
         [HttpGet("groups")]
-        public IActionResult GetGroups(string branch = "Programming", string affiliate = "П")
+        public IActionResult GetGroups(string branch = IScheduleController.DefaultBranch, string affiliate = IScheduleController.DefaultAffiliation)
         {
             List<string> groups = getter.GetGroupNames(branch, affiliate);
 

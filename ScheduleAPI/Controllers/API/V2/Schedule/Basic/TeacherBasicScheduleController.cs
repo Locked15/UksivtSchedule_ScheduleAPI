@@ -8,7 +8,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
 {
     [Route("~/api/v2/[controller]/")]
     [Route("~/api/v2/schedule/{word:regex(basic[[s]]?)}/teacher/")]
-    public class TeacherBasicScheduleController : Controller
+    public class TeacherBasicScheduleController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -38,7 +38,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
         #region Подоблать: Дневные Расписания.
 
         [HttpGet("day/index-id")]
-        public IActionResult GetTeacherBasicDayScheduleByDayIndexAndTeacherId(int dayIndex = 0, int teacherId = 0)
+        public IActionResult GetTeacherBasicDayScheduleByDayIndexAndTeacherId(int dayIndex = IScheduleController.DefaultDayIndex, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             var result = dataGetter.GetBasicScheduleForTeacher(teacherId, targetDate);
@@ -47,7 +47,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
         }
 
         [HttpGet("day/index-bio")]
-        public IActionResult GetTeacherBasicDayScheduleByDayIndexAndBio(string? name, string? surname, string? patronymic, int dayIndex = 0)
+        public IActionResult GetTeacherBasicDayScheduleByDayIndexAndBio(string? name, string? surname, string? patronymic, int dayIndex = IScheduleController.DefaultDayIndex)
         {
             var targetDate = DateOnly.FromDateTime(dayIndex.GetDateTimeInWeek());
             var result = dataGetter.GetBasicScheduleForTeacher(name, surname, patronymic, targetDate);
@@ -56,7 +56,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
         }
 
         [HttpGet("day/date-id")]
-        public IActionResult GetTeacherBasicDayScheduleByDateAndTeacherId(DateOnly targetDate, int teacherId = 0)
+        public IActionResult GetTeacherBasicDayScheduleByDateAndTeacherId(DateOnly targetDate, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var result = dataGetter.GetBasicScheduleForTeacher(teacherId, targetDate);
             return Json(result);
@@ -74,7 +74,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
 
         [HttpGet("week/id")]
         [HttpGet("week/index-id")]
-        public IActionResult GetTeacherBasicWeekScheduleByTeacherId(int teacherId = 0)
+        public IActionResult GetTeacherBasicWeekScheduleByTeacherId(int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var results = new List<TeacherScheduleDataWrapper>(7);
             for (int i = 0; i < 7; i++)
@@ -101,7 +101,7 @@ namespace ScheduleAPI.Controllers.API.V2.Schedule.Basic
         }
 
         [HttpGet("week/date-id")]
-        public IActionResult GetTeacherBasicWeekScheduleByDateAndTeacherId(DateOnly targetDate, int teacherId = 0)
+        public IActionResult GetTeacherBasicWeekScheduleByDateAndTeacherId(DateOnly targetDate, int teacherId = IScheduleController.DefaultTeacherIndex)
         {
             var results = new List<TeacherScheduleDataWrapper>(7);
             (DateOnly currentDate, DateOnly targetWeekEndingDate) dates = (targetDate.GetStartOfWeek(),

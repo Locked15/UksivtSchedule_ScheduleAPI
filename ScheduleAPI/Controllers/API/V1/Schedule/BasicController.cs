@@ -13,7 +13,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
     /// </summary>
     [Route("~/api/v1/[controller]/")]
     [Route("~/api/v1/schedule/[controller]/")]
-    public class BasicController : Controller
+    public class BasicController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -59,7 +59,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet("day")]
-        public JsonResult GetDaySchedule(int dayIndex = 0, string groupName = "19П-3")
+        public JsonResult GetDaySchedule(int dayIndex = IScheduleController.DefaultDayIndex, string groupName = IScheduleController.DefaultGroupName)
         {
             groupName = groupName.RemoveStringChars();
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
@@ -77,7 +77,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule
         /// Значение по умолчанию: 19П-3.</param>
         /// <returns>Json-объект, содержащий расписание для указанной группы в указанный день.</returns>
         [HttpGet("week")]
-        public JsonResult GetWeekSchedule(string groupName = "19П-3")
+        public JsonResult GetWeekSchedule(string groupName = IScheduleController.DefaultGroupName)
         {
             groupName = groupName.RemoveStringChars();
             WeekSchedule schedule = getter.GetWeekSchedule(groupName);

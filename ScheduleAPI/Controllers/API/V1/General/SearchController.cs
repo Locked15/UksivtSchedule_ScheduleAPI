@@ -10,7 +10,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
     /// </summary>
     [Route("~/api/v1/[controller]/")]
     [Route("~/api/v1/general/[controller]/")]
-    public class SearchController : Controller
+    public class SearchController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -89,7 +89,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
             UpdateGetterSettings(options);
             cacheWorker.Set("getter", getter);
 
-            return new JsonResult("Settings succefully applied.");
+            return new JsonResult("Settings successfully applied.");
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         /// <param name="request">Строка, которая должна содержаться в названии группы.</param>
         /// <returns>Строковое представление объекта.</returns>
         [HttpGet("groups")]
-        public JsonResult GetGroups(string request = "П")
+        public JsonResult GetGroups(string request = IScheduleController.DefaultAffiliation)
         {
             var result = getter.SearchTargetGroups(request);
 
@@ -111,7 +111,7 @@ namespace ScheduleAPI.Controllers.API.V1.General
         /// <param name="request">Строка запроса. ФИО преподавателя должно содержать это значение.</param>
         /// <returns>Строковое представление результата поиска.</returns>
         [HttpGet("teachers")]
-        public JsonResult GetTeachers(string request = "Карим")
+        public JsonResult GetTeachers(string request = IScheduleController.DefaultTeacherSearchRequest)
         {
             var result = getter.SearchTargetTeachers(request);
 

@@ -13,7 +13,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
     /// </summary>
     [Route("~/api/v1/[controller]/")]
     [Route("~/api/v1/schedule/[controller]/")]
-    public class ReplacementsController : Controller
+    public class ReplacementsController : Controller, IScheduleController
     {
         #region Область: Поля.
 
@@ -54,7 +54,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet("day")]
-        public IActionResult DayReplacements(int dayIndex = 0, string groupName = "19П-3")
+        public IActionResult DayReplacements(int dayIndex = IScheduleController.DefaultDayIndex, string groupName = IScheduleController.DefaultGroupName)
         {
             dayIndex = dayIndex.CheckDayIndexFromOverflow();
             ReplacementsOfDay replacements = new TargetReplacementsGetter(dayIndex, groupName).GetDayReplacements();
@@ -70,7 +70,7 @@ namespace ScheduleAPI.Controllers.API.V1.Schedule.Replacements
         /// <param name="groupName">Название группы.</param>
         /// <returns>Строковое представление списка замен.</returns>
         [HttpGet("week")]
-        public IActionResult WeekReplacements(string groupName = "19П-3")
+        public IActionResult WeekReplacements(string groupName = IScheduleController.DefaultGroupName)
         {
             List<ReplacementsOfDay> replacements = new TargetReplacementsGetter(default, groupName).GetWeekReplacements();
 

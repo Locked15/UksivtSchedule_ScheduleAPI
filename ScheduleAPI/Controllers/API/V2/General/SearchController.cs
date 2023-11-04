@@ -6,7 +6,7 @@ namespace ScheduleAPI.Controllers.API.V2.General
 {
     [Route("~/api/v2/[controller]/")]
     [Route("~/api/v2/general/[controller]/")]
-    public class SearchController : Controller
+    public class SearchController : Controller, IScheduleController
     {
         #region Область: Свойства.
 
